@@ -18,6 +18,7 @@
 | 深入了解技术平台 | → [`01-booster-kb/07-tech-platform/`](01-booster-kb/07-tech-platform/) |
 | 研究具身智能教育理论 | → [`02-embodied-ai-edu/01-theory/`](02-embodied-ai-edu/01-theory/) |
 | 设计K-12课程体系 | → [`02-embodied-ai-edu/03-curriculum/`](02-embodied-ai-edu/03-curriculum/) |
+| 查阅 K1 通识课与课程库 | → [`02-embodied-ai-edu/03-curriculum/k1-通识课/`](02-embodied-ai-edu/03-curriculum/k1-通识课/) |
 | 查看全局知识地图 | → [`KNOWLEDGE-MAP.md`](KNOWLEDGE-MAP.md) |
 | 按关键词搜索 | → [`INDEX.md`](INDEX.md) |
 
@@ -84,3 +85,4 @@ booster-knowledge-base/
 | 日期 | 版本 | 变更说明 |
 |------|------|----------|
 | 2026-07-16 | v1.0 | 知识库初始化，完成架构搭建和公司知识库核心模块 |
+| 2026-07-29 | v1.1 | 补充 K1 课程库：归档 54 份课程源文件(L1-L4大纲+教案+清华工训)，新增 K1 通识课结构化分析层，更新交叉引用与索引 |

@@ -82,6 +82,8 @@ last_updated: "2026-07-16"
 | 关键词 | 相关文档 |
 |--------|----------|
 | K-12课程体系 | `02-embodied-ai-edu/03-curriculum/_curriculum-overview.md` |
+| K1 通识课（L1-L4） | `02-embodied-ai-edu/03-curriculum/k1-通识课/README.md` |
+| 课程库/教案 | `05-internal-materials/course-outlines/` |
 | 课程标准 | `02-embodied-ai-edu/02-standards/k12-ability-map.md` |
 | 客户案例 | `01-booster-kb/05-cases/_cases-index.md` |
 
@@ -89,7 +91,7 @@ last_updated: "2026-07-16"
 
 | 关键词 | 相关文档 |
 |--------|----------|
-| L1-L4课程 | `01-booster-kb/01-company/../03-solutions/` |
+| L1-L4 通识课 | `02-embodied-ai-edu/03-curriculum/k1-通识课/README.md` |
 | 里程碑 | `01-booster-kb/01-company/milestones.md` |
 
 ## P
@@ -104,6 +106,7 @@ last_updated: "2026-07-16"
 |--------|----------|
 | 起航计划 | `01-booster-kb/01-company/milestones.md` |
 | 强化学习 | `01-booster-kb/07-tech-platform/booster-gym.md` |
+| 清华工训中心课程 | `02-embodied-ai-edu/03-curriculum/k1-通识课/清华工训中心课程.md` |
 
 ## R
 

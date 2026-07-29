@@ -41,6 +41,7 @@ last_updated: 2026-07-16
 | 3 | [AI课程线](./ai-track/_index.md) | 从 AI 基础到强化学习的 AI 课程 | draft |
 | 4 | [机器人课程线](./robotics-track/_index.md) | 从运动控制到系统集成的机器人课程 | draft |
 | 5 | [跨学科课程线](./interdisciplinary-track/_index.md) | 物理/数学/艺术/人文+机器人 | draft |
+| 6 | [K1 通识课体系（落地课纲）](./k1-通识课/README.md) | L1-L4 已交付课纲 + 清华工训，课程库实例 | active |
 
 ## 课程设计原则
 
