@@ -53,7 +53,7 @@ last_updated: "2026-07-16"
 | 工训 | 清华工训中心课程 | 大学/工训 | — | Python/ROS2/C++ | 自主追球+视觉踢球 | [清华工训](../../02-embodied-ai-edu/03-curriculum/k1-通识课/清华工训中心课程.md) |
 
 > 课程库说明与全部教案：[05-internal-materials/course-outlines](../../05-internal-materials/course-outlines)
-> ⚠️ 大纲规划 52 课次，当前缺 4 份教案（L1_11 / L2_12 / L3_05 / L4_15），建议后续补齐。
+> ✅ 大纲规划 52 课次，已归档 51 份教案。仅缺 L4_15（自主追球与执行踢球动作决策，L4 足球闭环收口课），建议优先补齐。
 
 ## 🏆 赛事速查
 
