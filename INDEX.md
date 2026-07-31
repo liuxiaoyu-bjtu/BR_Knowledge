@@ -53,6 +53,8 @@ last_updated: "2026-07-16"
 | 关键词 | 相关文档 |
 |--------|----------|
 | 高中课程 | `01-booster-kb/03-solutions/k12-high.md` |
+| 高职课程 | `02-embodied-ai-edu/03-curriculum/_curriculum-overview.md#高职课程线调研阶段` |
+| 高职调研报告 | `05-internal-materials/vocational-planning/2026-07-29_高职具身智能课程开发知识库与系统调研报告.md` |
 | 工具清单 | `04-shared/tools/_index.md` |
 
 ## H
