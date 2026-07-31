@@ -15,6 +15,7 @@ last_updated: "2026-07-16"
 ```
 05-internal-materials/
 ├── _README.md              # 本文件
+├── vocational-planning/     # 高职课程规划相关文档（会议纪要、方案讨论稿）
 ├── product-manuals/        # 产品手册 PDF
 ├── course-outlines/        # 课程大纲/教案
 ├── sales-decks/            # 销售 PPT/方案模板
