@@ -43,6 +43,7 @@ last_updated: 2026-07-16
 | Obsidian | 知识库浏览 | 双向链接、图谱视图 | 推荐 |
 | Typora | Markdown 编辑 | 所见即所得编辑 | 推荐 |
 | MkDocs | 文档站点 | 知识库静态站点生成 | 待配置 |
+| 建构笔记 | 设计经验与约束记录 | [\_construction-notes.md](./_construction-notes.md) | 使用中 |
 
 ## 工具推荐
 
