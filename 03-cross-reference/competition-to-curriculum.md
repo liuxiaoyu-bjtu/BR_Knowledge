@@ -3,7 +3,7 @@ title: 赛事→课程映射
 category: cross-reference
 tags: [交叉引用, 赛事映射, 课程映射, RoboCup]
 status: completed
-last_updated: 2026-07-16
+last_updated: 2026-08-04
 ---
 
 # 赛事→课程映射

@@ -3,7 +3,7 @@ title: "全局关键词索引"
 category: "导航层"
 tags: ["索引", "搜索", "关键词"]
 status: completed
-last_updated: "2026-07-16"
+last_updated: "2026-08-04"
 ---
 
 # 全局关键词索引
@@ -108,7 +108,8 @@ last_updated: "2026-07-16"
 |--------|----------|
 | 起航计划 | `01-booster-kb/01-company/milestones.md` |
 | 强化学习 | `01-booster-kb/07-tech-platform/booster-gym.md` |
-| 清华工训中心课程 | `02-embodied-ai-edu/03-curriculum/k1-通识课/清华工训中心课程.md` |
+| 清华工训中心课程（分析） | `02-embodied-ai-edu/03-curriculum/k1-通识课/清华工训中心课程.md` |
+| 清华工训课 18 章全文 | `05-internal-materials/course-outlines/清华工训课-18章/` |
 
 ## R
 

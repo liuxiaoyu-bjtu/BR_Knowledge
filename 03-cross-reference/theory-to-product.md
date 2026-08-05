@@ -3,7 +3,7 @@ title: 理论→产品映射
 category: cross-reference
 tags: [交叉引用, 理论映射, 产品映射, 教学设计]
 status: completed
-last_updated: 2026-07-16
+last_updated: 2026-08-04
 ---
 
 # 理论→产品映射

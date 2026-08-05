@@ -11,7 +11,7 @@ last_updated: 2026-07-29
 
 > 本区是 **Core B 课程体系规范矩阵**（见 [_curriculum-overview](../_curriculum-overview.md)）在「机器人课程线」上的**已交付落地实例**。它以加速进化 Booster K1 人形机器人为核心载体，是面向中小学（并延伸至大学工程训练）的递进式机器人系统认知与工程实践课纲。
 >
-> 原始素材（课程库说明、L1-L4 大纲与教案、清华工训中心课程）完整归档于 [05-internal-materials/course-outlines](../../../05-internal-materials/course-outlines)。
+> 原始素材（课程库说明、L1-L4 大纲与教案、清华工训中心课程）完整归档于 [05-internal-materials/course-outlines](../../../05-internal-materials/course-outlines)。清华工训课 18 章全文见 [清华工训课-18章](../../../05-internal-materials/course-outlines/清华工训课-18章)。
 
 ## 一、课程定位
 

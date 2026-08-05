@@ -148,7 +148,7 @@ last_updated: 2026-07-16
 > - [L1 机器人启蒙](./k1-通识课/L1-机器人启蒙.md) · [L2 机器人应用](./k1-通识课/L2-机器人应用.md) · [L3 机器人系统与项目实践](./k1-通识课/L3-机器人系统与项目实践.md) · [L4 机器人工程](./k1-通识课/L4-机器人工程.md)
 > - [清华工训中心具身智能课程](./k1-通识课/清华工训中心课程.md)
 >
-> 原始大纲与 49 份教案归档于 [05-internal-materials/course-outlines](../../05-internal-materials/course-outlines)。
+> 原始大纲与 51 份教案归档于 [05-internal-materials/course-outlines](../../05-internal-materials/course-outlines)。清华工训课 18 章全文归档于 [清华工训课-18章](../../05-internal-materials/course-outlines/清华工训课-18章)。
 
 ## 高职课程线（调研阶段）
 
