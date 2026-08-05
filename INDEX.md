@@ -55,6 +55,7 @@ last_updated: "2026-08-05"
 | 高中课程 | `01-booster-kb/03-solutions/k12-high.md` |
 | 高职课程 | `02-embodied-ai-edu/03-curriculum/_curriculum-overview.md#高职课程线调研阶段` |
 | 高职调研报告 | `05-internal-materials/vocational-planning/2026-07-29_高职具身智能课程开发知识库与系统调研报告.md` |
+| 高职应用开发大纲 | `05-internal-materials/vocational-planning/高职应用开发大纲-修订版.md` |
 | 工具清单 | `04-shared/tools/_index.md` |
 
 ## H
@@ -78,6 +79,7 @@ last_updated: "2026-08-05"
 | 教育解决方案 | `01-booster-kb/03-solutions/_solution-overview.md` |
 | 竞品分析 | `01-booster-kb/08-competitive-analysis/_competitive-overview.md` |
 | 具身智能教育 | `02-embodied-ai-edu/01-theory/what-is-embodied-ai-edu.md` |
+| 具身智能应用开发（高职） | `05-internal-materials/vocational-planning/高职应用开发大纲-修订版.md` |
 
 ## K
 
@@ -157,3 +159,5 @@ last_updated: "2026-08-05"
 |--------|----------|
 | 中国科技馆 | `01-booster-kb/05-cases/case-cstm.md` |
 | 中高职方案 | `01-booster-kb/03-solutions/vocational.md` |
+| 状态机/FSM | `05-internal-materials/vocational-planning/高职应用开发大纲-修订版.md#模块-4状态机与任务流程4-课时` |
+| 综合项目（视觉踢球） | `05-internal-materials/vocational-planning/高职应用开发大纲-修订版.md#模块-7综合项目开发与展示5-课时` |
