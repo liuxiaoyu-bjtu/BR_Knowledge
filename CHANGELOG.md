@@ -74,6 +74,25 @@ title: 知识库更新日志
 
 ---
 
+## v1.6 (2026-08-05)
+
+### 🧪 清华工训课实验代码索引归档
+
+- ✅ 从微云 `Code/CourseCode/` 提取 Chapter 03~18 共 16 个章节的实验代码 README
+- ✅ 新建 `05-internal-materials/course-outlines/清华工训课-18章/实验代码索引.md`
+- ✅ 同时归档 CourseCode 总 README（`实验代码-CourseCode总README.md`）
+- ✅ 归档策略：仅归档各级 README 概览，不收录完整源码，避免知识库臃肿
+- ✅ 更新 `00-目录摘要.md` 加入实验代码索引引用
+- ✅ 更新 `_README.md` 文件统计（72→74，清华工训课 19→21）
+
+### 🔗 联动更新
+
+- ✅ `INDEX.md` 新增实验代码索引条目
+- ✅ `KNOWLEDGE-MAP.md` 文件计数更新（72→73）
+- ✅ `05-internal-materials/_README.md` 更新统计与说明
+
+---
+
 ## v1.5 (2026-08-04)
 
 ### 📦 清华工训课 18 章全文归档
