@@ -14,7 +14,7 @@ created: 2026-07-16
 | 文档 | 说明 |
 |------|------|
 | [_tech-overview.md](_tech-overview.md) | 技术平台全景 |
-| [booster-sdk.md](booster-sdk.md) | BoosterOS SDK 文档 |
+| [booster-sdk.md](booster-sdk.md) | **BoosterOS SDK V1.0** — 主 SDK 完整 API 参考（41 接口 + 5 独立模块 + 22 数据类型） |
 | [ros2-sdk.md](ros2-sdk.md) | ROS2 SDK 文档 |
 | [booster-gym.md](booster-gym.md) | Booster GYM 强化学习框架 |
 | [booster-studio.md](booster-studio.md) | Booster Studio 一体化开发平台 |
