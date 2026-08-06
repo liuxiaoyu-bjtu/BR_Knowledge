@@ -134,6 +134,33 @@ title: 知识库更新日志
 
 ---
 
+## v1.11 (2026-08-06)
+
+### 🏗️ Booster 产品生态体系录入
+
+基于用户提供的「Booster产品功能矩阵」(2026-08-06) 全面更新知识库：
+
+**新建文档（4篇）**：
+- ✅ `hichat.md` — HiChat 语音对话 Agent（人设系统/多轮对话/灯语反馈/v1.2 在研功能）
+- ✅ `motion-creator.md` — Motion Creator 动作编辑器（视频→AI提取→机器人动作，8月 P0）
+- ✅ `product-ecosystem.md` — 产品生态体系（App/技能库/加速豆/账号/AI助手/应用中心/文档中心）
+- ✅ `05-internal-materials/product-manuals/Booster产品功能矩阵-20260806.md` — 源文档归档
+
+**大幅更新（2篇）**：
+- ✅ `booster-studio.md` — 重写为完整产品文档（连接管理/仿真/Agent部署/云桌面/在研功能/路线图）
+- ✅ `_tech-overview.md` — 更新平台架构图，新增应用层和生态层
+
+**联动更新**：
+- ✅ `_index.md` — 文档索引从 10 篇扩至 14 篇，更新技术栈概览图
+- ✅ `CHANGELOG.md` — v1.11
+
+### 📊 知识库统计更新
+
+- 技术平台模块：10 篇 → **14 篇**
+- 新增覆盖产品：HiChat、Motion Creator、Booster App、技能库、加速豆、账号体系、AI 助手、应用中心
+
+---
+
 ## v1.10 (2026-08-06)
 
 ### 📚 BoosterOS SDK V1.0 完整录入
