@@ -125,7 +125,19 @@ while True:
 | 语音控制 | 中等 | 豆包大模型、语音识别 |
 | 足球射门 | 困难 | 感知+决策+控制全流程 |
 
-### 阶段四：进阶学习（持续）
+### 阶段四：Agent 应用开发（3-5 天）
+
+**目标**：使用 Booster Agent Framework 开发完整的机器人 Agent 应用
+
+1. 阅读 [Booster Agent Framework 文档](booster-agent-framework.md)
+2. 在 Booster Studio 中创建第一个 Agent 项目
+3. 完成以下练习：
+   - 创建一个带 UI 组件的 Agent（按钮触发挥手动作）
+   - 添加参数配置页（schema.json + 参数读写）
+   - 实现基于机器人状态的页面自动切换（ComponentStatePageProxy）
+4. 理解 Agent Framework 与 BoosterOS SDK 的层级关系：SDK 是底层驱动层，Agent Framework 是上层应用框架
+
+### 阶段五：进阶学习（持续）
 
 **目标**：掌握高级开发能力
 
@@ -167,7 +179,8 @@ while True:
 
 1. 完整阅读 [BoosterOS SDK 文档](booster-sdk.md)
 2. 尝试 [Booster Studio](booster-studio.md) 的全部功能
-3. 运行 [RoboCup Demo](robocup-demo.md) 了解完整项目结构
-4. 如果想做强化学习，从 [Booster GYM](booster-gym.md) 开始
+3. 学习 [Booster Agent Framework](booster-agent-framework.md) 开发 Agent 应用
+4. 运行 [RoboCup Demo](robocup-demo.md) 了解完整项目结构
+5. 如果想做强化学习，从 [Booster GYM](booster-gym.md) 开始
 
 祝开发愉快！

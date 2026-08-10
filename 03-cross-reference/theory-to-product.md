@@ -92,6 +92,8 @@ K1 四阶通识课是上述教育理论在 Booster 产品上的**具体落地路
 | L4 机器人工程 | K1 + ROS2 + YOLO + 状态机/行为树 | 工程化智能闭环 | 建构主义·PBL |
 | 清华工训 | K1 + BeyondMimic + MuJoCo + Rerun | 仿真→真机全链路 | 建构主义·PBL |
 
+> **技术层级关系**: BoosterOS SDK（`boosteros`）是底层驱动层，直接操作机器人硬件；Booster Agent Framework（`booster_agent_framework`）是上层应用框架，通过 `call_booster_interface_api()` 与 SDK 通信，提供 UI 组件、生命周期管理和参数系统。基于 SDK 的课程教底层能力，Agent 框架课程教应用开发，两者有明确因果顺序。详见 [Booster Agent Framework](../01-booster-kb/07-tech-platform/booster-agent-framework.md)。
+
 > 课程库原始素材与逐阶分析见 [K1 通识课体系](../../02-embodied-ai-edu/03-curriculum/k1-通识课/README.md)。
 
 ## 理论与产品设计一致性检查

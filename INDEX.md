@@ -12,10 +12,12 @@ last_updated: "2026-08-05"
 
 ## A
 
-| 关键词 | 相关文档 |
-|--------|----------|
-| AI教育政策 | `02-embodied-ai-edu/06-policy/national-ai-policy.md` |
-| API接口 | `01-booster-kb/07-tech-platform/booster-sdk.md` |
+| 关键词             | 相关文档                                                        |
+| --------------- | ----------------------------------------------------------- |
+| AI教育政策          | `02-embodied-ai-edu/06-policy/national-ai-policy.md`        |
+| Agent Framework | `01-booster-kb/07-tech-platform/booster-agent-framework.md` |
+| AgentBase       | `01-booster-kb/07-tech-platform/booster-agent-framework.md` |
+| API接口           | `01-booster-kb/07-tech-platform/booster-sdk.md`             |
 
 ## B
 
@@ -26,6 +28,8 @@ last_updated: "2026-08-05"
 | Booster Studio | `01-booster-kb/07-tech-platform/booster-studio.md` |
 | Booster T1 | `01-booster-kb/02-products/booster-t1.md` |
 | BoosterOS | `01-booster-kb/07-tech-platform/booster-sdk.md` |
+| Booster Agent Framework | `01-booster-kb/07-tech-platform/booster-agent-framework.md` |
+| booster_agent_framework | `01-booster-kb/07-tech-platform/booster-agent-framework.md` |
 | Booster GYM | `01-booster-kb/07-tech-platform/booster-gym.md` |
 
 ## C
@@ -103,6 +107,7 @@ last_updated: "2026-08-05"
 | 关键词 | 相关文档 |
 |--------|----------|
 | Python编程 | `01-booster-kb/07-tech-platform/booster-sdk.md` |
+| Python Agent开发 | `01-booster-kb/07-tech-platform/booster-agent-framework.md` |
 
 ## Q
 
@@ -128,6 +133,7 @@ last_updated: "2026-08-05"
 | 关键词 | 相关文档 |
 |--------|----------|
 | SDK | `01-booster-kb/07-tech-platform/booster-sdk.md` |
+| UI组件系统 | `01-booster-kb/07-tech-platform/booster-agent-framework.md` |
 | 实验室建设 | `01-booster-kb/03-solutions/lab-construction.md` |
 | 双减政策 | `02-embodied-ai-edu/06-policy/national-ai-policy.md` |
 

@@ -4,6 +4,37 @@ title: 知识库更新日志
 
 # 更新日志
 
+## v1.12 (2026-08-10)
+
+### 📦 Booster Agent Framework 完整录入
+
+基于官方三份文档（了解/开发第一个 Agent/Python API）全面录入 Booster Agent Framework 知识体系：
+
+**新建文档（1篇）**：
+- ✅ `booster-agent-framework.md` — 完整 API 参考文档，覆盖 8 大子系统（Agent 基类 / UI 组件 / 参数系统 / 手柄快捷键 / 机器人状态 / 存储管理 / 本地化日志 / 模块函数）+ 工程结构 + 构建部署 + 线程模型 + 最佳实践 + 与 BoosterOS SDK 的层级关系
+
+**联动更新（6篇）**：
+- ✅ `_index.md` — 技术平台索引从 14 篇扩至 15 篇，更新技术栈概览图和使用指南
+- ✅ `_tech-overview.md` — 平台架构图新增「应用框架层」，组件详解从 10 个扩至 11 个
+- ✅ `dev-onboarding.md` — 学习路径新增「阶段四：Agent 应用开发」，下一步指引增加 Agent Framework
+- ✅ `INDEX.md` — 新增关键词：Agent Framework / AgentBase / booster_agent_framework / Python Agent开发 / UI组件系统
+- ✅ `KNOWLEDGE-MAP.md` — 技术平台模块文档计数更新（14→15）
+- ✅ `theory-to-product.md` — K1 通识课映射表补充技术层级关系说明
+
+### 📊 知识库统计更新
+
+- 技术平台模块：14 篇 → **15 篇**
+- 新增覆盖能力：UI 组件系统、Agent 生命周期管理、参数系统（schema.json）、ComponentStatePageProxy 状态页面代理、OnlineWebviewComponent 网页组件、手柄快捷键、存储管理
+
+### 🔗 关键知识关系
+
+Booster Agent Framework 与 BoosterOS SDK 是两套独立体系：
+- **BoosterOS SDK（`boosteros`）**：底层驱动层，直接操作机器人硬件（传感器/运动控制/AI 检测）
+- **Booster Agent Framework（`booster_agent_framework`）**：上层应用框架，通过 `call_booster_interface_api()` 与 SDK 通信，提供 UI 组件/生命周期/参数管理
+- 两者构成**底层能力层 vs 上层应用层**的关系，课程设计有明确因果顺序
+
+---
+
 ## v1.0 (2026-07-16)
 
 ### 🎉 知识库初始化

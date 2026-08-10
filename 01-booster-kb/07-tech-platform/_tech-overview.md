@@ -27,6 +27,13 @@ updated: 2026-08-06
 │  │  云桌面 · 云端仿真 · 3V3 足球赛                            │   │
 │  └──────────────────────────────────────────────────────────┘   │
 ├──────────────────────────────────────────────────────────────────┤
+│                      应用框架层                                    │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │              Booster Agent Framework                      │   │
+│  │  UI 组件 · 生命周期 · 参数系统 · 状态订阅 · 存储管理        │   │
+│  │  通过 call_booster_interface_api() 与 SDK 通信             │   │
+│  └──────────────────────────────────────────────────────────┘   │
+├──────────────────────────────────────────────────────────────────┤
 │                           SDK 层                                   │
 │  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐             │
 │  │ BoosterOS SDK│ │   ROS2 SDK   │ │ 豆包大模型API │             │
@@ -56,41 +63,45 @@ updated: 2026-08-06
 
 ### 2.1 BoosterOS SDK（Python）— 主 SDK
 
-详见 [booster-sdk.md](booster-sdk.md)。41 个接口 + 5 个独立模块，覆盖连接、感知、控制、语音、检测全部能力。
+详见 [booster-sdk.md](booster-sdk.md)。41 个接口 + 5 个独立模块，覆盖连接、感知、控制、语音、检测全部能力。属于**底层驱动层**，直接操作机器人硬件。
 
-### 2.2 ROS2 SDK
+### 2.2 Booster Agent Framework — 应用开发框架
+
+详见 [booster-agent-framework.md](booster-agent-framework.md)。运行在 App 端的高层 Python 开发框架，提供 UI 组件系统、生命周期管理、参数管理、机器人状态订阅、存储管理等 8 大子系统。通过 `call_booster_interface_api()` 与底层 SDK 通信，不直接操作机器人硬件。与 BoosterOS SDK 构成**应用层 vs 驱动层**的关系。
+
+### 2.3 ROS2 SDK
 
 详见 [ros2-sdk.md](ros2-sdk.md)。基于 ROS2 标准，兼容标准生态（节点/话题/服务），支持 C++/Python。
 
-### 2.3 Booster Studio — 核心开发平台
+### 2.4 Booster Studio — 核心开发平台
 
 详见 [booster-studio.md](booster-studio.md)。集虚拟仿真、真机连接、Notebook、Agent 部署于一体。8月在研：云端仿真、T2 支持、自然语言生成场景。
 
-### 2.4 HiChat — 语音对话 Agent
+### 2.5 HiChat — 语音对话 Agent
 
 详见 [hichat.md](hichat.md)。基于大语言模型的语音对话系统，支持人设定制、多轮对话、灯语反馈。v1.2 在研：断句优化、打断功能、延迟降低 10%。
 
-### 2.5 Motion Creator — 动作编辑器
+### 2.6 Motion Creator — 动作编辑器
 
 详见 [motion-creator.md](motion-creator.md)。真人视频→AI 提取→机器人动作，8月 P0 开发中。降低动作创作门槛至「手机拍视频即可」。
 
-### 2.6 产品生态体系
+### 2.7 产品生态体系
 
 详见 [product-ecosystem.md](product-ecosystem.md)。覆盖 Booster App、技能库、加速豆、账号体系、AI 助手、应用中心、文档中心。
 
-### 2.7 Booster GYM
+### 2.8 Booster GYM
 
 详见 [booster-gym.md](booster-gym.md)。基于 Gymnasium 的强化学习框架，开源（github.com/BoosterRobotics/booster_gym）。
 
-### 2.8 Booster Train
+### 2.9 Booster Train
 
 详见 [booster-train.md](booster-train.md)。基于 NVIDIA Isaac Lab 的大规模并行训练框架（BeyondMimic）。
 
-### 2.9 Booster Deploy
+### 2.10 Booster Deploy
 
 详见 [booster-deploy.md](booster-deploy.md)。Sim2Real 部署工具链。
 
-### 2.10 豆包大模型集成
+### 2.11 豆包大模型集成
 
 详见 [doubao-integration.md](doubao-integration.md)。K1 标配，半年免费。
 
