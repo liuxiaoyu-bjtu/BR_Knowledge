@@ -84,6 +84,7 @@ last_updated: "2026-08-05"
 | 竞品分析 | `01-booster-kb/08-competitive-analysis/_competitive-overview.md` |
 | 具身智能教育 | `02-embodied-ai-edu/01-theory/what-is-embodied-ai-edu.md` |
 | 具身智能应用开发（高职） | `05-internal-materials/vocational-planning/高职应用开发大纲-修订版.md` |
+| 具身智能机器人实践（X课程） | `05-internal-materials/vocational-planning/X课程大纲-v3.md` |
 
 ## K
 
@@ -158,6 +159,7 @@ last_updated: "2026-08-05"
 | 销售支持 | `01-booster-kb/06-sales-support/_sales-overview.md` |
 | 选型决策 | `01-booster-kb/02-products/version-comparison.md` |
 | 学-练-赛-评 | `01-booster-kb/03-solutions/_solution-overview.md` |
+| X 课程（具身智能机器人实践） | `05-internal-materials/vocational-planning/X课程大纲-v3.md` |
 
 ## Z
 
