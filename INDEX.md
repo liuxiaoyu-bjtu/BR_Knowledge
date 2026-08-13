@@ -3,7 +3,7 @@ title: "全局关键词索引"
 category: "导航层"
 tags: ["索引", "搜索", "关键词"]
 status: completed
-last_updated: "2026-08-05"
+last_updated: "2026-08-13"
 ---
 
 # 全局关键词索引
@@ -18,6 +18,9 @@ last_updated: "2026-08-05"
 | Agent Framework | `01-booster-kb/07-tech-platform/booster-agent-framework.md` |
 | AgentBase       | `01-booster-kb/07-tech-platform/booster-agent-framework.md` |
 | API接口           | `01-booster-kb/07-tech-platform/booster-sdk.md`             |
+| AGENTS 指南        | `AGENTS.md`                                                 |
+| Agent 使用指南     | `AGENTS.md`                                                 |
+| 公司知识库总览       | `01-booster-kb/_index.md`                                   |
 
 ## B
 

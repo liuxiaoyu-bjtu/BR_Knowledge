@@ -4,6 +4,30 @@ title: 知识库更新日志
 
 # 更新日志
 
+## v1.15 (2026-08-13)
+
+### 🤖 README 体系审查 + Agent 理解指南建立
+
+审查知识库一级文件夹的 README/_index 覆盖情况，并建立面向其他 AI Agent（Codex / Claude Code / WorkBuddy）的快速理解入口。
+
+**审查结论**：
+- 8 个一级入口中，`02-embodied-ai-edu`（_index）、`05-internal-materials`（_README）、`99-task-contexts`（README）已有说明；`00-navigation`、`03-cross-reference`、`04-shared` 无独立说明（已合并说明到根 README）；`01-booster-kb` 缺总览索引。
+- **关键缺口**：整个知识库没有任何面向其他 Agent 的快速理解文档。
+
+**新建文档（2篇）**：
+- ✅ `AGENTS.md` — **面向 AI Agent 的使用指南**（Codex 等打开项目自动优先读取）：仓库结构速览、按任务类型导航、三条硬性规则（先看索引/规范落盘/联动更新）、双层技术架构（SDK vs Agent Framework）、当前进行中的工作、Codex 特别说明（Git 推送/沙箱共享/DNS 劫持）
+- ✅ `01-booster-kb/_index.md` — Core A 公司知识库总览：8 模块导航表、使用建议、与其他部分关系
+
+**修改文档（1篇）**：
+- ✅ `README.md` — 更新至 v2.1：目录结构补充 `AGENTS.md`、`99-task-contexts`、子模块 `_index` 指引；快速导航增加 Agent 指南入口
+
+### 调整原因
+
+- `01-booster-kb` 是 Core A 核心，8 个子模块各自有 `_index` 却缺总览入口，新读者/新 Agent 难以建立整体认知
+- 知识库会被其他 Agent 调用，缺少一个"打开即懂"的说明文档，跨 Agent 协作成本高
+
+---
+
 ## v1.14 (2026-08-13)
 
 ### 🗂️ SDK 测试文件目录治理

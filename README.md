@@ -1,7 +1,9 @@
 # 加速进化 K-12 课程设计师知识库
 
 > **定位**：为课程设计岗位提供面向客户项目与专业研究的综合知识体系。
-> **维护者**：课程设计团队 | **版本**：v2.0 | **更新日期**：2026-08
+> **维护者**：课程设计团队 | **版本**：v2.1 | **更新日期**：2026-08-13
+>
+> 🤖 **给 AI Agent 的话**：本仓库也是可被 Codex / Claude Code / WorkBuddy 等 Agent 调用的知识库。**如果你是 Agent，请先读 [`AGENTS.md`](AGENTS.md)**——那是专为你准备的使用指南。
 
 ---
 
@@ -21,6 +23,7 @@
 | 查阅 K1 通识课与课程库 | → [`02-embodied-ai-edu/03-curriculum/k1-通识课/`](02-embodied-ai-edu/03-curriculum/k1-通识课/) |
 | 查看全局知识地图 | → [`KNOWLEDGE-MAP.md`](KNOWLEDGE-MAP.md) |
 | 按关键词搜索 | → [`INDEX.md`](INDEX.md) |
+| **AI Agent 快速上手** | → [`AGENTS.md`](AGENTS.md) |
 
 ---
 
@@ -55,16 +58,19 @@
 
 ```
 booster-knowledge-base/
-├── README.md                    # 本文件
+├── README.md                    # 本文件（给人看的导航入口）
+├── AGENTS.md                    # 给 AI Agent（Codex 等）的使用指南 ← 新人/Agent 先读
 ├── KNOWLEDGE-MAP.md             # 可视化知识地图
 ├── INDEX.md                     # 全局关键词索引
+├── CHANGELOG.md                 # 更新日志
 │
-├── 00-navigation/               # L0: 导航层
-├── 01-booster-kb/               # Core A: 公司知识库（8模块）
-├── 02-embodied-ai-edu/          # Core B: 教育体系库（6模块）
+├── 00-navigation/               # L0: 导航层（dashboard/glossary/quick-reference）
+├── 01-booster-kb/               # Core A: 公司知识库（8模块，见其 _index.md）
+├── 02-embodied-ai-edu/          # Core B: 教育体系库（6模块，见其 _index.md）
 ├── 03-cross-reference/          # 交叉引用映射
-├── 04-shared/                   # 共享资源
-└── 05-internal-materials/       # 内部资料填充区
+├── 04-shared/                   # 共享资源（模板/工具/媒体/sdk-tests）
+├── 05-internal-materials/       # 内部资料填充区（源文档+课程规划）
+└── 99-task-contexts/            # 任务元信息（上下文/提示词/日志）
 ```
 
 ---
