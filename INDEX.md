@@ -85,6 +85,8 @@ last_updated: "2026-08-05"
 | 具身智能教育 | `02-embodied-ai-edu/01-theory/what-is-embodied-ai-edu.md` |
 | 具身智能应用开发（高职） | `05-internal-materials/vocational-planning/高职应用开发大纲-修订版.md` |
 | 具身智能机器人实践（X课程） | `05-internal-materials/vocational-planning/X课程大纲-v3.md` |
+| X课程开发计划 | `05-internal-materials/vocational-planning/X课程开发计划-v1.md` |
+| X课程实验代码 | `05-internal-materials/vocational-planning/实验代码/` |
 
 ## K
 
@@ -161,6 +163,8 @@ last_updated: "2026-08-05"
 | 选型决策 | `01-booster-kb/02-products/version-comparison.md` |
 | 学-练-赛-评 | `01-booster-kb/03-solutions/_solution-overview.md` |
 | X 课程（具身智能机器人实践） | `05-internal-materials/vocational-planning/X课程大纲-v3.md` |
+| X 课程开发计划 | `05-internal-materials/vocational-planning/X课程开发计划-v1.md` |
+| X 课程实验代码 | `05-internal-materials/vocational-planning/实验代码/` |
 
 ## Z
 
