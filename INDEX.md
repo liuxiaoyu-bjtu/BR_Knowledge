@@ -134,6 +134,7 @@ last_updated: "2026-08-05"
 | 关键词 | 相关文档 |
 |--------|----------|
 | SDK | `01-booster-kb/07-tech-platform/booster-sdk.md` |
+| SDK测试 | `04-shared/sdk-tests/_README.md` |
 | UI组件系统 | `01-booster-kb/07-tech-platform/booster-agent-framework.md` |
 | 实验室建设 | `01-booster-kb/03-solutions/lab-construction.md` |
 | 双减政策 | `02-embodied-ai-edu/06-policy/national-ai-policy.md` |

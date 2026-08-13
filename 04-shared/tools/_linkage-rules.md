@@ -123,7 +123,15 @@ git push origin main
 - 次版本号（v1.1, v1.2）：内容级变更（如新增文件/目录、新增调研记录）
 - 每次变更必须更新 `README.md` 版本号和 `CHANGELOG.md`
 
-### 4.4 建构笔记联动规则
+### 4.4 SDK 测试脚本放置规则
+
+SDK 相关的测试/验证脚本（`.py` / `.ipynb`）**必须**放置于 `04-shared/sdk-tests/` 目录，禁止直接放在 `04-shared/` 根目录或其他模块目录：
+
+- 每个测试脚本需在 `04-shared/sdk-tests/_README.md` 文件清单中登记（测试内容、覆盖接口、运行方式）
+- 涉及 BoosterOS SDK API 的测试脚本以 `booster-sdk.md` 为技术依据，接口变动时同步更新
+- 环境验证类脚本（如机器人连通性检查、SDK 安装检测）同样归入本目录
+
+### 4.5 建构笔记联动规则
 
 `_construction-notes.md` 中的约束/调研/审计记录：
 - 每条记录标注日期和状态

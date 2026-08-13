@@ -4,6 +4,24 @@ title: 知识库更新日志
 
 # 更新日志
 
+## v1.14 (2026-08-13)
+
+### 🗂️ SDK 测试文件目录治理
+
+将 SDK 测试脚本从 `04-shared/` 根目录迁移至独立子目录 `04-shared/sdk-tests/`，建立独立管控：
+
+- ✅ 新建 `04-shared/sdk-tests/` 目录，移入 `test_boosteros_sdk.py` 和 `test_vision_capabilities.ipynb`
+- ✅ 新建 `04-shared/sdk-tests/_README.md` — 测试文件清单（内容/覆盖接口/运行方式）+ 使用前提 + 维护规则
+- ✅ `INDEX.md` — 新增「SDK测试」关键词条目
+- ✅ `_linkage-rules.md` — 新增 4.4 节「SDK 测试脚本放置规则」，禁止再裸放根目录
+
+### 调整原因
+
+- `04-shared/` 原语义为共享资源层（模板/工具），测试脚本裸放根目录破坏目录语义
+- SDK 测试脚本跨课程共享（高职 SDK 课/K1 通识课/Agent 框架课），需独立子目录管控
+
+---
+
 ## v1.13 (2026-08-11)
 
 ### 📐 X 课程大纲 v3.0 录入
