@@ -1,3 +1,0 @@
-# U1-L1 实验依赖
-# BoosterOS SDK — 机器人连接与操作
-boosteros

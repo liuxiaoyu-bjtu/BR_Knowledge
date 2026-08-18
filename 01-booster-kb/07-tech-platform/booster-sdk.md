@@ -308,7 +308,7 @@ speech.chat(config=config)
 
 ```python
 from boosteros.brain import Detection
-detector = Detection(model="soccer_yolo", backend="onnx")
+detector = Detection(model="default", backend="onnx")
 ```
 
 | 方法 | 返回 | 功能 |
@@ -325,6 +325,48 @@ detector = Detection(model="soccer_yolo", backend="onnx")
 | `image` | `AnyImage \| np.ndarray` | 必填 | 输入图像 |
 | `confidence` | `float` | `0.5` | 置信度阈值（0-1），低于此值的检测结果被丢弃 |
 | `iou_threshold` | `float` | `0.45` | NMS IoU 阈值 |
+
+### 3.3 可用检测模型与类别能力
+
+`list_models()` 返回当前环境可用的检测模型（字段：`id` / `name` / `type` / `backend`）。实测（2026-08-14）环境共 3 个模型，后端均支持 `cloud` / `local`：
+
+| 模型 ID | 名称 | 识别目标 | 类别来源 |
+|---|---|---|---|
+| `default` | 通用物体检测（快速） | **COCO 80 类**通用物体（人/车/动物/家具/食物/电子设备等） | 从 ONNX 模型导出，见下方完整清单 |
+| `person` | 人物检测 | 人（单一类别） | 专用模型 |
+| `soccer` | robocup 检测 | 足球/球门/队友对手/场线等 RoboCup 场景目标 | 专用模型，见 [robocup-demo.md](robocup-demo.md) |
+
+#### default 模型 — COCO 80 类完整清单
+
+`default` 模型为 COCO 数据集 80 类目标检测（YOLO 系），`DetectionResult.class_id` 即下表索引。课程视觉实验可直接据此设计（如"找杯子""避让行人""识别课桌"）。
+
+| ID | 类别 | ID | 类别 | ID | 类别 | ID | 类别 |
+|---|---|---|---|---|---|---|---|
+| 0 | person | 1 | bicycle | 2 | car | 3 | motorcycle |
+| 4 | airplane | 5 | bus | 6 | train | 7 | truck |
+| 8 | boat | 9 | traffic light | 10 | fire hydrant | 11 | stop sign |
+| 12 | parking meter | 13 | bench | 14 | bird | 15 | cat |
+| 16 | dog | 17 | horse | 18 | sheep | 19 | cow |
+| 20 | elephant | 21 | bear | 22 | zebra | 23 | giraffe |
+| 24 | backpack | 25 | umbrella | 26 | handbag | 27 | tie |
+| 28 | suitcase | 29 | frisbee | 30 | skis | 31 | snowboard |
+| 32 | sports ball | 33 | kite | 34 | baseball bat | 35 | baseball glove |
+| 36 | skateboard | 37 | surfboard | 38 | tennis racket | 39 | bottle |
+| 40 | wine glass | 41 | cup | 42 | fork | 43 | knife |
+| 44 | spoon | 45 | bowl | 46 | banana | 47 | apple |
+| 48 | sandwich | 49 | orange | 50 | broccoli | 51 | carrot |
+| 52 | hot dog | 53 | pizza | 54 | donut | 55 | cake |
+| 56 | chair | 57 | couch | 58 | potted plant | 59 | bed |
+| 60 | dining table | 61 | toilet | 62 | tv | 63 | laptop |
+| 64 | mouse | 65 | remote | 66 | keyboard | 67 | cell phone |
+| 68 | microwave | 69 | oven | 70 | toaster | 71 | sink |
+| 72 | refrigerator | 73 | book | 74 | clock | 75 | vase |
+| 76 | scissors | 77 | teddy bear | 78 | hair drier | 79 | toothbrush |
+
+**课程应用提示**：
+- 实验室常见可识别目标：人(0)、杯子(41)、瓶子(39)、手机(67)、椅子(56)、桌子(60)、球(32)、书本(73)、背包(24)、键盘(66)、鼠标(64)、显示器 tv(62)、盆栽(58) 等
+- 无人机/交通类（5/6/7/9/11）与动物类（14-23）适合通识课拓展演示，实验室场景较少见
+- 通过 `confidence` 阈值调节灵敏度：降低到 0.3 可在复杂场景捕获更多目标
 
 ---
 

@@ -16,8 +16,14 @@ last_updated: "2026-08-13"
 
 | 文件 | 测试内容 | 覆盖接口 | 运行方式 |
 |------|---------|----------|----------|
-| `test_boosteros_sdk.py` | SDK 环境检测（4 项测试） | 包安装检测、机器人连接、`Detection.list_models()`、RGB 图像获取 | `python test_boosteros_sdk.py` |
+| `probe_detection_classes.py` | **模型类别探测**：验证指定检测模型实际输出类别（`default`=COCO 80 类，清单见 booster-sdk.md §3.3） | `Detection(model)` / `get_image()` / `detect()` / `plot()` | `python probe_detection_classes.py [模型ID]`（默认 `default`） |
+| `test_boosteros_basic.py` | **快速验证（精简版，日常首选）**：连接 → 图像 → 模型列表（完整 JSON）→ 一次检测 → 结果图 | `BoosterRobot()` / `robot_info` / `get_image()` / `Detection.list_models()` / `detect()` / `plot()` | `python test_boosteros_basic.py` |
+| `test_boosteros_sdk.py` | SDK 环境检测（4 项测试，含失败降级与汇总报告） | 包安装检测、机器人连接、`Detection.list_models()`、RGB 图像获取 | `python test_boosteros_sdk.py` |
 | `test_vision_capabilities.ipynb` | 视觉能力全量测试（4 类 17 项） | `get_image()` / `get_camera_info()` / `subscribe_image()` / `Detection` 系列 / 视觉数据类型 / `set_head_angle()` / `get_transform()` / `SoccerKickManager` | Jupyter Notebook 逐 cell 运行 |
+| `probe_depth_distance.py` | **深度图测距标定探针**（替代已删除的 `probe_distance_m.py`）：源码确认标准 `detect()` 的 `distance_m` 永远为 `None`，本脚本改为读深度图在 bbox 区域取深度中位数实现测距，并输出 `to_dict()` + 标定行 + 深度图 dtype/编码 | `BoosterRobot()` / `Detection(model)` / `get_image("depth")` / `to_numpy()` / `detect()` / `bbox` | `python probe_depth_distance.py [模型ID] [真实距离m]`（如 `python probe_depth_distance.py default 1.0`） |
+| `probe_distance_source.py` | **源码探源**：定位 boosteros 包并递归搜索 `distance_m`，已确认全包仅 `types/vision_data.py` 一处定义、零赋值 | 包路径定位 + 源码递归搜索 | `python probe_distance_source.py` |
+
+> **版本分工**：`test_boosteros_basic.py` 为无防御包装的冒烟验证，验证基本功能是否通；`test_boosteros_sdk.py` / `.ipynb` 为完整巡检与全量验收，含失败降级和汇总报告。日常开发优先跑精简版。
 
 ## 🧪 使用前提
 

@@ -4,6 +4,18 @@ title: 知识库更新日志
 
 # 更新日志
 
+## v1.16 (2026-08-14)
+
+### 👁️ 检测模型类别能力确认（default = COCO 80 类）
+
+用户从 `default` 对应的 ONNX 模型中导出完整类别表，确认通用物体检测模型为标准 **COCO 80 类**目标检测。已沉淀到知识库：
+
+**更新内容**：
+- ✅ `01-booster-kb/07-tech-platform/booster-sdk.md` — 新增 §3.3「可用检测模型与类别能力」：3 个模型（default/person/soccer）能力总表 + default 模型 COCO 80 类完整清单（4 列排版）+ 课程应用提示（实验室常见可识别目标/场景拓展建议/置信度调参）；修正检测示例中模型 ID `soccer_yolo` → `soccer`（与实际环境一致）
+- ✅ `04-shared/sdk-tests/probe_detection_classes.py` — 注释更新：default 类别能力已确认，脚本用途从"从零摸索类别"改为"验证实际输出是否符合预期"
+- ✅ `04-shared/sdk-tests/_README.md` — probe 脚本说明同步更新
+- ✅ `INDEX.md` — 新增关键词「COCO 80 类」「视觉检测模型」
+
 ## v1.15 (2026-08-13)
 
 ### 🤖 README 体系审查 + Agent 理解指南建立

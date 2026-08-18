@@ -39,6 +39,7 @@ last_updated: "2026-08-13"
 
 | 关键词 | 相关文档 |
 |--------|----------|
+| COCO 80 类（default 检测模型） | `01-booster-kb/07-tech-platform/booster-sdk.md#33-可用检测模型与类别能力` |
 | 程昊 | `01-booster-kb/01-company/team.md` |
 | 传感器 | `01-booster-kb/02-products/booster-k1.md` |
 
@@ -140,6 +141,7 @@ last_updated: "2026-08-13"
 |--------|----------|
 | SDK | `01-booster-kb/07-tech-platform/booster-sdk.md` |
 | SDK测试 | `04-shared/sdk-tests/_README.md` |
+| 视觉检测模型 | `01-booster-kb/07-tech-platform/booster-sdk.md#33-可用检测模型与类别能力` |
 | UI组件系统 | `01-booster-kb/07-tech-platform/booster-agent-framework.md` |
 | 实验室建设 | `01-booster-kb/03-solutions/lab-construction.md` |
 | 双减政策 | `02-embodied-ai-edu/06-policy/national-ai-policy.md` |
