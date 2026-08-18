@@ -66,9 +66,12 @@ booster-knowledge-base/
 
 ## 5. 当前进行中的工作（2026-08 上下文）
 
-- **X 课程**（职业院校 BoosterOS SDK 实训实操基础课，8 单元 × 32 课时）：处于**开发执行阶段**，5 阶段流水线定义见 `05-internal-materials/vocational-planning/X课程开发计划-v1.md`，Phase 1 实验代码已产出。
+- **X 课程**（高职 BoosterOS SDK 实训实操基础课，8 单元 × 32 课时）：处于**开发执行阶段**，已独立为 `05-internal-materials/vocational-planning/03_X课程项目/`，采用 **Jupyter Notebook 单一源文件工作流**（`.ipynb` 导出即实训手册）。
+  - 最新大纲：`X课程大纲-v4.md`；最新计划：`X课程开发计划-v3.md`（5 阶段流水线，开发周期至 2026-10-20）
+  - 实验代码：`03_X课程项目/notebooks/`（U1-L1/U1-L2 已产出）
+  - 开发规则：`02_共创规则与上下文/notebook开发规则.md`
 - **高职「具身智能应用开发」课程**（7 模块 × 32 课时）：**挂起中**，唤醒入口在 `99-task-contexts/20260806-高职应用开发/`。
-- 两者定位不同：X 课程为 SDK 实训基础课，应用开发课为专业核心课。
+- 目录总览见 `vocational-planning/README.md`（01_官方文件 / 02_共创规则与上下文 / 03_X课程项目）。
 
 ## 6. 给 Codex 的特别说明
 

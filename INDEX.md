@@ -3,7 +3,7 @@ title: "全局关键词索引"
 category: "导航层"
 tags: ["索引", "搜索", "关键词"]
 status: completed
-last_updated: "2026-08-13"
+last_updated: "2026-08-18"
 ---
 
 # 全局关键词索引
@@ -61,9 +61,9 @@ last_updated: "2026-08-13"
 | 关键词 | 相关文档 |
 |--------|----------|
 | 高中课程 | `01-booster-kb/03-solutions/k12-high.md` |
-| 高职课程 | `02-embodied-ai-edu/03-curriculum/_curriculum-overview.md#高职课程线调研阶段` |
-| 高职调研报告 | `05-internal-materials/vocational-planning/2026-07-29_高职具身智能课程开发知识库与系统调研报告.md` |
-| 高职应用开发大纲 | `05-internal-materials/vocational-planning/高职应用开发大纲-修订版.md` |
+| 高职课程 | `02-embodied-ai-edu/03-curriculum/_curriculum-overview.md#高职课程线调研--开发执行` |
+| 高职调研报告 | `05-internal-materials/vocational-planning/01_官方文件/2026-07-29_高职具身智能课程开发知识库与系统调研报告.md` |
+| 高职应用开发大纲 | `05-internal-materials/vocational-planning/03_X课程项目/高职应用开发大纲-修订版.md` |
 | 工具清单 | `04-shared/tools/_index.md` |
 
 ## H
@@ -87,10 +87,11 @@ last_updated: "2026-08-13"
 | 教育解决方案 | `01-booster-kb/03-solutions/_solution-overview.md` |
 | 竞品分析 | `01-booster-kb/08-competitive-analysis/_competitive-overview.md` |
 | 具身智能教育 | `02-embodied-ai-edu/01-theory/what-is-embodied-ai-edu.md` |
-| 具身智能应用开发（高职） | `05-internal-materials/vocational-planning/高职应用开发大纲-修订版.md` |
-| 具身智能机器人实践（X课程） | `05-internal-materials/vocational-planning/X课程大纲-v3.md` |
-| X课程开发计划 | `05-internal-materials/vocational-planning/X课程开发计划-v1.md` |
-| X课程实验代码 | `05-internal-materials/vocational-planning/实验代码/` |
+| 具身智能应用开发（高职） | `05-internal-materials/vocational-planning/03_X课程项目/高职应用开发大纲-修订版.md` |
+| 具身智能机器人实践（X课程） | `05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md`（最新版；历史版 v3 同目录） |
+| X课程开发计划 | `05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v3.md`（最新版；v1/v2 同目录） |
+| X课程实验代码 | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/` |
+| X课程实训手册/大纲嵌入 | `05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md` |
 
 ## K
 
@@ -167,9 +168,9 @@ last_updated: "2026-08-13"
 | 销售支持 | `01-booster-kb/06-sales-support/_sales-overview.md` |
 | 选型决策 | `01-booster-kb/02-products/version-comparison.md` |
 | 学-练-赛-评 | `01-booster-kb/03-solutions/_solution-overview.md` |
-| X 课程（具身智能机器人实践） | `05-internal-materials/vocational-planning/X课程大纲-v3.md` |
-| X 课程开发计划 | `05-internal-materials/vocational-planning/X课程开发计划-v1.md` |
-| X 课程实验代码 | `05-internal-materials/vocational-planning/实验代码/` |
+| X 课程（具身智能机器人实践） | `05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md` |
+| X 课程开发计划 | `05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v3.md` |
+| X 课程实验代码 | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/` |
 
 ## Z
 
@@ -177,5 +178,5 @@ last_updated: "2026-08-13"
 |--------|----------|
 | 中国科技馆 | `01-booster-kb/05-cases/case-cstm.md` |
 | 中高职方案 | `01-booster-kb/03-solutions/vocational.md` |
-| 状态机/FSM | `05-internal-materials/vocational-planning/高职应用开发大纲-修订版.md#模块-4状态机与任务流程4-课时` |
-| 综合项目（视觉踢球） | `05-internal-materials/vocational-planning/高职应用开发大纲-修订版.md#模块-7综合项目开发与展示5-课时` |
+| 状态机/FSM | `05-internal-materials/vocational-planning/03_X课程项目/高职应用开发大纲-修订版.md#模块-4状态机与任务流程4-课时` |
+| 综合项目（视觉踢球） | `05-internal-materials/vocational-planning/03_X课程项目/高职应用开发大纲-修订版.md#模块-7综合项目开发与展示5-课时` |

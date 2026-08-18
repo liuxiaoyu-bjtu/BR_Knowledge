@@ -4,7 +4,7 @@ title: 知识库更新日志
 
 # 更新日志
 
-## v1.16 (2026-08-14)
+## v1.16 (2026-08-14 ~ 08-18)
 
 ### 👁️ 检测模型类别能力确认（default = COCO 80 类）
 
@@ -15,6 +15,55 @@ title: 知识库更新日志
 - ✅ `04-shared/sdk-tests/probe_detection_classes.py` — 注释更新：default 类别能力已确认，脚本用途从"从零摸索类别"改为"验证实际输出是否符合预期"
 - ✅ `04-shared/sdk-tests/_README.md` — probe 脚本说明同步更新
 - ✅ `INDEX.md` — 新增关键词「COCO 80 类」「视觉检测模型」
+
+### 🧪 SDK 测试扩展（新增探测/冒烟脚本）
+
+`04-shared/sdk-tests/` 新增 4 个测试脚本，扩展 SDK 能力探测与验证覆盖：
+
+**新增文件**：
+- ✅ `probe_depth_distance.py` — 深度图测距标定探针：确认标准 `detect()` 的 `distance_m` 恒为 `None`，改为读深度图在 bbox 区域取深度中位数实现测距，输出标定行 + 深度图 dtype/编码
+- ✅ `probe_distance_source.py` — 源码探源脚本：定位 boosteros 包并递归搜索 `distance_m`，确认全包仅 `types/vision_data.py` 一处定义、零赋值
+- ✅ `probe_detection_classes.py` — 模型类别探测：验证指定检测模型实际输出类别（default=COCO 80 类）
+- ✅ `test_boosteros_basic.py` — 快速冒烟验证（精简版，日常首选）：连接→图像→模型列表→一次检测→结果图
+- ✅ `test_vision_capabilities.ipynb` — 大幅扩充（视觉能力全量巡检）
+- ✅ `04-shared/sdk-tests/_README.md` — 新增脚本清单、版本分工说明（精简版 vs 全量巡检）
+
+### 📁 vocational-planning 目录重构 + X 课程重大演进
+
+`vocational-planning/` 从平铺结构重组为三个性质清晰的子目录，同时 X 课程进入 notebook 单一源文件工作流阶段：
+
+**目录重构**：
+```
+vocational-planning/
+├── README.md                       # 新增目录说明
+├── 01_官方文件/                    # 官方/既有文稿（2026-05~07），非共创产物
+├── 02_共创规则与上下文/             # 协作规则、上下文传递、审查类文件
+│   ├── _高职课程设计上下文传递.md    # 跨会话上下文与决策索引
+│   ├── notebook开发规则.md          # 新增：notebook 开发规则总文件
+│   └── 课时评估-*.md                # 大纲深度审查与确认答复
+└── 03_X课程项目/                   # 独立项目：全部大纲/开发计划/notebooks
+    ├── X课程大纲-v3.md / -v3-clean.md / -v4.md
+    ├── X课程开发计划-v1.md / -v2.md / -v3.md
+    ├── 课时关联与复用分析表.md
+    ├── 高职应用开发大纲-修订版.md
+    └── notebooks/                  # 实验代码（ipynb 单一源文件）
+```
+
+**X 课程重大演进（大纲 v4 + 开发计划 v3）**：
+- ✅ `X课程大纲-v4.md` — **v4 主要变更**：8 单元统一为每单元 4 课时（原 v3 为 2/4/6 不等）；U2 前置为「机器人感知+ROS2 通信基础」；U3 承接视觉单元、U4 升级为视觉引导自主接近（引入闭环/反馈控制主线）；U6 扩展为动作示教与模仿学习（补数采课程缺口）；U7/U8 重构为剧场化收口；明确不引入 ArUco/OpenCV 二维码库（三传感融合完成定位）
+- ✅ `X课程开发计划-v3.md` — 引入 **Jupyter Notebook 单一源文件工作流**（`.ipynb` = python cells + 说明，未来导出 PDF 即实训手册）；开发周期 2026-08-17~10-20；10 周进度表 + 国庆预写策略 + 工期评估（紧平衡，余量约 2 天）
+- ✅ `X课程开发计划-v2.md` — 过渡版本（30 个实验代码包，.py+README 格式）
+- ✅ `notebooks/U1-L1_K1连接与信息.ipynb`、`notebooks/U1-L2_运行模式与安全.ipynb` — 前两个 notebook
+- ✅ `02_共创规则与上下文/notebook开发规则.md` — notebook 开发规则总文件（命名规范/五阶段工作流/三类实验设计约定）
+- 🔄 **格式切换说明**：v2 的 `.py + README + requirements` 代码包改为 `.ipynb`；旧 `实验代码/U1-L1_K1连接与信息/`（main.py 等）已删除，转为 `notebooks/U1-L1_K1连接与信息.ipynb`
+
+### 🔗 连锁更新（本任务补齐）
+- ✅ `INDEX.md` — 修复 4 处旧路径引用（→ `03_X课程项目/`），新增 X 课程 v4/开发计划 v3/notebook 索引
+- ✅ `05-internal-materials/_README.md` — 更新 vocational-planning 统计与目录结构
+- ✅ `AGENTS.md` — 更新 X 课程描述（v1 → v4/v3 notebook 工作流）
+- ✅ `02-embodied-ai-edu/03-curriculum/_curriculum-overview.md` — 修复调研报告路径引用，高职课程线状态「调研→开发执行」
+- ✅ `99-task-contexts/20260806-高职应用开发/`（01/02/03 三文件）— 修复挂起任务上下文的失效路径引用，对齐新目录结构
+- ✅ `vocational-planning/README.md` — 新增目录说明（本次推送）
 
 ## v1.15 (2026-08-13)
 

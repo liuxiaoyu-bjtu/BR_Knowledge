@@ -10,14 +10,14 @@ last_updated: "2026-07-16"
 
 本目录用于存放公司内部文档资料，作为知识库的一手信息来源。
 
-> 📊 **vocational-planning 更新**（2026-08-13）：**X 课程已进入开发执行阶段**——`X课程开发计划-v1.md` 定义 5 阶段流水线（实验代码→课时大纲→教学设计+实训手册→PPT内容设计→PPT开发），Phase 1 首个实验代码包 `U1-L1_K1连接与信息/` 已产出。此前完成 `X课程大纲-v3.0`（8 单元 × 32 课时，BoosterOS SDK 实训实操基础课）。另有「具身智能应用开发」高职课程 Phase 1 大纲定稿（7 模块 × 32 课时）。两门课程定位不同：X 课程为 SDK 实训基础课，应用开发课为专业核心课。
+> 📊 **vocational-planning 更新**（2026-08-18）：目录已重构为三个子目录——`01_官方文件/`（既有官方文稿）、`02_共创规则与上下文/`（协作规则/审查）、`03_X课程项目/`（独立项目全部产出）。**X 课程**已进入**开发执行阶段（notebook 单一源文件工作流）**：`X课程大纲-v4.0`（8 单元 × 32 课时，BoosterOS SDK 实训实操基础课，剧场化收口）为最新大纲；`X课程开发计划-v3` 定义 5 阶段流水线（实验代码→大纲嵌入→实训手册→PPT内容→PPT开发，开发周期至 2026-10-20），`notebooks/` 下已产出 U1-L1/U1-L2 前两个 notebook。另有「高职应用开发」课程大纲（修订版，7 模块 × 32 课时）。目录结构与详细说明见 [`vocational-planning/README.md`](vocational-planning/README.md)。
 
 ## 📂 目录结构
 
 ```
 05-internal-materials/
 ├── _README.md              # 本文件
-├── vocational-planning/     # 高职课程规划相关文档（会议纪要、方案讨论稿）
+├── vocational-planning/     # 高职课程规划（官方文件/共创规则/X课程项目，见其 README）
 ├── product-manuals/        # 产品手册 PDF
 ├── course-outlines/        # 课程大纲/教案
 ├── sales-decks/            # 销售 PPT/方案模板
