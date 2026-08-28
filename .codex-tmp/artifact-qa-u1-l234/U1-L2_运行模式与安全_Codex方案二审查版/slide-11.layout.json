@@ -1,0 +1,1136 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/jetc3ut0",
+    "id": "jetc3ut0",
+    "slide": 11,
+    "layoutId": "/ppt/slideLayouts/slideLayout7.xml",
+    "layoutName": "Blank",
+    "layoutType": "blank",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1279.97,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4F81BD",
+      "accent2": "#C0504D",
+      "accent3": "#9BBB59",
+      "accent4": "#8064A2",
+      "accent5": "#4BACC6",
+      "accent6": "#F79646",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#1F497D",
+      "lt2": "#EEECE1",
+      "hlink": "#0000FF",
+      "folHlink": "#800080"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout7.xml",
+      "name": "Blank",
+      "type": "blank",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/2",
+          "id": "2",
+          "name": "Date Placeholder 1",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "1/27/13",
+          "textPreview": "1/27/13",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1/27/13",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1/27/13"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/3",
+          "id": "3",
+          "name": "Footer Placeholder 2",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/4",
+          "id": "4",
+          "name": "Slide Number Placeholder 3",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "Title Placeholder 1",
+          "bbox": [
+            48,
+            28.83,
+            864,
+            120
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master title style",
+          "textPreview": "Click to edit Master title style",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master title style",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master title style"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "Text Placeholder 2",
+          "bbox": [
+            48,
+            168,
+            864,
+            475.17
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+          "textPreview": "Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master text styles",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master text styles"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "Second level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Second level"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "Third level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Third level"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "Fourth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fourth level"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "Fifth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fifth level"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/4",
+          "id": "4",
+          "name": "Date Placeholder 3",
+          "bbox": [
+            48,
+            667.33,
+            224,
+            38.33
+          ],
+          "geometry": "rect",
+          "text": "1/27/13",
+          "textPreview": "1/27/13",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1/27/13",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1/27/13"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/5",
+          "id": "5",
+          "name": "Footer Placeholder 4",
+          "bbox": [
+            328,
+            667.33,
+            304,
+            38.33
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/6",
+          "id": "6",
+          "name": "Slide Number Placeholder 5",
+          "bbox": [
+            688,
+            667.33,
+            224,
+            38.33
+          ],
+          "geometry": "rect",
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xcryxg7y",
+      "id": "2",
+      "name": "Rectangle 1",
+      "bbox": [
+        0,
+        0,
+        1279.97,
+        720
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#FFFFFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wbih4b6d",
+      "id": "3",
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        67.2,
+        40.32,
+        327.36,
+        46.08
+      ],
+      "geometry": "roundRect",
+      "text": "第二部分 · 用程序查看与切换模式",
+      "textPreview": "第二部分 · 用程序查看与切换模式",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 5.76,
+          "right": 11.52,
+          "bottom": 5.76,
+          "left": 11.52
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "第二部分 · 用程序查看与切换模式"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "第二部分 · 用程序查看与切换模式",
+          "lineSpacingPercent": 112000,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "第二部分 · 用程序查看与切换模式",
+              "fontSize": 17.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#2563EB",
+      "lineColor": "#2563EB",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n69grmpw",
+      "id": "4",
+      "name": "Rectangle 3",
+      "bbox": [
+        67.2,
+        97.92,
+        1152,
+        59.52
+      ],
+      "geometry": "rect",
+      "text": "手动切换 vs 程序切换",
+      "textPreview": "手动切换 vs 程序切换",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 5.76,
+          "right": 11.52,
+          "bottom": 5.76,
+          "left": 11.52
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "手动切换 vs 程序切换"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "手动切换 vs 程序切换",
+          "lineSpacingPercent": 112000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "手动切换 vs 程序切换",
+              "fontSize": 42.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#1F2937",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/250zy18b",
+      "id": "5",
+      "name": "Rectangle 4",
+      "bbox": [
+        67.2,
+        159.36,
+        1152,
+        43.2
+      ],
+      "geometry": "rect",
+      "text": "—— 即时操作与流程自动化",
+      "textPreview": "—— 即时操作与流程自动化",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 5.76,
+          "right": 11.52,
+          "bottom": 5.76,
+          "left": 11.52
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "—— 即时操作与流程自动化"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "—— 即时操作与流程自动化",
+          "lineSpacingPercent": 112000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "—— 即时操作与流程自动化",
+              "fontSize": 24,
+              "typeface": "Microsoft YaHei",
+              "color": "#606A78"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/bu903eds",
+      "id": "9",
+      "name": "Table 5",
+      "bbox": [
+        86.4,
+        278.4,
+        1104,
+        288
+      ],
+      "text": "维度 | 手动切换（按钮/手柄） | 程序切换（SDK）\n适用 | 人在现场即时操作 | 按流程自动执行\n特点 | 直观、响应快 | 可复现、可批量、可组合成任务\n局限 | 每次都要人动手 | 需提前写好并验证",
+      "textPreview": "维度 | 手动切换（按钮/手柄） | 程序切换（SDK） | 适用 | 人在现场即时操作 | 按流程自动执行 | 特点 | 直观、响应快 | 可复现、可批量、可组合成任务 | 局限 | 每次都要人动手 | 需提前写好并验证",
+      "rows": 4,
+      "cols": 3,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            86.4,
+            278.4,
+            211.2,
+            72
+          ],
+          "text": "维度",
+          "textPreview": "维度",
+          "fillColor": "#2563EB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "维度",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "维度",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            297.6,
+            278.4,
+            446.4,
+            72
+          ],
+          "text": "手动切换（按钮/手柄）",
+          "textPreview": "手动切换（按钮/手柄）",
+          "fillColor": "#2563EB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "手动切换（按钮/手柄）",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "手动切换（按钮/手柄）",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            744,
+            278.4,
+            446.4,
+            72
+          ],
+          "text": "程序切换（SDK）",
+          "textPreview": "程序切换（SDK）",
+          "fillColor": "#2563EB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "程序切换（SDK）",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "程序切换（SDK）",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            86.4,
+            350.4,
+            211.2,
+            72
+          ],
+          "text": "适用",
+          "textPreview": "适用",
+          "fillColor": "#F4F6F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "适用",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "适用",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            297.6,
+            350.4,
+            446.4,
+            72
+          ],
+          "text": "人在现场即时操作",
+          "textPreview": "人在现场即时操作",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "人在现场即时操作",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "人在现场即时操作",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            744,
+            350.4,
+            446.4,
+            72
+          ],
+          "text": "按流程自动执行",
+          "textPreview": "按流程自动执行",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "按流程自动执行",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "按流程自动执行",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            86.4,
+            422.4,
+            211.2,
+            72
+          ],
+          "text": "特点",
+          "textPreview": "特点",
+          "fillColor": "#F4F6F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "特点",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "特点",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            297.6,
+            422.4,
+            446.4,
+            72
+          ],
+          "text": "直观、响应快",
+          "textPreview": "直观、响应快",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "直观、响应快",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "直观、响应快",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            744,
+            422.4,
+            446.4,
+            72
+          ],
+          "text": "可复现、可批量、可组合成任务",
+          "textPreview": "可复现、可批量、可组合成任务",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "可复现、可批量、可组合成任务",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "可复现、可批量、可组合成任务",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            86.4,
+            494.4,
+            211.2,
+            72
+          ],
+          "text": "局限",
+          "textPreview": "局限",
+          "fillColor": "#F4F6F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "局限",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "局限",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            297.6,
+            494.4,
+            446.4,
+            72
+          ],
+          "text": "每次都要人动手",
+          "textPreview": "每次都要人动手",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "每次都要人动手",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "每次都要人动手",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            744,
+            494.4,
+            446.4,
+            72
+          ],
+          "text": "需提前写好并验证",
+          "textPreview": "需提前写好并验证",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "需提前写好并验证",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "需提前写好并验证",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o7ih0r6h",
+      "id": "7",
+      "name": "Rectangle 6",
+      "bbox": [
+        86.4,
+        595.2,
+        1104,
+        48
+      ],
+      "geometry": "rect",
+      "text": "按钮/手柄适合人即时操作；程序适合按流程自动执行、可复现、可批量——这就是学机器人编程的意义。",
+      "textPreview": "按钮/手柄适合人即时操作；程序适合按流程自动执行、可复现、可批量——这就是学机器人编程的意义。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 5.76,
+          "right": 11.52,
+          "bottom": 5.76,
+          "left": 11.52
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "按钮/手柄适合人即时操作；程序适合按流程自动执行、可复现、可批量——这就是学机器人编程的意义。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "按钮/手柄适合人即时操作；程序适合按流程自动执行、可复现、可批量——这就是学机器人编程的意义。",
+          "lineSpacingPercent": 112000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "按钮/手柄适合人即时操作；程序适合按流程自动执行、可复现、可批量——这就是学机器人编程的意义。",
+              "fontSize": 18.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#606A78"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72t03qp0",
+      "id": "8",
+      "name": "Rectangle 7",
+      "bbox": [
+        1142.4,
+        672,
+        115.2,
+        32.64
+      ],
+      "geometry": "rect",
+      "text": "11 / 26",
+      "textPreview": "11 / 26",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 5.76,
+          "right": 11.52,
+          "bottom": 5.76,
+          "left": 11.52
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "11 / 26"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "11 / 26",
+          "lineSpacingPercent": 112000,
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "11 / 26",
+              "fontSize": 14.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#606A78"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

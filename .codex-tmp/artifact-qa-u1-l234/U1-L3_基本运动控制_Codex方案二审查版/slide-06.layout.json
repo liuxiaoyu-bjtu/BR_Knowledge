@@ -1,0 +1,1265 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/x8f69ofe",
+    "id": "x8f69ofe",
+    "slide": 6,
+    "layoutId": "/ppt/slideLayouts/slideLayout7.xml",
+    "layoutName": "Blank",
+    "layoutType": "blank",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1279.97,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Office",
+    "colors": {
+      "accent1": "#4F81BD",
+      "accent2": "#C0504D",
+      "accent3": "#9BBB59",
+      "accent4": "#8064A2",
+      "accent5": "#4BACC6",
+      "accent6": "#F79646",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#1F497D",
+      "lt2": "#EEECE1",
+      "hlink": "#0000FF",
+      "folHlink": "#800080"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Microsoft YaHei"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout7.xml",
+      "name": "Blank",
+      "type": "blank",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/2",
+          "id": "2",
+          "name": "Date Placeholder 1",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "1/27/13",
+          "textPreview": "1/27/13",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1/27/13",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1/27/13"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/3",
+          "id": "3",
+          "name": "Footer Placeholder 2",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/4",
+          "id": "4",
+          "name": "Slide Number Placeholder 3",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "Title Placeholder 1",
+          "bbox": [
+            48,
+            28.83,
+            864,
+            120
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master title style",
+          "textPreview": "Click to edit Master title style",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master title style",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master title style"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "Text Placeholder 2",
+          "bbox": [
+            48,
+            168,
+            864,
+            475.17
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+          "textPreview": "Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master text styles",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master text styles"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "Second level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Second level"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "Third level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Third level"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "Fourth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fourth level"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "Fifth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fifth level"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/4",
+          "id": "4",
+          "name": "Date Placeholder 3",
+          "bbox": [
+            48,
+            667.33,
+            224,
+            38.33
+          ],
+          "geometry": "rect",
+          "text": "1/27/13",
+          "textPreview": "1/27/13",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1/27/13",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1/27/13"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/5",
+          "id": "5",
+          "name": "Footer Placeholder 4",
+          "bbox": [
+            328,
+            667.33,
+            304,
+            38.33
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/6",
+          "id": "6",
+          "name": "Slide Number Placeholder 5",
+          "bbox": [
+            688,
+            667.33,
+            224,
+            38.33
+          ],
+          "geometry": "rect",
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yhg7epsj",
+      "id": "2",
+      "name": "Rectangle 1",
+      "bbox": [
+        0,
+        0,
+        1279.97,
+        720
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#FFFFFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zi98nu94",
+      "id": "3",
+      "name": "Rounded Rectangle 2",
+      "bbox": [
+        67.2,
+        40.32,
+        292.8,
+        46.08
+      ],
+      "geometry": "roundRect",
+      "text": "第一部分 · 速度指令与坐标系",
+      "textPreview": "第一部分 · 速度指令与坐标系",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 5.76,
+          "right": 11.52,
+          "bottom": 5.76,
+          "left": 11.52
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "第一部分 · 速度指令与坐标系"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "第一部分 · 速度指令与坐标系",
+          "lineSpacingPercent": 112000,
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "第一部分 · 速度指令与坐标系",
+              "fontSize": 17.33,
+              "typeface": "Microsoft YaHei",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "#2563EB",
+      "lineColor": "#2563EB",
+      "lineWidth": 1.33
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/87ipkzal",
+      "id": "4",
+      "name": "Rectangle 3",
+      "bbox": [
+        67.2,
+        97.92,
+        1152,
+        59.52
+      ],
+      "geometry": "rect",
+      "text": "set_velocity 的三个参数",
+      "textPreview": "set_velocity 的三个参数",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 5.76,
+          "right": 11.52,
+          "bottom": 5.76,
+          "left": 11.52
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "set_velocity 的三个参数"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "set_velocity 的三个参数",
+          "lineSpacingPercent": 112000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "set_velocity 的三个参数",
+              "fontSize": 42.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#1F2937",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/98rqt4r6",
+      "id": "5",
+      "name": "Rectangle 4",
+      "bbox": [
+        67.2,
+        159.36,
+        1152,
+        43.2
+      ],
+      "geometry": "rect",
+      "text": "—— 一个指令，三个数，决定往哪走",
+      "textPreview": "—— 一个指令，三个数，决定往哪走",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 5.76,
+          "right": 11.52,
+          "bottom": 5.76,
+          "left": 11.52
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "—— 一个指令，三个数，决定往哪走"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "—— 一个指令，三个数，决定往哪走",
+          "lineSpacingPercent": 112000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "—— 一个指令，三个数，决定往哪走",
+              "fontSize": 24,
+              "typeface": "Microsoft YaHei",
+              "color": "#606A78"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/obu5sjut",
+      "id": "9",
+      "name": "Table 5",
+      "bbox": [
+        86.4,
+        259.2,
+        1104,
+        326.4
+      ],
+      "text": "参数 | 含义 | 单位 | 正方向\nvx | 前后方向速度 | m/s | 正数 = 前进，负数 = 后退\nvy | 左右方向速度 | m/s | 正数 = 左移，负数 = 右移\nvyaw | 绕竖直轴转向速度 | rad/s | 正数 = 向左（逆时针）转，负数 = 向右（顺时针）转",
+      "textPreview": "参数 | 含义 | 单位 | 正方向 | vx | 前后方向速度 | m/s | 正数 = 前进，负数 = 后退 | vy | 左右方向速度 | m/s | 正数 = 左移，负数 = 右移 | vyaw | 绕竖直轴转向速度 | rad/s | 正数 = 向左（逆时针）转，...",
+      "rows": 4,
+      "cols": 4,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            86.4,
+            259.2,
+            230.4,
+            81.6
+          ],
+          "text": "参数",
+          "textPreview": "参数",
+          "fillColor": "#2563EB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "参数",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "参数",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            316.8,
+            259.2,
+            441.6,
+            81.6
+          ],
+          "text": "含义",
+          "textPreview": "含义",
+          "fillColor": "#2563EB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "含义",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "含义",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            758.4,
+            259.2,
+            192,
+            81.6
+          ],
+          "text": "单位",
+          "textPreview": "单位",
+          "fillColor": "#2563EB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单位",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单位",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "bbox": [
+            950.4,
+            259.2,
+            240,
+            81.6
+          ],
+          "text": "正方向",
+          "textPreview": "正方向",
+          "fillColor": "#2563EB",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "正方向",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "正方向",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            86.4,
+            340.8,
+            230.4,
+            81.6
+          ],
+          "text": "vx",
+          "textPreview": "vx",
+          "fillColor": "#F4F6F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "vx",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "vx",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            316.8,
+            340.8,
+            441.6,
+            81.6
+          ],
+          "text": "前后方向速度",
+          "textPreview": "前后方向速度",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "前后方向速度",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "前后方向速度",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            758.4,
+            340.8,
+            192,
+            81.6
+          ],
+          "text": "m/s",
+          "textPreview": "m/s",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "m/s",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "m/s",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "bbox": [
+            950.4,
+            340.8,
+            240,
+            81.6
+          ],
+          "text": "正数 = 前进，负数 = 后退",
+          "textPreview": "正数 = 前进，负数 = 后退",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "正数 = 前进，负数 = 后退",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "正数 = 前进，负数 = 后退",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            86.4,
+            422.4,
+            230.4,
+            81.6
+          ],
+          "text": "vy",
+          "textPreview": "vy",
+          "fillColor": "#F4F6F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "vy",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "vy",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            316.8,
+            422.4,
+            441.6,
+            81.6
+          ],
+          "text": "左右方向速度",
+          "textPreview": "左右方向速度",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "左右方向速度",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "左右方向速度",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            758.4,
+            422.4,
+            192,
+            81.6
+          ],
+          "text": "m/s",
+          "textPreview": "m/s",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "m/s",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "m/s",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "bbox": [
+            950.4,
+            422.4,
+            240,
+            81.6
+          ],
+          "text": "正数 = 左移，负数 = 右移",
+          "textPreview": "正数 = 左移，负数 = 右移",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "正数 = 左移，负数 = 右移",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "正数 = 左移，负数 = 右移",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            86.4,
+            504,
+            230.4,
+            81.6
+          ],
+          "text": "vyaw",
+          "textPreview": "vyaw",
+          "fillColor": "#F4F6F9",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "vyaw",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "vyaw",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            316.8,
+            504,
+            441.6,
+            81.6
+          ],
+          "text": "绕竖直轴转向速度",
+          "textPreview": "绕竖直轴转向速度",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "绕竖直轴转向速度",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "绕竖直轴转向速度",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            758.4,
+            504,
+            192,
+            81.6
+          ],
+          "text": "rad/s",
+          "textPreview": "rad/s",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "rad/s",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "rad/s",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "bbox": [
+            950.4,
+            504,
+            240,
+            81.6
+          ],
+          "text": "正数 = 向左（逆时针）转，负数 = 向右（顺时针）转",
+          "textPreview": "正数 = 向左（逆时针）转，负数 = 向右（顺时针）转",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "正数 = 向左（逆时针）转，负数 = 向右（顺时针）转",
+              "resolvedTextStyle": {
+                "alignment": "center"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "正数 = 向左（逆时针）转，负数 = 向右（顺时针）转",
+                  "fontSize": 18.67,
+                  "typeface": "Microsoft YaHei",
+                  "color": "#1F2937"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7m98ru9g",
+      "id": "7",
+      "name": "Rectangle 6",
+      "bbox": [
+        86.4,
+        614.4,
+        1104,
+        48
+      ],
+      "geometry": "rect",
+      "text": "一个指令 set_velocity(vx, vy, vyaw)，三个数同时生效，决定往哪走、转多快。",
+      "textPreview": "一个指令 set_velocity(vx, vy, vyaw)，三个数同时生效，决定往哪走、转多快。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 5.76,
+          "right": 11.52,
+          "bottom": 5.76,
+          "left": 11.52
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "一个指令 set_velocity(vx, vy, vyaw)，三个数同时生效，决定往哪走、转多快。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "一个指令 set_velocity(vx, vy, vyaw)，三个数同时生效，决定往哪走、转多快。",
+          "lineSpacingPercent": 112000,
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "一个指令 set_velocity(vx, vy, vyaw)，三个数同时生效，决定往哪走、转多快。",
+              "fontSize": 18.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#606A78"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oryp8fah",
+      "id": "8",
+      "name": "Rectangle 7",
+      "bbox": [
+        1142.4,
+        672,
+        115.2,
+        32.64
+      ],
+      "geometry": "rect",
+      "text": "6 / 26",
+      "textPreview": "6 / 26",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 5.76,
+          "right": 11.52,
+          "bottom": 5.76,
+          "left": 11.52
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "6 / 26"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "6 / 26",
+          "lineSpacingPercent": 112000,
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "6 / 26",
+              "fontSize": 14.67,
+              "typeface": "Microsoft YaHei",
+              "color": "#606A78"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

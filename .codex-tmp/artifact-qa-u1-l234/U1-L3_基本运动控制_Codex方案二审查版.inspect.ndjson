@@ -1,0 +1,150 @@
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"第三堂人形机器人课","textShapes":6}
+{"kind":"shape","id":"sh/547294r6","slide":1,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/7qp4be9c","slide":1,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"textChars":13,"textLines":1}
+{"kind":"shape","id":"sh/ts7md4r2","slide":1,"name":"Rectangle 5","bbox":[86.4,432,211.2,9.6]}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"textChars":31,"textLines":2}
+{"kind":"textbox","id":"sh/fu94fe98","slide":1,"textChars":22,"textLines":1}
+{"kind":"textbox","id":"sh/utg3698n","slide":1,"textChars":6,"textLines":1}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":""}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"导学","textShapes":5}
+{"kind":"shape","id":"sh/9072xkry","slide":2,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/b29kza94","slide":2,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/x4r21kru","slide":2,"textChars":82,"textLines":3}
+{"kind":"textbox","id":"sh/w3i1sfa9","slide":2,"textChars":6,"textLines":1}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":""}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"第一部分 · 速度指令与坐标系","textShapes":8}
+{"kind":"shape","id":"sh/cza94vmx","slide":3,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"textChars":15,"textLines":1}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"textChars":12,"textLines":1}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/obq90bml","slide":3,"textChars":24,"textLines":2}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"textChars":25,"textLines":1}
+{"kind":"shape","id":"sh/m5cra54z","slide":3,"name":"Rounded Rectangle 7","bbox":[86.4,384,595.2,172.8]}
+{"kind":"shape","id":"sh/n6ls3alk","slide":3,"name":"Rectangle 8","bbox":[86.4,384,9.6,172.8]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"textChars":5,"textLines":1}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"textChars":36,"textLines":3}
+{"kind":"textbox","id":"sh/943mhgre","slide":3,"textChars":6,"textLines":1}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":""}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"第一部分 · 速度指令与坐标系","textShapes":6}
+{"kind":"shape","id":"sh/1cj2d8b6","slide":4,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"textChars":15,"textLines":1}
+{"kind":"textbox","id":"sh/rm1k7yt4","slide":4,"textChars":8,"textLines":1}
+{"kind":"textbox","id":"sh/ql8jytsj","slide":4,"textChars":16,"textLines":1}
+{"kind":"textbox","id":"sh/doj29oba","slide":4,"textChars":75,"textLines":4}
+{"kind":"textbox","id":"sh/sna103ap","slide":4,"textChars":23,"textLines":2}
+{"kind":"textbox","id":"sh/3ihk3et8","slide":4,"textChars":6,"textLines":1}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":""}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"第一部分 · 速度指令与坐标系","textShapes":6}
+{"kind":"shape","id":"sh/dgbulwnm","slide":5,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/cf2tcr61","slide":5,"textChars":15,"textLines":1}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"textChars":23,"textLines":1}
+{"kind":"textbox","id":"sh/l4bupwny","slide":5,"textChars":93,"textLines":7}
+{"kind":"textbox","id":"sh/032tgr6d","slide":5,"textChars":33,"textLines":2}
+{"kind":"textbox","id":"sh/n6dcr65o","slide":5,"textChars":6,"textLines":1}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":""}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"第一部分 · 速度指令与坐标系","textShapes":5}
+{"kind":"shape","id":"sh/yhg7epsj","slide":6,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/zi98nu94","slide":6,"textChars":15,"textLines":1}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"textChars":18,"textLines":1}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"textChars":17,"textLines":1}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":6,"textChars":50,"textLines":1}
+{"kind":"textbox","id":"sh/oryp8fah","slide":6,"textChars":6,"textLines":1}
+{"kind":"table","id":"tb/obu5sjut","slide":6,"name":"Table 5","rows":4,"cols":4,"preview":"参数 | 含义 | 单位 | 正方向","bbox":[86.4,259.2,1104,326.4]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":""}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"第一部分 · 速度指令与坐标系","textShapes":5}
+{"kind":"shape","id":"sh/cb2tkvap","slide":7,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/dcbud0ra","slide":7,"textChars":15,"textLines":1}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"textChars":7,"textLines":1}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"textChars":40,"textLines":1}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"textChars":6,"textLines":1}
+{"kind":"table","id":"tb/alg7adcj","slide":7,"name":"Table 5","rows":7,"cols":3,"preview":"指令 | 动作 | 方向","bbox":[86.4,249.6,1104,374.4]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":""}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"第一部分 · 速度指令与坐标系","textShapes":7}
+{"kind":"shape","id":"sh/18byd4zy","slide":8,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/g72x4zyd","slide":8,"textChars":15,"textLines":1}
+{"kind":"textbox","id":"sh/ri9g7uhw","slide":8,"textChars":7,"textLines":1}
+{"kind":"textbox","id":"sh/6h0fypgb","slide":8,"textChars":22,"textLines":1}
+{"kind":"textbox","id":"sh/tkby9kzm","slide":8,"textChars":36,"textLines":2}
+{"kind":"textbox","id":"sh/sjix0zy1","slide":8,"textChars":85,"textLines":3}
+{"kind":"textbox","id":"sh/je9g3ahk","slide":8,"textChars":35,"textLines":2}
+{"kind":"textbox","id":"sh/id0fu50z","slide":8,"textChars":6,"textLines":1}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":""}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"第二部分 · 开环控制与偏差","textShapes":6}
+{"kind":"shape","id":"sh/1cfmhgne","slide":9,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/0b65obm9","slide":9,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/nex4jq5k","slide":9,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/mdonql4z","slide":9,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/9gzml0nq","slide":9,"textChars":32,"textLines":2}
+{"kind":"textbox","id":"sh/ofq5svm5","slide":9,"textChars":17,"textLines":2}
+{"kind":"textbox","id":"sh/bih4na5w","slide":9,"textChars":6,"textLines":1}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":""}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"第二部分 · 开环控制与偏差","textShapes":7}
+{"kind":"shape","id":"sh/xc3mho32","slide":10,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/cbu58j2h","slide":10,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/zelojyl8","slide":10,"textChars":7,"textLines":1}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/l036l83y","slide":10,"textChars":85,"textLines":4}
+{"kind":"textbox","id":"sh/kzu5c32t","slide":10,"textChars":27,"textLines":2}
+{"kind":"textbox","id":"sh/725onyl4","slide":10,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/m1cnetkj","slide":10,"textChars":7,"textLines":1}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":""}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"第二部分 · 开环控制与偏差","textShapes":8}
+{"kind":"shape","id":"sh/xcryxg7y","slide":11,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/wbih4b6d","slide":11,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/n69grmpw","slide":11,"textChars":5,"textLines":1}
+{"kind":"textbox","id":"sh/250zy18b","slide":11,"textChars":15,"textLines":1}
+{"kind":"textbox","id":"sh/98rytw72","slide":11,"textChars":38,"textLines":3}
+{"kind":"textbox","id":"sh/o7ih0r6h","slide":11,"textChars":46,"textLines":3}
+{"kind":"textbox","id":"sh/72t03qp0","slide":11,"textChars":24,"textLines":2}
+{"kind":"textbox","id":"sh/61kzalof","slide":11,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/ofqtgnyt","slide":11,"textChars":7,"textLines":1}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":""}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"第二部分 · 开环控制与偏差","textShapes":5}
+{"kind":"shape","id":"sh/1gbm9s3a","slide":12,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/0f2lgnmp","slide":12,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/ra943il8","slide":12,"textChars":8,"textLines":1}
+{"kind":"textbox","id":"sh/q903ad4n","slide":12,"textChars":16,"textLines":1}
+{"kind":"textbox","id":"sh/sb2lcnmd","slide":12,"textChars":33,"textLines":1}
+{"kind":"textbox","id":"sh/b6d4f2lc","slide":12,"textChars":7,"textLines":1}
+{"kind":"table","id":"tb/ny1gzqtk","slide":12,"name":"Table 5","rows":5,"cols":3,"preview":"维度 | 开环（本课） | 闭环（后续课程）","bbox":[86.4,278.4,1104,307.2]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":""}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"第二部分 · 开环控制与偏差","textShapes":6}
+{"kind":"shape","id":"sh/q50nydsj","slide":13,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/bq9orito","slide":13,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/o3i5w3ad","slide":13,"textChars":10,"textLines":1}
+{"kind":"textbox","id":"sh/p4r6p8by","slide":13,"textChars":12,"textLines":1}
+{"kind":"textbox","id":"sh/21gnuts7","slide":13,"textChars":69,"textLines":5}
+{"kind":"textbox","id":"sh/32ponyts","slide":13,"textChars":23,"textLines":2}
+{"kind":"textbox","id":"sh/gzy5s3a1","slide":13,"textChars":7,"textLines":1}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":""}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"第三部分 · 运动实验与安全","textShapes":6}
+{"kind":"shape","id":"sh/xc7eds76","slide":14,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/wbydknq1","slide":14,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/jepwf2pc","slide":14,"textChars":8,"textLines":1}
+{"kind":"textbox","id":"sh/idgvmx8r","slide":14,"textChars":12,"textLines":1}
+{"kind":"textbox","id":"sh/5grehs7i","slide":14,"textChars":37,"textLines":2}
+{"kind":"textbox","id":"sh/kfidonqx","slide":14,"textChars":21,"textLines":2}
+{"kind":"textbox","id":"sh/zi5c3y98","slide":14,"textChars":7,"textLines":1}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":""}
+{"kind":"slide","id":"sl/vaxsvy10","slide":15,"title":"第三部分 · 运动实验与安全","textShapes":6}
+{"kind":"shape","id":"sh/547mhg3m","slide":15,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/k3y5ov21","slide":15,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/76p4jqls","slide":15,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/65gnqlk7","slide":15,"textChars":16,"textLines":1}
+{"kind":"shape","id":"sh/t87ml0ji","slide":15,"name":"Rounded Rectangle 5","bbox":[86.4,230.4,1104,48]}
+{"kind":"textbox","id":"sh/s7y5sv2x","slide":15,"textChars":16,"textLines":1}
+{"kind":"textbox","id":"sh/na5476l8","slide":15,"textChars":81,"textLines":4}
+{"kind":"textbox","id":"sh/m9c3e1kn","slide":15,"textChars":7,"textLines":1}
+{"kind":"notes","id":"nt/vaxsvy10","slide":15,"text":""}
+{"kind":"slide","id":"sl/gny5sjyp","slide":16,"title":"第三部分 · 运动实验与安全","textShapes":6}
+{"kind":"shape","id":"sh/8z2h8bq1","slide":16,"name":"Rectangle 1","bbox":[0,0,1279.97,720]}
+{"kind":"textbox","id":"sh/9kby1g7m","slide":16,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/ytkf2h8j","slide":16,"textChars":12,"textLines":1}
+{"kind":"textbox","id":"sh/zutgvm94","slide":16,"textChars":14,"textLines":1}
+{"kind":"notice","message":"Truncated: omitted 137 lines. Increase maxChars or narrow target."}
