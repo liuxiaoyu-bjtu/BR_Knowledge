@@ -3,7 +3,7 @@ title: "全局关键词索引"
 category: "导航层"
 tags: ["索引", "搜索", "关键词"]
 status: completed
-last_updated: "2026-08-18"
+last_updated: "2026-08-28"
 ---
 
 # 全局关键词索引
@@ -92,6 +92,7 @@ last_updated: "2026-08-18"
 | X课程开发计划 | `05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v3.md`（最新版；v1/v2 同目录） |
 | X课程实验代码 | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/` |
 | X课程实训手册/大纲嵌入 | `05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md` |
+| 教学体例配色（PPT） | `05-internal-materials/vocational-planning/03_X课程项目/PPT视觉配色规范.md`（科技蓝=知识、青绿=实践、橘黄=思考/评价/总结、红=安全） |
 
 ## K
 
