@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # U1-L2 P6 生成脚本：占位版 PPTX（照片类用占位框，框图类原生绘制，代码页浅色高亮，安全页警示红点缀）
-# 视觉规范 §8.12：16:9 / 白底 #FFFFFF / 主色科技蓝 #2563EB / 微软雅黑 / 页脚仅页码 / 代码页浅底 #F4F6F9 + 高亮 #FFF8E1
+# 视觉规范 §8.12：知识蓝 / 实践青绿 / 思考评价橘黄 / 安全警示红
 import os
 from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
@@ -21,8 +21,10 @@ BLUE    = RGBColor(0x25, 0x63, 0xEB)   # 科技蓝 主色
 DARK    = RGBColor(0x1F, 0x29, 0x37)   # 主文字
 GRAY    = RGBColor(0x60, 0x6A, 0x78)   # 副文字
 LIGHT   = RGBColor(0xF4, 0xF6, 0xF9)   # 浅底/代码底
-AMBER   = RGBColor(0xFF, 0xF8, 0xE1)   # 高亮行
-AMBERBAR= RGBColor(0xF5, 0xA6, 0x23)   # 琥珀色条
+TEAL    = RGBColor(0x0E, 0xA5, 0xA4)   # 实践操作主色
+TEALBG  = RGBColor(0xCC, 0xFB, 0xF1)   # 实践代码高亮
+AMBER   = RGBColor(0xFF, 0xF7, 0xE6)   # 思考/评价浅底
+AMBERBAR= RGBColor(0xF5, 0x9E, 0x0B)   # 思考/评价主色
 PH_FILL = RGBColor(0xEE, 0xF1, 0xF5)   # 占位框底
 PH_LINE = RGBColor(0xB8, 0xC0, 0xCC)   # 占位框边
 SOFT    = RGBColor(0xE7, 0xEC, 0xF5)   # 浅蓝卡片
@@ -33,7 +35,7 @@ FONT    = "Microsoft YaHei"
 MONO    = "Consolas"
 TOTAL   = 26
 
-OUT = r"d:/A_Project/BoosterRobotics/知识库/05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L2_运行模式与安全.pptx"
+OUT = r"d:/A_Project/BoosterRobotics/知识库/05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L2_运行模式与安全_Codex方案二审查版.pptx"
 
 prs = Presentation()
 prs.slide_width = PAGE_W
@@ -123,13 +125,12 @@ def new_slide():
 def bg(slide):
     shape(slide, MSO_SHAPE.RECTANGLE, 0, 0, PAGE_W, PAGE_H, fill=WHITE)
 
-def section_tag(slide, text):
+def section_tag(slide, text, color=BLUE):
     if not text:
         return
-    w = Inches(0.20 + 0.115 * len(text))
-    w = min(w, Inches(6.0))
-    sp = shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.7), Inches(0.42), w, Inches(0.42),
-               fill=BLUE, line=BLUE)
+    w = Inches(min(7.0, 0.35 + 0.18 * len(text)))
+    sp = shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.7), Inches(0.42), w, Inches(0.48),
+               fill=color, line=color)
     set_text(sp, text, size=13, color=WHITE, bold=True, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 
 def title_block(slide, title, subtitle=None):
@@ -137,7 +138,7 @@ def title_block(slide, title, subtitle=None):
              title, size=32, color=DARK, bold=True, align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.MIDDLE)
     if subtitle:
         set_text(shape(slide, MSO_SHAPE.RECTANGLE, Inches(0.7), Inches(1.66), Inches(12.0), Inches(0.45), fill=None, line=None),
-                 "—— " + subtitle, size=18, color=GRAY, bold=False, align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.MIDDLE)
+             subtitle if subtitle.lstrip().startswith("——") else "—— " + subtitle, size=18, color=GRAY, bold=False, align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.MIDDLE)
 
 def page_no(slide, n):
     set_text(shape(slide, MSO_SHAPE.RECTANGLE, Inches(11.9), Inches(7.0), Inches(1.2), Inches(0.34), fill=None, line=None),
@@ -177,10 +178,10 @@ def code_block(slide, l, t, w, lines, highlight=None, size=13):
     n = len(lines)
     h = Emu(int(line_h * (n + 1)) + int(Inches(0.24)))
     shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, l, t, w, h, fill=LIGHT, line=PH_LINE, line_w=1.0)
-    shape(slide, MSO_SHAPE.RECTANGLE, l, t, Inches(0.09), h, fill=AMBERBAR, line=None)
+    shape(slide, MSO_SHAPE.RECTANGLE, l, t, Inches(0.09), h, fill=TEAL, line=None)
     for i in highlight:
         y = Emu(int(t) + int(Inches(0.12)) + i * int(line_h))
-        shape(slide, MSO_SHAPE.RECTANGLE, l, y, w, line_h, fill=AMBER, line=None)
+        shape(slide, MSO_SHAPE.RECTANGLE, l, y, w, line_h, fill=TEALBG, line=None)
     tb = shape(slide, MSO_SHAPE.RECTANGLE, l, t, w, h, fill=None, line=None)
     tf = tb.text_frame
     tf.word_wrap = True
@@ -193,11 +194,11 @@ def code_block(slide, l, t, w, lines, highlight=None, size=13):
     return h
 
 def hint_card(slide, l, t, w, h, kind, text):
-    bar_color = BLUE if kind != "动手试试" else AMBERBAR
-    shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, l, t, w, h, fill=CARD, line=BLUE, line_w=1.0)
-    shape(slide, MSO_SHAPE.RECTANGLE, l, t, Inches(0.10), h, fill=bar_color, line=None)
+    accent = TEAL if kind == "动手试试" else (AMBERBAR if kind == "想一想" else BLUE)
+    shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, l, t, w, h, fill=CARD, line=accent, line_w=1.0)
+    shape(slide, MSO_SHAPE.RECTANGLE, l, t, Inches(0.10), h, fill=accent, line=None)
     set_text(shape(slide, MSO_SHAPE.RECTANGLE, l + Inches(0.25), t + Inches(0.06), w - Inches(0.4), Inches(0.4), fill=None, line=None),
-             "【%s】" % kind, size=14, color=BLUE, bold=True, anchor=MSO_ANCHOR.MIDDLE)
+             "【%s】" % kind, size=14, color=accent, bold=True, anchor=MSO_ANCHOR.MIDDLE)
     set_text(shape(slide, MSO_SHAPE.RECTANGLE, l + Inches(0.25), t + Inches(0.46), w - Inches(0.45), h - Inches(0.52), fill=None, line=None),
              text, size=13, color=DARK, anchor=MSO_ANCHOR.TOP)
 
@@ -283,14 +284,19 @@ def draw_safety_path(s):
         card(s, x, y, bw, bh, lb, fill=SOFT, size=12, color=DARK)
     for i in range(4):
         arrow(s, MSO_SHAPE.RIGHT_ARROW, Emu(int(xs[i]) + int(bw)), y + Inches(0.6), Inches(0.3), Inches(0.4))
-    set_text(shape(s, MSO_SHAPE.RECTANGLE, Inches(2.85), y - Inches(0.5), Inches(2.4), Inches(0.4), fill=None, line=None),
-             "人工窗口", size=12, color=WARN, bold=True, align=PP_ALIGN.CENTER)
 
 # ---------- 页面生成 ----------
+def page_accent(n):
+    if n in {26}:
+        return AMBERBAR
+    if n in {12, 13, 14, 15, 20, 21, 22, 24, 25}:
+        return TEAL
+    return BLUE
+
 def make(slide, n, section, title, subtitle, build):
     bg(slide)
     if section:
-        section_tag(slide, section)
+        section_tag(slide, section, page_accent(n))
     else:
         section_tag(slide, "单元 U1 · 人形机器人初探与运动控制")
     title_block(slide, title, subtitle)
@@ -528,7 +534,7 @@ make(new_slide(), 25, "第四部分 · 手柄手动遥控", "分组实操任务�
 def p26(s):
     set_text(shape(s, MSO_SHAPE.RECTANGLE, Inches(0.9), Inches(2.3), Inches(11.5), Inches(0.5), fill=None, line=None),
              "带走三件东西：① 四种模式　② 程序切换　③ 安全切换顺序", size=16, color=DARK, bold=True)
-    card(s, Inches(0.9), Inches(3.1), Inches(11.5), Inches(0.6), "学习评价（与实训手册一致）", fill=BLUE, color=WHITE, bold=True, size=15)
+    card(s, Inches(0.9), Inches(3.1), Inches(11.5), Inches(0.6), "学习评价（与实训手册一致）", fill=AMBERBAR, line=AMBERBAR, color=WHITE, bold=True, size=15)
     bullets(s, Inches(1.0), Inches(3.9), Inches(11.3), Inches(2.6), [
         "判断：walk 模式可以由 damping 直接切换进入。（　）",
         "填空：停止行走时，必须先回到 ________ 模式，再收尾到 damping。",
