@@ -90,7 +90,7 @@ booster-knowledge-base/
    - 任务元信息（上下文/提示词/日志）→ `99-task-contexts/YYYYMMDD-任务名/`
 3. **每次改动后必须联动更新**：`CHANGELOG.md`、`INDEX.md`（如涉及新关键词）、受影响模块的 `_index.md`、根 `README.md` 统计（如涉及）。**改动需要 git 提交并推送**。
 
-## 4. 双层技术架构（理解课程设计因果的关键）
+## 5. 双层技术架构（理解课程设计因果的关键）
 
 课程内容依赖两层技术能力，设计课程时必须理清因果：
 
@@ -101,7 +101,7 @@ booster-knowledge-base/
 
 > SDK V1.0 是未来针对 K1 机器人研发的**主 SDK**，其他版本辅助。后续可能出现 V1.x / Vx 更新，注意以最新主文档为准。
 
-## 5. 当前进行中的工作（2026-09 上下文）
+## 6. 当前进行中的工作（2026-09 上下文）
 
 - **X 课程**（高职 BoosterOS SDK 实训实操基础课，8 单元 × 32 课时）：处于**开发执行阶段**，已独立为 `05-internal-materials/vocational-planning/03_X课程项目/`，采用 **Jupyter Notebook 单一源文件工作流**。
   - 最新大纲：`X课程大纲-v4.md`；最新计划：`X课程开发计划-v3.md`（**七阶段流水线 P1-P7**，含 5 道用户确认闸门，开发周期至 2026-10-20）
@@ -113,13 +113,13 @@ booster-knowledge-base/
 - **高职「具身智能应用开发」课程**（7 模块 × 32 课时）：**挂起中**，唤醒入口在 `99-task-contexts/20260806-高职应用开发/`。
 - 目录总览见 `vocational-planning/README.md`（01_官方文件 / 02_共创规则与上下文 / 03_X课程项目）。
 
-## 6. 给 Codex 的特别说明
+## 7. 给 Codex 的特别说明
 
 - 本仓库用 Git 管理，远端在 GitHub，改动请 `git commit` + `git push`。
 - 沙箱共享：同一项目下的子任务共享本地工作区与 Git 配置，无需重新 clone。
 - 若遇到 GitHub 连接异常，优先尝试 GitHub 连接器（MCP）；必要时检查 `/etc/hosts` 是否存在 DNS 劫持条目（github.com → 198.18.x.x）。
 
-## 7. 人读文档 vs 本指南
+## 8. 人读文档 vs 本指南
 
 | 文档 | 读者 |
 |---|---|
