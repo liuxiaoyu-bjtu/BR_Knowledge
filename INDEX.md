@@ -84,6 +84,7 @@ last_updated: "2026-09-01"
 | 关键词 | 相关文档 |
 |--------|----------|
 | 教师培训 | `01-booster-kb/03-solutions/teacher-training.md` |
+| 师资培训沙龙（2026-09） | `05-internal-materials/training-materials/师资培训沙龙-2026-09/内容摘要.md`（K1 硬件/实操/软件/人才需求/课程体系；含上午+下午 PDF） |
 | 教育解决方案 | `01-booster-kb/03-solutions/_solution-overview.md` |
 | 竞品分析 | `01-booster-kb/08-competitive-analysis/_competitive-overview.md` |
 | 具身智能教育 | `02-embodied-ai-edu/01-theory/what-is-embodied-ai-edu.md` |

@@ -21,7 +21,7 @@ last_updated: "2026-07-16"
 ├── product-manuals/        # 产品手册 PDF
 ├── course-outlines/        # 课程大纲/教案
 ├── sales-decks/            # 销售 PPT/方案模板
-├── training-materials/     # 内部培训材料
+├── training-materials/     # 师资培训/内部培训材料（已归档：师资培训沙龙-2026-09/）
 └── client-records/         # 客户沟通记录
 ```
 
