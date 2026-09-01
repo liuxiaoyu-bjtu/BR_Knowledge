@@ -1,0 +1,13 @@
+# --- 工具临时目录（禁止提交） ---
+.codex-tmp/
+.codex/
+.workbuddy/
+
+# --- Python 缓存 ---
+__pycache__/
+*.pyc
+*.pyo
+
+# --- 系统文件 ---
+.DS_Store
+Thumbs.db
