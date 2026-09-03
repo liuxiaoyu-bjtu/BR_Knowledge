@@ -26,6 +26,7 @@ booster-knowledge-base/
 ├── 03-cross-reference/    # 双核映射：product-to-standard / theory-to-product 等
 ├── 04-shared/             # 共享资源：templates 模板 / tools 工具 / media / sdk-tests
 ├── 05-internal-materials/ # 内部资料填充区（源文档 + 中间产物 + 课程规划）
+├── 98-临时任务记录/        # 临时任务实际记录、专项调研和阶段性工作稿
 └── 99-task-contexts/      # 任务元信息（上下文/提示词/日志），按任务独立成子文件夹
 ```
 
@@ -64,6 +65,7 @@ booster-knowledge-base/
 | 03-cross-reference | 产品↔课标 / 案例↔方案 / 赛事↔课程 / 理论↔产品 4 个映射 | 双核互通桥梁 |
 | 04-shared | templates 模板 / tools 工具（含建构笔记、联动规则）/ media / sdk-tests | 共享资源 |
 | 05-internal-materials | **源文档 + 中间产物 + 课程规划**（清华工训课 18 章全文、K1 课程库 74 份、X 课程项目、师资培训沙龙课件） | 一手资料区 |
+| 98-临时任务记录 | 临时调研、阶段性工作稿和待评审记录 | 临时任务实际记录 |
 | 99-task-contexts | 各任务元信息（上下文/提示词/日志） | 挂起任务唤醒入口 |
 
 ## 3. 快速导航（按任务类型）
@@ -79,6 +81,7 @@ booster-knowledge-base/
 | 具身智能教育理论 / 标准 | `02-embodied-ai-edu/01-theory/`、`02-standards/` |
 | K-12 / 高职课程体系 | `02-embodied-ai-edu/03-curriculum/` + `05-internal-materials/vocational-planning/` |
 | 全局搜索关键词 | 用 `INDEX.md` 检索，别盲目翻目录 |
+| 查阅临时调研或阶段性工作稿 | 去 `98-临时任务记录/`，先读该目录 `README.md` |
 | 被指派了一个"挂起任务" | 去 `99-task-contexts/` 找对应子文件夹，读 `00-任务上下文.md` + `01-执行提示词.md` + `02-产出清单与状态日志.md` |
 
 ## 4. 三条硬性规则（务必遵守）

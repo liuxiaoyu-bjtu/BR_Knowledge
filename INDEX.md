@@ -65,6 +65,7 @@ last_updated: "2026-09-01"
 | 高职调研报告 | `05-internal-materials/vocational-planning/01_官方文件/2026-07-29_高职具身智能课程开发知识库与系统调研报告.md` |
 | 高职应用开发大纲 | `05-internal-materials/vocational-planning/03_X课程项目/高职应用开发大纲-修订版.md` |
 | 工具清单 | `04-shared/tools/_index.md` |
+| 临时任务记录 | `98-临时任务记录/README.md` |
 
 ## H
 
@@ -106,6 +107,7 @@ last_updated: "2026-09-01"
 |--------|----------|
 | K-12课程体系 | `02-embodied-ai-edu/03-curriculum/_curriculum-overview.md` |
 | K1 通识课（L1-L4） | `02-embodied-ai-edu/03-curriculum/k1-通识课/README.md` |
+| K1 图形化编程工具前置调研 | `98-临时任务记录/20260903-BoosterStudio图形化编程工具前置调研.md` |
 | 课程库/教案 | `05-internal-materials/course-outlines/` |
 | 课程标准 | `02-embodied-ai-edu/02-standards/k12-ability-map.md` |
 | 客户案例 | `01-booster-kb/05-cases/_cases-index.md` |
@@ -160,6 +162,7 @@ last_updated: "2026-09-01"
 |--------|----------|
 | 团队介绍 | `01-booster-kb/01-company/team.md` |
 | 图形化编程 | `02-embodied-ai-edu/03-curriculum/programming-track/_index.md` |
+| 图形化编程工具 | `98-临时任务记录/20260903-BoosterStudio图形化编程工具前置调研.md` |
 
 ## W
 
@@ -178,6 +181,14 @@ last_updated: "2026-09-01"
 | X 课程（具身智能机器人实践） | `05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md` |
 | X 课程开发计划 | `05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v3.md` |
 | X 课程实验代码 | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/` |
+
+## 临时任务记录
+
+| 关键词 | 相关文档 |
+|---|---|
+| 98 临时任务记录 | `98-临时任务记录/README.md` |
+| BoosterStudio 图形化编程工具 | `98-临时任务记录/20260903-BoosterStudio图形化编程工具前置调研.md` |
+| 积木工具框架选型 | `98-临时任务记录/20260903-BoosterStudio图形化编程工具前置调研.md` |
 
 ## Z
 

@@ -24,6 +24,7 @@
 | 查看全局知识地图          | → [`KNOWLEDGE-MAP.md`](KNOWLEDGE-MAP.md)                                                 |
 | 按关键词搜索            | → [`INDEX.md`](INDEX.md)                                                                 |
 | **AI Agent 快速上手** | → [`AGENTS.md`](AGENTS.md)                                                               |
+| 查看临时任务记录       | → [`98-临时任务记录/`](98-临时任务记录/)                                                |
 
 ---
 
@@ -70,6 +71,7 @@ booster-knowledge-base/
 ├── 03-cross-reference/          # 交叉引用映射
 ├── 04-shared/                   # 共享资源（模板/工具/媒体/sdk-tests）
 ├── 05-internal-materials/       # 内部资料填充区（源文档+课程规划）
+├── 98-临时任务记录/              # 临时任务记录、专项调研和阶段性工作稿
 └── 99-task-contexts/            # 任务元信息（上下文/提示词/日志）
 ```
 
