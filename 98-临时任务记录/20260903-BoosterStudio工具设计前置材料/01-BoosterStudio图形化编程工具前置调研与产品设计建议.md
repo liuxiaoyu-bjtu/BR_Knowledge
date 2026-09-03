@@ -31,17 +31,17 @@ L4：代码工程与智能闭环调试器
 
 ## 一、主流工具的本质差异
 
-| 工具/路线 | 技术框架或运行方式 | 产品形态 | 最值得借鉴的部分 | 对 BoosterStudio 的限制 |
-|---|---|---|---|---|
-| Scratch | Scratch Blocks + Scratch VM，程序以事件驱动 AST 运行 | 创意编程、动画、游戏、故事 | 低龄友好、事件模型、即时反馈、自由创作 | 面向角色和舞台，不适合直接承载机器人安全、传感器流和复杂异步任务 |
-| Blockly | 通用 Web 积木编辑器，本身不负责完整运行时 | 可嵌入各种教育或行业应用 | 自定义积木、类型约束、代码生成、可扩展 | 需要自行建设运行时、仿真、设备连接和课程产品 |
-| MakeCode / PXT | Blockly 编辑器 + PXT 语言 + Monaco 代码编辑器 + 编译器/仿真器 | 硬件编程、游戏、Minecraft、机器人 | 积木与 JavaScript/Python 过渡、模拟器、教程地图、硬件部署 | PXT 强依赖其编译和目标设备体系，不宜作为 K1 的完整底座 |
-| Mind+ | 底层实现细节未完全公开 | 桌面端创客平台，积木、代码、AI 训练、界面设计、硬件扩展 | 对青少年友好、硬件生态丰富、实时/离线兼容、内容资源完整 | 功能范围很宽，容易形成“什么都有但学习主线不清”的产品 |
-| PictoBlox | 底层实现细节未完全公开，具有 Scratch 风格产品特征 | 积木、Python、AI/ML、机器人、AR/VR、Notebook | Junior Blocks、AI 模型工具、Python 调试、项目和课程产品化 | 内容跨度过大，K1 需要重新收敛到人形机器人能力 |
-| LEGO SPIKE | 硬件套件、课程、App、积木/Python 一体化 | 课程驱动的套件式机器人教育 | 课程目标、活动卡、实体搭建、教师资源高度绑定 | 强绑定 LEGO 硬件；官方已宣布 SPIKE 产品停止销售，软件支持至 2031 年 |
-| VEXcode VR | 专有积木运行时、虚拟机器人、Switch、Python | 仿真优先、任务/挑战/竞赛 | 免安装仿真、Blocks 到 Python、项目分享、学习提交、数据看板 | 产品和硬件体系封闭，无法直接复用技术实现 |
-| Open Roberta | Blockly + NEPO + 云端平台 + 多机器人后端 | 多硬件机器人编程实验室 | 多设备抽象、云端项目、模拟器、用户和程序管理 | 后端体系较重，适合参考平台架构，不适合作为 BoosterStudio 的直接底座 |
-| MIT App Inventor | Blockly 风格积木 + 组件模型 + 事件驱动 | 手机 App 创作、设计器和积木编辑器 | “组件—事件—属性—行为”模型、项目导向 | 不具备机器人运动控制和仿真能力 |
+| 工具/路线            | 技术框架或运行方式                                     | 产品形态                               | 最值得借鉴的部分                                 | 对 BoosterStudio 的限制                         |
+| ---------------- | --------------------------------------------- | ---------------------------------- | ---------------------------------------- | ------------------------------------------- |
+| Scratch          | Scratch Blocks + Scratch VM，程序以事件驱动 AST 运行    | 创意编程、动画、游戏、故事                      | 低龄友好、事件模型、即时反馈、自由创作                      | 面向角色和舞台，不适合直接承载机器人安全、传感器流和复杂异步任务            |
+| Blockly          | 通用 Web 积木编辑器，本身不负责完整运行时                       | 可嵌入各种教育或行业应用                       | 自定义积木、类型约束、代码生成、可扩展                      | 需要自行建设运行时、仿真、设备连接和课程产品                      |
+| MakeCode / PXT   | Blockly 编辑器 + PXT 语言 + Monaco 代码编辑器 + 编译器/仿真器 | 硬件编程、游戏、Minecraft、机器人              | 积木与 JavaScript/Python 过渡、模拟器、教程地图、硬件部署   | PXT 强依赖其编译和目标设备体系，不宜作为 K1 的完整底座             |
+| Mind+            | 底层实现细节未完全公开                                   | 桌面端创客平台，积木、代码、AI 训练、界面设计、硬件扩展      | 对青少年友好、硬件生态丰富、实时/离线兼容、内容资源完整             | 功能范围很宽，容易形成“什么都有但学习主线不清”的产品                 |
+| PictoBlox        | 底层实现细节未完全公开，具有 Scratch 风格产品特征                 | 积木、Python、AI/ML、机器人、AR/VR、Notebook | Junior Blocks、AI 模型工具、Python 调试、项目和课程产品化 | 内容跨度过大，K1 需要重新收敛到人形机器人能力                    |
+| LEGO SPIKE       | 硬件套件、课程、App、积木/Python 一体化                     | 课程驱动的套件式机器人教育                      | 课程目标、活动卡、实体搭建、教师资源高度绑定                   | 强绑定 LEGO 硬件；官方已宣布 SPIKE 产品停止销售，软件支持至 2031 年 |
+| VEXcode VR       | 专有积木运行时、虚拟机器人、Switch、Python                   | 仿真优先、任务/挑战/竞赛                      | 免安装仿真、Blocks 到 Python、项目分享、学习提交、数据看板     | 产品和硬件体系封闭，无法直接复用技术实现                        |
+| Open Roberta     | Blockly + NEPO + 云端平台 + 多机器人后端                | 多硬件机器人编程实验室                        | 多设备抽象、云端项目、模拟器、用户和程序管理                   | 后端体系较重，适合参考平台架构，不适合作为 BoosterStudio 的直接底座   |
+| MIT App Inventor | Blockly 风格积木 + 组件模型 + 事件驱动                    | 手机 App 创作、设计器和积木编辑器                | “组件—事件—属性—行为”模型、项目导向                     | 不具备机器人运动控制和仿真能力                             |
 
 ### 1. Scratch：适合借鉴交互，不适合直接借鉴运行时
 
@@ -718,8 +718,8 @@ L4：代码工程与智能闭环调试器
 
 ## 十二、知识库关联文档
 
-- [K1 通识课体系（L1-L4）](../02-embodied-ai-edu/03-curriculum/k1-通识课/README.md)
-- [Booster Studio](../01-booster-kb/07-tech-platform/booster-studio.md)
-- [BoosterOS SDK V1.0](../01-booster-kb/07-tech-platform/booster-sdk.md)
-- [编程课程线](../02-embodied-ai-edu/03-curriculum/programming-track/_index.md)
-- [安全操作规范](../02-embodied-ai-edu/04-implementation/safety-guidelines.md)
+- [K1 通识课体系（L1-L4）](../../02-embodied-ai-edu/03-curriculum/k1-通识课/README.md)
+- [Booster Studio](../../01-booster-kb/07-tech-platform/booster-studio.md)
+- [BoosterOS SDK V1.0](../../01-booster-kb/07-tech-platform/booster-sdk.md)
+- [编程课程线](../../02-embodied-ai-edu/03-curriculum/programming-track/_index.md)
+- [安全操作规范](../../02-embodied-ai-edu/04-implementation/safety-guidelines.md)

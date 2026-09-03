@@ -107,7 +107,7 @@ last_updated: "2026-09-01"
 |--------|----------|
 | K-12课程体系 | `02-embodied-ai-edu/03-curriculum/_curriculum-overview.md` |
 | K1 通识课（L1-L4） | `02-embodied-ai-edu/03-curriculum/k1-通识课/README.md` |
-| K1 图形化编程工具前置调研 | `98-临时任务记录/20260903-BoosterStudio图形化编程工具前置调研.md` |
+| K1 图形化编程工具前置调研 | `98-临时任务记录/20260903-BoosterStudio工具设计前置材料/01-BoosterStudio图形化编程工具前置调研与产品设计建议.md` |
 | 课程库/教案 | `05-internal-materials/course-outlines/` |
 | 课程标准 | `02-embodied-ai-edu/02-standards/k12-ability-map.md` |
 | 客户案例 | `01-booster-kb/05-cases/_cases-index.md` |
@@ -162,7 +162,7 @@ last_updated: "2026-09-01"
 |--------|----------|
 | 团队介绍 | `01-booster-kb/01-company/team.md` |
 | 图形化编程 | `02-embodied-ai-edu/03-curriculum/programming-track/_index.md` |
-| 图形化编程工具 | `98-临时任务记录/20260903-BoosterStudio图形化编程工具前置调研.md` |
+| 图形化编程工具 | `98-临时任务记录/20260903-BoosterStudio工具设计前置材料/01-BoosterStudio图形化编程工具前置调研与产品设计建议.md` |
 
 ## W
 
@@ -187,8 +187,9 @@ last_updated: "2026-09-01"
 | 关键词 | 相关文档 |
 |---|---|
 | 98 临时任务记录 | `98-临时任务记录/README.md` |
-| BoosterStudio 图形化编程工具 | `98-临时任务记录/20260903-BoosterStudio图形化编程工具前置调研.md` |
-| 积木工具框架选型 | `98-临时任务记录/20260903-BoosterStudio图形化编程工具前置调研.md` |
+| BoosterStudio 图形化编程工具 | `98-临时任务记录/20260903-BoosterStudio工具设计前置材料/README.md` |
+| Booster Educational IR | `98-临时任务记录/20260903-BoosterStudio工具设计前置材料/02-Booster-Educational-IR设计思考与目的.md` |
+| 积木工具框架选型 | `98-临时任务记录/20260903-BoosterStudio工具设计前置材料/01-BoosterStudio图形化编程工具前置调研与产品设计建议.md` |
 
 ## Z
 

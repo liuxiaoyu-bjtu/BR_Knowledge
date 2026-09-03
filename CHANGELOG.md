@@ -12,6 +12,15 @@ title: 知识库更新日志
 - ✅ 新建 `20260903-BoosterStudio图形化编程工具前置调研.md`，整理青少年积木工具框架、产品形态、K1 L1-L4 工具递进、BoosterStudio 技术架构和 MVP 建议
 - ✅ 联动更新 `README.md`、`AGENTS.md` 和 `INDEX.md`，增加临时任务记录入口与关键词
 
+## v1.22 (2026-09-03)
+
+### 🧠 补充 Booster Educational IR 专题说明
+
+- ✅ 将 BoosterStudio 前置调研与新增的 Educational IR 设计说明整理到 `98-临时任务记录/20260903-BoosterStudio工具设计前置材料/`
+- ✅ 新增任务目录 `README.md`，说明文档关系、阅读顺序和后续评审入口
+- ✅ 新增 `02-Booster-Educational-IR设计思考与目的.md`，记录 IR 的定义、边界、设计动机、核心语义、课程示例、分期落地和评审标准
+- ✅ 联动更新 `98-临时任务记录/README.md`、`INDEX.md`，修正原调研文档的关联链接
+
 ## v1.20 (2026-09-01)
 
 ### 📚 归档高职师资培训沙龙讲座（2 份 PDF，104 页）

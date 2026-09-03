@@ -21,4 +21,4 @@ last_updated: 2026-09-03
 
 | 文件 | 内容 | 状态 |
 |---|---|---|
-| [`20260903-BoosterStudio图形化编程工具前置调研.md`](./20260903-BoosterStudio图形化编程工具前置调研.md) | 青少年积木工具框架、产品形态与 K1 L1-L4 工具设计建议 | 临时记录 |
+| [`20260903-BoosterStudio工具设计前置材料/`](./20260903-BoosterStudio工具设计前置材料/) | 青少年积木工具调研、产品设计建议及 Booster Educational IR 专题说明 | 临时记录 |
