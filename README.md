@@ -9,21 +9,21 @@
 
 ## 🧭 快速导航
 
-| 我想…… | 走这里 |
-|--------|--------|
-| 快速了解公司整体情况 | → [`01-booster-kb/01-company/`](01-booster-kb/01-company/) |
-| 查看产品规格和选型 | → [`01-booster-kb/02-products/`](01-booster-kb/02-products/) |
-| 为客户做教育解决方案 | → [`01-booster-kb/03-solutions/`](01-booster-kb/03-solutions/) |
-| 了解赛事体系和参赛路径 | → [`01-booster-kb/04-competitions/`](01-booster-kb/04-competitions/) |
-| 查找客户案例作为参考 | → [`01-booster-kb/05-cases/`](01-booster-kb/05-cases/) |
-| 准备销售话术和FAQ | → [`01-booster-kb/06-sales-support/`](01-booster-kb/06-sales-support/) |
-| 深入了解技术平台 | → [`01-booster-kb/07-tech-platform/`](01-booster-kb/07-tech-platform/) |
-| 研究具身智能教育理论 | → [`02-embodied-ai-edu/01-theory/`](02-embodied-ai-edu/01-theory/) |
-| 设计K-12课程体系 | → [`02-embodied-ai-edu/03-curriculum/`](02-embodied-ai-edu/03-curriculum/) |
-| 查阅 K1 通识课与课程库 | → [`02-embodied-ai-edu/03-curriculum/k1-通识课/`](02-embodied-ai-edu/03-curriculum/k1-通识课/) |
-| 查看全局知识地图 | → [`KNOWLEDGE-MAP.md`](KNOWLEDGE-MAP.md) |
-| 按关键词搜索 | → [`INDEX.md`](INDEX.md) |
-| **AI Agent 快速上手** | → [`AGENTS.md`](AGENTS.md) |
+| 我想……              | 走这里                                                                                      |
+| ----------------- | ---------------------------------------------------------------------------------------- |
+| 快速了解公司整体情况        | → [`01-booster-kb/01-company/`](01-booster-kb/01-company/)                               |
+| 查看产品规格和选型         | → [`01-booster-kb/02-products/`](01-booster-kb/02-products/)                             |
+| 为客户做教育解决方案        | → [`01-booster-kb/03-solutions/`](01-booster-kb/03-solutions/)                           |
+| 了解赛事体系和参赛路径       | → [`01-booster-kb/04-competitions/`](01-booster-kb/04-competitions/)                     |
+| 查找客户案例作为参考        | → [`01-booster-kb/05-cases/`](01-booster-kb/05-cases/)                                   |
+| 准备销售话术和FAQ        | → [`01-booster-kb/06-sales-support/`](01-booster-kb/06-sales-support/)                   |
+| 深入了解技术平台          | → [`01-booster-kb/07-tech-platform/`](01-booster-kb/07-tech-platform/)                   |
+| 研究具身智能教育理论        | → [`02-embodied-ai-edu/01-theory/`](02-embodied-ai-edu/01-theory/)                       |
+| 设计K-12课程体系        | → [`02-embodied-ai-edu/03-curriculum/`](02-embodied-ai-edu/03-curriculum/)               |
+| 查阅 K1 通识课与课程库     | → [`02-embodied-ai-edu/03-curriculum/k1-通识课/`](02-embodied-ai-edu/03-curriculum/k1-通识课/) |
+| 查看全局知识地图          | → [`KNOWLEDGE-MAP.md`](KNOWLEDGE-MAP.md)                                                 |
+| 按关键词搜索            | → [`INDEX.md`](INDEX.md)                                                                 |
+| **AI Agent 快速上手** | → [`AGENTS.md`](AGENTS.md)                                                               |
 
 ---
 

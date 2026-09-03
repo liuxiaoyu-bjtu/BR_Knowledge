@@ -1,0 +1,434 @@
+# -*- coding: utf-8 -*-
+"""U3-L1 实训手册生成器（单源，重新运行将覆盖 notebooks/U3-L1_机器人的眼睛.ipynb）。
+
+内容依据：X课程大纲-v4（U3-L1 机器人"眼睛"）、U2-L2/L3 用户手动精修版体例。
+体例遵循：知识节（一~四）纯 markdown 讲解，代码集中在实验节（五），连接在实验节开头。
+轻量概念：A04 图像坐标系（左上角原点，x→右，y→下）；E05 CvBridge（ROS 图像消息 ↔ OpenCV 数组）。
+SDK 事实（源码 boosteros 内省确认）：
+  - 相机话题（robots/booster/_adapters/constants.py）：
+      rgb   -> /boostercamera/head/rgb        （sensor_msgs/Image）
+      depth -> /boostercamera/head/depth      （sensor_msgs/Image）
+      info  -> /boostercamera/head/rgb/camera_info
+  - get_image(camera_id=DEFAULT_CAMERA_ID, img_type="rgb") -> AnyImage（Image 或 CompressedImage）
+  - subscribe_image(callback, *, camera_id, img_type="rgb", queue_size=0, overflow="drop_oldest")
+      -> SensorSubscription（有 unsubscribe()，也支持 with 上下文）
+  - Image：width / height / encoding / header / to_numpy() / to_pil() / save(path) / show()
+      __repr__ = "<Image Raw 1920x1080 bgr8 @ 1234.567>"；自带 _repr_html_，Jupyter 里直接显示图像
+  - ImageBase.to_numpy() 返回 HWC 布局数组
+  - 编码转换（_subscription/converters.py）：nv12/nv21/yuyv → OpenCV → bgr8；
+      其余走 cv_bridge（passthrough）保持原始 encoding；压缩图返回 CompressedImage（有 format 无 encoding）
+表述规范：遵循《去AI化表达记录》§1–§19；安全约束遵规则 §3.5 / §3.6。
+风格对齐 U2-L2/L3 手动版：先 print 返回值对象再给属性表、真实数据用红字「你会发现」、
+安全态表述 DAMP 坐姿/趴姿或 prepare 站姿、细节给全名。
+"""
+import json, os
+OUT = os.path.join(os.path.dirname(__file__), "notebooks", "U3-L1_机器人的眼睛.ipynb")
+def md(text):
+    return {"cell_type":"markdown","metadata":{},"source":text.splitlines(keepends=True)}
+def code(text):
+    return {"cell_type":"code","execution_count":None,"metadata":{},"outputs":[],"source":text.splitlines(keepends=True)}
+cells = []
+
+# # U3-L1：机器人的“眼睛”
+cells.append(md("""# U3-L1：机器人的“眼睛”
+
+**课程目标**
+
+1. 能说明 K1 相机输出的彩色图与深度图各记录什么信息，以及两者在机器人视觉里的不同用途。
+2. 能说明图像编码的含义，说出一个像素的颜色在程序里是怎么存放的。
+3. 能在图像坐标系里指出画面中某个位置的像素坐标，并说明它与数学课上的坐标系有什么不一样。
+4. 能使用 `get_image()` 与 `subscribe_image()` 采集图像，把图像转成数组读出像素值，并保存当前帧。
+"""))
+
+# ## 课程大纲映射（审核用）
+cells.append(md("""## 课程大纲映射（审核用）
+
+| 轻任务 | 对应 cell | 核心概念 | 轻量概念 |
+| --- | --- | --- | --- |
+| ① 订阅相机图像流实时显示，按快捷键保存当前帧 | 5.2、5.6 | — | **A04 图像坐标系**（左上角原点，x→右，y→下）；**E05 CvBridge**（ROS 图像消息 ↔ OpenCV 数组） |
+
+- 编程线接口覆盖：`get_image()`、`subscribe_image()`、`unsubscribe()`、`to_numpy()`、`save()`。
+- 知识线覆盖：相机话题、RGB 图 vs 深度图、图像编码（NV12 / BGR8）。
+
+> 本映射块用于大纲对齐审核；导出 PDF 版本时移除此块。
+"""))
+
+# ## 一、K1 的相机
+cells.append(md("""## 一、K1 的相机
+
+U2-L2 用 `get_image()` 抓过一帧画面，知道了画面是 1920×1080。这一课把画面拆开看：一个像素是什么、坐标怎么数、图像在程序里到底是什么东西。
+
+### 1.1 相机是什么
+
+K1 的相机装在头部，是它的眼睛。和人眼一样，它把前方光线的明暗和颜色记录下来，交给机载计算机去处理。
+
+不一样的地方在于：人看一眼就知道前面是个人、是个球；相机只交出一堆数字。从数字到「前面有个球」，中间还隔着后面几课要做的事。U3 这一单元做的就是这件事的头一步——**从图像里提取出结构化的信息**。
+
+> 这也是「机器视觉」和「拍照」的区别：拍照是为了给人看，机器视觉是为了让程序算出结论。
+
+### 1.2 彩色图与深度图
+
+K1 的相机同时给出两路图，它们拍的是同一个场景，记的东西却完全不同：
+
+| | 彩色图（RGB 图） | 深度图 |
+| --- | --- | --- |
+| 每个像素记的是 | 这一点是什么颜色 | 这一点离相机有多远 |
+| 通道数 | 3 个（蓝、绿、红各一个值） | 1 个（距离值） |
+| 看起来像 | 普通照片 | 黑白灰图，越近越亮（或越暗，看显示方式） |
+| 能回答的问题 | 前面那个东西是什么颜色、是什么类别 | 前面那个东西离我多远 |
+| 回答不了的问题 | 它离我多远 | 它是什么 |
+
+只用彩色图，机器人能认出前方有个球，但不知道球在 1 米外还是 3 米外；只用深度图，能知道 1 米外有个东西，但不知道那是个球还是个瓶子。真实任务里两路图要一起用。
+
+### 1.3 怎么拿到这两路图
+
+两路图共用同一个接口，靠参数区分：
+
+- `get_image()` —— 拿彩色图，不给参数时的默认值。
+- `get_image(img_type="depth")` —— 拿深度图。
+
+这两个都是 U2-L2 学过的「快照式」取数：调用一次，拿回相机此刻最新的一帧。想持续接收画面，用「订阅式」的 `subscribe_image()`，那是本课实验的重点。
+"""))
+
+# ## 二、图像编码
+cells.append(md("""## 二、图像编码：像素是怎么排的
+
+一张 1920×1080 的彩色图，在程序里是 1920 × 1080 × 3 ≈ 622 万个数字。这些数字怎么排、每个数字代表什么，由**编码**决定。
+
+### 2.1 常见的几种编码
+
+| 编码 | 一个像素占多少 | 含义 |
+| --- | --- | --- |
+| `bgr8` | 3 字节 | 按蓝、绿、红的顺序各存 1 字节 |
+| `rgb8` | 3 字节 | 按红、绿、蓝的顺序各存 1 字节 |
+| `nv12` | 1.5 字节 | YUV 家族：亮度全存、颜色减半存 |
+| `mono8` | 1 字节 | 只有灰度，没有颜色 |
+| `16UC1` | 2 字节 | 单通道，每个像素是 0–65535 的整数，深度图常用 |
+
+编码弄错了会出什么事？把 `rgb8` 的数据当成 `bgr8` 去显示，红蓝两色会对调——蓝天变成橙天。这类错误不会报错，只会给出一张颜色不对的图，所以处理图像前先看一眼编码是个好习惯。
+
+### 2.2 相机发出 nv12，SDK 转成 bgr8
+
+`nv12` 这种 YUV 格式，一个像素只占 1.5 字节，比 `bgr8` 的 3 字节省一半。人眼对亮度敏感、对颜色不敏感，YUV 就是利用这一点，把亮度信息全留下、颜色信息砍掉一半——画面看起来几乎没差别，数据量却小很多。相机到计算机之间的传输带宽有限，省下来的这一半很值钱。
+
+省带宽的代价是程序不好处理。所以 BoosterOS 在收到图像消息后，会先把 `nv12` 转成 `bgr8` 再交给我们。你在 Python 里读到的 `img.encoding`，一般就是 `bgr8`。
+
+这一步转换用的不是 SDK 自己写的代码，而是 ROS 里的通用工具 **CvBridge**（后面 4.1 会讲）。
+
+### 2.3 验证一下：相机话题上写的是什么编码
+
+想知道相机实际发出的编码，可以在 K1 的终端里看话题消息里的 `encoding` 字段（终端操作见 U2-L1）。这一步是选做：
+
+```bash
+ros2 topic echo --once --field encoding /boostercamera/head/rgb
+```
+
+把终端里看到的编码，和等会儿 Python 里读到的 `img.encoding` 对一下。两者不一样，就是 SDK 在中间做了转换。
+"""))
+
+# ## 三、图像坐标系
+cells.append(md("""## 三、图像坐标系
+
+### 3.1 像素坐标怎么数
+
+图像坐标系（A04）规定的是：画面上某个位置，用哪两个数来表示。
+
+| | 图像坐标系 | 数学课的坐标系 |
+| --- | --- | --- |
+| 原点在哪 | 画面**左上角** | 通常在中间 |
+| x 轴朝哪 | 向**右**，越往右越大 | 向右 |
+| y 轴朝哪 | 向**下**，越往下越大 | 向上 |
+| 取值范围 | x：0 到宽度−1；y：0 到高度−1 | 可正可负 |
+
+y 轴朝下是最容易搞混的一点。数学课里 y 越大越靠上，图像里 y 越大越靠下。
+
+一张 1920×1080 的图：
+
+- 左上角是 `(0, 0)`，右下角是 `(1919, 1079)`；
+- 画面正中心是 `(960, 540)`；
+- 注意写法是 `(x, y)`，先列后行。
+
+### 3.2 用坐标把画面分区
+
+这个坐标系直接就能用。把画面横向三等分：
+
+| 分区 | x 的范围（宽度 1920） |
+| --- | --- |
+| 左侧 | 0 – 639 |
+| 中间 | 640 – 1279 |
+| 右侧 | 1280 – 1919 |
+
+判断一个东西在画面的左边还是右边，只要看它的 x 落在哪一段就行。U3-L4 做「方位检测器」用的就是这套换算。
+"""))
+
+# ## 四、从图像消息到数组
+cells.append(md("""## 四、从图像消息到数组
+
+### 4.1 CvBridge 是干什么的
+
+相机发出的是 ROS 图像消息（`sensor_msgs/msg/Image`），里面是一长串字节，还带着 `encoding`、`step` 这些字段——它适合在网络上传输，不适合直接拿来算。
+
+程序处理图像用的是 OpenCV，而 OpenCV 认的是 **numpy 数组**：一个形状为 `(高度, 宽度, 通道数)` 的三维数组，想读哪个像素直接下标取。
+
+把 ROS 图像消息翻译成 numpy 数组的工具，叫 **CvBridge**（E05）。它做的三件事：
+
+1. 读出消息里的字节；
+2. 按 `encoding` 决定这些字节怎么切成一个个像素；
+3. 必要的时候转换颜色顺序，最后给出数组。
+
+在 BoosterOS 里这一步已经包好了，不需要你手动调 CvBridge——拿到图像对象后调 `to_numpy()`，出来的就是转换好的数组。
+
+### 4.2 数组里的一个数就是一个像素
+
+转成数组之后：
+
+- `arr.shape` 是 `(1080, 1920, 3)`：高 1080、宽 1920、3 个通道；
+- `arr.dtype` 是 `uint8`：每个值是 0–255 的整数；
+- `arr[540, 960]` 是画面正中心那一点，得到 3 个数；
+- 编码是 `bgr8` 时，这 3 个数按**蓝、绿、红**排列，不是我们习惯的红、绿、蓝。
+
+图像放大了看就是一堆格子，每个格子里三个数。所谓「处理图像」，本质上就是对这些数做运算。
+"""))
+
+# ## 五、实验：采集并保存图像帧
+cells.append(md("""## 五、实验：采集并保存图像帧
+
+**实验名称**：机器人的眼睛
+
+**实验目标**：抓一帧彩色图和一个深度值，看清楚图像对象里有什么；在画面上标出中心十字；把图像转成数组读出像素值；订阅图像流，按回车保存当前帧。
+
+⚠️ **安全**：本课全程只读取相机数据，**不发送任何运动 / 动作指令**，<font color="red">不需要进入 walk 模式</font>。机器人放在地面，保持坐姿、趴姿（DAMP 模式）或 `prepare` 模式的站姿即可。测深度时需要有人或物体站到相机前方 1–2 米处，注意别挡住机器人的活动空间。
+
+**前置准备**：K1 已开机并与电脑建立连接（见 U1-L1）；已完成 U2-L1（ROS2 话题操作）、U2-L2（传感器速览，`get_image()` 与 `subscribe_image()` 的基本用法）。另备一把卷尺，用于深度值对照。
+
+### 5.1 连接机器人
+"""))
+
+cells.append(code("""from boosteros.robots.booster import BoosterRobot
+
+robot = BoosterRobot()
+print("已连接 K1")"""))
+
+# ### 5.2 抓一帧看全貌
+cells.append(md("""### 5.2 抓一帧，先看全貌
+
+调用 `get_image()` 拿回一帧。先把返回值整个打印出来，看看这个对象长什么样；把它单独写在最后一行，Jupyter 会直接把这帧图显示出来。
+"""))
+
+cells.append(code("""img = robot.get_image()
+
+print("获取图像的返回值：", img)
+img"""))
+
+cells.append(md("""`get_image()` 的返回值是 `Image` 类型，包含如下信息：
+
+| 属性 / 方法 | 类型 | 说明 |
+| --- | --- | --- |
+| `width` | `int` | 画面宽度，像素数 |
+| `height` | `int` | 画面高度，像素数 |
+| `encoding` | `str` | 像素编码，如 `bgr8` |
+| `header` | `Header` | 消息头，`header.timestamp` 是这一帧的时间戳（秒） |
+| `to_numpy()` | 方法 | 转成 numpy 数组，形状为（高度, 宽度, 通道数） |
+| `save(路径)` | 方法 | 存成图片文件，如 `.jpg` |
+| `show()` | 方法 | 用系统看图工具打开这一帧 |
+
+下面把几个关键字段读出来。
+"""))
+
+cells.append(code("""print("画面尺寸：", img.width, "×", img.height)
+print("像素编码：", img.encoding)
+print("时间戳：", round(img.header.timestamp, 3))"""))
+
+cells.append(md("""<font color="red">你会发现：</font>尺寸一般是固定的（K1 头部相机常见 1920×1080），编码通常是 `bgr8`——相机发出的是 `nv12`，SDK 已经转好了。时间戳每抓一帧都在往前走，说明拿到的是新帧，不是缓存里的旧图。
+
+### 5.3 图像坐标系：在画面上标出中心
+
+用 3.1 的坐标系算出画面中心，再把这个位置在图上标出来。做法很简单：把中心那一行、那一列的像素直接改成红色。
+"""))
+
+cells.append(code("""import numpy as np
+from boosteros.types import Image
+
+arr = img.to_numpy().copy()                      # 复制一份，避免改坏原图
+h, w = arr.shape[:2]
+cy, cx = h // 2, w // 2                          # 画面中心：y 取高度一半，x 取宽度一半
+
+print("画面中心坐标：(x, y) =", (cx, cy))
+
+# 编码是 bgr8 时，3 个数按蓝、绿、红排列，所以红色写作 [0, 0, 255]
+red = [0, 0, 255] if img.encoding.lower().startswith("bgr") else [255, 0, 0]
+
+arr[cy - 1 : cy + 2, :] = red                    # 横着画一条线
+arr[:, cx - 1 : cx + 2] = red                    # 竖着画一条线
+
+marked = Image(
+    data=arr,
+    header=img.header,
+    encoding=img.encoding,
+)
+marked"""))
+
+cells.append(md("""十字交叉的那个点就是画面中心 `(cx, cy)`。改的是数组里的数，图就跟着变了——图像在程序里就是一堆可以修改的数字。
+
+<font color="red">你会发现：</font>横线的行号是 `cy`，竖线的列号是 `cx`，写数组时的顺序是 `arr[行, 列]`，也就是 `arr[y, x]`，和坐标 `(x, y)` 的写法正好反过来。这是刚上手时最容易写错的地方。
+
+### 5.4 图像在程序里是什么
+
+把图像转成数组，看看它的形状和数据类型，再读几个点的颜色。
+"""))
+
+cells.append(code("""arr = img.to_numpy()
+h, w = arr.shape[:2]
+cy, cx = h // 2, w // 2
+
+print("数组形状（高, 宽, 通道）：", arr.shape)
+print("数据类型：", arr.dtype)
+print("数值范围：", arr.min(), "到", arr.max())
+
+print()
+print("左上角 (0, 0) 的像素：", arr[0, 0])
+print("画面中心的像素：", arr[cy, cx])
+print("右下角的像素：", arr[h - 1, w - 1])"""))
+
+cells.append(md("""每个像素是 3 个 0–255 的整数。编码为 `bgr8` 时顺序是蓝、绿、红，所以中心那一点若是 `[112, 130, 145]`，意思是蓝 112、绿 130、红 145——这是个偏暖的灰。
+
+<font color="red">你会发现：</font>对着亮处和暗处各取一个点，三个数会明显不一样；把相机对准一块纯色区域，三个数里会有一个特别突出。取像素这个值，就是后面做识别时最原始的材料。
+
+### 5.5 深度图：每个像素是一个距离
+
+同一支相机换一个参数，拿到的就是深度图。它只有一个通道，每个像素记的是这段距离。
+
+让一位同学站到相机正前方，或者放一个纸箱。先读出画面中心的深度值，再用卷尺量一下相机到这个目标的实际距离。
+"""))
+
+cells.append(code("""depth = robot.get_image(img_type="depth")
+d_arr = depth.to_numpy()
+
+print("深度图尺寸：", depth.width, "×", depth.height)
+print("深度图编码：", depth.encoding)
+print("数组形状：", d_arr.shape, "数据类型：", d_arr.dtype)
+
+dh, dw = d_arr.shape[0], d_arr.shape[1]
+dcy, dcx = dh // 2, dw // 2
+
+center = d_arr[dcy, dcx]
+if d_arr.ndim == 3:               # 有些相机多出一个长度为 1 的维度
+    center = center[0]
+
+print("画面中心点的深度值：", center)"""))
+
+cells.append(md("""把读到的深度值和卷尺量出的实际距离记下来：
+
+| 项目 | 数值 |
+| --- | --- |
+| 画面中心的深度值 |  |
+| 卷尺量出的实际距离（米） |  |
+| 深度值 ÷ 实际距离 |  |
+
+<font color="red">你会发现：</font>深度值往往不是以米为单位的。把两个数列成上表算一下比值：如果比值接近 1000，说明深度值的单位是**毫米**（1 米记成 1000）；如果接近 1，单位就是米。不同相机的约定不一样，用一次实测就能定下来，往后算距离时按这个换算。
+
+### 5.6 订阅图像流，按回车保存当前帧
+
+快照只能拿一帧。想持续看画面，用 `subscribe_image()` 把回调函数注册上去，之后每来一帧，SDK 自动跑一次这个函数。
+
+下面这个回调只做两件事：把最新的一帧记下来，把收到的帧数加 1。主程序里等你按回车，按一次就把当前这一帧存成文件。
+
+> 下面两格要手动参与：运行后下方会出现输入框，输入 `q` 回车才结束。用「Run All」整本重跑时，执行会停在这里等你，不会继续往下走——所以这两格单独跑。
+"""))
+
+cells.append(code("""import time
+
+latest = {"frame": None, "count": 0}
+
+
+def on_frame(frame):
+    \"\"\"每收到一帧就跑一次：记下最新的一帧，计数加 1。\"\"\"
+    latest["frame"] = frame
+    latest["count"] += 1
+
+
+sub = robot.subscribe_image(on_frame)
+print("已订阅相机，等 3 秒让画面稳定……")
+time.sleep(3)
+print("3 秒内收到", latest["count"], "帧")"""))
+
+cells.append(code("""while True:
+    key = input("按回车保存当前这一帧，输入 q 结束：")
+    if key.strip().lower() == "q":
+        break
+    if latest["frame"] is None:
+        print("还没收到帧，再等一下。")
+        continue
+    name = f"frame_{latest['count']}.jpg"
+    latest["frame"].save(name)
+    print("已保存：", name)"""))
+
+cells.append(md("""每按一次回车，就把回调里记下的最新一帧写成文件。对着不同角度多按几次，攒下几张内容不一样的图，比只存一张更容易看出画面里哪些东西在变。
+
+> 回调是在后台线程里跑的，它一直在更新 `latest["frame"]`；主程序这边等你的回车。两边通过同一个变量打交道，这是订阅式取数里最常见的写法。
+
+### 5.7 退订并检查一下
+"""))
+
+cells.append(code("""sub.unsubscribe()
+print("已退订，回调不再执行")
+
+import os
+
+saved = [f for f in os.listdir(".") if f.startswith("frame_") and f.endswith(".jpg")]
+print("这次保存的图像：")
+for f in sorted(saved):
+    print(" ", f, os.path.getsize(f) // 1024, "KB")"""))
+
+cells.append(md("""退订别漏。不退订，回调会一直跑，占着通信通道也占着算力。
+"""))
+
+# ## 六、观察与记录
+cells.append(md("""## 六、观察与记录
+
+| 观察项 | 你看到的 | 说明 |
+| --- | --- | --- |
+| 彩色图尺寸 |  | 宽 × 高，像素 |
+| 彩色图编码 |  | 一般是 `bgr8` |
+| 画面中心坐标 |  | `(x, y)` 各是多少？ |
+| 中心像素的三个数 |  | 编码为 `bgr8` 时按蓝、绿、红排列 |
+| 数组形状 |  | （高, 宽, 通道数） |
+| 深度图编码与类型 |  | 常见 `16UC1`、`uint16` |
+| 中心点深度值 |  | 单位是什么？ |
+| 卷尺实测距离 |  | 米 |
+| 3 秒收到的帧数 |  | 换算一下每秒几帧 |
+| 保存的图像文件 |  | 文件名与大小 |
+
+**想一想**
+
+1. 彩色图能回答「前面有什么」，深度图能回答「它离多远」。如果只能留一路图，你会留哪一路？说说理由。
+2. 画面中心的坐标写成 `(cx, cy)`，可数组下标要写 `arr[cy, cx]`。为什么两个顺序不一样？
+3. `subscribe_image()` 的回调每隔约 1/30 秒就跑一次。如果回调里的代码要跑 1 秒才结束，会发生什么？
+"""))
+
+# ## 七、扩展阅读
+cells.append(md("""## 七、扩展阅读：机器视觉都用在哪
+
+机器人装上相机，做的事远不止「看看」。常见几类：
+
+| 场景 | 相机要回答的问题 | 用哪路图 |
+| --- | --- | --- |
+| 工业分拣 | 传送带上这个零件是哪种、在什么位置 | 彩色图 |
+| 扫码与读字符 | 这串数字是什么 | 彩色图 |
+| AGV 避障 | 前方多远有障碍 | 深度图 |
+| 服务机器人迎宾 | 有没有人走过来、在哪一侧 | 两路都用 |
+| 足球机器人找球 | 球在画面的哪个方位、离多远 | 两路都用 |
+
+从这几行能看出一条规律：**凡是涉及「在哪、多远」的任务，都绕不开坐标与距离**。本课的像素坐标、深度值，就是这些任务里最底层的那组数。
+
+对应到岗位上，做这类工作的是**机器视觉应用开发**和**视觉调试**：不训练模型，而是把现成的视觉能力接到机器人上，调参数、标定相机、验证在真实光线和真实场景下稳不稳。调一套视觉系统，多数时间花在「换个环境再试一遍」上，而不是写新算法。
+"""))
+
+nb = {
+    "cells": cells,
+    "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"name": "python", "version": "3"}},
+    "nbformat": 4,
+    "nbformat_minor": 5
+}
+json.dump(nb, open(OUT,"w",encoding="utf-8"), ensure_ascii=False, indent=1)
+print("wrote", OUT, "cells=", len(cells))

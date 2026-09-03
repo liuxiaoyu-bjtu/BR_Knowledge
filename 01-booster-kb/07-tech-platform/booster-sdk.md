@@ -129,30 +129,30 @@ BoosterRobot(
 
 ### 2.2 信息与状态获取
 
-| 方法 | 返回类型 | 功能 |
-|---|---|---|
-| `robot_info` (属性) | `RobotInfo` | 获取名称、型号、序列号、固件版本等元信息 |
-| `get_mode()` | `RobotModeName` | 获取当前模式（`"damping"` / `"prepare"` / `"walk"` / `"custom"`） |
-| `list_gaits()` | `list[RobotGaitName]` | 获取 walk 模式可用步态（如 `["default", "soccer"]`） |
-| `get_gait()` | `RobotGaitName` | 获取当前步态（默认 `"default"`） |
-| `list_frames()` | `list[str]` | 获取可查询的坐标系名称列表 |
-| `list_joints()` | `list[JointInfo]` | 获取当前机型支持的关节列表（含限位、最大力矩/速度） |
-| `list_actions()` | `list[ActionInfo]` | 获取预定义动作列表（10 个动作 ID，见 [ActionInfo](#actioninfo)） |
+| 方法                | 返回类型                  | 功能                                                        |
+| ----------------- | --------------------- | --------------------------------------------------------- |
+| `robot_info` (属性) | `RobotInfo`           | 获取名称、型号、序列号、固件版本等元信息                                      |
+| `get_mode()`      | `RobotModeName`       | 获取当前模式（`"damping"` / `"prepare"` / `"walk"` / `"custom"`） |
+| `list_gaits()`    | `list[RobotGaitName]` | 获取 walk 模式可用步态（如 `["default", "soccer"]`）                 |
+| `get_gait()`      | `RobotGaitName`       | 获取当前步态（默认 `"default"`）                                    |
+| `list_frames()`   | `list[str]`           | 获取可查询的坐标系名称列表                                             |
+| `list_joints()`   | `list[JointInfo]`     | 获取当前机型支持的关节列表（含限位、最大力矩/速度）                                |
+| `list_actions()`  | `list[ActionInfo]`    | 获取预定义动作列表（10 个动作 ID，见 [ActionInfo](#actioninfo)）          |
 
 ### 2.3 传感器与状态快照
 
 > 快照类接口获取的是**最近一帧**缓存数据，调用时不会阻塞等待新数据。超时时间内无数据则抛 `DataNotReadyError`。
 
-| 方法 | 返回类型 | 功能 |
-|---|---|---|
-| `get_image(camera_id="", img_type="rgb")` | `AnyImage` | 获取最近一帧 RGB 或深度图像 |
-| `get_camera_info(camera_id="")` | `CameraInfo` | 获取相机内参（K/D/R/P 矩阵）和标定信息 |
-| `get_imu(imu_id="")` | `IMUState` | 获取 IMU：线加速度、角速度、姿态四元数、RPY |
-| `get_odom()` | `OdomState` | 获取里程计：位置、姿态、线速度、角速度、pose_2d |
-| `get_joint_states()` | `JointStates` | 获取所有关节的位置、速度、力矩 |
-| `get_battery()` | `BatteryState` | 获取电池百分比、电压、电流、温度、充放电状态 |
-| `get_fall_down_state()` | `FallDownState` | 获取摔倒状态（normal / falling / fallen / getting_up） |
-| `get_transform(target_frame, source_frame)` | `Transform` | 查询坐标系变换（需 `enable_tf_listener=True`） |
+| 方法                                          | 返回类型            | 功能                                             |
+| ------------------------------------------- | --------------- | ---------------------------------------------- |
+| `get_image(camera_id="", img_type="rgb")`   | `AnyImage`      | 获取最近一帧 RGB 或深度图像                               |
+| `get_camera_info(camera_id="")`             | `CameraInfo`    | 获取相机内参（K/D/R/P 矩阵）和标定信息                        |
+| `get_imu(imu_id="")`                        | `IMUState`      | 获取 IMU：线加速度、角速度、姿态四元数、RPY                      |
+| `get_odom()`                                | `OdomState`     | 获取里程计：位置、姿态、线速度、角速度、pose_2d                    |
+| `get_joint_states()`                        | `JointStates`   | 获取所有关节的位置、速度、力矩                                |
+| `get_battery()`                             | `BatteryState`  | 获取电池百分比、电压、电流、温度、充放电状态                         |
+| `get_fall_down_state()`                     | `FallDownState` | 获取摔倒状态（normal / falling / fallen / getting_up） |
+| `get_transform(target_frame, source_frame)` | `Transform`     | 查询坐标系变换（需 `enable_tf_listener=True`）           |
 
 ### 2.4 传感器订阅
 
@@ -384,21 +384,21 @@ detector = Detection(model="default", backend="onnx")
 
 ### 4.2 感知与状态数据
 
-| 类型 | 关键属性 | 说明 |
-|---|---|---|
-| `AnyImage` (= `Image \| CompressedImage`) | `header`, `width`, `height` | 图像联合类型。方法: `to_numpy()`, `to_pil()`, `to_bytes()`, `size()`, `save(path)`, `resize(w,h)`, `show()` |
-| `Image` | 继承 ImageBase + `encoding` (str) | 原始像素图像 |
-| `CompressedImage` | 继承 ImageBase + `format` (str) | 压缩图像（JPEG/PNG） |
-| `BoundingBox2D` | `x`, `y`, `width`, `height`; 只读: `center_x`, `center_y`, `area` | 2D 检测框。方法: `to_dict()` |
-| `DetectionResult` | `class_name`, `class_id`, `confidence`, `bbox` (BoundingBox2D), `mask`, `keypoints`, `distance_m` | 检测结果。方法: `to_dict()` |
-| `CameraInfo` | `header`, `width`, `height`, `k` (3x3), `d`, `r`, `p`, `distortion_model`, `binning_x`, `binning_y`, `roi` | 相机内参和标定。方法: `to_dict()` |
-| `RegionOfInterest` | `x_offset`, `y_offset`, `height`, `width`, `do_rectify` | ROI 区域。方法: `to_dict()` |
-| `IMUState` | `header`; 只读: `linear_acceleration` (3,), `angular_velocity` (3,), `orientation` (4,), `rpy` (3,) | IMU 状态。方法: `to_numpy()` |
-| `OdomState` | `header`; 只读: `position` (3,), `orientation` (4,), `linear_velocity`, `angular_velocity`, `rpy`, `pose_2d` (3,) | 里程计位姿和速度。方法: `to_numpy()` |
-| `Transform` | `header`; 只读: `translation` (3,), `rotation` (4,), `source_frame`, `target_frame`, `rpy` (3,) | 坐标系变换。方法: `inverse()`, `to_matrix()`, `to_numpy()` |
-| `BatteryState` | `header`, `temperature`, `charge`, `capacity`, `serial_number`; 只读: `percentage`, `voltage`, `current`, `status_code`, `is_charging`, `is_low`, `is_critical` | 电池状态。方法: `to_numpy()` |
-| `FallDownState` | `header`, `state` (str), `recoverable` (bool); 只读: `is_normal`, `is_falling`, `has_fallen`, `is_getting_up` | 摔倒状态（从 `boosteros.robots.booster` 导入） |
-| `AudioData` | `header`, `channels`, `sample_rate`, `coding_format`, `sample_format`, `bitrate`; 只读: `data`, `format`, `bit_depth`, `duration` | 音频数据。方法: `save(path)`, `with_data(bytes)`, `concat([...])` (类方法), `to_numpy()` |
+| 类型                                        | 关键属性                                                                                                                                                          | 说明                                                                                                 |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `AnyImage` (= `Image \| CompressedImage`) | `header`, `width`, `height`                                                                                                                                   | 图像联合类型。方法: `to_numpy()`, `to_pil()`, `to_bytes()`, `size()`, `save(path)`, `resize(w,h)`, `show()` |
+| `Image`                                   | 继承 ImageBase + `encoding` (str)                                                                                                                               | 原始像素图像                                                                                             |
+| `CompressedImage`                         | 继承 ImageBase + `format` (str)                                                                                                                                 | 压缩图像（JPEG/PNG）                                                                                     |
+| `BoundingBox2D`                           | `x`, `y`, `width`, `height`; 只读: `center_x`, `center_y`, `area`                                                                                               | 2D 检测框。方法: `to_dict()`                                                                             |
+| `DetectionResult`                         | `class_name`, `class_id`, `confidence`, `bbox` (BoundingBox2D), `mask`, `keypoints`, `distance_m`                                                             | 检测结果。方法: `to_dict()`                                                                               |
+| `CameraInfo`                              | `header`, `width`, `height`, `k` (3x3), `d`, `r`, `p`, `distortion_model`, `binning_x`, `binning_y`, `roi`                                                    | 相机内参和标定。方法: `to_dict()`                                                                            |
+| `RegionOfInterest`                        | `x_offset`, `y_offset`, `height`, `width`, `do_rectify`                                                                                                       | ROI 区域。方法: `to_dict()`                                                                             |
+| `IMUState`                                | `header`; 只读: `linear_acceleration` (3,), `angular_velocity` (3,), `orientation` (4,), `rpy` (3,)                                                             | IMU 状态。方法: `to_numpy()`                                                                            |
+| `OdomState`                               | `header`; 只读: `position` (3,), `orientation` (4,), `linear_velocity`, `angular_velocity`, `rpy`, `pose_2d` (3,)                                               | 里程计位姿和速度。方法: `to_numpy()`                                                                          |
+| `Transform`                               | `header`; 只读: `translation` (3,), `rotation` (4,), `source_frame`, `target_frame`, `rpy` (3,)                                                                 | 坐标系变换。方法: `inverse()`, `to_matrix()`, `to_numpy()`                                                 |
+| `BatteryState`                            | `header`, `temperature`, `charge`, `capacity`, `serial_number`; 只读: `percentage`, `voltage`, `current`, `status_code`, `is_charging`, `is_low`, `is_critical` | 电池状态。方法: `to_numpy()`                                                                              |
+| `FallDownState`                           | `header`, `state` (str), `recoverable` (bool); 只读: `is_normal`, `is_falling`, `has_fallen`, `is_getting_up`                                                   | 摔倒状态（从 `boosteros.robots.booster` 导入）                                                              |
+| `AudioData`                               | `header`, `channels`, `sample_rate`, `coding_format`, `sample_format`, `bitrate`; 只读: `data`, `format`, `bit_depth`, `duration`                               | 音频数据。方法: `save(path)`, `with_data(bytes)`, `concat([...])` (类方法), `to_numpy()`                     |
 
 ### 4.3 关节相关数据
 
