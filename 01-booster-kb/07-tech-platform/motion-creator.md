@@ -1,16 +1,17 @@
 ---
 title: Motion Creator — 动作编辑器
 module: 07-tech-platform
-status: in-development
+status: completed
 created: 2026-08-06
-source: Booster产品功能矩阵 (2026-08-06)
+updated: 2026-09-15
+source: 企业内部知识库检索（2026-09-15）+ Booster产品功能矩阵 (2026-08-06)
 ---
 
 # Motion Creator — 动作编辑器
 
 > **定位**: Motion Creator 是动作创作工具，支持将真人动作录像转化为机器人动作，并部署到虚拟机器人或真机上运行。是 BeyondMimic 训练链路的上游「数据生产」工具。
 >
-> **状态**: 🔄 开发中（2026年8月 P0）
+> **状态**: ✅ 已上线（2026年8月 P0，0729 Demo Day 演示）
 
 ---
 

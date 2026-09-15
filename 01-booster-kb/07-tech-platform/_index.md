@@ -17,9 +17,9 @@ created: 2026-07-16
 | [booster-sdk.md](booster-sdk.md)                         | **BoosterOS SDK V1.0** — 主 SDK 完整 API 参考（41 接口 + 5 独立模块 + 22 数据类型） |
 | [booster-agent-framework.md](booster-agent-framework.md) | **Booster Agent Framework** — App 端高层应用开发框架（UI 组件/生命周期/参数系统/状态订阅）  |
 | [ros2-sdk.md](ros2-sdk.md)                               | ROS2 SDK 文档                                                        |
-| [booster-studio.md](booster-studio.md)                   | **Booster Studio** — 核心开发平台（仿真/Notebook/Agent 部署/云桌面）              |
+| [booster-studio.md](booster-studio.md)                   | **Booster Studio** — 具身智能原生 IDE（仿真/Vibe Coding/实时可视化/Sim-to-Real/云桌面） |
 | [hichat.md](hichat.md)                                   | **HiChat** — 语音对话 Agent（人设系统/多轮对话/灯语反馈）                            |
-| [motion-creator.md](motion-creator.md)                   | **Motion Creator** — 动作编辑器（视频→动作，8月 P0 开发中）                        |
+| [motion-creator.md](motion-creator.md)                   | **Motion Creator** — 动作编辑器（视频→动作，2026年8月已上线）                        |
 | [product-ecosystem.md](product-ecosystem.md)             | **产品生态体系** — App/技能库/加速豆/账号/AI 助手/应用中心/文档中心                        |
 | [booster-gym.md](booster-gym.md)                         | Booster GYM 强化学习框架                                                 |
 | [booster-train.md](booster-train.md)                     | Booster Train 训练框架（BeyondMimic）                                    |
@@ -33,7 +33,7 @@ created: 2026-07-16
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                      Booster Studio                              │
-│   仿真 · Notebook · Agent 部署 · AI 助手 · 云桌面 · 云端仿真      │
+│   仿真 · Vibe Coding · 实时可视化 · Sim-to-Real · 云桌面 · AI 助手 │
 ├──────────────────────────────────────────────────────────────────┤
 │  BoosterOS SDK │ Booster Agent Framework │ ROS2 SDK │ 豆包 API   │
 ├──────────────────────────────────────────────────────────────────┤
