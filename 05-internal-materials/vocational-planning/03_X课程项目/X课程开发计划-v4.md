@@ -8,6 +8,8 @@
 > **⚠️ 周期铁律（二次修订补充）**：开发周期**严格锁定 v3 的 2026-08-17 ~ 2026-10-20（10 周）**，不得因临时插入（如 U1 P2–P6 验证切片）、其他任务延误而向后顺延任何日期。插入/延误只能在固定窗口内通过重新排程（re-sequence）与优先级调整吸收，到期日 10-20 不可更改。详见 §九。
 > **范式参考**：`计算机视觉实训书书稿24Sep2020.pdf`（244 页中文实训书，章节/实验体例，作为实训手册范本）
 
+> **当前执行状态（2026-10-20）**：U2 四课已完成 P3，P4 教学设计与 Notebook 对照修订完成，待确认④；U3 四课真机确认②已完成，尚未进入 P3。当前阶段与确认要求以 `../02_共创规则与上下文/notebook开发规则.md` 为准：执行 P1、P3–P7，P2 编号已停用。下文保留历次流程和排期记录。
+
 ---
 
 ## 一、v4 相对 v3 的核心变化（基于开发记录）
@@ -211,9 +213,9 @@ v3 开发计划（2026-08-17）按「Phase 1 代码骨架 → Phase 2 大纲嵌�
 | U1 | L3 | 基本运动控制 | `set_velocity(vx, vy, vyaw)` | `U1-L3_基本运动控制` |
 | U1 | L4 | 头部、步态与预定义动作 | `set_head_angle()`、`set_gait()`、`do_action()`、`list_actions()`/`ActionInfo`/`TaskHandle` | `U1-L4_头部步态与预定义动作` |
 | U2 | L1 | ROS2 通信基础 | `ros2 topic list/echo/hz/info` 四件套 | `U2-L1_ROS2通信基础` |
-| U2 | L2 | 传感器速览 | `subscribe_image()`、`get_imu()`、`get_odom()`、`get_joint_states()`、`get_battery()` | `U2-L2_传感器速览` |
-| U2 | L3 | IMU 与里程计观测 | `get_imu()`(rpy)、`get_odom()`(pose_2d)、`reset_odom()` | `U2-L3_IMU与里程计观测` |
-| U2 | L4 | 状态监测与融合 | `get_battery()`、`get_fall_down_state()`、`get_up()`、定时器 | `U2-L4_状态监测与融合` |
+| U2 | L2 | 传感器速览 | `subscribe_imu()`、`get_imu()`、`get_odom()`、`get_joint_states()`、`get_battery()`；相机仅用 Studio 观察 | `U2-L2_传感器速览` |
+| U2 | L3 | IMU 与里程计观测 | `get_imu()` 读加速度/角速度；`get_odom().rpy`、`pose_2d`；`reset_odom()`；循环采样与坐标换算 | `U2-L3_IMU与里程计` |
+| U2 | L4 | 状态监测与融合 | `get_battery()`、`get_fall_down_state()`、`get_mode()`；普通循环、联合告警与起身条件检查；教师可演示 `get_up()` | `U2-L4_状态监测与融合` |
 | U3 | L1 | 相机图像采集 | `subscribe_image()` 回调保存帧 | `U3-L1_相机图像采集` |
 | U3 | L2 | 目标检测入门 | `Detection(model="default").detect()` | `U3-L2_目标检测入门` |
 | U3 | L3 | 置信度与多目标 | JSON 提取 `class_name/confidence/bbox`，阈值筛选 | `U3-L3_置信度与多目标` |
