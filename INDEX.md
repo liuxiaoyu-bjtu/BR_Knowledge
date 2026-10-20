@@ -93,6 +93,7 @@ last_updated: "2026-09-01"
 | 具身智能机器人实践（X课程） | `05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md`（最新版；历史版 v3 同目录） |
 | X课程开发计划 | `05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md`（最新版；v1–v3 同目录） |
 | X课程实验代码 | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/` |
+| X课程动作来源（示教器、行为克隆、模仿学习与强化学习） | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L1_动作的来源.ipynb` |
 | X课程实训手册/大纲嵌入 | `05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md` |
 | 教学体例配色（PPT） | `05-internal-materials/vocational-planning/03_X课程项目/PPT视觉配色规范.md`（科技蓝=知识、青绿=实践、橘黄=思考/评价/总结、红=安全） |
 | 去AI化表达记录 | `05-internal-materials/去AI化表达记录.md`（"AI 味"表述风格规则） |

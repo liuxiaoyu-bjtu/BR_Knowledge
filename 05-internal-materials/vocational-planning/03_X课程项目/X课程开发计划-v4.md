@@ -226,7 +226,7 @@ v3 开发计划（2026-08-17）按「Phase 1 代码骨架 → Phase 2 大纲嵌�
 | U5 | L2 | 语音合成 | `play_stream()`、`list_voices()` | `U5-L2_语音合成` |
 | U5 | L3 | LLM 对话与人设 | `Speech.chat(config=ChatConfig(system_prompt=...))` | `U5-L3_LLM对话` |
 | U5 | L4 | 语音交互闭环 | ASR→LLM→TTS 端到端链路 | `U5-L4_语音问答闭环` |
-| U6 | L1 | 模仿学习概念与数据链路 | `hand_guiding_manager` 概念；数据链路讲解 | `U6-L1_模仿学习概念` |
+| U6 | L1 | 动作的来源 | 比较规则驱动、行为克隆与强化学习（B18），用 Booster Train 说明参考动作模仿目标与强化学习训练的结合；区分 `.btraj` 直接回放和策略训练；`TrajectoryData.load()` 读取预录轨迹（2026-10-20 评审修订稿，待确认①与真机确认②） | `U6-L1_动作的来源` |
 | U6 | L2 | 动作采集与录制 | `hand_guiding_manager` → `start_recording()` → `stop_recording()` → `TrajectoryData.save()` | `U6-L2_动作采集录制` |
 | U6 | L3 | 动作回放与预定义动作 | `execute_trajectory()`、`do_action()` | `U6-L3_动作回放与预定义` |
 | U6 | L4 | 动作编排 | Python 顺序调用动作序列 | `U6-L4_动作编排` |
