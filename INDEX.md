@@ -100,7 +100,7 @@ last_updated: "2026-09-01"
 | X课程教学设计 | `05-internal-materials/vocational-planning/03_X课程项目/教学设计/`（教师用 .md） |
 | X课程PPT | `05-internal-materials/vocational-planning/03_X课程项目/PPT/`（+ `PPT内容设计/`） |
 | X课程实训手册 | `05-internal-materials/vocational-planning/03_X课程项目/实训手册PDF/` |
-| notebook 开发规则 | `05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md`（七阶段工作流 P1-P7） |
+| notebook 开发规则 / P3 审定 / 真机验证 | `05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md`（P1 含实验设计；①设计审阅、②用户真机验证；P2 停用；P3 有问题先确认方案，无问题提示可进入 P4） |
 
 ## K
 
