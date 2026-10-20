@@ -182,6 +182,7 @@ last_updated: "2026-09-01"
 | X 课程（具身智能机器人实践） | `05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md` |
 | X 课程开发计划 | `05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md` |
 | X 课程实验代码 | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/` |
+| X课程 PPT 制作与图示验收 / PPT Master 方法借鉴 | `05-internal-materials/vocational-planning/03_X课程项目/PPT制作与图示验收规范.md`（延续 U1 视觉规则、按内容选构图、关键图示规格、素材溯源与逐页验收；附官方版本与来源） |
 
 ## 临时任务记录
 
