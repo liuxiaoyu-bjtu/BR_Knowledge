@@ -183,6 +183,7 @@ last_updated: "2026-09-01"
 | X 课程开发计划 | `05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md` |
 | X 课程实验代码 | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/` |
 | X课程 PPT 制作与图示验收 / PPT Master 方法借鉴 | `05-internal-materials/vocational-planning/03_X课程项目/PPT制作与图示验收规范.md`（延续 U1 视觉规则、按内容选构图、关键图示规格、素材溯源与逐页验收；附官方版本与来源） |
+| X课程 U3 P4 / PPT内容大纲 / 覆盖检查 | `05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U3_P4覆盖检查记录.md`（四课大纲入口、42个代码格与15道评价题覆盖、真机补验范围；待确认⑤） |
 
 ## 临时任务记录
 
