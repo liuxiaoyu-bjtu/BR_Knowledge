@@ -102,3 +102,13 @@ L2附件本来就是close后wait，本轮保留顺序，补上失败和超时判
 | 任务类型 | [TaskHandle](https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/tasks-and-subscriptions/task-handle/)、[TaskStatus](https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/tasks-and-subscriptions/task-status/) |
 | 播放流类型 | [AudioPlaybackStreamHandle](https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/tasks-and-subscriptions/audio-playback-stream-handle/)、[OverflowPolicy](https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/tasks-and-subscriptions/overflow-policy/) |
 | 音频数据类型 | [AudioData](https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/sensor-and-state-data/audio-data/)、[PcmSampleFormat](https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/sensor-and-state-data/pcm-sample-format/) |
+
+## 六、U5-L4第二轮：只读状态与应用状态机
+
+2026-10-23再次回读TaskHandle、TaskStatus和chat的官方页面：status、error为只读；wait超时返回当前状态，不会自动取消；cancel返回是否成功提交请求。TaskHandle[None]仍是句柄，只是没有供程序领取的最终结果数据。
+
+add_status_change_callback(fn)接收任务句柄，注册时立即以当前状态触发一次，后续状态变化时再调用；注册前已发生的短暂状态不会补发。本课回调只打印，不修改管理状态或调度其他任务。当前Notebook环境的后续回调输出位置待真机核实。
+
+应用状态机可根据操作与旧任务是否终止来决定调用chat或cancel；SDK按实际执行情况更新任务状态。读状态、调用done或wait、修改应用字符串，都不会直接设定SDK状态。不主动取消时仍可能发生启动或故障等生命周期变化；公开文档未给出持续聊天的全部自然终止条件，不能承诺永远RUNNING，也不推定静默后自动停止。
+
+L4第二轮未使用recognize()。该接口在本记录中作为官方能力索引保留，不表示加入课程。学生稿27格，新增状态观察与真实操作控制，待新确认①②；教学取舍、接口依据与逐格测试见[教学审阅与真机验证建议](U5-L4_教学审阅与真机验证建议.md)。本轮未连接真机或核验SDK实现源码。
