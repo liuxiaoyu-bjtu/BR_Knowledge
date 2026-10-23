@@ -1,0 +1,258 @@
+{
+  "date": "2026-10-23",
+  "passed": true,
+  "scope": "静态文稿、映射和文件指纹；不代表PPTX版面或真机验证",
+  "inputs": [
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L1_转向来宾.ipynb",
+      "sha256": "cef5aeece8b05c7b15d0bbc7d716f8ac6cca21854b155dcb9c5d9298a759d28f",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L1_语音识别.ipynb",
+      "sha256": "ed3e7ff33741f1b5cab16d60e0ace7381fa55ee2de883474dc7c535f25658d17",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L2_语音合成.ipynb",
+      "sha256": "b384381fe2e0b7ff4843ea7abe792f4f1e1a82576db8802ade1a066a4e9f8239",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L3_LLM对话.ipynb",
+      "sha256": "e61be68533f4395c1b97c3ac215283904d95b7180d316f26ddc115863077accd",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L2/sound_lab.py",
+      "sha256": "1ff55a0bb6167de108e56fd5d39858c7dc9a0a77e17ae71fcf2f7d3c32ee9c93",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L2/U5-L2_语音合成.ipynb",
+      "sha256": "6ce894527f1d99b170550ba7d73d42695fd57caa7be9c546ed7bc5f72720cf2e",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L13.py",
+      "sha256": "d385c0796261fd237955221e3e492c72fed0742f5cddd1ab14e0faf8013b9105",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L17.py",
+      "sha256": "b7f3e9412f04aadde0a672770fe4b79862c3790ca542d7156c7ece13de98f060",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L18.py",
+      "sha256": "24f753cbc5aa2d130f0311ea13da0b9ea36042290fac760656bd6e67eed903b8",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L19.py",
+      "sha256": "3008212de486ee5bcf759544b2f0e287a0ec9be8f4251144c7b5ad6b74bc9ad5",
+      "unchanged": true
+    }
+  ],
+  "lessons": [
+    {
+      "lesson": "U4-L1_转向来宾",
+      "pages": 27,
+      "cells_mapped": 44,
+      "code_cells_mapped": [
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        21,
+        23,
+        25,
+        28,
+        33,
+        35,
+        39,
+        41
+      ],
+      "minutes": 45,
+      "time_segments": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          21,
+          30
+        ],
+        [
+          30,
+          39
+        ],
+        [
+          39,
+          45
+        ]
+      ],
+      "after_class_pages": []
+    },
+    {
+      "lesson": "U5-L1_语音识别",
+      "pages": 27,
+      "cells_mapped": 34,
+      "code_cells_mapped": [
+        7,
+        9,
+        12,
+        15,
+        19,
+        23,
+        25,
+        31,
+        33
+      ],
+      "minutes": 45,
+      "time_segments": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          19,
+          30
+        ],
+        [
+          30,
+          39
+        ],
+        [
+          39,
+          45
+        ]
+      ],
+      "after_class_pages": []
+    },
+    {
+      "lesson": "U5-L2_语音合成",
+      "pages": 28,
+      "cells_mapped": 34,
+      "code_cells_mapped": [
+        7,
+        9,
+        12,
+        14,
+        16,
+        19,
+        21,
+        24,
+        26,
+        32
+      ],
+      "minutes": 45,
+      "time_segments": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          18,
+          28
+        ],
+        [
+          28,
+          33
+        ],
+        [
+          33,
+          39
+        ],
+        [
+          39,
+          45
+        ]
+      ],
+      "after_class_pages": [
+        28
+      ]
+    },
+    {
+      "lesson": "U5-L3_LLM对话",
+      "pages": 28,
+      "cells_mapped": 32,
+      "code_cells_mapped": [
+        9,
+        11,
+        15,
+        24,
+        26,
+        28,
+        30
+      ],
+      "minutes": 45,
+      "time_segments": [
+        [
+          0,
+          6
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          13,
+          20
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          25,
+          35
+        ],
+        [
+          35,
+          40
+        ],
+        [
+          40,
+          45
+        ]
+      ],
+      "after_class_pages": [
+        28
+      ]
+    }
+  ],
+  "totals": {
+    "pages": 110,
+    "cells": 144,
+    "code_cells": 40,
+    "documents_link_checked": 11,
+    "local_links": 34
+  }
+}

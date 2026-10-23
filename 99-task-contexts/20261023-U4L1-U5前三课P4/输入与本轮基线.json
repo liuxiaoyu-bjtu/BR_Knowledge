@@ -1,0 +1,109 @@
+{
+  "inputs": [
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L1_转向来宾.ipynb",
+      "sha256": "cef5aeece8b05c7b15d0bbc7d716f8ac6cca21854b155dcb9c5d9298a759d28f",
+      "cells": 44,
+      "code_cells": [
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        21,
+        23,
+        25,
+        28,
+        33,
+        35,
+        39,
+        41
+      ]
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L1_语音识别.ipynb",
+      "sha256": "ed3e7ff33741f1b5cab16d60e0ace7381fa55ee2de883474dc7c535f25658d17",
+      "cells": 34,
+      "code_cells": [
+        7,
+        9,
+        12,
+        15,
+        19,
+        23,
+        25,
+        31,
+        33
+      ]
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L2_语音合成.ipynb",
+      "sha256": "b384381fe2e0b7ff4843ea7abe792f4f1e1a82576db8802ade1a066a4e9f8239",
+      "cells": 34,
+      "code_cells": [
+        7,
+        9,
+        12,
+        14,
+        16,
+        19,
+        21,
+        24,
+        26,
+        32
+      ]
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L3_LLM对话.ipynb",
+      "sha256": "e61be68533f4395c1b97c3ac215283904d95b7180d316f26ddc115863077accd",
+      "cells": 32,
+      "code_cells": [
+        9,
+        11,
+        15,
+        24,
+        26,
+        28,
+        30
+      ]
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L2/sound_lab.py",
+      "sha256": "1ff55a0bb6167de108e56fd5d39858c7dc9a0a77e17ae71fcf2f7d3c32ee9c93"
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L2/U5-L2_语音合成.ipynb",
+      "sha256": "6ce894527f1d99b170550ba7d73d42695fd57caa7be9c546ed7bc5f72720cf2e"
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L13.py",
+      "sha256": "d385c0796261fd237955221e3e492c72fed0742f5cddd1ab14e0faf8013b9105"
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L17.py",
+      "sha256": "b7f3e9412f04aadde0a672770fe4b79862c3790ca542d7156c7ece13de98f060"
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L18.py",
+      "sha256": "24f753cbc5aa2d130f0311ea13da0b9ea36042290fac760656bd6e67eed903b8"
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L19.py",
+      "sha256": "3008212de486ee5bcf759544b2f0e287a0ec9be8f4251144c7b5ad6b74bc9ad5"
+    }
+  ],
+  "shared": [
+    "AGENTS.md",
+    "INDEX.md",
+    "CHANGELOG.md",
+    "05-internal-materials/_README.md",
+    "05-internal-materials/vocational-planning/README.md",
+    "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\X课程开发计划-v4.md",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\教学设计\\U4-L1_转向来宾_教学设计.md",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\实验验证\\U4-L1_P2复核与定稿记录.md",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\实验验证\\U5-L1-L2-L3_P2复核与修改方案.md",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\_外挂附件清单.md"
+  ]
+}
