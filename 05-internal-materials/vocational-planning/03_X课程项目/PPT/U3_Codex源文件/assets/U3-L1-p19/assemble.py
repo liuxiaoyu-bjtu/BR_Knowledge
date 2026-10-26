@@ -14,7 +14,7 @@ fontpath='C:/Windows/Fonts/msyh.ttc'
 def font(n):return ImageFont.truetype(fontpath,int(n))
 
 # Replace the blank generated blade with a deterministic millimetre scale.
-scene=Image.open(O/'scene-generated-v3.png').convert('RGBA')
+scene=Image.open(O/'scene-no-tape-post.png').convert('RGBA')
 tape=Image.open(O/'tape-0-220cm-transparent.png').convert('RGBA').crop((80,40,5480,335))
 src=[(0,0),(tape.width,0),(tape.width,tape.height),(0,tape.height)]
 dst=[(574,752),(1454,657),(1454,685),(574,783)]
