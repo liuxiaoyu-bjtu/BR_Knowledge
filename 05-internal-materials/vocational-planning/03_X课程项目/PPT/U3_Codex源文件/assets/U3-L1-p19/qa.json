@@ -1,0 +1,32 @@
+{
+  "changed_existing_parts": [
+    "ppt/slides/slide19.xml",
+    "ppt/slides/_rels/slide19.xml.rels"
+  ],
+  "all_other_existing_parts_identical": true,
+  "slide_count": 29,
+  "scene_source": "sensenova-u1.5-lite reference image edits; constructed illustration",
+  "ruler_ticks": "deterministic millimetre ticks; not experiment readings",
+  "native_annotations": true,
+  "depth_qa": {
+    "canvas": [
+      1440,
+      1080
+    ],
+    "depth_kind": "axial camera Z; ideal pinhole model",
+    "gray_mapping": {
+      "near_metres": 0.8,
+      "far_metres": 4.2,
+      "formula": "round(255*clip((far-Z)/(far-near),0,1))"
+    },
+    "center_object": "carton front",
+    "center_z_m": 1.8,
+    "front_gray_min": 180,
+    "front_gray_max": 180,
+    "bottle_gray_min": 114,
+    "bottle_gray_max": 126,
+    "carton_top": "not visible in camera view; front plane covers optical axis",
+    "ruler": "0-220 cm; one tick every 1 mm; not an experimental reading",
+    "scene_generation": "completed; third reference-conditioned edit selected"
+  }
+}
