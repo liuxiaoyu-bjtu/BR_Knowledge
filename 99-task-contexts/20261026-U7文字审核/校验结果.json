@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-26",
+  "reviewed_cells": 56,
+  "markdown_cells": 40,
+  "code_cells": 16,
+  "issues": 33,
+  "issue_categories": {
+    "A": 16,
+    "C": 1,
+    "B": 16
+  },
+  "input_files": [
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L1_多传感器订阅.ipynb",
+      "sha256": "98da432eafb2eed778204b6f44f3e5d5c832333cdee75eba4cd241bbb17dbec7",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L2_视觉-运动-语音桥接.ipynb",
+      "sha256": "bb6e777478e39f8d5cc41e35224f84564bfdb061f69f47fa9e1fed4b445654dc",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L3_多线程协作.ipynb",
+      "sha256": "9e126a63da46545ccce85808026de7f061fb67f9d136b967190868883b040e94",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L4_小剧场预演.ipynb",
+      "sha256": "373cf8ece0e07358e39af8d027034d8303b8bb7a7b5d20d87088b901b80d9d97",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L25.py",
+      "sha256": "d8aa0714ab09e6d68b59abf30279ebe19d2d5b2f1f1325534fc11a4f205386ac",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L26.py",
+      "sha256": "4f26122ee6efc840817f22a54a2d510acb01aad9ff2c7c27735275caab726ee2",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L27.py",
+      "sha256": "34de125c8f95042304a866371b875442272da315a71f6b6fdd0c2897383403c7",
+      "unchanged": true
+    },
+    {
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L28.py",
+      "sha256": "d8bd33758a015ff9f9f02c7270c880350a9f138cd4dcc7969831c5b98e1ec808",
+      "unchanged": true
+    }
+  ],
+  "quotes_valid": true,
+  "links": [
+    {
+      "source": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "target": "../notebooks/U7-L1_多传感器订阅.ipynb",
+      "exists_or_generated": true
+    },
+    {
+      "source": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "target": "../notebooks/U7-L2_视觉-运动-语音桥接.ipynb",
+      "exists_or_generated": true
+    },
+    {
+      "source": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "target": "../notebooks/U7-L3_多线程协作.ipynb",
+      "exists_or_generated": true
+    },
+    {
+      "source": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "target": "../notebooks/U7-L4_小剧场预演.ipynb",
+      "exists_or_generated": true
+    },
+    {
+      "source": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "target": "../../../../99-task-contexts/20261026-U7文字审核/输入与审核清单.json",
+      "exists_or_generated": true
+    },
+    {
+      "source": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "target": "../../../../01-booster-kb/07-tech-platform/booster-sdk.md",
+      "exists_or_generated": true
+    },
+    {
+      "source": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "target": "../notebooks/U4-L2_走近来宾.ipynb",
+      "exists_or_generated": true
+    },
+    {
+      "source": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "target": "../notebooks/U5-L4_语音问答闭环.ipynb",
+      "exists_or_generated": true
+    },
+    {
+      "source": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "target": "../notebooks/U6-L4_动作编排.ipynb",
+      "exists_or_generated": true
+    },
+    {
+      "source": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "target": "../../../../99-task-contexts/20261026-U7文字审核/02-产出清单与状态日志.md",
+      "exists_or_generated": true
+    },
+    {
+      "source": "99-task-contexts/20261026-U7文字审核/02-产出清单与状态日志.md",
+      "target": "../../05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md",
+      "exists_or_generated": true
+    },
+    {
+      "source": "99-task-contexts/20261026-U7文字审核/02-产出清单与状态日志.md",
+      "target": "输入与审核清单.json",
+      "exists_or_generated": true
+    },
+    {
+      "source": "99-task-contexts/20261026-U7文字审核/02-产出清单与状态日志.md",
+      "target": "audit.py",
+      "exists_or_generated": true
+    },
+    {
+      "source": "99-task-contexts/20261026-U7文字审核/02-产出清单与状态日志.md",
+      "target": "verify.py",
+      "exists_or_generated": true
+    },
+    {
+      "source": "99-task-contexts/20261026-U7文字审核/02-产出清单与状态日志.md",
+      "target": "校验结果.json",
+      "exists_or_generated": true
+    },
+    {
+      "source": "99-task-contexts/20261026-U7文字审核/02-产出清单与状态日志.md",
+      "target": "共享文档本轮增量.patch",
+      "exists_or_generated": true
+    }
+  ],
+  "scripts_syntax_valid": true,
+  "shared_patch_reverse_check": "passed",
+  "shared_patch_excludes_concurrent_edits": true,
+  "robot_execution": false,
+  "notebook_or_generator_modified": false,
+  "stage_changed": false
+}
