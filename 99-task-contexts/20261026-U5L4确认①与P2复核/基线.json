@@ -1,0 +1,46 @@
+[
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L4_语音问答闭环.ipynb",
+    "sha256": "133d1ba33f7cfa6c9507c0263c8bc0651a4bfe7bfe5f028e72c3a059c6f336ef"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L20.py",
+    "sha256": "3198d039331833344c2550d2e6184cb2a39a6bd54d9a3766a58e2923061bc419"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U5-L4_教学审阅与真机验证建议.md",
+    "sha256": "dfabd170a0ffd0641073020129f8c9e962cc643831fd28334535d3518082eac1"
+  },
+  {
+    "path": "AGENTS.md",
+    "sha256": "66741f90c45ed2063220c192f0de8f5bddcfc31380a427a91cd9c572ccc21d92"
+  },
+  {
+    "path": "INDEX.md",
+    "sha256": "353c74afe7f081092837e07897a55710f86131717d3ffe09c4871aacc3ae9d37"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "sha256": "b68ac0c1c1789dd20bf8fb0bd0522a718f69f4cff3fb65fcfcfc91568b6168bd"
+  },
+  {
+    "path": "05-internal-materials/_README.md",
+    "sha256": "de3a78147628aa48ee2081ad8ee04aaefdffd83e1360a060a65d3a30d057bd94"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/README.md",
+    "sha256": "86f859838f4c7acb513bf7391d885ca93a14da69e49a3ddc0bff5a264af37055"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md",
+    "sha256": "9112dab2bd0410cf36b3eb1ed892eca50a726396a10b635af8c61f40e745abbf"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md",
+    "sha256": "e6ceafdd86fbc99d77c5e84386e018ca54a9f44514c13b42ba7f5b472199828c"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md",
+    "sha256": "fda130744245d7bae7082a432a498c20885330382ca0b462e05f9bc4a3e4ebd0"
+  }
+]

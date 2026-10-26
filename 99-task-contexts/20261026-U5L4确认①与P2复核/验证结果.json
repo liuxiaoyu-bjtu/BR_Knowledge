@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-26",
+  "passed": true,
+  "notebook_sha256": "133d1ba33f7cfa6c9507c0263c8bc0651a4bfe7bfe5f028e72c3a059c6f336ef",
+  "notebook_bytes_unchanged": true,
+  "cells": 27,
+  "code_cells_parsed": 9,
+  "generator_matches_current_source": true,
+  "offline_control_cases": [
+    "无旧任务时创建并保存句柄",
+    "应用旧值为待机但任务仍运行时拦截重复启动",
+    "SDK取消中时拦截重开",
+    "取消请求已提交但任务未结束时保留句柄、拦截重开、再次停止仅等待",
+    "取消请求未提交成功时保留原任务和应用状态",
+    "取消后确认终态才恢复待机并创建新任务",
+    "失败终态显示错误并在查看时刷新应用状态",
+    "无任务时停止不创建新任务"
+  ],
+  "start_condition_cases": 21,
+  "local_links_checked": 17,
+  "shared_increment_patch_reverse_check": true,
+  "robot_connected": false,
+  "confirmation_1": "用户明确通过",
+  "confirmation_2": "整课依据待齐",
+  "confirmation_3": "暂不登记；P2文稿复核完成"
+}
