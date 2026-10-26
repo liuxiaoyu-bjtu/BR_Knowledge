@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-26",
+  "passed": true,
+  "cells": 27,
+  "code_cells_unchanged": 9,
+  "changed_markdown_cells": [
+    1,
+    2,
+    3,
+    4,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    18,
+    22,
+    26
+  ],
+  "execution_and_metadata_unchanged": true,
+  "generator_sources_match": true,
+  "python_quote_blocks_parsed": 1,
+  "local_links_checked": 11,
+  "start_condition_cases": [
+    {
+      "app_state": "待机",
+      "task_status": null,
+      "can_start": true
+    },
+    {
+      "app_state": "待机",
+      "task_status": "PENDING",
+      "can_start": false
+    },
+    {
+      "app_state": "待机",
+      "task_status": "RUNNING",
+      "can_start": false
+    },
+    {
+      "app_state": "待机",
+      "task_status": "CANCELLING",
+      "can_start": false
+    },
+    {
+      "app_state": "待机",
+      "task_status": "SUCCEEDED",
+      "can_start": true
+    },
+    {
+      "app_state": "待机",
+      "task_status": "FAILED",
+      "can_start": true
+    },
+    {
+      "app_state": "待机",
+      "task_status": "CANCELLED",
+      "can_start": true
+    },
+    {
+      "app_state": "会话已发起",
+      "task_status": null,
+      "can_start": false
+    },
+    {
+      "app_state": "会话已发起",
+      "task_status": "PENDING",
+      "can_start": false
+    },
+    {
+      "app_state": "会话已发起",
+      "task_status": "RUNNING",
+      "can_start": false
+    },
+    {
+      "app_state": "会话已发起",
+      "task_status": "CANCELLING",
+      "can_start": false
+    },
+    {
+      "app_state": "会话已发起",
+      "task_status": "SUCCEEDED",
+      "can_start": false
+    },
+    {
+      "app_state": "会话已发起",
+      "task_status": "FAILED",
+      "can_start": false
+    },
+    {
+      "app_state": "会话已发起",
+      "task_status": "CANCELLED",
+      "can_start": false
+    },
+    {
+      "app_state": "停止请求已发出",
+      "task_status": null,
+      "can_start": false
+    },
+    {
+      "app_state": "停止请求已发出",
+      "task_status": "PENDING",
+      "can_start": false
+    },
+    {
+      "app_state": "停止请求已发出",
+      "task_status": "RUNNING",
+      "can_start": false
+    },
+    {
+      "app_state": "停止请求已发出",
+      "task_status": "CANCELLING",
+      "can_start": false
+    },
+    {
+      "app_state": "停止请求已发出",
+      "task_status": "SUCCEEDED",
+      "can_start": false
+    },
+    {
+      "app_state": "停止请求已发出",
+      "task_status": "FAILED",
+      "can_start": false
+    },
+    {
+      "app_state": "停止请求已发出",
+      "task_status": "CANCELLED",
+      "can_start": false
+    }
+  ],
+  "robot_connected": false,
+  "confirmation_1_2": "未登记整课通过"
+}
