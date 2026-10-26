@@ -150,6 +150,7 @@ last_updated: "2026-09-01"
 
 | 关键词 | 相关文档 |
 |--------|----------|
+| 深度图示意（近白远黑、同距同灰度） | `05-internal-materials/vocational-planning/03_X课程项目/PPT/U3_Codex源文件/assets/U3-L1-p19/README.md` |
 | SDK | `01-booster-kb/07-tech-platform/booster-sdk.md` |
 | SDK测试 | `04-shared/sdk-tests/_README.md` |
 | 视觉检测模型 | `01-booster-kb/07-tech-platform/booster-sdk.md#33-可用检测模型与类别能力` |
