@@ -1,0 +1,55 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/sensor-and-state-snapshot-apis/get-image/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+传感器与状态快照接口
+get_image
+
+get_image
+接口签名：
+
+BoosterRobot.get_image(camera_id: str = "", img_type: ImageType = "rgb") -> AnyImage
+
+功能：
+
+获取最近一帧 RGB 或深度图像。
+
+参数：
+
+参数
+类型
+默认值
+说明
+
+camera_id
+str
+""
+相机 ID；留空使用默认相机。可用 ID 见「list_sensors」返回的相机传感器。
+
+img_type
+ImageType
+"rgb"
+图像类型，见「感知与状态数据 / ImageType」。
+
+返回：
+
+AnyImage，见「感知与状态数据 / AnyImage」
+
+异常：
+
+ValueError: img_type 不是支持的图像类型。
+
+DataNotReadyError: 在超时时间内未获取到对应图像。
+
+示例：
+
+from boosteros.robots.booster import BoosterRobot
+
+robot = BoosterRobot()
+
+image = robot.get_image(img_type="rgb")
+
+print(image.width, image.height)
+
+# 输出示例：320 240

@@ -1,0 +1,78 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/advanced-task-apis/do-action/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+高级任务接口
+do_action
+
+do_action
+接口签名：
+
+BoosterRobot.do_action(
+
+    action_id: str,
+
+    *,
+
+    on_done: Callable[[TaskHandle[None]], None] | None = None,
+
+    on_status_change: Callable[[TaskHandle[None]], None] | None = None,
+
+) -> TaskHandle[None]
+
+功能：
+
+异步执行预定义动作，并返回 TaskHandle，调用前可用 list_actions() 获取支持的 action_id。
+
+参数：
+
+参数
+类型
+默认值
+说明
+
+action_id
+str
+必填
+预定义动作 ID。
+
+on_done
+Callable[[TaskHandle[None]], None] | None
+None
+任务进入终态时调用的回调。
+
+on_status_change
+Callable[[TaskHandle[None]], None] | None
+None
+任务状态变化时调用的回调。
+
+返回：
+
+TaskHandle[None]，见「任务与订阅 / TaskHandle」
+
+异常：
+
+ValueError: action_id 不存在或当前版本不支持。
+
+RuntimeError: 同组任务正在运行、机器人正在执行其他动作，或动作启动失败。
+
+示例：
+
+import time
+
+from boosteros.robots.booster import BoosterRobot
+
+robot = BoosterRobot()
+
+handle = robot.do_action("hand_wave")
+
+time.sleep(10.0)
+
+handle.cancel()
+
+status = handle.wait(timeout=5.0)
+
+print(status)
+
+# 输出示例：'CANCELLED'

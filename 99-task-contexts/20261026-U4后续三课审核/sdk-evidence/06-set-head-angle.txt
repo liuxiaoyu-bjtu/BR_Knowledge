@@ -1,0 +1,51 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/motion-control-apis/set-head-angle/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+运动控制接口
+set_head_angle
+
+set_head_angle
+接口签名：
+
+BoosterRobot.set_head_angle(pitch: float, yaw: float) -> None
+
+功能：
+
+在 "walk" 模式下控制头部俯仰和偏航角度。
+
+参数：
+
+参数
+类型
+默认值
+说明
+
+pitch
+float
+必填
+俯仰角，单位 rad；正值向下，负值向上。关节限位因机型而异，见 T1/K1 说明书；超出限位不报错，机器人停止响应。
+
+yaw
+float
+必填
+偏航角，单位 rad；正值向左，负值向右。关节限位因机型而异，见 T1/K1 说明书；超出限位不报错，机器人停止响应。
+
+返回：
+
+None
+
+异常：
+
+RuntimeError: 当前不在 "walk" 模式。
+
+示例：
+
+from boosteros.robots.booster import BoosterRobot
+
+robot = BoosterRobot()
+
+robot.set_mode("walk")
+
+robot.set_head_angle(pitch=2.0, yaw=2.0)

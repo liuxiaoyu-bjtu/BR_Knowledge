@@ -1,0 +1,249 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/tasks-and-subscriptions/task-handle/
+
+开发指南
+BoosterOS Python SDK
+公共数据类型
+任务与订阅
+TaskHandle
+本章总览
+
+TaskHandle
+表示一个异步任务句柄，用于查询状态、等待任务进入终态或请求取消。TaskHandle 由 SDK 接口返回，应用代码不直接构造。
+
+属性：
+
+属性
+类型
+说明
+
+trace_id
+str
+任务实例追踪标识，由 TaskHandle 自动生成
+
+task_id
+str
+同类任务的业务标识，如动作 ID、轨迹来源或音频来源
+
+type
+str
+任务类型
+
+group
+str
+任务分组，同组任务通常互斥
+
+只读属性：
+
+属性
+类型
+说明
+
+status
+TaskStatus
+当前任务状态，见「任务与订阅 / TaskStatus」
+
+error
+Exception | None
+任务失败时的异常对象，否则为 None
+wait​
+
+接口签名：
+
+TaskHandle.wait(timeout: float | None = None) -> TaskStatus
+
+功能：
+
+阻塞等待任务进入终态；超时则返回当前状态。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+timeout
+float | None
+否
+等待超时秒数；不传或 None 表示无限等待
+
+返回：
+
+TaskStatus，见「任务与订阅 / TaskStatus」
+
+异常：
+
+无。
+result​
+
+接口签名：
+
+TaskHandle.result(timeout: float | None = None) -> T
+
+功能：
+
+阻塞等待任务完成并返回结果。仅适用于返回具体数据的任务（如 TaskHandle[AudioData]、TaskHandle[str]）；对于 TaskHandle[None] 类型的任务（如动作、流式会话），应使用 wait() 方法。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+timeout
+float | None
+否
+等待超时秒数；不传或 None 表示无限等待
+
+返回：
+
+泛型类型 T，任务成功完成时的结果。
+
+异常：
+
+RuntimeError: 任务失败或被取消。
+
+TimeoutError: 超时前任务未完成。
+cancel​
+
+接口签名：
+
+TaskHandle.cancel() -> bool
+
+功能：
+
+请求取消任务；取消是否被接受由具体任务类型决定。
+
+参数：
+
+无参数。
+
+返回：
+
+bool，是否成功提交取消请求。
+
+异常：
+
+无。
+done​
+
+接口签名：
+
+TaskHandle.done() -> bool
+
+功能：
+
+判断任务是否已进入终态（SUCCEEDED / FAILED / CANCELLED）。
+
+参数：
+
+无参数。
+
+返回：
+
+bool。
+
+异常：
+
+无。
+running​
+
+接口签名：
+
+TaskHandle.running() -> bool
+
+功能：
+
+判断任务是否仍在执行（状态为 RUNNING）。
+
+参数：
+
+无参数。
+
+返回：
+
+bool。
+
+异常：
+
+无。
+task_info​
+
+接口签名：
+
+TaskHandle.task_info() -> TaskInfo
+
+功能：
+
+返回任务身份与状态的不可变快照，常用于过滤函数。
+
+参数：
+
+无参数。
+
+返回：
+
+TaskInfo。
+
+异常：
+
+无。
+add_done_callback​
+
+接口签名：
+
+TaskHandle.add_done_callback(fn: Callable[[TaskHandle[T]], None]) -> None
+
+功能：
+
+注册任务进入终态时的回调函数；如果任务已经处于终态，会立即调用一次。回调中抛出的异常会被记录但不会传播。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+fn
+Callable[[TaskHandle[T]], None]
+是
+终态回调，接收当前 TaskHandle
+
+返回：
+
+None。
+
+异常：
+
+无。
+add_status_change_callback​
+
+接口签名：
+
+TaskHandle.add_status_change_callback(fn: Callable[[TaskHandle[T]], None]) -> None
+
+功能：
+
+注册状态变化回调；注册时会立即用当前状态触发一次。回调中抛出的异常会被记录但不会传播。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+fn
+Callable[[TaskHandle[T]], None]
+是
+状态变化回调，接收当前 TaskHandle
+
+返回：
+
+None。
+
+异常：
+
+无。

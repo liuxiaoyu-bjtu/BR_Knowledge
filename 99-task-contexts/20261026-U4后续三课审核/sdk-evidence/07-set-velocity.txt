@@ -1,0 +1,66 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/motion-control-apis/set-velocity/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+运动控制接口
+set_velocity
+
+set_velocity
+接口签名：
+
+BoosterRobot.set_velocity(vx: float, vy: float, vyaw: float) -> None
+
+功能：
+
+在机器人坐标系下发送平面速度控制命令，调用前应先进入 "walk" 模式。初次调试建议从较小值开始，参见「常见问题」。
+
+参数：
+
+参数
+类型
+默认值
+说明
+
+vx
+float
+必填
+前后线速度，单位 m/s，向前为正。初次调试建议不超过 0.3 m/s。
+
+vy
+float
+必填
+左右线速度，单位 m/s，向左为正。
+
+vyaw
+float
+必填
+绕 Z 轴偏航角速度，单位 rad/s，逆时针为正。
+
+返回：
+
+None
+
+异常：
+
+无。
+
+示例：
+
+import time
+
+from boosteros.robots.booster import BoosterRobot
+
+robot = BoosterRobot()
+
+robot.set_mode("walk")
+
+try:
+
+    robot.set_velocity(0.2, 0.0, 0.0)
+
+    time.sleep(1.0)
+
+finally:
+
+    robot.set_velocity(0.0, 0.0, 0.0)

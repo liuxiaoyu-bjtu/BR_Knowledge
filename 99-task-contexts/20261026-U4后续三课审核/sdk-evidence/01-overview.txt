@@ -1,0 +1,10 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/advanced-task-apis/overview/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+高级任务接口
+概览
+
+概览
+高级任务接口会立即返回 TaskHandle，可通过该句柄等待任务完成、请求取消或查询当前状态。

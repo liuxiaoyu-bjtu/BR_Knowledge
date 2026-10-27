@@ -1,0 +1,10 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/motion-control-apis/overview/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+运动控制接口
+概览
+
+概览
+在真实机器人上调用运动控制、动作或轨迹回放前，请确认现场空间、机器人姿态、急停手段和安全策略均已就绪。

@@ -1,0 +1,40 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/sensor-and-state-snapshot-apis/get-odom/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+传感器与状态快照接口
+get_odom
+
+get_odom
+接口签名：
+
+BoosterRobot.get_odom() -> OdomState
+
+功能：
+
+获取最近一帧里程计数据。
+
+参数：
+
+无参数。
+
+返回：
+
+OdomState，见「感知与状态数据 / OdomState」
+
+异常：
+
+DataNotReadyError: 在超时时间内未获取到里程计数据。
+
+示例：
+
+from boosteros.robots.booster import BoosterRobot
+
+robot = BoosterRobot()
+
+odom = robot.get_odom()
+
+print(odom.position, odom.rpy)
+
+# 输出示例：[-0.45956746 -0.10788245  0.        ] [ 0.          0.         -1.38284385]
