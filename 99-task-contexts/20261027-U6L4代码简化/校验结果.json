@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-27",
+  "cells": 18,
+  "code_cells": 4,
+  "changed_cells": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "cell_metadata_preserved": true,
+  "syntax": "passed",
+  "nbformat": "passed",
+  "generator_matches": true,
+  "exception_handlers": [
+    "RuntimeError"
+  ],
+  "simulation_checks": [
+    "两类素材按顺序启动并等待，三列日志与清单对应",
+    "第二步FAILED后不调用第三步",
+    "第二步CANCELLED后不调用第三步",
+    "第二步RUNNING后不调用第三步；未结束句柄阻止重跑",
+    "第二步BUSY后不调用第三步",
+    "第二步WAIT_ERROR后不调用第三步；未结束句柄阻止重跑",
+    "键盘中断保留句柄，下次运行先拒绝未结束任务",
+    "缺文件、无效轨迹、未知ID、未接入类型均使素材检查失效，不执行部分或旧清单",
+    "模式不符时不发起动作"
+  ],
+  "shared_patch_checks": "passed",
+  "robot_commands_executed": false,
+  "new_confirmations": [],
+  "pushed": false
+}

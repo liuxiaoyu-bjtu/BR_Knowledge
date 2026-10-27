@@ -1,0 +1,33 @@
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -3,6 +3,12 @@
+ ---
+ 
+ # 更新日志
++
++## 2026-10-27 · 简化U6-L4学生编排代码
++
++- STEP 01～04改用普通循环、列表与索引，删除globals、lambda、enumerate、清单签名、计时和复杂日志；不再主动抛出各类异常，只保留SDK调用的RuntimeError捕获。
++- 保留素材全部检查后再运行、模式检查、旧任务未结束时拒绝重跑，以及仅SUCCEEDED才进入下一步；明确超时不取消任务。素材来源与3～5步作品要求由设计表和教师共同核对。
++- 同步Notebook说明、日志读取、生成器及教师核验记录。18格/4代码格不变；模拟检查不代替真机，仍待①②。本地提交，推送由用户执行。
+ 
+ ## 2026-10-26 · U6单元重构与混合动作SDK核验
+ 
+--- a/05-internal-materials/vocational-planning/README.md
++++ b/05-internal-materials/vocational-planning/README.md
+@@ -1,4 +1,6 @@
+ # vocational-planning 目录说明
++
++> **U6-L4更新（2026-10-27）**：学生编排程序已简化为普通循环、列表索引和条件判断，只保留一处SDK RuntimeError捕获；预检、等待成功与旧任务处理保留，计时和复杂日志移除。18格/4代码格不变，生成器及[核验说明](03_X课程项目/实验验证/U6_单元重构与动作编排核验.md)同步；受影响内容仍待真机补验。
+ 
+ > **U6重构（2026-10-26）**：[单元分工、45分钟实施建议与核验清单](03_X课程项目/实验验证/U6_单元重构与动作编排核验.md)已形成；新L2/L3见`03_X课程项目/notebooks/`，旧稿移到任务归档。
+ 
+--- a/05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md
++++ b/05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md
+@@ -1,4 +1,6 @@
+ # 课程实验 notebook（.ipynb）开发规则
++
++> **U6-L4初学者代码（2026-10-27）**：18格/4代码格不变，连接、素材准备、执行与日志改为普通循环和列表索引；移除globals/lambda/enumerate/清单签名/计时，保留plan_ready、旧句柄done检查、模式与SUCCEEDED判断及一处RuntimeError捕获。清单修改后按步骤重检；两类素材要求由作品设计与教师核对；Notebook和_gen_L24.py同步，仍待①②。
+ 
+ > **U6本轮重构（2026-10-26）**：L2合并录制与回放，L3改视频动作训练，L4改混合素材作品实践。当前分工以进度表新行及[重构记录](../03_X课程项目/实验验证/U6_单元重构与动作编排核验.md)为准，后文早期日志保留历史原义。L1未改，①②未登记通过。
+ 

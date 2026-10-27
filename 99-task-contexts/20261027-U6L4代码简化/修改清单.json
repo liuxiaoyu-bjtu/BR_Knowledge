@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-27",
+  "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L4_动作编排.ipynb",
+  "generator": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L24.py",
+  "report": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U6_单元重构与动作编排核验.md",
+  "changed_cells": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "cells": 18,
+  "notebook_before_sha256": "cde41a6230dc8a7d65d530b1aa72f627f5d6b7cd031c5845b142f1bbd5623fb1",
+  "notebook_after_sha256": "97eb68c9ed17058ff6a36834aeb3deee911c6aa72e0573a37d323d893c63b63b",
+  "notes": [
+    "CHANGELOG.md",
+    "05-internal-materials/vocational-planning/README.md",
+    "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md"
+  ],
+  "robot_commands_executed": false,
+  "new_confirmations": []
+}
