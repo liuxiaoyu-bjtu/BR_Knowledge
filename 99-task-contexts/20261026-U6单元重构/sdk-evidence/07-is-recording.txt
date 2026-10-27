@@ -1,0 +1,34 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/hand-guiding-manager/is-recording/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+示教管理器
+is_recording
+
+is_recording
+属性访问：
+
+robot.hand_guiding_manager.is_recording
+
+属性类型：
+
+bool
+
+功能：
+
+查询当前是否正在录制示教轨迹；True 表示正在录制。
+
+异常：
+
+无。
+
+示例：
+
+from boosteros.robots.booster import BoosterRobot
+
+robot = BoosterRobot()
+
+print(robot.hand_guiding_manager.is_recording)
+
+# 输出示例：False

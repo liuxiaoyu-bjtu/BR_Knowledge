@@ -1,0 +1,54 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/hand-guiding-manager/get-recording-duration/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+示教管理器
+get_recording_duration
+
+get_recording_duration
+接口签名：
+
+BoosterHandGuidingManager.get_recording_duration() -> float
+
+功能：
+
+获取当前示教录制持续时间；未录制时返回 0.0。
+
+参数：
+
+无参数。
+
+返回：
+
+float
+
+当前录制持续秒数。
+
+异常：
+
+无。
+
+示例：
+
+from boosteros.robots.booster import BoosterRobot
+
+import time
+
+robot = BoosterRobot()
+
+robot.set_mode("walk")
+
+with robot.hand_guiding_manager as hand_guiding:
+
+    hand_guiding.start_recording()
+
+    time.sleep(2)
+
+    duration = robot.hand_guiding_manager.get_recording_duration()
+
+    print(duration)
+
+    # 输出示例：2.0
+
+    hand_guiding.stop_recording()

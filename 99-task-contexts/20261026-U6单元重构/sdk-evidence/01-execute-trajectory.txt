@@ -1,0 +1,86 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/advanced-task-apis/execute-trajectory/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+高级任务接口
+execute_trajectory
+
+execute_trajectory
+接口签名：
+
+BoosterRobot.execute_trajectory(
+
+    trajectory: TrajectoryData,
+
+    *,
+
+    on_done: Callable[[TaskHandle[None]], None] | None = None,
+
+    on_status_change: Callable[[TaskHandle[None]], None] | None = None,
+
+) -> TaskHandle[None]
+
+功能：
+
+异步回放 TrajectoryData 示教轨迹。
+
+参数：
+
+参数
+类型
+默认值
+说明
+
+trajectory
+TrajectoryData
+必填
+要回放的轨迹对象。
+
+on_done
+Callable[[TaskHandle[None]], None] | None
+None
+任务进入终态时调用的回调。
+
+on_status_change
+Callable[[TaskHandle[None]], None] | None
+None
+任务状态变化时调用的回调。
+
+返回：
+
+TaskHandle[None]，见「任务与订阅 / TaskHandle」
+
+异常：
+
+TypeError: trajectory 不是 TrajectoryData 对象。
+
+RuntimeError: 当前机型（T2）暂不支持示教、当前未处于 "walk" 模式、示教模式正在启用、正在录制、已有回放任务，机器人正忙，或轨迹机型校验失败。
+
+示例：
+
+from boosteros.robots.booster import BoosterRobot
+
+from boosteros.types import TrajectoryData
+
+import time
+
+robot = BoosterRobot()
+
+robot.set_mode("walk")
+
+# 替换为实际轨迹文件路径
+
+trajectory = TrajectoryData.load("/data/demo.btraj")
+
+handle = robot.execute_trajectory(trajectory)
+
+time.sleep(10)
+
+handle.cancel()
+
+status = handle.wait(timeout=60.0)
+
+print(status)
+
+# 输出示例：'CANCELLED'

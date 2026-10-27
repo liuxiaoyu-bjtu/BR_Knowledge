@@ -1,0 +1,15 @@
+[
+  {
+    "path": "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md",
+    "reason": "HEAD缺少所需现行上下文；本轮增量保存在工作区补丁",
+    "detail": "('| `03_X课程项目/notebooks/U6-L2_动作录制.ipynb`', [])"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/_regen_from_nb.py",
+    "reason": "HEAD尚无此文件；本轮增量保存在工作区补丁"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/_diffcheck_u2.py",
+    "reason": "HEAD尚无此文件；本轮增量保存在工作区补丁"
+  }
+]

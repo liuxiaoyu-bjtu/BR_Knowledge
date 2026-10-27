@@ -1,0 +1,40 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/hand-guiding-manager/booster-robot-hand-guiding-manager/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+示教管理器
+BoosterRobot.hand_guiding_manager
+
+BoosterRobot.hand_guiding_manager
+属性访问：
+
+robot.hand_guiding_manager
+
+属性类型：
+
+BoosterHandGuidingManager
+
+功能：
+
+获取当前机器人的拖动示教管理器，也支持 with robot.hand_guiding_manager as hand_guiding: 上下文用法。
+
+异常：
+
+RuntimeError: 当前机型（T2）暂不支持示教。
+
+示例：
+
+from boosteros.robots.booster import BoosterRobot
+
+robot = BoosterRobot()
+
+robot.set_mode("walk")
+
+with robot.hand_guiding_manager as hand_guiding:
+
+    print(hand_guiding.is_recording)
+
+    # 输出示例：False
+
+以下接口均为 BoosterHandGuidingManager 的实例方法，需先通过 robot.hand_guiding_manager 获取管理器对象后调用。

@@ -1,0 +1,143 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/trajectory-data/trajectory-meta/
+
+开发指南
+BoosterOS Python SDK
+公共数据类型
+轨迹数据
+TrajectoryMeta
+本章总览
+
+TrajectoryMeta
+表示通用轨迹的元数据。
+
+属性：
+
+属性
+类型
+说明
+
+id
+str
+轨迹 ID
+
+duration
+float
+轨迹总时长，单位秒
+
+sample_interval
+float
+采样间隔，单位秒
+
+manufacturer
+str
+厂家
+
+model
+str
+机型
+
+firmware_version
+str
+固件版本
+
+boosteros_version
+str
+BoosterOS 版本
+TrajectoryMeta​
+
+接口签名：
+
+TrajectoryMeta(
+
+    *,
+
+    id: str = "",
+
+    duration: float = 0.0,
+
+    sample_interval: float = 0.0,
+
+    manufacturer: str = "",
+
+    model: str = "",
+
+    firmware_version: str = "",
+
+    boosteros_version: str = "",
+
+)
+
+功能：
+
+构造一个 TrajectoryMeta 实例。该类型为不可变 dataclass，所有参数仅支持关键字传入。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+id
+str
+否
+轨迹 ID
+
+duration
+float
+否
+轨迹总时长，单位秒
+
+sample_interval
+float
+否
+采样间隔，单位秒
+
+manufacturer
+str
+否
+厂家
+
+model
+str
+否
+机型
+
+firmware_version
+str
+否
+固件版本
+
+boosteros_version
+str
+否
+BoosterOS 版本
+
+返回：
+
+TrajectoryMeta 实例。
+
+异常：
+
+无。
+to_dict​
+
+接口签名：
+
+TrajectoryMeta.to_dict() -> dict[str, object]
+
+功能：
+
+转为可 JSON 序列化的字典。
+
+参数：
+
+无参数。
+
+返回：
+
+dict[str, object]。
+
+异常：
+
+无。

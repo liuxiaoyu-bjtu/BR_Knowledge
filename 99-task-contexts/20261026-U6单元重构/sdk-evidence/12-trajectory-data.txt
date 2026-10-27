@@ -1,0 +1,182 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/trajectory-data/
+
+开发指南
+BoosterOS Python SDK
+公共数据类型
+轨迹数据
+TrajectoryData
+本章总览
+
+TrajectoryData
+表示一条通用轨迹，由元数据和多个 JointTrajectoryPoint 组成。
+
+属性：
+
+属性
+类型
+说明
+
+meta
+TrajectoryMeta
+轨迹元数据
+
+points
+list[JointTrajectoryPoint]
+轨迹点列表
+
+只读属性：
+
+属性
+类型
+说明
+
+id
+str
+轨迹 ID，等同于 meta.id
+
+joint_names
+list[str]
+轨迹中的关节名称，取自第一个点
+
+duration
+Duration
+轨迹总时长；可通过 duration.seconds 读取秒数
+TrajectoryData​
+
+接口签名：
+
+TrajectoryData(
+
+    *,
+
+    meta: TrajectoryMeta | None = None,
+
+    points: list[JointTrajectoryPoint] | None = None,
+
+)
+
+功能：
+
+构造一个 TrajectoryData 实例。所有参数仅支持关键字传入。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+meta
+TrajectoryMeta | None
+否
+轨迹元数据；未传时使用默认空元数据
+
+points
+list[JointTrajectoryPoint] | None
+否
+轨迹点列表；未传时使用空列表
+
+返回：
+
+TrajectoryData 实例。
+
+异常：
+
+无。
+save​
+
+接口签名：
+
+TrajectoryData.save(path: str | PathLike[str]) -> None
+
+功能：
+
+将轨迹保存为 .btraj 轨迹包；包内只包含 meta.json 和 data.json。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+path
+str | PathLike[str]
+是
+输出文件路径，必须以 .btraj 结尾
+
+返回：
+
+None。
+
+异常：
+
+ValueError: 路径后缀不是 .btraj。
+
+RuntimeError: 文件写入失败。
+load​
+
+接口签名：
+
+@classmethod
+
+TrajectoryData.load(path: str | PathLike[str]) -> TrajectoryData
+
+功能：
+
+从 .btraj 轨迹包加载并校验，返回新的 TrajectoryData 实例。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+path
+str | PathLike[str]
+是
+轨迹包路径，必须以 .btraj 结尾
+
+返回：
+
+TrajectoryData 实例。
+
+异常：
+
+ValueError: 路径后缀不是 .btraj，或路径不是文件。
+
+FileNotFoundError: 文件不存在。
+
+RuntimeError: 包不是合法的 .btraj、JSON 解析失败、元数据缺字段或轨迹校验失败。
+to_numpy​
+
+接口签名：
+
+TrajectoryData.to_numpy() -> dict[str, Any]
+
+功能：
+
+导出轨迹的 numpy 数组形式，便于分析或编辑。返回字典包含：
+
+meta：原始 TrajectoryMeta
+
+joint_names：list[str]
+
+times：np.ndarray，每帧 time_from_start.seconds
+
+positions：np.ndarray，形状 (n_frames, n_joints)，缺失值填 np.nan
+
+velocities / accelerations / efforts：可选，对应字段在任一帧存在时输出
+
+参数：
+
+无参数。
+
+返回：
+
+dict[str, Any]。
+
+异常：
+
+无。

@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-26",
+  "shared": [
+    "AGENTS.md",
+    "INDEX.md",
+    "CHANGELOG.md",
+    "05-internal-materials/vocational-planning/README.md",
+    "01-booster-kb/07-tech-platform/motion-creator.md",
+    "01-booster-kb/07-tech-platform/_index.md",
+    "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md",
+    "05-internal-materials/vocational-planning/03_X课程项目/_regen_from_nb.py",
+    "05-internal-materials/vocational-planning/03_X课程项目/_diffcheck_u2.py"
+  ],
+  "lessons": [
+    {
+      "lesson": "L2",
+      "old_path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L2_动作录制.ipynb",
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L2_动作录制与回放.ipynb",
+      "generator": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L22.py",
+      "before_sha256": "90088ac6b3be113ab083ba2aa7979b936d94f7c9572643ac7bccb31b6b1f2f6a",
+      "after_sha256": "678af76a009ea7ea907b87d51826ce5a6d65c58908085aa4bcd3c685b18f09de",
+      "old_cells": 13,
+      "cells": 16,
+      "code_cells": 4
+    },
+    {
+      "lesson": "L3",
+      "old_path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L3_动作回放.ipynb",
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L3_视频动作训练.ipynb",
+      "generator": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L23.py",
+      "before_sha256": "3e0419d5ffae41d85e62418cc67c8981cec4f30bf39a28518cb6673e10441709",
+      "after_sha256": "1f0f887258eb4fc4f2e410cb534506a79a969f87cdb48021e1695cb4cd74c2c7",
+      "old_cells": 13,
+      "cells": 16,
+      "code_cells": 0
+    },
+    {
+      "lesson": "L4",
+      "old_path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L4_动作编排.ipynb",
+      "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L4_动作编排.ipynb",
+      "generator": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L24.py",
+      "before_sha256": "a995650744508ecf822660362f5a3941e80772a0adc918ee305b3d33c866a151",
+      "after_sha256": "3bb3af7c5d4b12a370e2145fd8893ba89588f4ef6be77ae03547e2c993433660",
+      "old_cells": 10,
+      "cells": 18,
+      "code_cells": 4
+    }
+  ],
+  "l1_preserved_sha256": "9d2a45f692f06efa94b89e1e4a98d98a05875d5a732372e12b03bf7c8364c95d"
+}

@@ -1,0 +1,12 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/hand-guiding-manager/overview/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+示教管理器
+概览
+
+概览
+示教管理器用于进入拖动示教模式并录制机器人轨迹。
+
+T2 机型暂不支持示教，相关接口会抛出 RuntimeError。

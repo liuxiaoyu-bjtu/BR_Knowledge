@@ -1,0 +1,54 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/hand-guiding-manager/stop-recording/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+示教管理器
+stop_recording
+
+stop_recording
+接口签名：
+
+BoosterHandGuidingManager.stop_recording() -> TrajectoryData | None
+
+功能：
+
+停止由 start_recording() 开始的示教录制，并读取生成的轨迹数据。
+
+参数：
+
+无参数。
+
+返回：
+
+TrajectoryData | None
+
+TrajectoryData：成功读取到轨迹，见「轨迹数据 / TrajectoryData」。
+
+None：录制停止后没有生成有效轨迹数据。
+
+异常：
+
+RuntimeError: 尚未调用 start_recording()，或当前没有进行中的录制；轨迹文件读取或解析失败。
+
+示例：
+
+from boosteros.robots.booster import BoosterRobot
+
+robot = BoosterRobot()
+
+robot.set_mode("walk")
+
+with robot.hand_guiding_manager as hand_guiding:
+
+    input("Press Enter to start recording")
+
+    hand_guiding.start_recording()
+
+    input("Move the robot, then press Enter to stop")
+
+    trajectory = hand_guiding.stop_recording()
+
+if trajectory is not None:
+
+    trajectory.save("/data/demo.btraj")

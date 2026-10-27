@@ -1,0 +1,136 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/tasks-and-subscriptions/task-info/
+
+开发指南
+BoosterOS Python SDK
+公共数据类型
+任务与订阅
+TaskInfo
+本章总览
+
+TaskInfo
+表示任务身份与状态的不可变快照，常用于 get_active_tasks(filter=...) 的过滤函数。
+
+属性：
+
+属性
+类型
+说明
+
+trace_id
+str
+任务实例追踪标识
+
+task_id
+str
+同类任务的业务标识
+
+type
+str
+任务类型
+
+group
+str
+任务分组
+
+status
+TaskStatus
+任务状态，见「任务与订阅 / TaskStatus」
+TaskInfo​
+
+接口签名：
+
+TaskInfo(
+
+    trace_id: str,
+
+    task_id: str,
+
+    type: str,
+
+    group: str,
+
+    status: TaskStatus,
+
+)
+
+功能：
+
+构造一个 TaskInfo 实例。该类型为不可变 dataclass，应用代码通常不直接构造。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+trace_id
+str
+是
+任务实例追踪标识
+
+task_id
+str
+是
+同类任务的业务标识
+
+type
+str
+是
+任务类型
+
+group
+str
+是
+任务分组
+
+status
+TaskStatus
+是
+任务状态，见「任务与订阅 / TaskStatus」
+
+返回：
+
+TaskInfo 实例。
+
+异常：
+
+无。
+
+group 与 type 的取值如下：
+
+group
+type
+说明
+
+"motion"
+"action"
+执行预设动作
+
+"motion"
+"get_up"
+起身
+
+"motion"
+"trajectory_replay"
+回放手把手轨迹
+
+"audio"
+"play_audio_file"
+播放本地音频文件
+
+"audio"
+"play_audio_buffer"
+播放内存中的有限 PCM 音频数据
+
+"audio"
+"play_audio_stream"
+播放可持续写入的 PCM 音频流
+
+"audio"
+"speech_stream_recognize"
+语音识别流
+
+"audio"
+"speech_chat"
+语音对话

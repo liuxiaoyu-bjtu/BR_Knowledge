@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-26",
+  "lessons": [
+    {
+      "lesson": "L2",
+      "cells": 16,
+      "code_cells": 4,
+      "generator_matches": true,
+      "sha256": "678af76a009ea7ea907b87d51826ce5a6d65c58908085aa4bcd3c685b18f09de"
+    },
+    {
+      "lesson": "L3",
+      "cells": 16,
+      "code_cells": 0,
+      "generator_matches": true,
+      "sha256": "1f0f887258eb4fc4f2e410cb534506a79a969f87cdb48021e1695cb4cd74c2c7"
+    },
+    {
+      "lesson": "L4",
+      "cells": 18,
+      "code_cells": 4,
+      "generator_matches": true,
+      "sha256": "3bb3af7c5d4b12a370e2145fd8893ba89588f4ef6be77ae03547e2c993433660"
+    }
+  ],
+  "l1_preserved": true,
+  "syntax": "passed",
+  "notebook_schema": "nbformat.validate通过",
+  "simulation_checks": [
+    "L4两类素材按start/wait顺序执行，共三步成功",
+    "L4第二步FAILED时不启动第三步",
+    "L4第二步CANCELLED时不启动第三步",
+    "L4第二步RUNNING时不启动第三步",
+    "L4未知类型/缺文件/未知ID/缺素材类别均不执行部分清单",
+    "L4清单改动/旧句柄未结束/已有运动任务时拒绝启动",
+    "L2退出示教后才允许回放；重录失效旧核对，完成读回后可启动",
+    "L2读回不一致时拒绝回放",
+    "L2录制期间中断仍停止录制并退出上下文，不保存或自动回放"
+  ],
+  "report_links_checked": 7,
+  "patch_checks": "passed",
+  "robot_commands_executed": false,
+  "platform_training_started": false,
+  "confirmations_passed": [],
+  "git_push": false
+}

@@ -1,0 +1,127 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/trajectory-data/joint-trajectory-point/
+
+开发指南
+BoosterOS Python SDK
+公共数据类型
+轨迹数据
+JointTrajectoryPoint
+本章总览
+
+JointTrajectoryPoint
+表示轨迹中的一帧关节数据。
+
+属性：
+
+属性
+类型
+说明
+
+time_from_start
+Duration
+从轨迹开始到当前帧的时间
+
+joints
+list[JointState]
+当前帧的关节数值
+
+只读属性：
+
+属性
+类型
+说明
+
+joint_names
+list[str]
+当前帧的关节名称，由 joints 计算得到
+JointTrajectoryPoint​
+
+接口签名：
+
+JointTrajectoryPoint(
+
+    *,
+
+    time_from_start: Duration,
+
+    joints: list[JointState],
+
+)
+
+功能：
+
+构造一个 JointTrajectoryPoint 实例。所有参数仅支持关键字传入。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+time_from_start
+Duration
+是
+从轨迹开始到当前帧的时间
+
+joints
+list[JointState]
+是
+当前帧的关节数值
+
+返回：
+
+JointTrajectoryPoint 实例。
+
+异常：
+
+无。
+get_joint​
+
+接口签名：
+
+JointTrajectoryPoint.get_joint(name: str) -> JointState | None
+
+功能：
+
+按名称查找当前帧的关节；找不到返回 None。
+
+参数：
+
+参数名
+类型
+是否必填
+说明
+
+name
+str
+是
+关节名称
+
+返回：
+
+JointState 或 None。
+
+异常：
+
+无。
+to_dict​
+
+接口签名：
+
+JointTrajectoryPoint.to_dict() -> dict[str, Any]
+
+功能：
+
+转为字典；time_from_start 序列化为纳秒整数。
+
+参数：
+
+无参数。
+
+返回：
+
+dict[str, Any]。
+
+异常：
+
+无。

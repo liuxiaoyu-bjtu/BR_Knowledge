@@ -1,0 +1,48 @@
+https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/hand-guiding-manager/start-recording/
+
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+示教管理器
+start_recording
+
+start_recording
+接口签名：
+
+BoosterHandGuidingManager.start_recording() -> None
+
+功能：
+
+开始录制拖动示教轨迹，需在 with robot.hand_guiding_manager as hand_guiding: 上下文中调用。
+
+参数：
+
+无参数。
+
+返回：
+
+None
+
+异常：
+
+RuntimeError: 未进入拖动示教上下文，或已有录制正在进行。
+
+示例：
+
+from boosteros.robots.booster import BoosterRobot
+
+robot = BoosterRobot()
+
+robot.set_mode("walk")
+
+with robot.hand_guiding_manager as hand_guiding:
+
+    hand_guiding.start_recording()
+
+    input("Move the robot, then press Enter to stop")
+
+    trajectory = hand_guiding.stop_recording()
+
+    print(trajectory)
+
+    # 输出示例：<TrajectoryData id='traj_20260610_200813_3b19' model='Booster K1' points=13 duration=0.024s>

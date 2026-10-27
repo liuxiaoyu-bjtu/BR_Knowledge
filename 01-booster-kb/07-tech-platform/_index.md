@@ -19,7 +19,7 @@ created: 2026-07-16
 | [ros2-sdk.md](ros2-sdk.md)                               | ROS2 SDK 文档                                                        |
 | [booster-studio.md](booster-studio.md)                   | **Booster Studio** — 具身智能原生 IDE（仿真/Vibe Coding/实时可视化/Sim-to-Real/云桌面） |
 | [hichat.md](hichat.md)                                   | **HiChat** — 语音对话 Agent（人设系统/多轮对话/灯语反馈）                            |
-| [motion-creator.md](motion-creator.md)                   | **Motion Creator** — 动作编辑器（视频→动作，2026年8月已上线）                        |
+| [motion-creator.md](motion-creator.md) | **Motion Creator动作工坊** — 视频骨架提取→imretarget重定向→Booster Train强化学习训练（2026-10-26用户更新）；Studio实践已纳入X课程U6-L3，导出与新SDK入口测试中 |
 | [product-ecosystem.md](product-ecosystem.md)             | **产品生态体系** — App/技能库/加速豆/账号/AI 助手/应用中心/文档中心                        |
 | [booster-gym.md](booster-gym.md)                         | Booster GYM 强化学习框架                                                 |
 | [booster-train.md](booster-train.md)                     | Booster Train 训练框架（BeyondMimic）                                    |
