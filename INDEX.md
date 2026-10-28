@@ -8,6 +8,8 @@ last_updated: "2026-09-01"
 
 # 全局关键词索引
 
+> U7/U8内容重叠 / U8-P1准备 / 模块接口与验收 / 视觉踢球前置：[边界排查](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7-L4与U8_内容边界排查.md)、[四课开发准备](05-internal-materials/vocational-planning/03_X课程项目/U8-P1开发准备.md)（2026-10-28；准备完成，U8学生稿尚未产出；U7 Notebook未改）。
+
 > U5-L4与U6五课P4 / 逐页大纲 / 全格与评价覆盖：[P4审阅入口](05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U5-L4_U6_P4覆盖检查记录.md)（④已通过；28/28/25/27/26页，待⑤；含全部96格、20代码格及逐题映射）。
 
 > X课程当前进度 / 32课阶段 / 确认节点 / 正式版与待补附件：[逐课进度总表](05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md)。U1-L1的⑥通过已补记；文件存在与阶段确认分开统计。

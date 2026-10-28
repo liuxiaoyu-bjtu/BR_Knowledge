@@ -1,0 +1,43 @@
+{
+  "head": "89af0a4b0e6744aac4a2de9135308046cad30e8b",
+  "files": {
+    "AGENTS.md": "bf16872126c06f6fb713e109e079d26df995460c712246cf83663b8402ee6ea3",
+    "INDEX.md": "9475b3c2320f9a7011516a59694b0d65f2eac09a8f7b805f2c77f0d6b83005ef",
+    "CHANGELOG.md": "7a49ab725e47bec85804066334f75d79369c90e3afd34378665aacc73c1ec0e4",
+    "05-internal-materials/vocational-planning/README.md": "9bae380e0c76b39a1eee2383727ea8444802595f36f696f9b2168e14f4a3d579",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md": "31f1d3cb9f988b732bc07f728abd1996b725f3bae7b85ea14259912cd3b00204",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md": "f87f7eb62767b5fe5bafb9411e7710e3a99aa21bd51829d6e3b34033cd8070ce"
+  },
+  "protected": {
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L1_具身智能概览与连接K1.ipynb": "46347897c40f8b3d4c1c0742cf1e624d67ff11a9ae80d7bb1f5c7880d20dd3c7",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L2_运行模式与安全.ipynb": "229a1706b76065835b56d94e9c17aa8760eaa727ba67bf78f9a2f79da58c8ab9",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L3_基本运动控制.ipynb": "9e329d008fe38b5b27a626de562e3a63b6dc3c2d6ca7be2c1b7421e50e90a8ba",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L4_头部步态与预定义动作.ipynb": "5e2375b7369279d8054780dde6dce743ce08ed4a85ba7f8e646b9e27a664f480",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L1_ROS2通信基础.ipynb": "6bdd42e878731e75639a7d1d4ce83b0ddfdafdb11aa6147325815313469b3017",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L2_传感器速览.ipynb": "719e56f36d7a67d23fe7d9ee8ff55a990179002ea6f85c00f1485e4d6fd05edc",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L3_IMU与里程计.ipynb": "5be4d8f1127bd1ba1c9dbaff3e562a1efdec463776bd871ff95f00f17bd26c9b",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L4_状态监测与融合.ipynb": "a45bdf3067f4c08f9f2390d4e90332a244f4ce86c886e129aa194a9c667a25d6",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L1_机器人的眼睛 1.ipynb": "f5a21082ffafa3f835dba021a3083ca06844b929f07c87a7fd162c8d29823532",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L1_机器人的眼睛.ipynb": "c649ffeb7166b6f3ac8b3c50fa76eb2ffc8d7c42385931450c5af8b7e35ff803",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L2_目标检测入门.ipynb": "9bf0832ace7daf857a32dc3ca3284e2d78fdbafde80810afe23a00462ae386a4",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L3_置信度与多目标.ipynb": "dcc5677c89ddce6ebfcb70b7f11c2c3d7f5c07e21424f312caba2f9d3ac6f8d0",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L4_方位检测器.ipynb": "67fbc9f33b5dcdea25eebdd0d93ce7e8ebb6ac36f510efe9f7f664a1404aa6b8",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L1_转向来宾.ipynb": "cef5aeece8b05c7b15d0bbc7d716f8ac6cca21854b155dcb9c5d9298a759d28f",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L2_走近来宾.ipynb": "a29b8b5b7c13348ee65bdce42fa05556640eb92273b7535e5de05752060975bb",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L3_跟住来宾.ipynb": "22dd2cd0fd6bdaecf2fe3fb3c7964ead832e57be7c6ec97193adfc212342b6c3",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L4_接待来宾.ipynb": "cfa7498623d1a4009a80d109fd4e261833dd0406131e2717d32d12dd80140f88",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L1_语音识别.ipynb": "ed3e7ff33741f1b5cab16d60e0ace7381fa55ee2de883474dc7c535f25658d17",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L2_语音合成.ipynb": "b384381fe2e0b7ff4843ea7abe792f4f1e1a82576db8802ade1a066a4e9f8239",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L3_LLM对话.ipynb": "e61be68533f4395c1b97c3ac215283904d95b7180d316f26ddc115863077accd",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L4_语音问答闭环.ipynb": "133d1ba33f7cfa6c9507c0263c8bc0651a4bfe7bfe5f028e72c3a059c6f336ef",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L1_动作的来源.ipynb": "9d2a45f692f06efa94b89e1e4a98d98a05875d5a732372e12b03bf7c8364c95d",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L2_动作录制与回放.ipynb": "a5bef09cff9304ec52c1de1ffd31019436bd25815c1fce6ddeac4d16084319fc",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L3_视频动作训练.ipynb": "d725c135e1b84902fea43cca8b802698a07687ca205deed223700b1cee4efaff",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L4_动作编排.ipynb": "d012a8cbf688076be2b0d2f31556c411d64967e25c1aefc25e981b2ddb3d0cca",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L1_多传感器订阅.ipynb": "d030bf9a6d59a15c858dcf0524a0a13605a9b4134df719b36cef770711b9392a",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L2_视觉-运动-语音桥接.ipynb": "828dd8fe5a8a79c766803440a5d755e2a84fad019d6eef4982205be2257f738a",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L3_多线程协作.ipynb": "588400ccaa31e6e9b5f16e78c6148198e643c18a54765227538f3364d56fa12c",
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L4_小剧场预演.ipynb": "9b3717b0fcdb349a4b37e0c6ae01f933cec315a91879e1abc635e803abe818e0",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md": "d27c69c72cae72b20086e9f378b66f470b5e05c0007d3abf9f888c064f97f393"
+  }
+}
