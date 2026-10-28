@@ -1,0 +1,19 @@
+{
+  "courses": 32,
+  "phase_counts": {
+    "P5完成记录": 4,
+    "P5审查待⑥": 12,
+    "P1待审验证": 11,
+    "P2复核中": 1,
+    "未产出P1": 4
+  },
+  "links_checked": 39,
+  "source_records_unchanged_except_status_entries": true,
+  "formal_ppt_path_exists": true,
+  "u1_l1_status_written": true,
+  "new_confirmation_inferred": false,
+  "course_body_changed": false,
+  "ppt_content_read": false,
+  "robot_commands_executed": false,
+  "push": false
+}

@@ -1,0 +1,242 @@
+"""核对32课状态与交付文件，回写已明确的U1-L1确认；不审改课程正文。"""
+from pathlib import Path
+from collections import Counter
+import difflib
+import hashlib
+import json
+import re
+import subprocess
+
+TASK = Path(__file__).resolve().parent
+ROOT = TASK.parents[1]
+PROJ = '05-internal-materials/vocational-planning/03_X课程项目'
+RULE = '05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md'
+REPORT = PROJ + '/X课程当前进度.md'
+FORMAL = PROJ + '/PPT/正式版/U1-L1_具身智能概览与连接K1_教学课件.pptx'
+ROWS = []
+
+
+def row(key, title, category, status, confirmation, next_step, pending):
+    ROWS.append(dict(course=key, title=title, category=category, status=status,
+                     confirmation=confirmation, next_step=next_step, pending=pending))
+
+
+row('U1-L1', '具身智能概览与连接K1', 'P5完成记录', 'P5完成', '用户明确确认⑥通过', '全课程结束后统一P6', '正式稿在PPT/正式版；附件《K1 连接与 BoosterStudio 操作图示》未制作，不撤销已通过的⑥')
+row('U1-L2', '运行模式与安全', 'P5完成记录', '沿用历史P2～P5完成记录', '历史完成口径保留，未新增独立⑥记录', '等待统一P6', '2026-10-19模式叫法表仅改Notebook，教学设计/课件当轮按用户要求未联动；不重开已完成阶段')
+row('U1-L3', '基本运动控制', 'P5完成记录', '沿用历史P2～P5完成记录', '历史完成口径保留，未新增独立⑥记录', '等待统一P6', '历史备注仍含占位补图说明；本次只核进度及文件存在，未重新审阅课件')
+row('U1-L4', '头部步态与预定义动作', 'P5完成记录', '沿用历史P2～P5完成记录', '历史完成口径保留，未新增独立⑥记录', '等待统一P6', '历史备注含旧编号及过期“下一步待③”；以现行状态列为准，不据此重开确认')
+for number, title, pending in [
+    (1, 'ROS2通信基础', 'Studio字符串发布、订阅操作截图待补'),
+    (2, '传感器速览', '单元现场素材与图片授权检查记录仍待闭合'),
+    (3, 'IMU与里程计', '受控侧倾、行走场地/人员分工照片待补'),
+    (4, '状态监测与融合', '有条件起身演示照片待补；电量口径已统一'),
+]:
+    row(f'U2-L{number}', title, 'P5审查待⑥', 'P5-A/P5-B审查版已产出', '②完成；④⑤通过；⑥待审', '补齐材料后确认⑥', pending)
+for number, title, pending in [
+    (1, '机器人的眼睛', '编码/深度/计时等真实输出与同场景截图；改码补验'),
+    (2, '目标检测入门', '同次检测结果、Studio图层入口/运行界面及退订输出；改码补验'),
+    (3, '置信度与多目标', '同图三阈值、比例与四规则选择等实际记录；改码补验'),
+    (4, '方位检测器', '边界、三组距离/框、同帧不同输入与None分支记录；改码补验'),
+]:
+    row(f'U3-L{number}', title, 'P5审查待⑥', 'P5审查版、成品检查及P5-B回填完成', '历史②保留；④⑤通过；⑥待审', '补验受影响代码及现场材料，再确认⑥', pending)
+row('U4-L1', '转向来宾', 'P5审查待⑥', 'P5审查版、P5-B回填完成', '③④通过；用户授权P5；⑥待审，未另记⑤', '补素材、审查成品及教学设计', '同帧检测/Kp对照/方向与停止原因输出；纵向自主程序待监护验证')
+row('U4-L2', '走近来宾', 'P1待审验证', 'P1修订稿；文字校对完成', '②未完成；无新确认', '先落实实验调整，再真机②及P2', '距离实验前移、独立里程计核对/视觉标定方案与控制代码待实施；1.2米视野有效性待核')
+row('U4-L3', '跟住来宾', 'P1待审验证', 'P1修订稿；文字校对完成', '②未完成；无新确认', '复核与L2的衔接，再真机②及P2', '实际任务为静止来宾接近；标题与移动跟随期待的差别已记录；控制与IMU分支待验')
+row('U4-L4', '接待来宾', 'P1待审验证', 'P1修订稿；文字校对完成', '②未完成；无新确认', '与L2/L3统一任务后真机②及P2', '多路信息联合使用，未实现统一融合定位；触发条件、流程结束和语音范围待核')
+for number, title, pending in [
+    (1, '语音识别', '三声道录音字段、20/60块、队列4/64及ASR回调实际输出'),
+    (2, '语音合成', '音频与波形、可用音色、双音色对照及先问后识别记录；附件sound_lab.py与fonts/随课发放'),
+    (3, 'LLM对话', '同题回答/字幕、打断和终态、自编提示词实际反馈'),
+]:
+    row(f'U5-L{number}', title, 'P5审查待⑥', 'P5审查版、成品检查及P5-B回填完成', '原实验②、③④通过；授权P5；⑥待审，未另记⑤', '补真实材料并核前轮补验清单，再确认⑥', pending)
+row('U5-L4', '语音会话管理（文件名仍为语音问答闭环）', 'P2复核中', 'P2文稿/控制逻辑复核完成，最终审定待齐', '①通过；已有局部实测；整课②依据待齐；③未通过', '补齐②依据，完成P2审定后再进P3', '回调、语音打断/程序取消、启停管理、终态重开与最后收尾记录待补；不要求重复已完成测试')
+for number, title, pending in [
+    (1, '动作的来源', '精修稿保留；TrajectoryData导入、预录文件读取待验'),
+    (2, '动作录制与回放', '合并录制→保存→读回→本课回放；v1/v2比较、示教退出与终态处理待真机'),
+    (3, '视频动作训练（动作工坊）', 'Studio视频要求/任务/可见阶段与结果对照待平台验证；教师已完成样例待准备'),
+    (4, '动作编排', '2026-10-27已简化学生代码；两类素材混编与姿态衔接待真机，工坊SDK入口待用户确认'),
+]:
+    row(f'U6-L{number}', title, 'P1待审验证', 'P1评审/重构修订稿', '①待审；②待完成；无新确认', '审阅当前稿①及对应代码/平台②，再P2', pending)
+for number, title, pending in [
+    (1, '多传感器订阅', '时序观察与数据对齐口径需区分；时间戳同源及字段条件待核'),
+    (2, '视觉-运动-语音桥接', '里程计位移与来宾距离、阻塞问候与重新取图等口径/代码待统一'),
+    (3, '多线程协作', '实际无对话生成；线程职责、SDK任务结束与收尾口径待统一'),
+    (4, '小剧场预演', 'U5旧状态引用、幕表/固定顺序/状态机差别、wait后成功判断待修'),
+]:
+    row(f'U7-L{number}', title, 'P1待审验证', 'P1初稿；文字与阅读衔接审核已提交', '①待审；②待完成；审核不等于修改完成', '按审核确定方案、修订，再①②及P2', pending)
+for number, title, pending in [
+    (1, '选题与任务拆解', '计划为活动课Markdown学材，尚未发现当前产物'),
+    (2, '核心模块开发（分组并行）', '计划文件U8-L2_分主题开发模板，尚未发现当前产物'),
+    (3, '真机彩排与联调', '计划文件U8-L3_联调模板，尚未发现当前产物'),
+    (4, '成果展演与答辩', '计划文件U8-L4_展示评分表，尚未发现当前产物'),
+]:
+    row(f'U8-L{number}', title, '未产出P1', '计划已列课时，未找到学生稿/教师稿', '未登记任何完成确认', '按单元综合项目需要编写P1', pending)
+
+
+def snapshot(rel):
+    path = ROOT / rel
+    dest = TASK / 'before' / rel
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(path.read_bytes())
+    return path.read_text(encoding='utf-8')
+
+
+def add_note(text, note):
+    heading = re.search(r'^# [^\n]+\n', text, re.M).group()
+    return text.replace(heading, heading + '\n' + note + '\n', 1)
+
+
+def transform(rel, text):
+    if rel == RULE:
+        text = add_note(text, '> **全课进度核查**：当前状态统一查阅[X课程当前进度](../03_X课程项目/X课程当前进度.md)。U1-L1已按用户明确确认登记P5-A/P5-B完成、⑥通过，等全课程结束统一P6；正式稿位于PPT/正式版，连接与Studio操作图示附件尚未制作。U1-L2～L4沿用历史完成状态，不新增独立⑥确认；旧编号备注保留历史含义。')
+        lines = text.splitlines(keepends=True)
+        for i, line in enumerate(lines):
+            if line.startswith('| `03_X课程项目/notebooks/U1-L1_'):
+                columns = line.split('|')
+                columns[3] = ' 🟢 **P5-A/P5-B完成；用户明确确认⑥通过；等待全课程统一P6** '
+                columns[4] += ' **本次状态补记**：用户已手动完成正式PPT检查与教学设计复核，原过程PPT未改；正式稿`PPT/正式版/U1-L1_具身智能概览与连接K1_教学课件.pptx`。附件《K1 连接与 BoosterStudio 操作图示》尚未制作，单列待补；以上覆盖备注中的旧编号和占位版状态。 '
+                lines[i] = '|'.join(columns)
+            if line.startswith('| `03_X课程项目/notebooks/U6-L4_'):
+                columns = line.split('|')
+                columns[3] = ' 🟡 **P1重构修订稿；2026-10-27学生代码已简化；待①②** '
+                lines[i] = '|'.join(columns)
+        return ''.join(lines)
+    notes = {
+        'AGENTS.md': '> **全课进度入口**：[X课程当前进度](05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md)已逐课核对32课：28课主Notebook，U8四课尚未产出；U1四课有历史P5完成记录（L1本次用户明确确认⑥），12课P5审查版待⑥，U5-L4在P2，11课P1待审/验证。U1-L1正式稿在`PPT/正式版/`，附件《K1 连接与 BoosterStudio 操作图示》未制作；P6仍待全课程结束统一执行。',
+        'INDEX.md': '> X课程当前进度 / 32课阶段 / 确认节点 / 正式版与待补附件：[逐课进度总表](05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md)。U1-L1的⑥通过已补记；文件存在与阶段确认分开统计。',
+        '05-internal-materials/vocational-planning/README.md': '> **全课进度核查**：[32课当前进度总表](03_X课程项目/X课程当前进度.md)已形成。28课已有主Notebook，16课已有教学设计/PPT大纲/课件产物；U8尚未产出。U1-L1的P5-A/P5-B及⑥通过按用户确认补记，正式PPT在`PPT/正式版/`，操作图示附件未制作；P6全课程结束后统一执行。',
+        PROJ + '/X课程开发计划-v4.md': '> **最新逐课核查**：实际进度见[X课程当前进度](X课程当前进度.md)，本文件历史排期不作当前完成依据。U1-L1已由用户手动完成P5-A/P5-B并确认⑥通过，等统一P6；正式稿`PPT/正式版/U1-L1_具身智能概览与连接K1_教学课件.pptx`，原过程稿未改，附件《K1 连接与 BoosterStudio 操作图示》未制作。U1其余三课沿用历史完成口径，不新增确认。当前统计为4课有P5完成记录、12课P5待⑥、1课P2、11课P1待审/验证、4课尚未产出。',
+        'CHANGELOG.md': '''## 课程全课进度核查与U1-L1确认补记
+
+- 对照现行P1～P6、用户确认、规则逐课表、P2/P5专项记录及实际文件，新增《X课程当前进度》覆盖32课，分开记录阶段产出、确认与待补事项。
+- 补记用户明确确认的U1-L1：P5-A/P5-B完成、⑥通过，正式稿位于PPT/正式版；原过程PPT未改，连接与BoosterStudio操作图示附件尚未制作。U1其余三课沿用历史完成口径，不代记新的确认。
+- 清点28课主Notebook（另有U3-L1副本）、16课教学设计/内容大纲/PPT；U8四课未找到产物。统计：4课P5完成记录、12课P5待⑥、1课P2、11课P1待审/验证、4课未产出。P6仍全课程结束统一执行。
+- 同步进度入口与U1-L1状态列，保留其他任务修改及历史编号记录。未改学生Notebook、教学设计正文或PPT，未执行机器人程序；本地提交，推送由用户完成。''',
+    }
+    return add_note(text, notes[rel])
+
+
+def main():
+    assert not (TASK / '核查数据.json').exists(), '已核查，不覆盖基线'
+    assert len(ROWS) == len({r['course'] for r in ROWS}) == 32
+    assert (ROOT / FORMAL).is_file()
+    inventory = {}
+    for folder, pattern in [('notebooks', 'U*.ipynb'), ('教学设计', 'U*.md'), ('PPT内容设计', 'U*.md'), ('PPT', 'U*.pptx'), ('PPT/正式版', 'U*.pptx')]:
+        files = sorted((ROOT / PROJ / folder).glob(pattern))
+        canonical = [p for p in files if re.match(r'U[1-8]-L[1-4]_', p.name) and not re.search(r' 1\.', p.name)]
+        inventory[folder] = {'files': [p.relative_to(ROOT).as_posix() for p in files],
+                             'course_count': len({re.match(r'U[1-8]-L[1-4]', p.name).group() for p in canonical})}
+    nb_files = inventory['notebooks']['files']
+    for item in ROWS:
+        matches = [p for p in nb_files if Path(p).name.startswith(item['course'] + '_') and not re.search(r' 1\.', Path(p).name)]
+        item['notebook'] = matches[0] if len(matches) == 1 else None
+        assert len(matches) == (0 if item['course'].startswith('U8') else 1)
+    counts = dict(Counter(r['category'] for r in ROWS))
+    assert counts == {'P5完成记录': 4, 'P5审查待⑥': 12, 'P1待审验证': 11, 'P2复核中': 1, '未产出P1': 4}
+    sources = [RULE, PROJ + '/X课程开发计划-v4.md',
+               PROJ + '/PPT/U2_Codex源文件/U2_P5交付检查记录.md',
+               PROJ + '/PPT/U3_Codex源文件/U3_P5交付检查记录.md',
+               PROJ + '/PPT/U4L1_U5L1-L3_Codex源文件/U4-L1_U5-L1-L3_P5交付检查记录.md',
+               PROJ + '/实验验证/U5-L4_P2复核与定稿记录.md',
+               PROJ + '/实验验证/U6_单元重构与动作编排核验.md',
+               PROJ + '/实验验证/U7_文字表达与阅读衔接审核.md',
+               PROJ + '/实验验证/U4-L2-L4_距离实验复评与文字校对.md']
+    source_hashes = {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in sources}
+    data = {'basis': '本次核查时文件状态与当前会话的用户明确确认；未以文件存在替代确认',
+            'phase_counts': counts, 'inventory': inventory, 'rows': ROWS,
+            'formal_u1_l1': FORMAL, 'source_sha256_before_status_update': source_hashes,
+            'ppt_content_read': False, 'course_body_changed': False,
+            'robot_commands_executed': False, 'new_confirmation': '仅补记用户已明确通过的U1-L1⑥'}
+    report = '''# X课程当前进度
+
+本表核对全部32课，依据现行P1～P6流程、用户最新确认、逐课开发记录、P2/P5专项清单及文件存在情况。旧计划排期和历史编号不作为当前完成证据。本次不运行机器人、不复审PPT内容、不改学生学材或教学设计正文。
+
+## 1. 当前分布
+
+| 状态 | 课数 | 范围 |
+| --- | --- | --- |
+| 有P5完成记录，等待统一P6 | 4 | U1四课；L1本次由用户明确确认⑥，其余沿用历史完成状态 |
+| P5审查版已产出，确认⑥待审 | 12 | U2四课、U3四课、U4-L1、U5-L1～L3 |
+| P2复核中 | 1 | U5-L4，文稿已复核，整课真机依据待齐，③未通过 |
+| P1修订或待审/验证 | 11 | U4-L2～L4、U6四课、U7四课 |
+| 仅有计划，未找到P1产物 | 4 | U8四课 |
+
+P6为全课程结束后统一导出学生PDF。已有历史PDF或HTML不代表现行全课程P6已经完成，导出时仍需删除内部审核文字及学习评价参考答案，保留题目。
+
+## 2. 逐课状态
+
+| 课程 | 当前阶段 | 已有确认及其范围 | 下一步 | 待补/限制 |
+| --- | --- | --- | --- | --- |
+'''
+    for item in ROWS:
+        title = item['course'] + ' ' + item['title']
+        if item['notebook']:
+            title = f"[{title}](notebooks/{Path(item['notebook']).name})"
+        report += '| ' + ' | '.join([title, item['status'], item['confirmation'], item['next_step'], item['pending']]) + ' |\n'
+    report += '''
+## 3. 产物清点
+
+按课程编号去重，不将副本、方案二和审查版重复计为新课：
+
+| 产物 | 覆盖课数 | 说明 |
+| --- | --- | --- |
+| 当前主Notebook | 28 | U1～U7，每单元4课；目录共29个课程Notebook，含U3-L1“ 1”副本 |
+| 教学设计 | 16 | U1/U2/U3各4课、U4-L1、U5-L1～L3；目录含总草案及副本，不重复计课 |
+| PPT内容大纲 | 16 | 同上；覆盖检查文档不计为课程大纲 |
+| PPT文件 | 16 | 同上；目录存在多种审查稿，文件存在不代表⑥已通过 |
+| 正式版目录 | 1 | 本次只发现U1-L1正式版，路径见下；其他课是否另有线下版本不能由此断定 |
+| U8当前产物 | 0 | 计划列出四课，但本次未找到对应Notebook、教学设计或课件文件 |
+
+## 4. U1-L1正式版与附件备忘
+
+用户已手动完成P5-A PPT成品检查、P5-B教学设计复核，明确确认⑥通过。正式稿为[PPT/正式版/U1-L1_具身智能概览与连接K1_教学课件.pptx](PPT/正式版/U1-L1_具身智能概览与连接K1_教学课件.pptx)。原过程PPT未由用户同步修改，应保留历史原义；后续引用与交付以正式版为准。本次仅核对文件存在，未重新打开审阅PPT，也未改动其内容。
+
+附件《K1 连接与 BoosterStudio 操作图示》由用户明确说明尚未制作，单列为待补材料。附件待补不撤销本次P5完成和⑥通过结论。P6仍等全课程结束统一执行。
+
+## 5. 状态冲突及处理
+
+1. **U1-L1逐课表滞后**：原状态仍停在④⑤，备注又记旧P6占位版；本次按用户新确认回写为现P5完成、⑥通过，并注明正式稿及附件。
+2. **U1-L2～L4历史完成与确认细目分开**：三课已有P2～P5完成记录，按既有结论等待统一P6；不因缺单独⑥条目强制重新验收，也不新造用户确认。旧备注仍有占位、旧编号和过期“下一步”，阅读时以现行状态列及本表为准。
+3. **U3②的适用范围**：八课历史真机确认中包含U3四课，但后续改码仍需补验。P5已产出不等于改码已验证，具体范围见P5检查记录。
+4. **U4-L1/U5-L1～L3的⑤**：用户明确授权启动P5，审查版及回填完成；记录不将此授权另记为单独⑤通过，也不因此回退已授权的工作。⑥仍待用户作出。
+5. **U5-L4已进入P2，但③尚未通过**：①已通过，部分STEP有用户实测，整课②依据待补；旧P5清单中“U5-L4待①”是当时状态，已被后续确认覆盖。
+6. **U6/L4静态检查与真机验证分开**：重构和初学者代码简化已完成；平台与真机②尚待完成，动作工坊新SDK由用户确认后接入。
+7. **U7审核与修订分开**：33项问题已列出，四份Notebook未按该报告改完，不能把“审核完成”登记为“问题已解决”。
+8. **U8计划文字与产物分开**：计划写“Markdown骨架”是交付要求；本次没有找到对应文件，不登记为已完成骨架。
+9. **副本不作为主稿**：U3-L1 Notebook及教学设计有“ 1”副本，当前链接沿用不带副本后缀的主稿；未删除或合并用户文件。
+
+## 6. 后续处理顺序建议
+
+1. U4-L2的实验结构和控制代码先按复评方案落实，再连同L3/L4完成真机②，避免三个课时分别验证互相矛盾的距离要求。
+2. 补齐U5-L4整课②依据后结束P2审定；不重复已经有明确实测结论的步骤。
+3. U6按新分工审阅及验证，L3先确认平台实际入口和样例，L4先验证录制轨迹与内置动作组合，工坊SDK接入另补验。
+4. 按U7审核先统一文字、任务和代码，再设计审阅①、真机②；U8可同时整理主题与作品评价要求。
+5. 已有12课P5审查版可按素材准备情况逐课完成⑥；U1-L1附件单列制作，P6等全课程完成统一执行。
+
+## 7. 核查依据
+
+- [逐课开发状态及规则](../02_共创规则与上下文/notebook开发规则.md)与[开发计划v4](X课程开发计划-v4.md)。
+- [U2 P5交付检查](PPT/U2_Codex源文件/U2_P5交付检查记录.md)、[U3 P5交付检查](PPT/U3_Codex源文件/U3_P5交付检查记录.md)、[U4-L1/U5-L1～L3 P5交付检查](PPT/U4L1_U5L1-L3_Codex源文件/U4-L1_U5-L1-L3_P5交付检查记录.md)。
+- [U4-L2～L4复评](实验验证/U4-L2-L4_距离实验复评与文字校对.md)、[U5-L4 P2记录](实验验证/U5-L4_P2复核与定稿记录.md)、[U6重构与核验](实验验证/U6_单元重构与动作编排核验.md)、[U7文字审核](实验验证/U7_文字表达与阅读衔接审核.md)。
+- 当前会话用户对U1-L1的明确确认与正式版/未制附件说明；本地目录清点。任务元信息及核查清单保存在99-task-contexts/20261027-X课程进度核查/。
+'''
+    (ROOT / REPORT).write_text(report, encoding='utf-8', newline='\n')
+    shared = [RULE, 'AGENTS.md', 'INDEX.md', '05-internal-materials/vocational-planning/README.md', PROJ + '/X课程开发计划-v4.md', 'CHANGELOG.md']
+    work_patch, stage_patch, skipped = [], [], []
+    for rel in shared:
+        before = snapshot(rel)
+        after = transform(rel, before)
+        (ROOT / rel).write_text(after, encoding='utf-8', newline='\n')
+        work_patch.extend(difflib.unified_diff(before.splitlines(keepends=True), after.splitlines(keepends=True), fromfile='a/' + rel, tofile='b/' + rel))
+        base = subprocess.check_output(['git', 'show', 'HEAD:' + rel], cwd=ROOT).decode('utf-8').replace('\r\n', '\n')
+        target = transform(rel, base)
+        stage_patch.extend(difflib.unified_diff(base.splitlines(keepends=True), target.splitlines(keepends=True), fromfile='a/' + rel, tofile='b/' + rel))
+    data['shared'] = shared
+    (TASK / '工作区状态增量.patch').write_text(''.join(work_patch), encoding='utf-8', newline='\n')
+    (TASK / '提交状态增量.patch').write_text(''.join(stage_patch), encoding='utf-8', newline='\n')
+    (TASK / '核查数据.json').write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print(json.dumps({'courses': len(ROWS), 'counts': counts, 'inventory': {k: v['course_count'] for k, v in inventory.items()}, 'report': REPORT}, ensure_ascii=False))
+
+
+if __name__ == '__main__':
+    main()

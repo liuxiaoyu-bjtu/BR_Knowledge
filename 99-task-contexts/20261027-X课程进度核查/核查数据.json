@@ -1,0 +1,471 @@
+{
+  "basis": "本次核查时文件状态与当前会话的用户明确确认；未以文件存在替代确认",
+  "phase_counts": {
+    "P5完成记录": 4,
+    "P5审查待⑥": 12,
+    "P1待审验证": 11,
+    "P2复核中": 1,
+    "未产出P1": 4
+  },
+  "inventory": {
+    "notebooks": {
+      "files": [
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L1_具身智能概览与连接K1.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L2_运行模式与安全.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L3_基本运动控制.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L4_头部步态与预定义动作.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L1_ROS2通信基础.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L2_传感器速览.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L3_IMU与里程计.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L4_状态监测与融合.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L1_机器人的眼睛 1.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L1_机器人的眼睛.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L2_目标检测入门.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L3_置信度与多目标.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L4_方位检测器.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L1_转向来宾.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L2_走近来宾.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L3_跟住来宾.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L4_接待来宾.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L1_语音识别.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L2_语音合成.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L3_LLM对话.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L4_语音问答闭环.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L1_动作的来源.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L2_动作录制与回放.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L3_视频动作训练.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L4_动作编排.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L1_多传感器订阅.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L2_视觉-运动-语音桥接.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L3_多线程协作.ipynb",
+        "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L4_小剧场预演.ipynb"
+      ],
+      "course_count": 28
+    },
+    "教学设计": {
+      "files": [
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U1-L1_具身智能概览与连接K1_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U1-L2_运行模式与安全_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U1-L3_基本运动控制_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U1-L4_头部步态与预定义动作_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U1教学设计草案.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U2-L1_ROS2通信基础_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U2-L2_传感器速览_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U2-L3_IMU与里程计_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U2-L4_状态监测与融合_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U3-L1_机器人的眼睛_教学设计 1.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U3-L1_机器人的眼睛_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U3-L2_目标检测入门_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U3-L3_置信度与多目标_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U3-L4_方位检测器_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U4-L1_转向来宾_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U5-L1_语音识别_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U5-L2_语音合成_教学设计.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U5-L3_LLM对话_教学设计.md"
+      ],
+      "course_count": 16
+    },
+    "PPT内容设计": {
+      "files": [
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U1-L1_具身智能概览与连接K1_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U1-L2_运行模式与安全_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U1-L3_基本运动控制_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U1-L4_头部步态与预定义动作_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U2-L1_ROS2通信基础_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U2-L2_传感器速览_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U2-L3_IMU与里程计_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U2-L4_状态监测与融合_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U3-L1_机器人的眼睛_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U3-L2_目标检测入门_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U3-L3_置信度与多目标_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U3-L4_方位检测器_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U3_P4覆盖检查记录.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U4-L1_U5-L1-L3_P4覆盖检查记录.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U4-L1_转向来宾_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U5-L1_语音识别_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U5-L2_语音合成_PPT内容大纲.md",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U5-L3_LLM对话_PPT内容大纲.md"
+      ],
+      "course_count": 16
+    },
+    "PPT": {
+      "files": [
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L1_具身智能概览与连接K1.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L1_具身智能概览与连接K1_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L1_具身智能概览与连接K1_Codex方案二审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L2_运行模式与安全.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L2_运行模式与安全_Codex方案二审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L3_基本运动控制.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L3_基本运动控制_Codex方案二审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L4_头部步态与预定义动作.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U1-L4_头部步态与预定义动作_Codex方案二审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U2-L1_ROS2通信基础_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U2-L2_传感器速览_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U2-L3_IMU与里程计_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U2-L4_状态监测与融合_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U3-L1_机器人的眼睛_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U3-L1_机器人的眼睛_第19页实物插图审阅版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U3-L2_目标检测入门_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U3-L3_置信度与多目标_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U3-L4_方位检测器_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U4-L1_转向来宾_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U5-L1_语音识别_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U5-L2_语音合成_Codex审查版.pptx",
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/U5-L3_LLM对话_Codex审查版.pptx"
+      ],
+      "course_count": 16
+    },
+    "PPT/正式版": {
+      "files": [
+        "05-internal-materials/vocational-planning/03_X课程项目/PPT/正式版/U1-L1_具身智能概览与连接K1_教学课件.pptx"
+      ],
+      "course_count": 1
+    }
+  },
+  "rows": [
+    {
+      "course": "U1-L1",
+      "title": "具身智能概览与连接K1",
+      "category": "P5完成记录",
+      "status": "P5完成",
+      "confirmation": "用户明确确认⑥通过",
+      "next_step": "全课程结束后统一P6",
+      "pending": "正式稿在PPT/正式版；附件《K1 连接与 BoosterStudio 操作图示》未制作，不撤销已通过的⑥",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L1_具身智能概览与连接K1.ipynb"
+    },
+    {
+      "course": "U1-L2",
+      "title": "运行模式与安全",
+      "category": "P5完成记录",
+      "status": "沿用历史P2～P5完成记录",
+      "confirmation": "历史完成口径保留，未新增独立⑥记录",
+      "next_step": "等待统一P6",
+      "pending": "2026-10-19模式叫法表仅改Notebook，教学设计/课件当轮按用户要求未联动；不重开已完成阶段",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L2_运行模式与安全.ipynb"
+    },
+    {
+      "course": "U1-L3",
+      "title": "基本运动控制",
+      "category": "P5完成记录",
+      "status": "沿用历史P2～P5完成记录",
+      "confirmation": "历史完成口径保留，未新增独立⑥记录",
+      "next_step": "等待统一P6",
+      "pending": "历史备注仍含占位补图说明；本次只核进度及文件存在，未重新审阅课件",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L3_基本运动控制.ipynb"
+    },
+    {
+      "course": "U1-L4",
+      "title": "头部步态与预定义动作",
+      "category": "P5完成记录",
+      "status": "沿用历史P2～P5完成记录",
+      "confirmation": "历史完成口径保留，未新增独立⑥记录",
+      "next_step": "等待统一P6",
+      "pending": "历史备注含旧编号及过期“下一步待③”；以现行状态列为准，不据此重开确认",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U1-L4_头部步态与预定义动作.ipynb"
+    },
+    {
+      "course": "U2-L1",
+      "title": "ROS2通信基础",
+      "category": "P5审查待⑥",
+      "status": "P5-A/P5-B审查版已产出",
+      "confirmation": "②完成；④⑤通过；⑥待审",
+      "next_step": "补齐材料后确认⑥",
+      "pending": "Studio字符串发布、订阅操作截图待补",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L1_ROS2通信基础.ipynb"
+    },
+    {
+      "course": "U2-L2",
+      "title": "传感器速览",
+      "category": "P5审查待⑥",
+      "status": "P5-A/P5-B审查版已产出",
+      "confirmation": "②完成；④⑤通过；⑥待审",
+      "next_step": "补齐材料后确认⑥",
+      "pending": "单元现场素材与图片授权检查记录仍待闭合",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L2_传感器速览.ipynb"
+    },
+    {
+      "course": "U2-L3",
+      "title": "IMU与里程计",
+      "category": "P5审查待⑥",
+      "status": "P5-A/P5-B审查版已产出",
+      "confirmation": "②完成；④⑤通过；⑥待审",
+      "next_step": "补齐材料后确认⑥",
+      "pending": "受控侧倾、行走场地/人员分工照片待补",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L3_IMU与里程计.ipynb"
+    },
+    {
+      "course": "U2-L4",
+      "title": "状态监测与融合",
+      "category": "P5审查待⑥",
+      "status": "P5-A/P5-B审查版已产出",
+      "confirmation": "②完成；④⑤通过；⑥待审",
+      "next_step": "补齐材料后确认⑥",
+      "pending": "有条件起身演示照片待补；电量口径已统一",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U2-L4_状态监测与融合.ipynb"
+    },
+    {
+      "course": "U3-L1",
+      "title": "机器人的眼睛",
+      "category": "P5审查待⑥",
+      "status": "P5审查版、成品检查及P5-B回填完成",
+      "confirmation": "历史②保留；④⑤通过；⑥待审",
+      "next_step": "补验受影响代码及现场材料，再确认⑥",
+      "pending": "编码/深度/计时等真实输出与同场景截图；改码补验",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L1_机器人的眼睛.ipynb"
+    },
+    {
+      "course": "U3-L2",
+      "title": "目标检测入门",
+      "category": "P5审查待⑥",
+      "status": "P5审查版、成品检查及P5-B回填完成",
+      "confirmation": "历史②保留；④⑤通过；⑥待审",
+      "next_step": "补验受影响代码及现场材料，再确认⑥",
+      "pending": "同次检测结果、Studio图层入口/运行界面及退订输出；改码补验",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L2_目标检测入门.ipynb"
+    },
+    {
+      "course": "U3-L3",
+      "title": "置信度与多目标",
+      "category": "P5审查待⑥",
+      "status": "P5审查版、成品检查及P5-B回填完成",
+      "confirmation": "历史②保留；④⑤通过；⑥待审",
+      "next_step": "补验受影响代码及现场材料，再确认⑥",
+      "pending": "同图三阈值、比例与四规则选择等实际记录；改码补验",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L3_置信度与多目标.ipynb"
+    },
+    {
+      "course": "U3-L4",
+      "title": "方位检测器",
+      "category": "P5审查待⑥",
+      "status": "P5审查版、成品检查及P5-B回填完成",
+      "confirmation": "历史②保留；④⑤通过；⑥待审",
+      "next_step": "补验受影响代码及现场材料，再确认⑥",
+      "pending": "边界、三组距离/框、同帧不同输入与None分支记录；改码补验",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U3-L4_方位检测器.ipynb"
+    },
+    {
+      "course": "U4-L1",
+      "title": "转向来宾",
+      "category": "P5审查待⑥",
+      "status": "P5审查版、P5-B回填完成",
+      "confirmation": "③④通过；用户授权P5；⑥待审，未另记⑤",
+      "next_step": "补素材、审查成品及教学设计",
+      "pending": "同帧检测/Kp对照/方向与停止原因输出；纵向自主程序待监护验证",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L1_转向来宾.ipynb"
+    },
+    {
+      "course": "U4-L2",
+      "title": "走近来宾",
+      "category": "P1待审验证",
+      "status": "P1修订稿；文字校对完成",
+      "confirmation": "②未完成；无新确认",
+      "next_step": "先落实实验调整，再真机②及P2",
+      "pending": "距离实验前移、独立里程计核对/视觉标定方案与控制代码待实施；1.2米视野有效性待核",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L2_走近来宾.ipynb"
+    },
+    {
+      "course": "U4-L3",
+      "title": "跟住来宾",
+      "category": "P1待审验证",
+      "status": "P1修订稿；文字校对完成",
+      "confirmation": "②未完成；无新确认",
+      "next_step": "复核与L2的衔接，再真机②及P2",
+      "pending": "实际任务为静止来宾接近；标题与移动跟随期待的差别已记录；控制与IMU分支待验",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L3_跟住来宾.ipynb"
+    },
+    {
+      "course": "U4-L4",
+      "title": "接待来宾",
+      "category": "P1待审验证",
+      "status": "P1修订稿；文字校对完成",
+      "confirmation": "②未完成；无新确认",
+      "next_step": "与L2/L3统一任务后真机②及P2",
+      "pending": "多路信息联合使用，未实现统一融合定位；触发条件、流程结束和语音范围待核",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L4_接待来宾.ipynb"
+    },
+    {
+      "course": "U5-L1",
+      "title": "语音识别",
+      "category": "P5审查待⑥",
+      "status": "P5审查版、成品检查及P5-B回填完成",
+      "confirmation": "原实验②、③④通过；授权P5；⑥待审，未另记⑤",
+      "next_step": "补真实材料并核前轮补验清单，再确认⑥",
+      "pending": "三声道录音字段、20/60块、队列4/64及ASR回调实际输出",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L1_语音识别.ipynb"
+    },
+    {
+      "course": "U5-L2",
+      "title": "语音合成",
+      "category": "P5审查待⑥",
+      "status": "P5审查版、成品检查及P5-B回填完成",
+      "confirmation": "原实验②、③④通过；授权P5；⑥待审，未另记⑤",
+      "next_step": "补真实材料并核前轮补验清单，再确认⑥",
+      "pending": "音频与波形、可用音色、双音色对照及先问后识别记录；附件sound_lab.py与fonts/随课发放",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L2_语音合成.ipynb"
+    },
+    {
+      "course": "U5-L3",
+      "title": "LLM对话",
+      "category": "P5审查待⑥",
+      "status": "P5审查版、成品检查及P5-B回填完成",
+      "confirmation": "原实验②、③④通过；授权P5；⑥待审，未另记⑤",
+      "next_step": "补真实材料并核前轮补验清单，再确认⑥",
+      "pending": "同题回答/字幕、打断和终态、自编提示词实际反馈",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L3_LLM对话.ipynb"
+    },
+    {
+      "course": "U5-L4",
+      "title": "语音会话管理（文件名仍为语音问答闭环）",
+      "category": "P2复核中",
+      "status": "P2文稿/控制逻辑复核完成，最终审定待齐",
+      "confirmation": "①通过；已有局部实测；整课②依据待齐；③未通过",
+      "next_step": "补齐②依据，完成P2审定后再进P3",
+      "pending": "回调、语音打断/程序取消、启停管理、终态重开与最后收尾记录待补；不要求重复已完成测试",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U5-L4_语音问答闭环.ipynb"
+    },
+    {
+      "course": "U6-L1",
+      "title": "动作的来源",
+      "category": "P1待审验证",
+      "status": "P1评审/重构修订稿",
+      "confirmation": "①待审；②待完成；无新确认",
+      "next_step": "审阅当前稿①及对应代码/平台②，再P2",
+      "pending": "精修稿保留；TrajectoryData导入、预录文件读取待验",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L1_动作的来源.ipynb"
+    },
+    {
+      "course": "U6-L2",
+      "title": "动作录制与回放",
+      "category": "P1待审验证",
+      "status": "P1评审/重构修订稿",
+      "confirmation": "①待审；②待完成；无新确认",
+      "next_step": "审阅当前稿①及对应代码/平台②，再P2",
+      "pending": "合并录制→保存→读回→本课回放；v1/v2比较、示教退出与终态处理待真机",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L2_动作录制与回放.ipynb"
+    },
+    {
+      "course": "U6-L3",
+      "title": "视频动作训练（动作工坊）",
+      "category": "P1待审验证",
+      "status": "P1评审/重构修订稿",
+      "confirmation": "①待审；②待完成；无新确认",
+      "next_step": "审阅当前稿①及对应代码/平台②，再P2",
+      "pending": "Studio视频要求/任务/可见阶段与结果对照待平台验证；教师已完成样例待准备",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L3_视频动作训练.ipynb"
+    },
+    {
+      "course": "U6-L4",
+      "title": "动作编排",
+      "category": "P1待审验证",
+      "status": "P1评审/重构修订稿",
+      "confirmation": "①待审；②待完成；无新确认",
+      "next_step": "审阅当前稿①及对应代码/平台②，再P2",
+      "pending": "2026-10-27已简化学生代码；两类素材混编与姿态衔接待真机，工坊SDK入口待用户确认",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L4_动作编排.ipynb"
+    },
+    {
+      "course": "U7-L1",
+      "title": "多传感器订阅",
+      "category": "P1待审验证",
+      "status": "P1初稿；文字与阅读衔接审核已提交",
+      "confirmation": "①待审；②待完成；审核不等于修改完成",
+      "next_step": "按审核确定方案、修订，再①②及P2",
+      "pending": "时序观察与数据对齐口径需区分；时间戳同源及字段条件待核",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L1_多传感器订阅.ipynb"
+    },
+    {
+      "course": "U7-L2",
+      "title": "视觉-运动-语音桥接",
+      "category": "P1待审验证",
+      "status": "P1初稿；文字与阅读衔接审核已提交",
+      "confirmation": "①待审；②待完成；审核不等于修改完成",
+      "next_step": "按审核确定方案、修订，再①②及P2",
+      "pending": "里程计位移与来宾距离、阻塞问候与重新取图等口径/代码待统一",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L2_视觉-运动-语音桥接.ipynb"
+    },
+    {
+      "course": "U7-L3",
+      "title": "多线程协作",
+      "category": "P1待审验证",
+      "status": "P1初稿；文字与阅读衔接审核已提交",
+      "confirmation": "①待审；②待完成；审核不等于修改完成",
+      "next_step": "按审核确定方案、修订，再①②及P2",
+      "pending": "实际无对话生成；线程职责、SDK任务结束与收尾口径待统一",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L3_多线程协作.ipynb"
+    },
+    {
+      "course": "U7-L4",
+      "title": "小剧场预演",
+      "category": "P1待审验证",
+      "status": "P1初稿；文字与阅读衔接审核已提交",
+      "confirmation": "①待审；②待完成；审核不等于修改完成",
+      "next_step": "按审核确定方案、修订，再①②及P2",
+      "pending": "U5旧状态引用、幕表/固定顺序/状态机差别、wait后成功判断待修",
+      "notebook": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L4_小剧场预演.ipynb"
+    },
+    {
+      "course": "U8-L1",
+      "title": "选题与任务拆解",
+      "category": "未产出P1",
+      "status": "计划已列课时，未找到学生稿/教师稿",
+      "confirmation": "未登记任何完成确认",
+      "next_step": "按单元综合项目需要编写P1",
+      "pending": "计划为活动课Markdown学材，尚未发现当前产物",
+      "notebook": null
+    },
+    {
+      "course": "U8-L2",
+      "title": "核心模块开发（分组并行）",
+      "category": "未产出P1",
+      "status": "计划已列课时，未找到学生稿/教师稿",
+      "confirmation": "未登记任何完成确认",
+      "next_step": "按单元综合项目需要编写P1",
+      "pending": "计划文件U8-L2_分主题开发模板，尚未发现当前产物",
+      "notebook": null
+    },
+    {
+      "course": "U8-L3",
+      "title": "真机彩排与联调",
+      "category": "未产出P1",
+      "status": "计划已列课时，未找到学生稿/教师稿",
+      "confirmation": "未登记任何完成确认",
+      "next_step": "按单元综合项目需要编写P1",
+      "pending": "计划文件U8-L3_联调模板，尚未发现当前产物",
+      "notebook": null
+    },
+    {
+      "course": "U8-L4",
+      "title": "成果展演与答辩",
+      "category": "未产出P1",
+      "status": "计划已列课时，未找到学生稿/教师稿",
+      "confirmation": "未登记任何完成确认",
+      "next_step": "按单元综合项目需要编写P1",
+      "pending": "计划文件U8-L4_展示评分表，尚未发现当前产物",
+      "notebook": null
+    }
+  ],
+  "formal_u1_l1": "05-internal-materials/vocational-planning/03_X课程项目/PPT/正式版/U1-L1_具身智能概览与连接K1_教学课件.pptx",
+  "source_sha256_before_status_update": {
+    "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md": "8370762fadb3e8c8aa4c3a98998217ca49b1996b46d89b83fc1a8dd64239e9aa",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md": "bdaf794ff9ddf859aca1eb6d049d060312f6d85e8db5a6cdea7bb9f79462018b",
+    "05-internal-materials/vocational-planning/03_X课程项目/PPT/U2_Codex源文件/U2_P5交付检查记录.md": "f5411c2fdb60c0aff632049568b12e38a3c831ce8181daf1c5cf0b2ea6b5256f",
+    "05-internal-materials/vocational-planning/03_X课程项目/PPT/U3_Codex源文件/U3_P5交付检查记录.md": "f81b33ebefb8f4869f8531e25d958446ffc443f271600ce824ebde6f6061eaf3",
+    "05-internal-materials/vocational-planning/03_X课程项目/PPT/U4L1_U5L1-L3_Codex源文件/U4-L1_U5-L1-L3_P5交付检查记录.md": "f019e509f4cd4e481c93acb1cf86b0f04f80e77cbb6148e9061bc0aee0976fd8",
+    "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U5-L4_P2复核与定稿记录.md": "83e5ad4155a08d299262baca858aee36b80738928a1b78794f2934aa04e2e727",
+    "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U6_单元重构与动作编排核验.md": "fea587d7fb4501ecc35866b245b05dcbf91ea616628b9be0cb96fd74f4e6400d",
+    "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_文字表达与阅读衔接审核.md": "17ab6073de19b16a6d72717f3129a96c4d31cd177b2b8a198a086badaa62bbdd",
+    "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L2-L4_距离实验复评与文字校对.md": "ff204ee10c0a31d672ec6ffaa07028fa6e79829701a10c37fee8e7bbd8198253"
+  },
+  "ppt_content_read": false,
+  "course_body_changed": false,
+  "robot_commands_executed": false,
+  "new_confirmation": "仅补记用户已明确通过的U1-L1⑥",
+  "shared": [
+    "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md",
+    "AGENTS.md",
+    "INDEX.md",
+    "05-internal-materials/vocational-planning/README.md",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md",
+    "CHANGELOG.md"
+  ]
+}
