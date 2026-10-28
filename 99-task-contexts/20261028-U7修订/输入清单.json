@@ -1,0 +1,70 @@
+[
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L1_多传感器订阅.ipynb",
+    "sha256": "98da432eafb2eed778204b6f44f3e5d5c832333cdee75eba4cd241bbb17dbec7"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L2_视觉-运动-语音桥接.ipynb",
+    "sha256": "bb6e777478e39f8d5cc41e35224f84564bfdb061f69f47fa9e1fed4b445654dc"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L3_多线程协作.ipynb",
+    "sha256": "9e126a63da46545ccce85808026de7f061fb67f9d136b967190868883b040e94"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L4_小剧场预演.ipynb",
+    "sha256": "373cf8ece0e07358e39af8d027034d8303b8bb7a7b5d20d87088b901b80d9d97"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L25.py",
+    "sha256": "d8aa0714ab09e6d68b59abf30279ebe19d2d5b2f1f1325534fc11a4f205386ac"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L26.py",
+    "sha256": "4f26122ee6efc840817f22a54a2d510acb01aad9ff2c7c27735275caab726ee2"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L27.py",
+    "sha256": "34de125c8f95042304a866371b875442272da315a71f6b6fdd0c2897383403c7"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/_gen_L28.py",
+    "sha256": "d8bd33758a015ff9f9f02c7270c880350a9f138cd4dcc7969831c5b98e1ec808"
+  },
+  {
+    "path": "AGENTS.md",
+    "sha256": "c910d4d87ba42e56b1a93086ee9685bdabbba3b173d28f2146d15ba11b3c9866"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "sha256": "6ebb58a34e3cf36915522df1c9b6c933bb84287af4ea25ae4c0a4ea584b59ecb"
+  },
+  {
+    "path": "INDEX.md",
+    "sha256": "610e280416c7b636448d568b80bd8dd3ee0ae88c8171a7125729f1ed764798d0"
+  },
+  {
+    "path": "README.md",
+    "sha256": "25cc499c421f0fbc918d68cf3c2e86e8eeac78b2b822f467bb143dba1a00aa26"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/README.md",
+    "sha256": "5532aa13b842b2d34bdd10a265068234ae17989d9ba80d537cfd1a2d1b733777"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md",
+    "sha256": "f73055b0fb135ab558197a733e72eeeb3a468fe2e37537013d4094aed8614351"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md",
+    "sha256": "87b8f1385cc9d4d311cfa3aba7eb82ada113fc9246e356eb8acdc94e36bfce00"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md",
+    "sha256": "7ed72e50a1e224d71d3af6669b2a471abc38b3f4ec62c244e462d73c49f63e9a"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md",
+    "sha256": "c48813b82688cf3382532f90bb80277e8c7564416f3dd32a15ca884b2c504727"
+  }
+]

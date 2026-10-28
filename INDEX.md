@@ -191,6 +191,7 @@ last_updated: "2026-09-01"
 | X 课程实验代码 | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/` |
 | X课程 U5-L4 / U6 P3 / 教学设计 / 确认④ / 全格覆盖 | [五课教学设计及覆盖检查](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U5-L4_U6_P3教学设计覆盖检查记录.md)（五份45分钟教师稿；P2通过、P3待④；含取消终态与现场表现、训练等待、附件及补做安排） |
 | X课程 PPT 制作与图示验收 / PPT Master 方法借鉴 | `05-internal-materials/vocational-planning/03_X课程项目/PPT制作与图示验收规范.md`（延续 U1 视觉规则、按内容选构图、关键图示规格、素材溯源与逐页验收；附官方版本与来源） |
+| X课程 U7 / 去AI化 / 阅读衔接 / Python cell分格 / bottle / 线程收尾 / 小剧场 | [修订与分格核查](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_修订与分格核查记录.md)（2026-10-28；90格、32代码格；原33项逐条处理，时间戳条件待核；四课P1修订稿待①②） |
 | X课程 U3 P4 / PPT内容大纲 / 覆盖检查 | `05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U3_P4覆盖检查记录.md`（四课大纲入口、42个代码格与15道评价题覆盖、真机补验范围；待确认⑤） |
 
 ## 临时任务记录
