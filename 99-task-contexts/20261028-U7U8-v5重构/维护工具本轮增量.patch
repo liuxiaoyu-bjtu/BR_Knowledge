@@ -1,0 +1,44 @@
+--- a/05-internal-materials/vocational-planning/03_X课程项目/_diffcheck_u2.py
++++ b/05-internal-materials/vocational-planning/03_X课程项目/_diffcheck_u2.py
+@@ -72 +72 @@
+-    ("_gen_L26.py", "U7-L2_视觉-运动-语音桥接.ipynb"),
++    ("_gen_L26.py", "U7-L2_足球定位与自动踢球.ipynb"),
+@@ -74 +74,6 @@
+-    ("_gen_L28.py", "U7-L4_小剧场预演.ipynb"),
++    ("_gen_L28.py", "U7-L4_多模态流程衔接.ipynb"),
++    # v5：U8四课完整P1。
++    ("_gen_L29.py", "U8-L1_选题与任务拆解.ipynb"),
++    ("_gen_L30.py", "U8-L2_分主题开发模板.ipynb"),
++    ("_gen_L31.py", "U8-L3_联调模板.ipynb"),
++    ("_gen_L32.py", "U8-L4_展示评分表.ipynb"),
+--- a/05-internal-materials/vocational-planning/03_X课程项目/_regen_from_nb.py
++++ b/05-internal-materials/vocational-planning/03_X课程项目/_regen_from_nb.py
+@@ -94,0 +95,13 @@
++
++    # v5八课保留完整Notebook元数据、cell id与用户执行记录。
++    if os.path.basename(gen_path) in [f"_gen_L{i}.py" for i in range(25, 33)]:
++        import pprint
++        payload = pprint.pformat(nb, width=110, sort_dicts=False)
++        source = ('# -*- coding: utf-8 -*-\n'
++                  '"""v5 P1镜像；重跑前核对Notebook手改。"""\n'
++                  'import json\nfrom pathlib import Path\nNOTEBOOK = ' + payload + '\n'
++                  'if __name__ in ("__main__", "__gen__"):\n'
++                  '    path = Path(__file__).parent / "notebooks" / ' + repr(nbname) + '\n'
++                  '    path.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1)+"\\n", encoding="utf-8")\n')
++        open(gen_path, "w", encoding="utf-8", newline="\n").write(source)
++        return
+@@ -1331 +1344 @@
+-    ('_gen_L26.py', os.path.join(HERE, "notebooks", 'U7-L2_视觉-运动-语音桥接.ipynb')),
++    ('_gen_L26.py', os.path.join(HERE, "notebooks", 'U7-L2_足球定位与自动踢球.ipynb')),
+@@ -1333 +1346,6 @@
+-    ('_gen_L28.py', os.path.join(HERE, "notebooks", 'U7-L4_小剧场预演.ipynb')),
++    ('_gen_L28.py', os.path.join(HERE, "notebooks", 'U7-L4_多模态流程衔接.ipynb')),
++    # v5：U8四课完整P1。
++    ("_gen_L29.py", os.path.join(HERE, "notebooks", "U8-L1_选题与任务拆解.ipynb")),
++    ("_gen_L30.py", os.path.join(HERE, "notebooks", "U8-L2_分主题开发模板.ipynb")),
++    ("_gen_L31.py", os.path.join(HERE, "notebooks", "U8-L3_联调模板.ipynb")),
++    ("_gen_L32.py", os.path.join(HERE, "notebooks", "U8-L4_展示评分表.ipynb")),
+@@ -1334,0 +1353,3 @@
++
++for number in range(25, 33):
++    DOC.setdefault(f"_gen_L{number}.py", "v5 P1 Notebook完整镜像")

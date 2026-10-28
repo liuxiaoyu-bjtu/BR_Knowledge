@@ -1,0 +1,49 @@
+{
+  "tests": 26,
+  "failures": 0,
+  "errors": 0,
+  "notebooks": [
+    {
+      "file": "U7-L1_多传感器订阅.ipynb",
+      "cells": 15,
+      "code_cells": 6
+    },
+    {
+      "file": "U7-L2_足球定位与自动踢球.ipynb",
+      "cells": 17,
+      "code_cells": 7
+    },
+    {
+      "file": "U7-L3_多线程协作.ipynb",
+      "cells": 15,
+      "code_cells": 6
+    },
+    {
+      "file": "U7-L4_多模态流程衔接.ipynb",
+      "cells": 13,
+      "code_cells": 5
+    },
+    {
+      "file": "U8-L1_选题与任务拆解.ipynb",
+      "cells": 5,
+      "code_cells": 0
+    },
+    {
+      "file": "U8-L2_分主题开发模板.ipynb",
+      "cells": 17,
+      "code_cells": 7
+    },
+    {
+      "file": "U8-L3_联调模板.ipynb",
+      "cells": 13,
+      "code_cells": 5
+    },
+    {
+      "file": "U8-L4_展示评分表.ipynb",
+      "cells": 6,
+      "code_cells": 0
+    }
+  ],
+  "protected_unchanged": true,
+  "robot_executed": false
+}

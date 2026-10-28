@@ -1,0 +1,32 @@
+开发指南
+BoosterOS Python SDK
+BoosterRobot 客户端文档
+自动踢球管理器
+概览
+概览
+SoccerKickManager
+用于管理足球踢球流程：开启自动踢球控制，接收球位置、踢球方向和力度，并下发踢球指令。适合在识别到足球位置后，让机器人完成自动踢球动作。
+T2 机型暂不支持自动踢球，构造
+SoccerKickManager
+时会抛出
+RuntimeError
+。
+典型调用顺序：
+创建
+BoosterRobot
+。
+创建
+SoccerKickManager(robot)
+。
+调用
+start()
+进入足球模式并开启视觉踢球控制。
+调用
+update_command(direction, power)
+设置踢球方向和力度。
+持续调用
+update_ball(x, y)
+更新当前球位置。
+调用
+stop()
+关闭视觉踢球控制。

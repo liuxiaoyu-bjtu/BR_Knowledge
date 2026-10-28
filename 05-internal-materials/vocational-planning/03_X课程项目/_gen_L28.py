@@ -1,353 +1,209 @@
 # -*- coding: utf-8 -*-
-"""U7-L4生成器。2026-10-28以当前学生Notebook反向同步。
-重新运行将覆盖对应Notebook；主稿为notebooks/U7-L4_小剧场预演.ipynb。
-P1修订稿，未登记确认①②；离线核查不代表真机验证。"""
-import json, os
-OUT = os.path.join(os.path.dirname(__file__), "notebooks", "U7-L4_小剧场预演.ipynb")
-def md(text):
-    return {"cell_type":"markdown","metadata":{},"source":text.splitlines(keepends=True)}
-def code(text):
-    return {"cell_type":"code","execution_count":None,"metadata":{},"outputs":[],"source":text.splitlines(keepends=True)}
-cells = []
-
-# U7-L4：小剧场预演
-cells.append(md("""# U7-L4：小剧场预演
-
-**课程目标**
-
-1. 能为预演各幕填写开始条件、完成条件及未完成时的处理。
-2. 能用动作单元函数和固定顺序列表组织检测、运动、语音与致意动作，说明何时继续、何时结束。
-3. 能依据程序条件和SDK任务状态记录各幕结果、用时及现场表现，指出最后完成或未完成的幕。"""))
-
-# 一、引入
-cells.append(md("""## 一、引入
-
-L1观察了多路传感器数据的时间差，L2以瓶子验证了检测、播报与运动衔接，L3在来宾场景中用线程处理检测和语音指令。本课将来宾接待编排为一段预演，为每幕规定开始条件、完成判断和未完成时的处理。
-
-> 连续执行多个行为时，怎样根据上一幕的结果决定是否继续，并留下可核对的记录？"""))
-
-# 二、幕次与完成条件
-cells.append(md("""## 二、幕次与完成条件
-
-### 2.1 预演幕表
-
-本片段面向前方可见的来宾：机器人先对准来宾并完成设定前向位移，再致意，最后播报并沿当前朝向前进。第三幕用于观察语音与移动衔接，来宾在通道外保持前方可见；本程序没有转身或带路路线。
-
-| 幕 | 开始条件 | 完成条件 | 未完成时处理 |
-| :--- | :--- | :--- | :--- |
-| 一、迎宾 | 开始预演，本帧检出来宾 | 前向位移与对准条件同时满足 | 未检出、状态异常或轮数耗尽，结束整段 |
-| 二、致意 | 幕一完成 | 致意任务返回SUCCEEDED | 失败、取消或等待后仍未结束，结束整段 |
-| 三、播报与前进 | 幕二完成 | 播放成功、前方仍检出来宾、位移达标 | 播放未成功、目标丢失或轮数耗尽，结束整段 |
-
-相邻幕之间按表中条件交接，任一幕未完成都不进入下一幕。机器人与来宾的间距由现场核对，里程计前向位移不直接表示间距。"""))
-
-# 2.2 顺序列表与函数
-cells.append(md("""### 2.2 顺序列表与函数
-
-每幕写成一个函数，返回`"完成"`或具体未完成原因。`script`列表保存幕名和函数名，`for`循环按列表顺序取出，`step()`才调用函数。函数名后不加括号时，列表登记的是函数本身。
-
-这里使用固定顺序和结果判断组织流程。U5-L4用“待机、会话已发起、停止请求已发出”等应用状态管理会话；本课没有另设可分支跳转的显式状态机。U6-L4的顺序素材编排提供了顺序执行的基础，本课增加每幕的条件与结果记录。
-
-新增一幕时，需定义函数、填写条件，并把函数加入列表；修改某幕内部步骤时，修改对应函数。
-
-### 2.3 结果与用时
-
-`log`记录幕名、返回原因和执行用时。动作等待返回后仍需检查任务状态，只有`SUCCEEDED`才记为完成。日志能定位已记录的幕及有限原因；幕内具体步骤不能确认时记“待查”。后续未执行的幕记“未执行”。"""))
-
-# 三、预演实验
-cells.append(md("""## 三、预演实验
-
-⚠️ **注意**：机器人会移动、致意和播报。留出3米以上平整通道；按迎宾和末幕位移之和核对活动范围，来宾在通道外保持前方可见，人员不得挡在行进方向。全程安排同学保护，异常时用按钮切回准备模式。
-
-📌 **前置**：上一课主循环已结束，工作线程与SDK识别任务均已确认退出；已核对致意动作适用模式和活动范围。每次预演前人工恢复站位和朝向。
-
-**STEP 01：首次连接。** 本格保存动作句柄，后续重试须先核查原任务，不能重复初始化覆盖句柄。"""))
-
-# 连接并准备检测器、语音和动作句柄。
-cells.append(md("""连接并准备检测器、语音和动作句柄。"""))
-
-# import time
-cells.append(code("""import time
-from boosteros.robots.booster import BoosterRobot
-from boosteros.brain import Detection, Speech
-
-robot = BoosterRobot()
-detector = Detection(model="person")
-speech = Speech(robot)
-print("已连接：", robot.robot_info.model, robot.robot_info.serial_number)
-print("当前模式：", robot.get_mode())
-
-motion_task = None"""))
-
-# 3.1 素材与参数
-cells.append(md("""### 3.1 素材与参数
-
-**STEP 02：查看动作清单，填写下一格的动作ID。**
-
-选择已经在U1/U6验证过的致意动作，按清单核对适用模式；不要直接使用未测试动作。"""))
-
-# for action in robot.list_actions():
-cells.append(code("""for action in robot.list_actions():
-    print(action)"""))
-
-# **STEP 03：设置预演参数。**
-cells.append(md("""**STEP 03：设置预演参数。**
-
-`APPROACH_X_M`是迎宾幕相对清零位置的目标前向位移；`FORWARD_X_M`是末幕重新清零后的前向位移。示例值1.2米和1.0米须按现场间距调整。每幕清零只改变读数参考，不改变站位。
-
-`KP`把像素偏差换成身体角速度，与头部位置角不同；本课采用当前偏差计算并限幅。"""))
-
-# GREET_ID = "____"       # 从上一格清单填写已验证动作ID
-cells.append(code("""GREET_ID = "____"       # 从上一格清单填写已验证动作ID
-NEAR_PIXELS = 20
-APPROACH_X_M = 1.2
-FORWARD_X_M = 1.0
-KP = 0.0005
-MAX_YAW = 0.3
-ACTION_TIMEOUT = 15.0   # 按已验证的动作时长调整
-
-if GREET_ID == "____":
-    raise ValueError("请先填写并核对致意动作ID")"""))
-
-# 3.2 检测与播放
-cells.append(md("""### 3.2 检测与播放
-
-**STEP 04：定义公共函数。**
-
-`find_guest()`按`person`类别和模型评分选择来宾，课堂只安排一名来宾。`say()`合成后等待播放，并返回播放状态。`fallen()`检查已经摔倒或正在摔倒；程序在幕开始前及运动循环中读取，不能覆盖接口阻塞和两次检查之间的所有时刻。"""))
-
-# def find_guest():
-cells.append(code("""def find_guest():
-    img = robot.get_image(img_type="rgb")
-    results = detector.detect(img.to_numpy())
-    best = None
-    for r in results:
-        if r.class_name == "person":
-            if best is None or r.confidence > best.confidence:
-                best = r
-    return img, best
-
-
-def say(text):
-    audio = speech.synthesize(text).result()
-    return robot.play_sound(audio).wait()
-
-
-def fallen():
-    state = robot.get_fall_down_state()
-    return state.has_fallen or state.is_falling"""))
-
-# 3.3 迎宾幕
-cells.append(md("""### 3.3 迎宾幕
-
-**STEP 05：定义迎宾函数。**
-
-每轮检测来宾、计算偏差和剩余前向位移。第一次未检出便结束本幕，未设置等候来宾功能；200轮耗尽也不算完成。`finally`保证函数返回或异常退出时尝试发送零速度。定义格不会启动运动。"""))
-
-# def act_approach():
-cells.append(code("""def act_approach():
-    robot.reset_odom()
-    try:
-        for i in range(200):
-            if fallen():
-                return "状态保护"
-            img, guest = find_guest()
-            if guest is None:
-                return "未检出来宾"
-            error = guest.bbox.center_x - img.width / 2
-            remain = APPROACH_X_M - robot.get_odom().pose_2d[0]
-            if abs(error) < NEAR_PIXELS and remain <= 0.05:
-                return "完成"
-            if fallen():
-                return "状态保护"
-            yaw_rate = max(-MAX_YAW, min(MAX_YAW, -KP * error))
-            robot.set_velocity(max(0.0, min(0.3, remain)), 0, yaw_rate)
-            time.sleep(0.5)
-            robot.set_velocity(0, 0, 0)
-        return "达到迎宾轮数上限"
-    finally:
-        robot.set_velocity(0, 0, 0)"""))
-
-# 3.4 致意幕
-cells.append(md("""### 3.4 致意幕
-
-**STEP 06：定义致意函数。**
-
-保存`motion_task`后有限等待。只有`SUCCEEDED`才返回“完成”；`FAILED`和`CANCELLED`均保留实际状态。等待后任务仍未结束时请求取消并再次等待，整段预演结束。取消不等于动作完整完成；未确认终态前保留原句柄，不能重开预演。"""))
-
-# def act_greet():
-cells.append(code("""def act_greet():
-    global motion_task
-    if motion_task is not None and not motion_task.done():
-        return "旧动作任务尚未结束"
-    motion_task = robot.do_action(GREET_ID)
-    status = motion_task.wait(timeout=ACTION_TIMEOUT)
-    if status == "SUCCEEDED":
-        return "完成"
-    if not motion_task.done():
-        motion_task.cancel()
-        motion_task.wait(timeout=3.0)
-        return "动作等待超时；当前状态：" + str(motion_task.status)
-    return "动作未成功：" + str(status)"""))
-
-# 3.5 播报与前进幕
-cells.append(md("""### 3.5 播报与前进幕
-
-**STEP 07：定义末幕函数。**
-
-先播报“接下来向前移动，请留在通道外观看。”播放成功后重新取图；来宾须始终在前方可见且不挡通道。程序沿当前方向前进，不转身，不实现真实带路。"""))
-
-# def act_forward():
-cells.append(code("""def act_forward():
-    try:
-        status = say("接下来向前移动，请留在通道外观看。")
-        if status != "SUCCEEDED":
-            return "播放未成功：" + str(status)
-        robot.reset_odom()
-        for i in range(100):
-            if fallen():
-                return "状态保护"
-            img, guest = find_guest()
-            if guest is None:
-                return "未检出来宾"
-            if robot.get_odom().pose_2d[0] >= FORWARD_X_M:
-                return "完成"
-            if fallen():
-                return "状态保护"
-            robot.set_velocity(0.2, 0, 0)
-            time.sleep(0.5)
-            robot.set_velocity(0, 0, 0)
-        return "达到前进轮数上限"
-    finally:
-        robot.set_velocity(0, 0, 0)"""))
-
-# 3.6 预演执行
-cells.append(md("""### 3.6 预演执行
-
-**STEP 08：登记幕次。**
-
-本格只创建列表，不调用幕函数。先核对幕名、函数和幕表一致，再执行预演。"""))
-
-# script = [("一 · 迎宾", act_approach),
-cells.append(code("""script = [("一 · 迎宾", act_approach),
-          ("二 · 致意", act_greet),
-          ("三 · 播报与前进", act_forward)]"""))
-
-# **开始下面程序前，机器人应处于行走模式。** 如果当前不在行走模式：先用按钮切到准备模式，等机器人站直站稳；再…
-cells.append(md("""**开始下面程序前，机器人应处于行走模式。** 如果当前不在行走模式：先用按钮切到准备模式，等机器人站直站稳；再切到行走模式。确认模式后再运行代码。
-
-**STEP 09：按顺序执行预演。**
-
-每幕开始前检查状态；函数返回“完成”才进入下一幕。异常时记录异常所在幕并退出，后续幕不执行；`finally`发送零速度，并在需要时请求取消尚未结束的动作。现场模式异常须按教师要求人工处理。"""))
-
-# if motion_task is not None and not motion_task.done():
-cells.append(code("""if motion_task is not None and not motion_task.done():
-    raise RuntimeError("旧动作尚未结束，请先执行STEP 11")
-log = []
-try:
-    for name, step in script:
-        t0 = time.monotonic()
-        try:
-            result = "状态保护" if fallen() else step()
-        except Exception as exc:
-            result = "异常：" + str(exc)
-        seconds = time.monotonic() - t0
-        log.append((name, result, seconds))
-        print(f"{name}：{result}，用时 {seconds:.1f} 秒")
-        if result != "完成":
-            print("本幕未完成，结束整段预演")
-            break
-finally:
-    robot.set_velocity(0, 0, 0)
-    if motion_task is not None and not motion_task.done():
-        motion_task.cancel()
-        motion_task.wait(timeout=3.0)
-print("预演流程结束；继续检查日志和任务状态")"""))
-
-# **STEP 10：查看各幕记录。**
-cells.append(md("""**STEP 10：查看各幕记录。**
-
-未执行的幕显示“未执行”；异常时保留原因。用时包含幕内检测、接口调用与等待，不能直接当作实际移动或动作时长。"""))
-
-# print("幕 | 结果 | 用时（秒）")
-cells.append(code("""print("幕 | 结果 | 用时（秒）")
-for name, step in script:
-    record = None
-    for row in log:
-        if row[0] == name:
-            record = row
-    if record is None:
-        print(name, "| 未执行 | —")
-    else:
-        print(f"{record[0]} | {record[1]} | {record[2]:.1f}")"""))
-
-# **STEP 11：确认动作任务结束。**
-cells.append(md("""**STEP 11：确认动作任务结束。**
-
-任务未结束时保留句柄，稍后重新执行本格；确认结束并人工恢复起点后，才能重跑STEP 09。若需修改参数，先修改并运行参数格与相应定义格，再登记幕次。"""))
-
-# robot.set_velocity(0, 0, 0)
-cells.append(code("""robot.set_velocity(0, 0, 0)
-if motion_task is None:
-    print("本次未发起致意任务")
-else:
-    if not motion_task.done():
-        motion_task.cancel()
-        motion_task.wait(timeout=3.0)
-    print("动作状态：", motion_task.status, "已结束：", motion_task.done())
-    if motion_task.status == "FAILED":
-        print("动作错误：", motion_task.error)
-    if not motion_task.done():
-        print("任务尚未结束，保留句柄，请教师检查")"""))
-
-# 四、收尾
-cells.append(md("""## 四、收尾
-
-先用按钮把机器人切回**准备模式**，等它站直站稳；再由人工扶着切到**阻尼模式**（damping），扶机器人坐下，确认坐稳。不要从行走模式直接切到阻尼模式。"""))
-
-# 五、观察与记录
-cells.append(md("""## 五、观察与记录
-
-### 5.1 各幕结果
-
-| 幕 | 开始条件 | 结果或未完成原因 | 用时（秒） | 现场表现 |
-| :--- | :--- | :--- | :--- | :--- |
-| 一、迎宾 | | | | |
-| 二、致意 | | | | |
-| 三、播报与前进 | | | | |
-
-未执行的幕填“未执行”，用时填“—”。任务状态与现场表现分别记录，不能由等待返回推断动作完整完成。
-
-### 5.2 未完成记录
-
-| 最后记录的幕 | 日志原因 | 可确认的幕内步骤／待查 | 当时现象 |
-| :--- | :--- | :--- | :--- |
-| | | | |
-
-本次未出现异常时填“未出现”；日志没有提供的幕内信息填“待查”。
-
-### 5.3 检查点
-
-- 能按实际代码填写各幕开始条件、完成条件和未完成时的处理。
-- 能说明列表保存函数名、循环调用函数及返回值决定是否继续的关系。
-- 已分别记录程序结果、SDK动作状态和现场表现，未执行幕有明确标记。
-- 已核查动作终态，重复预演前完成站位复原和任务检查。
-
-### 5.4 思考题
-
-1. 如果增加“等待来宾”的开场幕，需怎样定义等待上限和未检出时的返回结果？
-2. 致意任务返回`CANCELLED`时，为什么不能把本幕记为“完成”？
-3. 若整段预演要求不超过40秒，现有日志能支持哪些调整？还需记录哪些幕内步骤才能继续定位耗时？"""))
-
-
-for i, cell in enumerate(cells, 1):
-    cell["id"] = f"u7l4-{i:02d}"
-
-nb = {
-    "cells": cells,
-    "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"name": "python", "version": "3"}},
-    "nbformat": 4,
-    "nbformat_minor": 5
-}
-json.dump(nb, open(OUT,"w",encoding="utf-8"), ensure_ascii=False, indent=1)
-print("wrote", OUT, "cells=", len(cells))
+"""v5 P1反向同步生成器；运行会覆盖Notebook，先核对用户手改。"""
+import json
+from pathlib import Path
+NOTEBOOK = {'cells': [{'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['# U7-L4：多模态流程衔接\n',
+                       '\n',
+                       '**课程目标**\n',
+                       '\n',
+                       '1. 能为感知、播报和行为片段写出交接条件，说明播报之后为何需要新观测。\n',
+                       '2. 能分别运行导览和足球的局部参考片段，按所用接口管理任务句柄或自动踢球控制。\n',
+                       '3. 能记录程序返回原因、SDK状态和现场表现，未完成时停止后续操作，并核查重复运行条件。'],
+            'id': '202ba6e4d7'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['## 一、任务：一句播报之后还能按原计划行动吗\n',
+                       '\n',
+                       '定点导览发现来宾后准备介绍并致意；足球场景发现球后准备说明并试踢。两者都需要视觉、语音和行为衔接，但播报结束时目标可能已经移动或离开。\n',
+                       '\n',
+                       '本课比较两个局部片段：`确认目标 → 播报 → 重新确认 → 一次行为`。只运行这个交接过程，记录在哪里结束。导览暂不增加路线，足球不增加比赛策略。\n',
+                       '\n',
+                       '| 交接点 | 导览 | 足球 |\n',
+                       '| --- | --- | --- |\n',
+                       '| 首次确认 | 单名来宾可见 | 足球在已核对的标定范围 |\n',
+                       '| 播报后新观测 | 仍有来宾才致意 | 球坐标仍可用才进入管理器 |\n',
+                       '| 行为结束 | 检查动作句柄实际状态及现场表现 | stop返回，并现场记录球的效果 |\n',
+                       '\n',
+                       '### 1.1 多模态协作不要求所有步骤同时运行\n',
+                       '\n',
+                       'L3展示了播报期间继续检测的方式。若片段只需在播报结束后重新确认，顺序程序就能满足需求；若要求期间持续观察，才增加工作线程和退出管理。本课先用顺序片段把交接条件核对清楚。多模态指信息与行为方式的协作，不等于必须多线程。'],
+            'id': 'ac57be47dc'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['## 二、准备功能片段\n',
+                       '\n',
+                       '⚠️ '
+                       '**实验安全**：致意和踢球均可能带动机身。两类片段分开运行，先清理上一类任务，再核对各自场地。踢球场地、标定与保护要求同L2；不在踢球管理器运行时另发速度、轨迹或动作指令。\n',
+                       '\n',
+                       '📌 **前置**：L3线程与音频已结束；拟用动作已验证模式、时长和范围；踢球需有`ball_calibration.json`及足球步态下的教师验证。\n',
+                       '\n',
+                       '**STEP 01：首次连接并保存会话记录。** `session`附件记录当前音频、动作及踢球管理器，重试前用它检查旧任务，不重跑连接格覆盖它。'],
+            'id': '494fec8820'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['import json\n',
+                       'from pathlib import Path\n',
+                       'from boosteros.robots.booster import BoosterRobot\n',
+                       'from boosteros.brain import Detection, Speech\n',
+                       'from x_lab.flows import new_session, idle, observe_guest, observe_ball, say, greet, '
+                       'kick_window, cleanup\n',
+                       'import time\n',
+                       '\n',
+                       'robot = BoosterRobot()\n',
+                       'speech = Speech(robot)\n',
+                       'guest_detector = Detection(model="person")\n',
+                       'ball_detector = Detection(model="soccer")\n',
+                       'session = new_session(robot, speech)\n',
+                       'calibration = None\n',
+                       'if Path("ball_calibration.json").exists():\n',
+                       '    calibration = '
+                       'json.loads(Path("ball_calibration.json").read_text(encoding="utf-8"))\n',
+                       'for action in robot.list_actions():\n',
+                       '    print(action.id, action.type, action.duration)'],
+            'id': 'd01156c534'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['### 2.1 用返回原因决定交接\n',
+                       '\n',
+                       '每个片段返回“完成”或具体停止原因。有限文本合成、播放、动作有任务句柄；自动踢球管理器的四个控制调用返回`None`。不能给所有接口套上相同的`wait()`。\n',
+                       '\n',
+                       '附件`x_lab/flows.py`提供已学功能片段：`say()`合成与播放，`greet()`等待动作，`kick_window()`持续检测并更新球位。它们保存旧句柄、限制等待、必要时取消或停止，供本课和应用项目复用。可打开附件核对实际SDK调用，不把附件名称当作SDK接口。\n',
+                       '\n',
+                       '`greet()`仅在`SUCCEEDED`时返回“完成”；超时取消会返回实际原因。某些已实测动作采用等待后取消时，应分别记录现场动作与取消终态，不把`CANCELLED`改写为成功；本次未获成功状态则结束片段，待教师审定该动作的具体交接约定。\n',
+                       '\n',
+                       '**STEP 02：定义导览局部片段。** '
+                       '来宾在通道外站定；本片段不驱动接近，不判断人物身份。首次及播报后的观察都检查本次取图与处理时长，0.8秒是待本机核对的练习参数；取得新源图像后才进入行为。'],
+            'id': '6a6a838a93'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['GREET_ID = ""  # 从实际动作清单填写已验证的ID\n',
+                       '\n',
+                       'def guide_segment():\n',
+                       '    first = observe_guest(robot, guest_detector)\n',
+                       '    if not first["found"]:\n',
+                       '        return "首次未检出来宾"\n',
+                       '    if time.monotonic()-first["received"] > 0.8:\n',
+                       '        return "首次取图与处理过慢"\n',
+                       '    result = say(session, "欢迎参观。请在指定区域观看机器人的致意动作。")\n',
+                       '    if result != "完成":\n',
+                       '        return "播报：" + result\n',
+                       '    current = observe_guest(robot, guest_detector)\n',
+                       '    if not current["found"]:\n',
+                       '        return "播报后未检出来宾"\n',
+                       '    if time.monotonic()-current["received"] > 0.8:\n',
+                       '        return "播报后取图与处理过慢"\n',
+                       '    if current["source_stamp"] == first["source_stamp"]:\n',
+                       '        return "播报后尚无新图像"\n',
+                       '    return greet(session, GREET_ID)'],
+            'id': '77f060f170'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['**STEP 03：定义足球局部片段。** 播报时管理器尚未开始；之后重新核对球位，管理器启动后仍需逐轮取新坐标。这里只设六秒观察窗口，不保证六秒内踢出或进球。'],
+            'id': 'fb14a8bb4c'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['def soccer_segment():\n',
+                       '    if calibration is None or not calibration.get("verified", False):\n',
+                       '        return "没有通过独立核对的标定"\n',
+                       '    first = observe_ball(robot, ball_detector, calibration)\n',
+                       '    if not first["found"]:\n',
+                       '        return first["reason"]\n',
+                       '    if time.monotonic()-first["received"] > 0.8:\n',
+                       '        return "首次取图与处理过慢"\n',
+                       '    result = say(session, "准备进行短时试踢，请留在场地外观看。")\n',
+                       '    if result != "完成":\n',
+                       '        return "播报：" + result\n',
+                       '    current = observe_ball(robot, ball_detector, calibration)\n',
+                       '    if not current["found"]:\n',
+                       '        return "播报后：" + current["reason"]\n',
+                       '    if time.monotonic()-current["received"] > 0.8:\n',
+                       '        return "播报后取图与处理过慢"\n',
+                       '    if current["source_stamp"] == first["source_stamp"]:\n',
+                       '        return "播报后尚无新图像"\n',
+                       '    reason, rows = kick_window(session, ball_detector, calibration, seconds=6.0, '
+                       'power=1.0)\n',
+                       '    print("球坐标更新条数：", len(rows))\n',
+                       '    return reason'],
+            'id': '42a0cde8fa'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['## 三、一次只验证一类交接\n',
+                       '\n',
+                       '**STEP 04：先选导览，再按条件安排足球。** '
+                       '定义格不会运动；执行格会发起实际任务。按按钮流程先进入准备模式、等站稳，再进入本机实验要求的行走模式。动作ID和模式应在现场复核。\n',
+                       '\n',
+                       '<font color="red">导览确认动作范围；足球另确认标定姿态、动态适用范围、球位与出球方向。旧任务未结束时不试演。</font>'],
+            'id': '884e78c003'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['SCENE = "导览"  # 另一选项为“踢球”\n',
+                       'APPROVED = False  # 每次实际条件确认后修改\n',
+                       'if not APPROVED or robot.get_mode() != "walk":\n',
+                       '    print("尚未满足本次运行条件")\n',
+                       'elif not idle(session):\n',
+                       '    print("旧任务尚未结束")\n',
+                       'elif SCENE not in ["导览", "踢球"]:\n',
+                       '    print("请填写导览或踢球")\n',
+                       'elif input("本次可运行，输入“运行”：").strip() == "运行":\n',
+                       '    try:\n',
+                       '        if SCENE == "导览":\n',
+                       '            reason = guide_segment()\n',
+                       '        else:\n',
+                       '            reason = soccer_segment()\n',
+                       '        print("片段返回：", reason)\n',
+                       '    finally:\n',
+                       '        print("收尾待处理项：", cleanup(session))'],
+            'id': '1cbf0ad720'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['**STEP 05：核查后再重试。** '
+                       '返回原因表示程序条件，实际动作、来宾反应和球的去向另行记录。未确认结束时保留session，稍后重跑核查格；全部退出、人工恢复站位后才可重试。'],
+            'id': '834b155019'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['print("待处理项：", cleanup(session))\n',
+                       'print("资源全部结束：", idle(session))\n',
+                       'for key in ["audio_task", "motion_task"]:\n',
+                       '    task = session[key]\n',
+                       '    if task is not None:\n',
+                       '        print(key, task.status, "done=", task.done())\n',
+                       'print("踢球控制仍被本程序标为活动：", session["kick_active"])'],
+            'id': 'd77a18f63b'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['本次结束先切准备模式并等站稳；需要坐下时按人工支撑、切阻尼、坐稳的既定流程处理，不能从行走模式直接切阻尼。\n',
+                       '\n',
+                       '## 四、记录与学习检查\n',
+                       '\n',
+                       '| 片段 | 首次观测 | 播报结果 | 播报后新观测 | 返回原因/任务状态 | 现场行为 | 退出 |\n',
+                       '| --- | --- | --- | --- | --- | --- | --- |\n',
+                       '| 导览 | | | | | | |\n',
+                       '| 踢球 | | | | | | |\n',
+                       '\n',
+                       '1. 播报成功而目标已离开时，后续程序应怎样处理？指出两种片段中的对应行。\n',
+                       '2. 什么需求值得增加L3工作线程？仅在播报后检查目标时，顺序程序能否完成任务？\n',
+                       '3. 致意返回CANCELLED、踢球窗口达到上限，分别应怎样记录？为什么都不能直接填“表演成功”？\n',
+                       '4. 若修改为一段完整应用，仍需确定哪些对象、场地、模块交接和验收要求？列出本组实际需要解决的项目问题。\n',
+                       '\n',
+                       '**完成核对**：至少完成可用片段的交接记录，另一类按设备安排验证；未运行项明确标记。没有留下活动管理器、音频或动作任务。'],
+            'id': '8be6553245'}],
+ 'metadata': {'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
+              'language_info': {'name': 'python'},
+              'x_course': {'outline': 'v5', 'phase': 'P1', 'confirmation_1': False, 'confirmation_2': False}},
+ 'nbformat': 4,
+ 'nbformat_minor': 5}
+if __name__ in ("__main__", "__gen__"):
+    path = Path(__file__).parent / "notebooks" / 'U7-L4_多模态流程衔接.ipynb'
+    path.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1)+"\n", encoding="utf-8")

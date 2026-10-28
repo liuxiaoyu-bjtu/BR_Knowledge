@@ -8,6 +8,8 @@ last_updated: "2026-09-01"
 
 # 全局关键词索引
 
+> X课程v5 / 多传感器融合与多模态 / 自动踢球 / 机器人坐标 / U8导览踢球二选一：[v5大纲](05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v5.md)、[八课P1与验证清单](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_U8_v5重构与验证清单.md)（101格/36代码格；32课主Notebook；①②待完成）。旧U7与U8准备记录保留历史含义。
+
 > U7/U8内容重叠 / U8-P1准备 / 模块接口与验收 / 视觉踢球前置：[边界排查](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7-L4与U8_内容边界排查.md)、[四课开发准备](05-internal-materials/vocational-planning/03_X课程项目/U8-P1开发准备.md)（2026-10-28；准备完成，U8学生稿尚未产出；U7 Notebook未改）。
 
 > U5-L4与U6五课P4 / 逐页大纲 / 全格与评价覆盖：[P4审阅入口](05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U5-L4_U6_P4覆盖检查记录.md)（④已通过；28/28/25/27/26页，待⑤；含全部96格、20代码格及逐题映射）。
@@ -100,7 +102,7 @@ last_updated: "2026-09-01"
 | 竞品分析 | `01-booster-kb/08-competitive-analysis/_competitive-overview.md` |
 | 具身智能教育 | `02-embodied-ai-edu/01-theory/what-is-embodied-ai-edu.md` |
 | 具身智能应用开发（高职） | `05-internal-materials/vocational-planning/03_X课程项目/高职应用开发大纲-修订版.md` |
-| 具身智能机器人实践（X课程） | `05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md`（最新版；历史版 v3 同目录） |
+| 具身智能机器人实践（X课程） | `05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v5.md`（最新版；历史版v3/v4同目录） |
 | X课程开发计划 | `05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md`（最新版；v1–v3 同目录） |
 | X课程实验代码 | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/` |
 | X课程动作来源（示教器、行为克隆、模仿学习与强化学习） | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/U6-L1_动作的来源.ipynb` |
@@ -190,7 +192,7 @@ last_updated: "2026-09-01"
 | 销售支持 | `01-booster-kb/06-sales-support/_sales-overview.md` |
 | 选型决策 | `01-booster-kb/02-products/version-comparison.md` |
 | 学-练-赛-评 | `01-booster-kb/03-solutions/_solution-overview.md` |
-| X 课程（具身智能机器人实践） | `05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v4.md` |
+| X 课程（具身智能机器人实践） | `05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v5.md` |
 | X 课程开发计划 | `05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md` |
 | X 课程实验代码 | `05-internal-materials/vocational-planning/03_X课程项目/notebooks/` |
 | X课程 U5-L4 / U6 P3 / 教学设计 / 确认④ / 全格覆盖 | [五课教学设计及覆盖检查](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U5-L4_U6_P3教学设计覆盖检查记录.md)（五份45分钟教师稿；P2通过、P3待④；含取消终态与现场表现、训练等待、附件及补做安排） |

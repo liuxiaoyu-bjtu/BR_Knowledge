@@ -1,196 +1,228 @@
 # -*- coding: utf-8 -*-
-"""U7-L1生成器。2026-10-28以当前学生Notebook反向同步。
-重新运行将覆盖对应Notebook；主稿为notebooks/U7-L1_多传感器订阅.ipynb。
-P1修订稿，未登记确认①②；离线核查不代表真机验证。"""
-import json, os
-OUT = os.path.join(os.path.dirname(__file__), "notebooks", "U7-L1_多传感器订阅.ipynb")
-def md(text):
-    return {"cell_type":"markdown","metadata":{},"source":text.splitlines(keepends=True)}
-def code(text):
-    return {"cell_type":"code","execution_count":None,"metadata":{},"outputs":[],"source":text.splitlines(keepends=True)}
-cells = []
-
-# U7-L1：多传感器订阅
-cells.append(md("""# U7-L1：多传感器订阅
-
-**课程目标**
-
-1. 能比较按需读取与订阅的取数方式，说明主程序与订阅回调的执行关系。
-2. 能同时订阅相机、IMU和里程计，记录收到的条数、估算接收速率及末次时间戳，并结束订阅。
-3. 能在时间戳单位和计时基准一致的前提下，计算末次数据的时间差，解释正负号，并区分时间差观察与数据同步。"""))
-
-# 一、引入
-cells.append(md("""## 一、引入
-
-U4已把图像中的目标偏差和里程计读数用于同一个运动任务。图像和里程计各自更新，程序读取的两份数据可能对应不同的时刻；目标或机器人移动时，这种差异会影响判断。
-
-本课同时接收相机、IMU和里程计数据，记录接收条数及末次时间戳，观察各路数据的更新情况。
-
-> 联合使用传感器数据前，怎样检查它们记录的时刻相差多少？"""))
-
-# 二、读取与订阅
-cells.append(md("""## 二、读取与订阅
-
-### 2.1 按需读取
-
-`get_image()`、`get_imu()`、`get_odom()`等接口由主程序主动调用，返回最近的缓存数据。调用时刻与数据采集时刻可能不同，采集时刻需查看数据的时间戳。
-
-### 2.2 持续接收
-
-`subscribe_image()`、`subscribe_imu()`、`subscribe_odom()`先登记回调函数，SDK随后把到达的数据交给回调处理。实际收到的数量受推送、队列和处理速度影响。
-
-| 比较项 | 按需读取 | 订阅 |
-| :--- | :--- | :--- |
-| 发起方式 | 主程序调用读取接口 | 主程序登记回调，SDK在数据到达时调用 |
-| 返回内容 | 最近的缓存数据 | 订阅句柄；数据通过回调接收 |
-| 执行位置 | 本课主程序 | SDK工作线程 |
-| 结束方式 | 一次调用返回 | 用句柄调用`unsubscribe()` |
-
-线程是程序的一条执行路径。本课主程序在`sleep()`中等待时，SDK工作线程仍可执行回调，更新计数和时间戳；主程序稍后读取这些记录。本课用`with`上下文管理订阅句柄，退出上下文时自动调用退订。"""))
-
-# 2.3 时间戳与队列
-cells.append(md("""### 2.3 时间戳与队列
-
-| 数据 | 时间戳读法 |
-| :--- | :--- |
-| 图像 | `image.header.timestamp` |
-| IMU | `imu.timestamp` |
-| 里程计 | `odom.timestamp` |
-
-**相减前须由教师核实本机三路时间戳的单位和计时基准。** 单位为秒且计时基准一致时，差值乘1000可换算为毫秒。单位或基准尚未核实时，先记录原值，暂不解释差值。
-
-本课比较各路最后收到的数据。两份时间戳之差表示它们记录的时刻相隔多久，不能直接表示数据距当前时刻有多久，也没有完成同步配对或重采样。
-
-数据到达快于回调处理时，待处理数据会排队。传感器订阅的`queue_size`默认是0，表示不设上限；设置有限容量后，`overflow`决定队列满时的处理：`block`等待、`drop_oldest`丢弃最旧的待处理数据、`drop_newest`丢弃新到的数据，默认是`drop_oldest`。U5-L1的音频流排队对象是声音块，这里是待处理的传感器数据；参数约束须分别查接口。本实验沿用传感器订阅默认设置，进行短时计数。"""))
-
-# 三、订阅实验
-cells.append(md("""## 三、订阅实验
-
-⚠️ **注意**：本课读取传感器数据，机器人保持坐姿或站姿，无需进入行走模式。
-
-📌 **前置**：机器人已开机、配网；上一课的订阅已退订。
-
-**STEP 01：连接机器人。**"""))
-
-# import time
-cells.append(code("""import time
-
-from boosteros.robots.booster import BoosterRobot
-
-robot = BoosterRobot()
-
-print("已连接：", robot.robot_info.model, robot.robot_info.serial_number)
-print("当前模式：", robot.get_mode())"""))
-
-# **STEP 02：定义回调，订阅并观察5秒。**
-cells.append(md("""**STEP 02：定义回调，订阅并观察5秒。**
-
-`count`保存收到的条数，`last`保存各路末次时间戳。每个回调更新对应记录，避免频繁打印影响处理。先定义函数，再把函数名传给订阅接口。
-
-下一格包含订阅、等待和退订，按顺序完整运行。主程序等待期间，回调仍可更新记录；`with`管理三份订阅句柄，正常结束或中断等待时都会退出上下文并退订。退订后再读取统计值。"""))
-
-# SECONDS = 5.0                   # 设置的观察时长（秒）
-cells.append(code("""SECONDS = 5.0                   # 设置的观察时长（秒）
-
-count = {"图像": 0, "IMU": 0, "里程计": 0}
-last = {}                       # 各路最后收到的数据时间戳
-
-def on_image(image):
-    count["图像"] += 1
-    last["图像"] = image.header.timestamp
-
-def on_imu(imu):
-    count["IMU"] += 1
-    last["IMU"] = imu.timestamp
-
-def on_odom(odom):
-    count["里程计"] += 1
-    last["里程计"] = odom.timestamp
-
-with robot.subscribe_image(on_image), robot.subscribe_imu(on_imu), robot.subscribe_odom(on_odom):
-    print(f"三路已订阅，观察 {SECONDS:.0f} 秒")
-    time.sleep(SECONDS)
-print("已退出订阅上下文，三路均已退订")"""))
-
-# **STEP 03：查看接收条数和估算接收速率。**
-cells.append(md("""**STEP 03：查看接收条数和估算接收速率。**
-
-条数除以设置的5秒，近似表示本程序每秒收到多少条数据。三路依次订阅和退订，实际观察时段略有差异；结果还受传输、调度和回调处理影响，不能直接当成硬件采样频率。"""))
-
-# for name in ["图像", "IMU", "里程计"]:
-cells.append(code("""for name in ["图像", "IMU", "里程计"]:
-    t = last.get(name)
-    if t is None:
-        print(f"{name}：这 {SECONDS:.0f} 秒里一条都没收到")
-    else:
-        print(f"{name}：{count[name]:4d} 条，约 {count[name] / SECONDS:5.1f} 条/秒，"
-              f"最后一条的时间戳 {t:.3f}")"""))
-
-# **STEP 04：比较末次时间戳。**
-cells.append(md("""**STEP 04：比较末次时间戳。**
-
-确认单位为秒且计时基准一致后，将下一格的`TIMESTAMPS_VERIFIED`改为`True`。输出按“前一路－后一路”计算：正值表示前一路较晚，负值表示前一路较早。例如图像－IMU为−20毫秒，表示这份图像比这份IMU早20毫秒。
-
-完整重复STEP 02～04三次，每次都先结束订阅再重新开始。比较各组差值的最小值和最大值，观察本次采集的变化范围。"""))
-
-# TIMESTAMPS_VERIFIED = False  # 教师核实单位为秒且计时基准一致后改为True
-cells.append(code("""TIMESTAMPS_VERIFIED = False  # 教师核实单位为秒且计时基准一致后改为True
-names = ["图像", "IMU", "里程计"]
-
-if not TIMESTAMPS_VERIFIED:
-    print("先核实时间戳单位与计时基准，本次仅记录原值")
-else:
-    for i in range(len(names)):
-        for j in range(i + 1, len(names)):
-            a, b = names[i], names[j]
-            if a in last and b in last:
-                print(f"{a}－{b}：{(last[a] - last[b]) * 1000:+.1f} 毫秒")
-            else:
-                print(f"{a}－{b}：缺少数据，无法计算")"""))
-
-# 四、观察与记录
-cells.append(md("""## 四、观察与记录
-
-### 4.1 接收情况
-
-| 传感器 | 收到条数 | 估算接收速率（条/秒） | 末次时间戳 |
-| :--- | :--- | :--- | :--- |
-| 图像 | | | |
-| IMU | | | |
-| 里程计 | | | |
-
-### 4.2 末次数据的时间差
-
-时间戳单位：______；计时基准是否核实：______。未核实时填“待核实”。
-
-| 前一路－后一路 | 第1次（毫秒） | 第2次 | 第3次 | 最小值／最大值 |
-| :--- | :--- | :--- | :--- | :--- |
-| 图像－IMU | | | | |
-| 图像－里程计 | | | | |
-| IMU－里程计 | | | | |
-
-### 4.3 检查点
-
-- 能说明按需读取与订阅各由谁发起，主程序等待时回调为何仍可更新数据。
-- 已记录各路接收条数与估算接收速率，并确认全部订阅已退订。
-- 能说明时间戳相减的前提，以及正、负差值分别表示什么。
-- 能区分末次数据的相对时间差、数据距当前时刻的年龄和同步处理。
-
-### 4.4 思考题
-
-1. 图像比IMU早几十毫秒，目标和机器人都在转动时，联合判断方位可能受什么影响？
-2. 回调处理慢于数据到达时，有限队列中等待或丢弃各有什么代价？
-3. 同样的时间差，对静止目标与快速移动目标有何不同影响？本课记录是否足以制定通用同步阈值？"""))
-
-
-for i, cell in enumerate(cells, 1):
-    cell["id"] = f"u7l1-{i:02d}"
-
-nb = {
-    "cells": cells,
-    "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"name": "python", "version": "3"}},
-    "nbformat": 4,
-    "nbformat_minor": 5
-}
-json.dump(nb, open(OUT,"w",encoding="utf-8"), ensure_ascii=False, indent=1)
-print("wrote", OUT, "cells=", len(cells))
+"""v5 P1反向同步生成器；运行会覆盖Notebook，先核对用户手改。"""
+import json
+from pathlib import Path
+NOTEBOOK = {'cells': [{'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['# U7-L1：多传感器订阅\n',
+                       '\n',
+                       '**课程目标**\n',
+                       '\n',
+                       '1. 能为一个多路状态观察任务选择订阅方式，用短回调保存各路最近记录，并查看同一观察时刻下的数据值。\n',
+                       '2. 能区分源时间戳与本地接收时间，依据缺失、接收后时长及时间戳比较条件判断数据是否适合联合使用。\n',
+                       '3. 能比较有限队列的两种丢弃策略，说明选择依据，结束全部订阅，并区分多传感器融合与本课的联合检查。'],
+            'id': '5512ae5be5'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['## 一、任务：为场景运行准备状态观察窗\n',
+                       '\n',
+                       '机器人准备执行一段讲解或踢球程序。操作者需要同时知道：相机有没有画面，机器人是否正在转动，里程计位置有没有变化。每隔一秒显示三路最近记录；某路没有更新时，应明确标出，不能把上一次记录当作刚收到的数据。\n',
+                       '\n',
+                       '本课先做一个不驱动机器人的状态观察窗，再人为放慢图像处理，比较队列如何影响收到的记录。机器人保持固定姿态；可在镜头前缓慢移动彩色卡片观察画面数值变化，无需让机器人运动。\n',
+                       '\n',
+                       '| 需要回答的问题 | 使用的信息 | 程序安排 |\n',
+                       '| --- | --- | --- |\n',
+                       '| 当前收到的画面是什么样 | 图像尺寸、中心像素、源时间戳 | 图像到达后更新最近记录 |\n',
+                       '| 是否有转动读数 | IMU的z轴角速度 | IMU到达后更新数值 |\n',
+                       '| 位置和朝向读数是什么 | 里程计x、y、yaw | 里程计到达后更新数值 |\n',
+                       '| 这份记录多久没更新 | 本地接收时刻 | 主程序显示时计算经过时长 |\n',
+                       '\n',
+                       '### 1.1 多传感器融合与多模态\n',
+                       '\n',
+                       '**多传感器融合**是把多个传感器的信息结合起来，得到对环境或机器人状态的估计或判断。例如把IMU和里程计的信息用于估计姿态或位置；实际系统还需处理误差、坐标和时间关系。把几路数值打印在一起，只完成了联合观察，不等于已经得到融合定位结果。\n',
+                       '\n',
+                       '**多模态**涉及视觉、语音、动作等不同的信息或表达方式。相机与IMU是不同传感器；视觉检测后播放介绍、执行动作，则涉及多种模态的协作。多传感器融合可以为这种协作提供信息，两者关注的对象不同。'],
+            'id': 'fde58d1bf8'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['## 二、建立三路订阅\n',
+                       '\n',
+                       '### 2.1 按需读取与订阅\n',
+                       '\n',
+                       '`get_imu()`由主程序主动读取最近可用值；`subscribe_imu(on_imu)`登记一个回调，SDK收到更新时调用它。**回调**就是预先交给SDK、等数据到达时再执行的函数。本课使用SDK已有的回调机制，不需要先创建自己的线程。\n',
+                       '\n',
+                       '回调只提取需要的值，保存为一份新记录；显示、比较和慢处理放在主程序中。这样可减少回调等待。三路分别更新，显示时依次取得的最近记录仍可能来自不同采集时刻。\n',
+                       '\n',
+                       '⚠️ **实验安全**：本课不发运动或模式切换指令。机器人保持坐稳或站稳，避免碰动机器人。若需调整站姿，先按既定模式与人工支撑流程操作，完成后再运行采集。\n',
+                       '\n',
+                       '📌 **前置**：已连接机器人；旧订阅已退订；在Notebook所在目录运行。\n',
+                       '\n',
+                       '**STEP 01：连接并查看模式。**'],
+            'id': '03a5027415'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['import time\n',
+                       'from boosteros.robots.booster import BoosterRobot\n',
+                       '\n',
+                       'robot = BoosterRobot()\n',
+                       'print("机器人：", robot.robot_info.model, robot.robot_info.serial_number)\n',
+                       'print("模式：", robot.get_mode())'],
+            'id': '6547682ba7'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['### 2.2 同一观察时刻显示哪些值\n',
+                       '\n',
+                       '`latest`中每路保存一份记录，包括数据值、源时间戳和本地接收时刻。`time.monotonic()`用于计算本程序中的时间间隔，不能与SDK源时间戳直接相减。\n',
+                       '\n',
+                       '**STEP 02：订阅三路，每秒显示一次，共观察五次。** '
+                       '回调每次替换完整记录；主程序取出后使用这份记录，不在同一次打印中反复读取正在更新的字段。`with`覆盖整个观察过程，正常结束或中断时退出并退订。\n',
+                       '\n',
+                       '输出中的“接收后”表示这份记录被本程序接收后经过多久。它不包含传感器采集到回调开始前的传输和排队时间，因此不能直接当作完整延迟。'],
+            'id': 'eee6de38ef'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['latest = {"图像": None, "IMU": None, "里程计": None}\n',
+                       '\n',
+                       'def on_image(image):\n',
+                       '    received = time.monotonic()\n',
+                       '    pixels = image.to_numpy()\n',
+                       '    latest["图像"] = {"source": image.header.timestamp, "received": received,\n',
+                       '                      "value": '
+                       'f"{image.width}×{image.height}，中心像素{pixels[image.height//2, '
+                       'image.width//2].tolist()}"}\n',
+                       '\n',
+                       'def on_imu(imu):\n',
+                       '    latest["IMU"] = {"source": imu.timestamp, "received": time.monotonic(),\n',
+                       '                     "value": f"z轴角速度={imu.angular_velocity[2]:.3f} rad/s"}\n',
+                       '\n',
+                       'def on_odom(odom):\n',
+                       '    x, y, yaw = odom.pose_2d\n',
+                       '    latest["里程计"] = {"source": odom.timestamp, "received": time.monotonic(),\n',
+                       '                        "value": f"x={x:.3f} m，y={y:.3f} m，yaw={yaw:.3f} rad"}\n',
+                       '\n',
+                       'with robot.subscribe_image(on_image, queue_size=1, overflow="drop_oldest"), \\\n',
+                       '     robot.subscribe_imu(on_imu, queue_size=1, overflow="drop_oldest"), \\\n',
+                       '     robot.subscribe_odom(on_odom, queue_size=1, overflow="drop_oldest"):\n',
+                       '    for number in range(5):\n',
+                       '        time.sleep(1.0)\n',
+                       '        snapshot = dict(latest)\n',
+                       '        observed = time.monotonic()\n',
+                       '        print(f"\\n观察{number+1}，本地时刻={observed:.3f}")\n',
+                       '        for name in ["图像", "IMU", "里程计"]:\n',
+                       '            record = snapshot[name]\n',
+                       '            if record is None:\n',
+                       '                print(name, "尚未收到")\n',
+                       '            else:\n',
+                       '                age = observed-record["received"]\n',
+                       '                print(name, record["value"], "源时间戳=", record["source"],\n',
+                       '                      f"接收后{age:.3f}秒")\n',
+                       'print("三路观察已结束，订阅已退出")'],
+            'id': 'a2709fba70'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['记录一组完整快照。图像中心像素随卡片变化时，另外两路不一定发生明显变化；读数不变与没有更新要结合接收时刻判断。\n',
+                       '\n',
+                       '| 观察编号 | 图像数值/接收后时长 | IMU数值/接收后时长 | 里程计数值/接收后时长 | 缺失或待查项 |\n',
+                       '| --- | --- | --- | --- | --- |\n',
+                       '| | | | | |\n',
+                       '\n',
+                       '### 2.3 核对源时间戳\n',
+                       '\n',
+                       '源时间戳描述数据对应的时刻。比较图像和IMU前，须核实单位及计时基准一致；同为一个数值类型不代表可以直接比较。若单位为秒且同源，图像－IMU为负，表示这份图像的时刻较早。各路最近记录的差值没有完成同步配对，也不表示当前数据年龄。\n',
+                       '\n',
+                       '**STEP 03：检查最后一份快照的时间戳。** 未核实时保持`False`，记录原值即可。'],
+            'id': 'e0317ce258'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['TIMESTAMPS_VERIFIED = False  # 教师核实单位为秒且基准一致后修改\n',
+                       'if not TIMESTAMPS_VERIFIED:\n',
+                       '    print("本次仅保留源时间戳原值，单位与基准待核")\n',
+                       'elif snapshot["图像"] is None or snapshot["IMU"] is None or snapshot["里程计"] is None:\n',
+                       '    print("缺少记录，不能比较")\n',
+                       'else:\n',
+                       '    print("图像－IMU：", (snapshot["图像"]["source"]-snapshot["IMU"]["source"])*1000, '
+                       '"毫秒")\n',
+                       '    print("图像－里程计：", (snapshot["图像"]["source"]-snapshot["里程计"]["source"])*1000, '
+                       '"毫秒")'],
+            'id': 'c3e81ccaf2'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['## 三、处理跟不上时保留什么\n',
+                       '\n',
+                       '队列保存等待回调处理的数据。传感器订阅`queue_size=0`表示不设容量上限；本课状态观察需要近期数据，因此显式设置有限容量。\n',
+                       '\n',
+                       '| 队列满时的策略 | 处理 | 适用取舍 |\n',
+                       '| --- | --- | --- |\n',
+                       '| drop_oldest | 丢弃最旧的待处理项，留下新到的数据 | 优先了解近期状态，但会遗漏中间数据 |\n',
+                       '| drop_newest | 丢弃新到的数据，保留正在等待的旧项 | 保留已排队项，收到的记录可能更旧 |\n',
+                       '| block | 等待队列有空位 | 会产生等待，不能保证完整链路无损 |\n',
+                       '\n',
+                       '### 3.1 用慢回调比较两种策略\n',
+                       '\n',
+                       '**STEP 04：运行下面定义。** 这里特意把图像回调放慢到约0.3秒，用于暴露排队现象；实际状态观察应采用STEP '
+                       '02的短回调。实验保持机器人和场景条件相近，分别记录两种策略。回调中只采集时间记录，实验结束后打印，减少打印对比较的干扰。'],
+            'id': '4aac282936'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['def queue_trial(policy):\n',
+                       '    rows = []\n',
+                       '    def slow_image(image):\n',
+                       '        received = time.monotonic()\n',
+                       '        time.sleep(0.3)\n',
+                       '        rows.append((image.header.timestamp, received))\n',
+                       '    with robot.subscribe_image(slow_image, queue_size=1, overflow=policy):\n',
+                       '        time.sleep(3.0)\n',
+                       '    print("策略：", policy, "已处理条数：", len(rows))\n',
+                       '    for stamp, received in rows[-5:]:\n',
+                       '        print("源时间戳：", stamp, "回调开始的本地时刻：", round(received, 3))\n',
+                       '    return rows'],
+            'id': '95ecf4003e'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['**STEP 05：先运行drop_oldest，结束后再运行下一格。** 运行期间可以缓慢移动卡片，不碰机器人。'],
+            'id': '8e3cd3f8e3'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['oldest_rows = queue_trial("drop_oldest")'],
+            'id': '5f12471448'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['**STEP 06：比较drop_newest。** '
+                       '条数接近不表示保留了相同的数据。核实时间戳单位后，可比较相邻源时刻间隔与回调开始间隔；本实验没有记录全部原始消息，因此不能准确统计每条被丢弃的数据，也不能保证每次差异都明显。'],
+            'id': 'e78053dd94'},
+           {'cell_type': 'code',
+            'metadata': {},
+            'execution_count': None,
+            'outputs': [],
+            'source': ['newest_rows = queue_trial("drop_newest")'],
+            'id': '974d546683'},
+           {'cell_type': 'markdown',
+            'metadata': {},
+            'source': ['### 3.2 为状态观察窗作选择\n',
+                       '\n',
+                       '| 策略 | 已处理条数 | 末几条源时间戳与间隔 | 本次能确认什么 | 仍不能确认什么 |\n',
+                       '| --- | --- | --- | --- | --- |\n',
+                       '| drop_oldest | | | | |\n',
+                       '| drop_newest | | | | |\n',
+                       '\n',
+                       '状态观察窗关心近期读数，可以选择小队列和`drop_oldest`，同时显示接收后时长；若要保存全部采样用于离线分析，还需另行设计处理能力和存储，不能把本课设置当作无损采集方案。\n',
+                       '\n',
+                       '本课实验结束时，各格的`with`均已退出，无需切换模式来证明退订。按教师安排保持当前安全姿态；需要关机时执行既定人工收尾流程。\n',
+                       '\n',
+                       '## 四、学习检查\n',
+                       '\n',
+                       '1. 在STEP 02某次观察中，三路数值分别是什么？哪路记录被接收得更早？这一结果能否说明采集顺序？\n',
+                       '2. 某路“接收后”很短，但源数据已经排队很久，显示值能证明端到端延迟很小吗？说明还缺少什么信息。\n',
+                       '3. 为当前状态窗选择队列策略，并结合本次记录解释代价；若两次实验差异不明显，应如实记录。\n',
+                       '4. 说明多传感器融合、多路联合打印和视觉—语音—动作协作各关注什么。给出一个需要融合估计的例子，但不把本实验称为已实现定位融合。\n',
+                       '\n',
+                       '**完成核对**：有数值的三路快照、源时间戳核实状态、队列记录和策略说明均已保存；全部订阅已退出。'],
+            'id': '450fc97516'}],
+ 'metadata': {'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
+              'language_info': {'name': 'python'},
+              'x_course': {'outline': 'v5', 'phase': 'P1', 'confirmation_1': False, 'confirmation_2': False}},
+ 'nbformat': 4,
+ 'nbformat_minor': 5}
+if __name__ in ("__main__", "__gen__"):
+    path = Path(__file__).parent / "notebooks" / 'U7-L1_多传感器订阅.ipynb'
+    path.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1)+"\n", encoding="utf-8")
