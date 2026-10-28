@@ -1,0 +1,13 @@
+{
+  "head": "3051c3def714c740b324f3c3e240143082916ce9",
+  "shared_expected_sha256": {
+    "AGENTS.md": "b29cfb4a0f46932da43bbbdc617b5eeef8882aac52c40d8b697bc98ef1787f17",
+    "INDEX.md": "1445ec3ba5becbc244a11eb937cbb4a3a8e6fe14c00fce8336e1df4ff8525c2c",
+    "CHANGELOG.md": "59aa9fdc29942fe5146a3f7fe93298fbaede7e33e40d9eccc3d0364a102ae864",
+    "05-internal-materials/vocational-planning/README.md": "b3674b9e02e6164d911a1c580f6a5ed590f8b5cddf569a0839422bfb9f4ce5b9",
+    "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md": "c358ec10448f1a5b6a4467a639f1b227c5a1e2d8d6b169f518aae581b45e37c0",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md": "b342acc2b2ea39c95c3b0a429cf6612a0b3f4a777c4a011c56f1e89395c71da8",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md": "fa49712fa078f530fea3da9c72f11e50fa056f49067d5a5afc31ee677357f5c3",
+    "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U5-L4_U6_P3教学设计覆盖检查记录.md": "b51ec674e7ca007fb8ef28ff53f70cda4e632b9bcbe62c495328f2ea3043f028"
+  }
+}

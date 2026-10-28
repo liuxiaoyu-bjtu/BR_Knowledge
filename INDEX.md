@@ -8,9 +8,11 @@ last_updated: "2026-09-01"
 
 # 全局关键词索引
 
+> U5-L4与U6五课P4 / 逐页大纲 / 全格与评价覆盖：[P4审阅入口](05-internal-materials/vocational-planning/03_X课程项目/PPT内容设计/U5-L4_U6_P4覆盖检查记录.md)（④已通过；28/28/25/27/26页，待⑤；含全部96格、20代码格及逐题映射）。
+
 > X课程当前进度 / 32课阶段 / 确认节点 / 正式版与待补附件：[逐课进度总表](05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md)。U1-L1的⑥通过已补记；文件存在与阶段确认分开统计。
 
-> U6动作录制与回放 / 视频动作训练 / imretarget / 动作工坊与Booster Train / 混合动作编排：[重构与SDK核验](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U6_单元重构与动作编排核验.md)（2026-10-28更新；四课P2通过，P3待④；L3现有资源调用示例，L4基础混编尚未接入工坊资源）。
+> U6动作录制与回放 / 视频动作训练 / imretarget / 动作工坊与Booster Train / 混合动作编排：[重构与SDK核验](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U6_单元重构与动作编排核验.md)（2026-10-28更新；四课P2及④通过，P4大纲完成待⑤；L3现有资源调用示例，L4基础混编尚未接入工坊资源）。
 
 > U4距离实验 / 框高估距 / 框面积与距离 / 指定位移 / U4与U7分工：[L2～L4复评与文字校对](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L2-L4_距离实验复评与文字校对.md)（2026-10-26；策略2主线建议、官方SDK核验、42格文字修订，实验结构与代码未变）。
 

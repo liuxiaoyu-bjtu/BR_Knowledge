@@ -1,0 +1,50 @@
+[
+  {
+    "path": "AGENTS.md",
+    "before_sha256": "04e387570d45b98f43559aa4180beac7b0658440086069cede4f46bbcbfc63bc",
+    "after_sha256": "bf16872126c06f6fb713e109e079d26df995460c712246cf83663b8402ee6ea3",
+    "u7_records_preserved": true
+  },
+  {
+    "path": "INDEX.md",
+    "before_sha256": "a11358232464d28282d40e4b3f01902cf7c67024323e484e6be5835624111a5b",
+    "after_sha256": "9475b3c2320f9a7011516a59694b0d65f2eac09a8f7b805f2c77f0d6b83005ef",
+    "u7_records_preserved": true
+  },
+  {
+    "path": "CHANGELOG.md",
+    "before_sha256": "c352b1526e4d3746437a606bafe6ab5b65efe6304bb1a6fad0c8579d632d50fd",
+    "after_sha256": "7a49ab725e47bec85804066334f75d79369c90e3afd34378665aacc73c1ec0e4",
+    "u7_records_preserved": true
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/README.md",
+    "before_sha256": "6ea0e8aac27c6eaec530b0739c5a18943a0f333ba36ce6dc77119b121422774d",
+    "after_sha256": "9bae380e0c76b39a1eee2383727ea8444802595f36f696f9b2168e14f4a3d579",
+    "u7_records_preserved": true
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md",
+    "before_sha256": "60f456eb45acae6678aff331d01ea90bca694426a742b397e16c9f7c22fb74b2",
+    "after_sha256": "c3b54e39632ea500d7aa6246855d3ed087f3ba62a930fce1b7786aa6b8934e3b",
+    "u7_records_preserved": true
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md",
+    "before_sha256": "665d22668a944c04d3c9fa6642fa9b0783737cab4dc1bf2731b5a9326988a0f8",
+    "after_sha256": "f87f7eb62767b5fe5bafb9411e7710e3a99aa21bd51829d6e3b34033cd8070ce",
+    "u7_records_preserved": true
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md",
+    "before_sha256": "aec07e5fb97070d315d4ecd1bc5c4e700c965c39b0028aa165e0ea967278ac75",
+    "after_sha256": "31f1d3cb9f988b732bc07f728abd1996b725f3bae7b85ea14259912cd3b00204",
+    "u7_records_preserved": true
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U5-L4_U6_P3教学设计覆盖检查记录.md",
+    "before_sha256": "b48165c0af27e47b8908e8a7bba283b2d9591dfaf01376a50ddcf60f3d56300b",
+    "after_sha256": "b51ec674e7ca007fb8ef28ff53f70cda4e632b9bcbe62c495328f2ea3043f028",
+    "u7_records_preserved": true
+  }
+]
