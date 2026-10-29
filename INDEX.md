@@ -8,6 +8,8 @@ last_updated: "2026-09-01"
 
 # 全局关键词索引
 
+> U4移动目标跟随 / 框高阈值 / 跟进与暂停 / 接待到位 / 机器人位移方向：[L3/L4新稿与验证](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L3-L4_视觉移动跟随重设与验证.md)（2026-10-29；视觉控制、IMU/odom记录；新代码待①②）。
+
 > U4课间承接 / 框高启动与停止阈值：[L3/L4同步审查](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L3-L4_承接新版L2的同步审查.md)；U7逐格真机测试 / 足球动态标定 / 线程退出：[四课测试指导](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_逐课真机测试指导.md)（2026-10-29；未新增确认）。
 
 > U4-L2重开发 / 行进速度比较 / 框高反比例估距 / 视觉停止阈值：[第五部分与后续Phase依据](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L2_重开发回读与第五部分同步.md)（2026-10-29；36格/10代码，生成器同步，未新增真机确认）。
