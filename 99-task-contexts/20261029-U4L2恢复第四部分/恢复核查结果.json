@@ -1,0 +1,24 @@
+{
+  "reference_commit": "b0c2a1ffd9bf5e751e29fc09597b53f899168a9d",
+  "before_cells": 34,
+  "after_cells": 36,
+  "restored": [
+    {
+      "cell": 21,
+      "id": "7daf2f28",
+      "title": "### 4.1 检测框大小与距离"
+    },
+    {
+      "cell": 22,
+      "id": "f0a303cc",
+      "title": "### 4.2 已知距离上的标定"
+    }
+  ],
+  "cell_9_preserved_exactly": true,
+  "all_other_cells_preserved_exactly": true,
+  "all_code_outputs_and_metadata_preserved": true,
+  "nbformat_valid": true,
+  "generator_round_trip_identical": true,
+  "other_notebooks_unchanged": 32,
+  "robot_executed": false
+}

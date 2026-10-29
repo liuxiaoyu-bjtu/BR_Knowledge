@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'U4-L2 用户重开发稿的完整Notebook镜像；2026-10-29同步。\n36格（26 Markdown/10代码），STEP01–08；第五部分记录实际行走、速度比较、框高标定核对与阈值任务。\n用户代码、空白自主编写格、元数据和执行记录按Notebook保留。未登记真机确认②或P2通过。\n运行会覆盖Notebook，须先核对用户手改。'
+'U4-L2完整Notebook镜像；已恢复第四部分误删的4.1、4.2两格。第9格保留用户明确确认的原描述；36格，26 Markdown/10代码。运行会覆盖Notebook，须先核对用户手改。'
 import json
 from pathlib import Path
 NOTEBOOK = {'cells': [{'cell_type': 'markdown',
@@ -101,8 +101,7 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
                        '- 结果2：`清零之后：x = 0.000 m，y = 0.000 m，方向 = 0.002 rad`\n',
                        '- 结果3：`清零之后：x = -0.000 m，y = 0.000 m，方向 = -0.000 rad`\n',
                        '\n',
-                       '清零后到读取之间，估计值仍可能更新，因此输出不一定恰好为零。记录本次 x、y '
-                       '和朝向；偏差是否可接受，要结合计划行进量和朝向要求判断。反复清零直到显示为零，不能证明里程计已经准确。']},
+                       '这些都是误差允许范围，可以直接使用。如果就是想让输出结果接近“结果3”该怎么做呢？连续运行几次上面一格程序，得到的结果千分位也会成为`0`。']},
            {'cell_type': 'markdown',
             'id': '16b78535',
             'metadata': {},
@@ -524,5 +523,5 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
  'nbformat': 4,
  'nbformat_minor': 5}
 if __name__ in ("__main__", "__gen__"):
-    path = Path(__file__).parent / "notebooks" / "U4-L2_走近来宾.ipynb"
-    path.write_text(json.dumps(NOTEBOOK,ensure_ascii=False,indent=1)+"\n",encoding="utf-8")
+    path = Path(__file__).parent / "notebooks" / 'U4-L2_走近来宾.ipynb'
+    path.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1)+"\n", encoding="utf-8")
