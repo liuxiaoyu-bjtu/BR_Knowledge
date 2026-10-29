@@ -1,0 +1,36 @@
+{
+  "cells": 36,
+  "markdown_cells": 26,
+  "code_cells": 10,
+  "original_code_and_outputs_preserved": true,
+  "metadata_preserved": true,
+  "missing_cell_ids_completed": true,
+  "student_exercise_preserved": true,
+  "nbformat_valid": true,
+  "format_notes": [],
+  "generator_roundtrip": true,
+  "reverse_roundtrip": true,
+  "protected_checked": 33,
+  "external_changes_not_written_or_staged": [
+    {
+      "file": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L1_多传感器订阅.ipynb",
+      "baseline": "97d30af34668579aa81194438e8d960be7ac750061a428674fd166dd55e08ab1",
+      "current": "478eef5323ac9189ddaf61fb728c85ac4c0b1de2d386eb5b7b98e6fb0ec3ab21"
+    },
+    {
+      "file": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L2_足球定位与自动踢球.ipynb",
+      "baseline": "d43cc9a4246388706c8279887dcbc689b04f86613fadbfc733e67f899f648b5b",
+      "current": "933c9138bde0c14b86db8998bbe6f0bc07131ab274ff1a612fccbfbddd77f278"
+    },
+    {
+      "file": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L3_多线程协作.ipynb",
+      "baseline": "7081b5a89dfedc2a56c4b43f97c72d794545c62ca2c55f28d51af9cb99d9a225",
+      "current": "e25aa9324922654444407d815f1559bdfe32d3f19faa4cac65aac9efc39d9ab3"
+    }
+  ],
+  "u4_l1_l3_l4_and_v4_unchanged": true,
+  "step_references_valid": true,
+  "missing_links": [],
+  "robot_executed": false,
+  "phase_advanced": false
+}

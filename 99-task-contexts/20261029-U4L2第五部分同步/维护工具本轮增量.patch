@@ -1,0 +1,10 @@
+--- a/05-internal-materials/vocational-planning/03_X课程项目/_regen_from_nb.py
++++ b/05-internal-materials/vocational-planning/03_X课程项目/_regen_from_nb.py
+@@ -96,2 +96,2 @@
+-    # v5八课保留完整Notebook元数据、cell id与用户执行记录。
+-    if os.path.basename(gen_path) in [f"_gen_L{i}.py" for i in range(25, 33)]:
++    # U4-L2重开发稿与v5八课保留完整Notebook元数据、cell id与用户执行记录。
++    if os.path.basename(gen_path) in ["_gen_L14.py"] + [f"_gen_L{i}.py" for i in range(25, 33)]:
+@@ -772 +772 @@
+-    '_gen_L14.py': 'U4-L2 走近来宾（距离估计与核对）——Notebook 的可执行镜像。\n以 notebooks/U4-L2_走近来宾.ipynb 为源，2026-10-21 反向同步；重新运行会覆盖该 Notebook。\n现稿 41 cells（30 markdown / 11 code），STEP 01–11。\n学生任务：区分行进量与来宾间距；在 walk 模式清零里程计并按计划行进量停止；\n用同一位来宾在 1.2 m 处的框高占比粗略估距，在 1.5 m 处检查；\n把同一次停靠的里程计推算间距、框高估距、卷尺实测并列比较，提出下一次运行前应检查的条件。\n教学层次：标定(B11)、传感局限(B12)；单次偏差与持续漂移分开说明，\n不要求优化里程计、实现融合定位或根据视觉结果自动补走。\n代码条件：get_odom().pose_2d 的 x 只在清零后基本直行时近似表示行进量；\nDetection(model="person") 只安排一位站定来宾，传入 to_numpy() 的结果。\n运行与收尾保留 prepare → 人工拉起确认 → walk；零速度 → prepare → 人工扶坐 → damping。\n状态：P1 修订稿，真机确认②未完成。',
++    '_gen_L14.py': 'U4-L2 用户重开发稿的完整Notebook镜像；2026-10-29同步。\n36格（26 Markdown/10代码），STEP01–08；第五部分记录实际行走、速度比较、框高标定核对与阈值任务。\n用户代码、空白自主编写格、元数据和执行记录按Notebook保留。未登记真机确认②或P2通过。\n运行会覆盖Notebook，须先核对用户手改。',

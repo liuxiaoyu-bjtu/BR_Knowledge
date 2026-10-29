@@ -1,0 +1,28 @@
+{
+  "shared_head_increment": [
+    "AGENTS.md",
+    "INDEX.md",
+    "CHANGELOG.md",
+    "05-internal-materials/vocational-planning/README.md",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v5.md",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md",
+    "05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md",
+    "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md",
+    "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L2-L4_距离实验复评与文字校对.md"
+  ],
+  "owned": [
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L2_走近来宾.ipynb",
+    "05-internal-materials/vocational-planning/03_X课程项目/_gen_L14.py",
+    "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L2_重开发回读与第五部分同步.md",
+    "99-task-contexts/20261029-U4L2第五部分同步/00-任务上下文.md",
+    "99-task-contexts/20261029-U4L2第五部分同步/基线.json",
+    "99-task-contexts/20261029-U4L2第五部分同步/修订Notebook.py",
+    "99-task-contexts/20261029-U4L2第五部分同步/同步必要文件.py",
+    "99-task-contexts/20261029-U4L2第五部分同步/Notebook修改清单.json",
+    "99-task-contexts/20261029-U4L2第五部分同步/离线核查.py",
+    "99-task-contexts/20261029-U4L2第五部分同步/离线核查结果.json",
+    "99-task-contexts/20261029-U4L2第五部分同步/维护工具本轮增量.patch",
+    "99-task-contexts/20261029-U4L2第五部分同步/补齐单元格标识.json"
+  ],
+  "local_commit_only": true
+}

@@ -8,6 +8,8 @@ last_updated: "2026-09-01"
 
 # 全局关键词索引
 
+> U4-L2重开发 / 行进速度比较 / 框高反比例估距 / 视觉停止阈值：[第五部分与后续Phase依据](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L2_重开发回读与第五部分同步.md)（2026-10-29；36格/10代码，生成器同步，未新增真机确认）。
+
 > X课程v5 / 多传感器融合与多模态 / 自动踢球 / 机器人坐标 / U8导览踢球二选一：[v5大纲](05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v5.md)、[八课P1与验证清单](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_U8_v5重构与验证清单.md)（101格/36代码格；32课主Notebook；①②待完成）。旧U7与U8准备记录保留历史含义。
 
 > U7/U8内容重叠 / U8-P1准备 / 模块接口与验收 / 视觉踢球前置：[边界排查](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7-L4与U8_内容边界排查.md)、[四课开发准备](05-internal-materials/vocational-planning/03_X课程项目/U8-P1开发准备.md)（2026-10-28；准备完成，U8学生稿尚未产出；U7 Notebook未改）。
