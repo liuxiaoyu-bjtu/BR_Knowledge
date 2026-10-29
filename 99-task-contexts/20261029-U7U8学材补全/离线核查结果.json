@@ -1,0 +1,76 @@
+{
+  "robot_executed": false,
+  "notebooks": [
+    {
+      "name": "U7-L1_多传感器订阅.ipynb",
+      "cells": 15,
+      "code": 6,
+      "generator_equal": true
+    },
+    {
+      "name": "U7-L2_足球定位与自动踢球.ipynb",
+      "cells": 17,
+      "code": 7,
+      "generator_equal": true
+    },
+    {
+      "name": "U7-L3_多线程协作.ipynb",
+      "cells": 15,
+      "code": 6,
+      "generator_equal": true
+    },
+    {
+      "name": "U7-L4_多模态流程衔接.ipynb",
+      "cells": 13,
+      "code": 5,
+      "generator_equal": true
+    },
+    {
+      "name": "U8-L1_选题与任务拆解.ipynb",
+      "cells": 5,
+      "code": 0,
+      "generator_equal": true
+    },
+    {
+      "name": "U8-L2_分主题开发模板.ipynb",
+      "cells": 19,
+      "code": 8,
+      "generator_equal": true
+    },
+    {
+      "name": "U8-L3_联调模板.ipynb",
+      "cells": 13,
+      "code": 5,
+      "generator_equal": true
+    },
+    {
+      "name": "U8-L4_展示评分表.ipynb",
+      "cells": 6,
+      "code": 0,
+      "generator_equal": true
+    }
+  ],
+  "cases": [
+    "U1～U6全部主Notebook字节未变",
+    "八课语法、ID、标签、子标题和生成器镜像核查通过",
+    "完整导览配置通过静态检查",
+    "重复或不匹配基础步骤被拒绝",
+    "非有限踢球参数被拒绝",
+    "正常路径依次执行观察、介绍、新观测、行为",
+    "主流程实际调用可由本组修改的介绍和行为函数",
+    "首次观察不满足时阻断行为并标记未执行",
+    "介绍不满足时阻断行为并标记未执行",
+    "再观察不满足时阻断行为并标记未执行",
+    "介绍异常保留部分日志且不进入后续行为",
+    "试踢保留停止原因与坐标记录，不伪造进球成功",
+    "本次没有标定记录时清除上轮观测展示，拒用旧值",
+    "旧任务未结束时主流程拒绝启动",
+    "取消后仍未结束时保留原句柄及待处理项",
+    "未获本次批准时保留既有运行日志与版本"
+  ],
+  "nbformat_validation": true,
+  "totals": {
+    "cells": 103,
+    "code": 37
+  }
+}
