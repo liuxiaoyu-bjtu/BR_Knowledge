@@ -1,0 +1,7 @@
+--- 05-internal-materials/vocational-planning/03_X课程项目/_regen_from_nb.py
++++ 05-internal-materials/vocational-planning/03_X课程项目/_regen_from_nb.py
+@@ -96,2 +96,2 @@
+-    # U4-L2重开发稿与v5八课保留完整Notebook元数据、cell id与用户执行记录。
+-    if os.path.basename(gen_path) in ["_gen_L14.py"] + [f"_gen_L{i}.py" for i in range(25, 33)]:
++    # U4-L2～L4与v5八课保留完整Notebook元数据、cell id与用户执行记录。
++    if os.path.basename(gen_path) in ["_gen_L14.py", "_gen_L15.py", "_gen_L16.py"] + [f"_gen_L{i}.py" for i in range(25, 33)]:

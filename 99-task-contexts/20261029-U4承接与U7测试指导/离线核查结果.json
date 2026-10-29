@@ -1,0 +1,184 @@
+{
+  "notebooks": [
+    {
+      "file": "U4-L3_跟住来宾.ipynb",
+      "cells": 39,
+      "code_cells": 11,
+      "code_outputs_metadata_preserved": true,
+      "nbformat": true,
+      "forward_and_reverse_generator": true,
+      "sss_remaining": 0
+    },
+    {
+      "file": "U4-L4_接待来宾.ipynb",
+      "cells": 40,
+      "code_cells": 11,
+      "code_outputs_metadata_preserved": true,
+      "nbformat": true,
+      "forward_and_reverse_generator": true,
+      "sss_remaining": 0
+    },
+    {
+      "file": "U7-L1_多传感器订阅.ipynb",
+      "cells": 15,
+      "code_cells": 6,
+      "code_outputs_metadata_preserved": true,
+      "nbformat": true,
+      "forward_and_reverse_generator": true,
+      "sss_remaining": 0
+    },
+    {
+      "file": "U7-L2_足球定位与自动踢球.ipynb",
+      "cells": 17,
+      "code_cells": 7,
+      "code_outputs_metadata_preserved": true,
+      "nbformat": true,
+      "forward_and_reverse_generator": true,
+      "sss_remaining": 0
+    },
+    {
+      "file": "U7-L3_多线程协作.ipynb",
+      "cells": 15,
+      "code_cells": 6,
+      "code_outputs_metadata_preserved": true,
+      "nbformat": true,
+      "forward_and_reverse_generator": true,
+      "sss_remaining": 0
+    },
+    {
+      "file": "U7-L4_多模态流程衔接.ipynb",
+      "cells": 13,
+      "code_cells": 5,
+      "code_outputs_metadata_preserved": true,
+      "nbformat": true,
+      "forward_and_reverse_generator": true,
+      "sss_remaining": 0
+    }
+  ],
+  "protected": [
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U1-L1_具身智能概览与连接K1.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U1-L2_运行模式与安全.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U1-L3_基本运动控制.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U1-L4_头部步态与预定义动作.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U2-L1_ROS2通信基础.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U2-L2_传感器速览.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U2-L3_IMU与里程计.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U2-L4_状态监测与融合.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U3-L1_机器人的眼睛 1.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U3-L1_机器人的眼睛.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U3-L2_目标检测入门.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U3-L3_置信度与多目标.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U3-L4_方位检测器.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U4-L1_转向来宾.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U5-L1_语音识别.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U5-L2_语音合成.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U5-L3_LLM对话.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U5-L4_语音问答闭环.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U6-L1_动作的来源.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U6-L2_动作录制与回放.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U6-L3_视频动作训练.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U6-L4_动作编排.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U8-L1_选题与任务拆解.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U8-L2_分主题开发模板.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U8-L3_联调模板.ipynb",
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U8-L4_展示评分表.ipynb"
+  ],
+  "links": [
+    {
+      "file": "U4-L3-L4_承接新版L2的同步审查.md",
+      "target": "../notebooks/U4-L3_跟住来宾.ipynb"
+    },
+    {
+      "file": "U4-L3-L4_承接新版L2的同步审查.md",
+      "target": "../notebooks/U4-L4_接待来宾.ipynb"
+    },
+    {
+      "file": "U4-L3-L4_承接新版L2的同步审查.md",
+      "target": "U4-L2_重开发回读与第五部分同步.md"
+    },
+    {
+      "file": "U4-L3-L4_承接新版L2的同步审查.md",
+      "target": "U7_逐课真机测试指导.md"
+    },
+    {
+      "file": "U7_逐课真机测试指导.md",
+      "target": "../notebooks/U7-L1_多传感器订阅.ipynb"
+    },
+    {
+      "file": "U7_逐课真机测试指导.md",
+      "target": "../notebooks/U7-L2_足球定位与自动踢球.ipynb"
+    },
+    {
+      "file": "U7_逐课真机测试指导.md",
+      "target": "../notebooks/U7-L3_多线程协作.ipynb"
+    },
+    {
+      "file": "U7_逐课真机测试指导.md",
+      "target": "../notebooks/U7-L4_多模态流程衔接.ipynb"
+    },
+    {
+      "file": "U7_逐课真机测试指导.md",
+      "target": "U7_U8_v5重构与验证清单.md"
+    },
+    {
+      "file": "U7_逐课真机测试指导.md",
+      "target": "../notebooks/x_lab/README.md"
+    }
+  ],
+  "robot_executed": false,
+  "external_changes_preserved": [
+    "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U4-L2_走近来宾.ipynb"
+  ],
+  "markdown_replacements": 16,
+  "added_cell_ids": 79,
+  "changed_cells": [
+    [
+      "U4-L3_跟住来宾.ipynb",
+      2
+    ],
+    [
+      "U4-L3_跟住来宾.ipynb",
+      5
+    ],
+    [
+      "U4-L3_跟住来宾.ipynb",
+      21
+    ],
+    [
+      "U4-L3_跟住来宾.ipynb",
+      30
+    ],
+    [
+      "U4-L4_接待来宾.ipynb",
+      2
+    ],
+    [
+      "U4-L4_接待来宾.ipynb",
+      5
+    ],
+    [
+      "U4-L4_接待来宾.ipynb",
+      15
+    ],
+    [
+      "U4-L4_接待来宾.ipynb",
+      24
+    ],
+    [
+      "U4-L4_接待来宾.ipynb",
+      28
+    ],
+    [
+      "U4-L4_接待来宾.ipynb",
+      39
+    ],
+    [
+      "U7-L1_多传感器订阅.ipynb",
+      2
+    ],
+    [
+      "U7-L2_足球定位与自动踢球.ipynb",
+      2
+    ]
+  ]
+}

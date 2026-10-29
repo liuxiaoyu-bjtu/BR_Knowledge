@@ -1,0 +1,10 @@
+{
+  "05-internal-materials\\vocational-planning\\03_X课程项目\\notebooks\\U4-L2_走近来宾.ipynb": {
+    "baseline_sha256": "549225c38506216511d05b742800a1347254dbc291002e9414ff35191247c851",
+    "observed_sha256": "fd69b21612ed19f2c6b3599c7716407820cf115f803a4effb03771b9f4846bd9",
+    "cells_now": 34,
+    "code_order_preserved": true,
+    "changed_by_this_task": false,
+    "detail": "删除原21、22格标定原理说明；修改原第9格清零说明；其余source按cell ID核对不变；未暂存该Notebook"
+  }
+}
