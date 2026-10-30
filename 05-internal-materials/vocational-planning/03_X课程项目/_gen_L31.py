@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Notebook完整镜像；重跑前核对学生稿与用户执行记录。"""
+"""学生Notebook完整镜像；2026-10-30补齐评价与检查点，不执行SDK。"""
 import json
 from pathlib import Path
 NOTEBOOK = {'cells': [{'cell_type': 'markdown',
@@ -201,16 +201,45 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
                        '\n',
                        'L4沿用本课Notebook的已验证运行格，不另抄新程序；彩排结束后不再临时增加未测试动作。作品运行原则上不超过两分钟，讲解与复位另计。\n',
                        '\n',
+                       '### 思考题\n',
+                       '\n',
                        '1. 哪条需求仍缺证据，需要补哪个用例？\n',
                        '2. 这次修改有哪项变化能由记录支持，哪些环境差异限制判断？\n',
                        '3. 请另一成员按运行说明指出退出检查和人工复位位置，两者分别解决什么问题？\n',
                        '\n',
-                       '**完成核对**：修改前代码与原始基线已保留，修改后版本和复测对应，失败/取消/未测如实记录，所有资源退出，下一课能按说明使用。']}],
+                       '**完成核对**：修改前代码与原始基线已保留，修改后版本和复测对应，失败/取消/未测如实记录，所有资源退出，下一课能按说明使用。\n',
+                       '\n',
+                       '### 检查点\n',
+                       '\n',
+                       '- [__] 能对照需求保存原始基线，区分程序结果、现场表现与未完成项。\n',
+                       '- [__] 能在注明条件的情况下复测修改，并检查原本可用路径。\n',
+                       '- [__] 能保存可交付版本和运行说明，由另一成员找到退出与人工复位步骤。\n']},
+           {'cell_type': 'markdown',
+            'id': 'u8-l3-assessment',
+            'metadata': {},
+            'source': ['## 七、学习评价\n',
+                       '\n',
+                       '请独立作答；操作完成情况另按本课记录与检查点核对。\n',
+                       '\n',
+                       '1. 判断：修改后一次运行成功，即使同时更换了场地、目标和参数，也能证明成功完全来自代码修改。（\u3000）\n',
+                       '\n',
+                       '2. 填空：修改前保留原始________记录与代码版本；复测时尽量恢复相同条件，改变的条件要________；修改后还需核对原本能工作的路径是否受影响。\n',
+                       '\n',
+                       '3. 选择：交给下一课使用的运行说明应包含（\u3000）。\n',
+                       '   A. 只有作品名称\n',
+                       '   B. 只有一次成功截图\n',
+                       '   C. 目录与版本、现场布置、运行顺序、退出复位及已知问题\n',
+                       '   D. 未测试的新功能承诺\n',
+                       '\n',
+                       '> 参考答案（教师留存，勿印发给学生）：\n',
+                       '> 1. ×，条件变化会限制归因。2. 基线；注明（记录）。3. C。\n']}],
  'metadata': {'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
               'language_info': {'name': 'python'},
               'x_course': {'confirmation_1': False, 'confirmation_2': False, 'outline': 'v5', 'phase': 'P1'}},
  'nbformat': 4,
  'nbformat_minor': 5}
-OUT = Path(__file__).parent / "notebooks" / 'U8-L3_联调模板.ipynb'
-OUT.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-print("wrote", OUT, "cells=", len(NOTEBOOK["cells"]))
+
+if __name__ == "__main__":
+    target = Path(__file__).resolve().parent / "notebooks" / 'U8-L3_联调模板.ipynb'
+    target.parent.mkdir(exist_ok=True)
+    target.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

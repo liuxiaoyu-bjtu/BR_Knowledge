@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Notebook完整镜像；重跑前核对学生稿与用户执行记录。"""
+"""学生Notebook完整镜像；2026-10-30补齐评价与检查点，不执行SDK。"""
 import json
 from pathlib import Path
 NOTEBOOK = {'cells': [{'cell_type': 'markdown',
@@ -113,6 +113,8 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
                        '\n',
                        '**任务04：每人填写，并指向本组证据。**\n',
                        '\n',
+                       '### 思考题与个人说明\n',
+                       '\n',
                        '1. 我负责哪条需求、哪个函数或哪份记录？交给谁使用？\n',
                        '2. 我能解释哪处代码或哪次修改？在哪个版本、哪个用例中看到结果？\n',
                        '3. 作品适用的场地、姿态与材料是什么？离开这些条件后先补哪项验证？\n',
@@ -132,12 +134,39 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
                        '\n',
                        '不把仍待测试的功能写成已具备能力。视频补充现场证据，替代现场演示须按教师安排，来源和时间应注明。\n',
                        '\n',
-                       '**完成核对**：文件和版本可交接，需求有对应证据，未完成项明确，现场资源全部核查，使用者能按说明找到启动、停止和复位步骤。']}],
+                       '**完成核对**：文件和版本可交接，需求有对应证据，未完成项明确，现场资源全部核查，使用者能按说明找到启动、停止和复位步骤。\n',
+                       '\n',
+                       '### 检查点\n',
+                       '\n',
+                       '- [__] 能按本组需求演示作品，用程序与现场记录说明完成程度。\n',
+                       '- [__] 能结合本组代码或现象解释两个概念及个人职责、模块交接和修改依据。\n',
+                       '- [__] 能整理交付版本与运行说明，列明适用条件、未解决项和待补用例。\n']},
+           {'cell_type': 'markdown',
+            'id': 'u8-l4-assessment',
+            'metadata': {},
+            'source': ['## 六、学习评价\n',
+                       '\n',
+                       '请独立作答；操作完成情况另按本课记录与检查点核对。\n',
+                       '\n',
+                       '1. 判断：只要用了更多API或动作幅度更大，就应该在本课评分中自动加分。（\u3000）\n',
+                       '\n',
+                       '2. 填空：说明一项功能是否完成时，应对照本组________，给出程序记录和________证据；个人答辩应指出自己的职责、代码或修改及其________依据。\n',
+                       '\n',
+                       '3. 选择：作品仍有未完成项时，合适的交付方式是（\u3000）。\n',
+                       '   A. 只展示成功录像，删除失败记录\n',
+                       '   B. 写成已完成，留给使用者发现\n',
+                       '   C. 列明适用条件、未解决项与待补用例，交付对应版本和证据\n',
+                       '   D. 展演前临时增加未测试动作\n',
+                       '\n',
+                       '> 参考答案（教师留存，勿印发给学生）：\n',
+                       '> 1. ×，评分依据已确定需求及证据。2. 需求（验收条件）；现场；验证（测试）。3. C。\n']}],
  'metadata': {'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
               'language_info': {'name': 'python'},
               'x_course': {'confirmation_1': False, 'confirmation_2': False, 'outline': 'v5', 'phase': 'P1'}},
  'nbformat': 4,
  'nbformat_minor': 5}
-OUT = Path(__file__).parent / "notebooks" / 'U8-L4_展示评分表.ipynb'
-OUT.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-print("wrote", OUT, "cells=", len(NOTEBOOK["cells"]))
+
+if __name__ == "__main__":
+    target = Path(__file__).resolve().parent / "notebooks" / 'U8-L4_展示评分表.ipynb'
+    target.parent.mkdir(exist_ok=True)
+    target.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

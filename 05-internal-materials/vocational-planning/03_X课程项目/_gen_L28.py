@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Notebook完整镜像；重跑前核对学生稿与用户执行记录。"""
+"""学生Notebook完整镜像；2026-10-30补齐评价与检查点，不执行SDK。"""
 import json
 from pathlib import Path
 NOTEBOOK = {'cells': [{'cell_type': 'markdown',
@@ -227,18 +227,47 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
                        '| 导览 | | | | | | |\n',
                        '| 踢球 | | | | | | |\n',
                        '\n',
+                       '### 思考题\n',
+                       '\n',
                        '1. 播报成功而目标已离开时，后续程序应怎样处理？指出两种片段中的对应行。\n',
                        '2. 什么需求值得增加L3工作线程？仅在播报后检查目标时，顺序程序能否完成任务？\n',
                        '3. 致意返回CANCELLED、踢球窗口达到上限，分别应怎样记录？为什么都不能直接填“表演成功”？\n',
                        '4. 若修改为一段完整应用，仍需确定哪些对象、场地、模块交接和验收要求？列出本组实际需要解决的项目问题。\n',
                        '\n',
-                       '**完成核对**：至少完成可用片段的交接记录，另一类按设备安排验证；未运行项明确标记。没有留下活动管理器、音频或动作任务。'],
-            'id': '8be6553245'}],
+                       '**完成核对**：至少完成可用片段的交接记录，另一类按设备安排验证；未运行项明确标记。没有留下活动管理器、音频或动作任务。\n',
+                       '\n',
+                       '### 检查点\n',
+                       '\n',
+                       '- [__] 能写出观察、播报、新观测与行为的交接条件，解释失败时如何退出。\n',
+                       '- [__] 能结合可用片段说明动作句柄与踢球管理器的不同收尾方式，未验证片段明确标记。\n',
+                       '- [__] 能分别记录返回原因、任务状态和现场效果，核查重跑条件。\n'],
+            'id': '8be6553245'},
+           {'cell_type': 'markdown',
+            'id': 'u7-l4-assessment',
+            'metadata': {},
+            'source': ['## 五、学习评价\n',
+                       '\n',
+                       '请独立作答；操作完成情况另按本课记录与检查点核对。\n',
+                       '\n',
+                       '1. 判断：介绍音频播放成功，就足以证明来宾或足球仍在原来的位置，可以直接执行后续行为。（\u3000）\n',
+                       '\n',
+                       '2. 填空：本课局部流程是观察→介绍→________→行为→收尾；后续行为开始前要核对新的观测、模式和________条件。\n',
+                       '\n',
+                       '3. 选择：`cleanup()`没有待处理项、`idle()`显示空闲时，可以确认（\u3000）。\n',
+                       '   A. 本session所保存资源的检查已通过，仍需核查现场及其他连接的任务\n',
+                       '   B. 整台机器人所有连接都没有任务\n',
+                       '   C. 机器人必然已物理停稳\n',
+                       '   D. 本次导览或踢球必然完成\n',
+                       '\n',
+                       '> 参考答案（教师留存，勿印发给学生）：\n',
+                       '> 1. ×，播放期间目标可能移动。2. 再观察；现场空间（或姿态、安全）。3. A。\n']}],
  'metadata': {'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
               'language_info': {'name': 'python'},
               'x_course': {'outline': 'v5', 'phase': 'P1', 'confirmation_1': False, 'confirmation_2': False}},
  'nbformat': 4,
  'nbformat_minor': 5}
-OUT = Path(__file__).parent / "notebooks" / 'U7-L4_多模态流程衔接.ipynb'
-OUT.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-print("wrote", OUT, "cells=", len(NOTEBOOK["cells"]))
+
+if __name__ == "__main__":
+    target = Path(__file__).resolve().parent / "notebooks" / 'U7-L4_多模态流程衔接.ipynb'
+    target.parent.mkdir(exist_ok=True)
+    target.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

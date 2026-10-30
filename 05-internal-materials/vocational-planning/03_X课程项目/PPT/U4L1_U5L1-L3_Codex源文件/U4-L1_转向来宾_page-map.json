@@ -1,0 +1,402 @@
+{
+  "name": "U4-L1_转向来宾",
+  "output": "D:\\A_Project\\BoosterRobotics\\知识库\\05-internal-materials\\vocational-planning\\03_X课程项目\\PPT\\U4-L1_转向来宾_Codex审查版.pptx",
+  "slides": 28,
+  "notebook_sha256": "8687000cf3f244e723b7645b9b8659cf25dd4564dcc83870ce6d59c9e746ceae",
+  "pages": [
+    {
+      "page": 1,
+      "title": "转向来宾",
+      "role": "封面",
+      "layout": "cover",
+      "code": []
+    },
+    {
+      "page": 2,
+      "title": "怎样让目标回到画面中间",
+      "role": "目标与安全",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 3,
+      "title": "连接并完成状态归位",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 5,
+          "line": 1,
+          "text": "from boosteros.robots.booster import BoosterRobot"
+        },
+        {
+          "cell": 5,
+          "line": 2,
+          "text": "from boosteros.brain import Detection"
+        },
+        {
+          "cell": 5,
+          "line": 4,
+          "text": "robot = BoosterRobot()"
+        },
+        {
+          "cell": 5,
+          "line": 5,
+          "text": "detector = Detection(model=\"default\")"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "title": "检测框中心离中线多远",
+      "role": "图示",
+      "layout": "offset",
+      "code": []
+    },
+    {
+      "page": 5,
+      "title": "用同一帧检测和画框",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 9,
+          "line": 3,
+          "text": "img = robot.get_image(img_type=\"rgb\")"
+        },
+        {
+          "cell": 9,
+          "line": 6,
+          "text": "img_array = img.to_numpy()"
+        },
+        {
+          "cell": 9,
+          "line": 7,
+          "text": "results = detector.detect(img_array)"
+        },
+        {
+          "cell": 9,
+          "line": 13,
+          "text": "plt.imshow(img_array[:, :, ::-1])   # [:, :, ::-1] 把采集到的 bgr 通道转为 rgb 排列"
+        },
+        {
+          "cell": 9,
+          "line": 14,
+          "text": "plt.show()"
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "title": "从瓶子列表取出一个目标",
+      "role": "操作代码与手算",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 13,
+          "line": 2,
+          "text": "bottle_r = [r for r in results if r.class_name == \"bottle\"]"
+        },
+        {
+          "cell": 15,
+          "line": 1,
+          "text": "error0 = bottle_r[0].bbox.center_x - img.width / 2"
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "title": "图像坐标与头部转角方向",
+      "role": "图示",
+      "layout": "axes",
+      "code": []
+    },
+    {
+      "page": 8,
+      "title": "一次大转动还是多次小调整",
+      "role": "知识流程",
+      "layout": "feedback",
+      "code": []
+    },
+    {
+      "page": 9,
+      "title": "Kp先从小值试起",
+      "role": "预测与计算",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 21,
+          "line": 1,
+          "text": "Kp = 0.001                      # 比例系数（弧度 / 像素）：先从一个小值试"
+        },
+        {
+          "cell": 21,
+          "line": 3,
+          "text": "head_step = -Kp * error0"
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "title": "从回读的头角开始累加",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 25,
+          "line": 3,
+          "text": "head_yaw = robot.get_joint_states()[\"aahead_yaw_joint\"].position   # 头部水平角度（弧度）"
+        },
+        {
+          "cell": 25,
+          "line": 10,
+          "text": "for i in range(40):"
+        },
+        {
+          "cell": 25,
+          "line": 19,
+          "text": "    error = bottle_r[0].bbox.center_x - img.width / 2"
+        },
+        {
+          "cell": 25,
+          "line": 25,
+          "text": "    head_yaw = head_yaw - Kp * error"
+        },
+        {
+          "cell": 25,
+          "line": 26,
+          "text": "    robot.set_head_angle(0, head_yaw)"
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "title": "结束原因也要记录",
+      "role": "分支与记录",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 12,
+      "title": "如果目标在画面上方呢",
+      "role": "思考与补做",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 13,
+      "title": "头对准了，身体还朝哪里",
+      "role": "图示",
+      "layout": "headbody",
+      "code": []
+    },
+    {
+      "page": 14,
+      "title": "位置角与角速度要分清",
+      "role": "接口对照",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 15,
+      "title": "清零后朝已测头角转身",
+      "role": "代码流程",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 35,
+          "line": 1,
+          "text": "robot.reset_odom()   "
+        },
+        {
+          "cell": 35,
+          "line": 2,
+          "text": "robot.set_head_angle(0, 0)      # 头回正"
+        },
+        {
+          "cell": 35,
+          "line": 4,
+          "text": "yaw_now = robot.get_odom().pose_2d[2]     # 读取当前里程计的朝向角"
+        },
+        {
+          "cell": 35,
+          "line": 7,
+          "text": "    turn_rad = robot.get_odom().pose_2d[2] - yaw_now"
+        },
+        {
+          "cell": 35,
+          "line": 8,
+          "text": "    if abs(turn_rad) < abs(head_yaw):"
+        },
+        {
+          "cell": 35,
+          "line": 9,
+          "text": "        robot.set_velocity(0, 0, 0.5*head_yaw)"
+        },
+        {
+          "cell": 35,
+          "line": 10,
+          "text": "    else:"
+        },
+        {
+          "cell": 35,
+          "line": 11,
+          "text": "        robot.set_velocity(0, 0, 0)"
+        },
+        {
+          "cell": 35,
+          "line": 12,
+          "text": "        break"
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "title": "把预测与实际转向放在一起",
+      "role": "观察与解释",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 17,
+      "title": "一次换算系数能说明什么",
+      "role": "概念辨析",
+      "layout": "formula",
+      "code": []
+    },
+    {
+      "page": 18,
+      "title": "头部量程不够时怎么办",
+      "role": "问题引入",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 19,
+      "title": "先建立新的观察起点",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 39,
+          "line": 4,
+          "text": "robot.set_head_angle(0, 0)      # 头回正，画面中间重新对准身体正前方"
+        },
+        {
+          "cell": 39,
+          "line": 5,
+          "text": "robot.reset_odom()              # 里程计清零，从这一刻开始算朝向"
+        },
+        {
+          "cell": 39,
+          "line": 7,
+          "text": "time.sleep(1)"
+        },
+        {
+          "cell": 39,
+          "line": 9,
+          "text": "yaw_init = robot.get_odom().pose_2d[2]     # 刚清零，约为 0"
+        },
+        {
+          "cell": 39,
+          "line": 10,
+          "text": "yaw_rad = yaw_init"
+        },
+        {
+          "cell": 39,
+          "line": 13,
+          "text": "Kp_deg = 0.0005                   # 比例系数"
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "title": "将本轮偏差用于身体旋转",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 41,
+          "line": 3,
+          "text": "for i in range(80):"
+        },
+        {
+          "cell": 41,
+          "line": 7,
+          "text": "    if not bottle_r:"
+        },
+        {
+          "cell": 41,
+          "line": 13,
+          "text": "    if abs(error) < 20:"
+        },
+        {
+          "cell": 41,
+          "line": 19,
+          "text": "    yaw_rad = yaw_rad - Kp_deg * error"
+        },
+        {
+          "cell": 41,
+          "line": 21,
+          "text": "    robot.set_velocity(0, 0, yaw_rad)"
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "title": "两个等待各发生在哪里",
+      "role": "时序图",
+      "layout": "flow",
+      "code": []
+    },
+    {
+      "page": 22,
+      "title": "两种转向方法怎样选择",
+      "role": "对照与讨论",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 23,
+      "title": "用记录解释机器人为什么这样动",
+      "role": "记录页",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 24,
+      "title": "对照四项检查点",
+      "role": "检查页",
+      "layout": "checks",
+      "code": []
+    },
+    {
+      "page": 25,
+      "title": "目标移动以后会怎样",
+      "role": "讨论页",
+      "layout": "questions",
+      "code": []
+    },
+    {
+      "page": 26,
+      "title": "独立完成三道题",
+      "role": "学习评价",
+      "layout": "quiz",
+      "code": []
+    },
+    {
+      "page": 27,
+      "title": "先停运动，再按流程收尾",
+      "role": "操作检查",
+      "layout": "flow",
+      "code": []
+    },
+    {
+      "page": 28,
+      "title": "将纵向对准思路写成程序",
+      "role": "任务页",
+      "layout": "compare",
+      "code": []
+    }
+  ]
+}

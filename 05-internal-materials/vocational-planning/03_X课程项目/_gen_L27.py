@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Notebook完整镜像；重跑前核对学生稿与用户执行记录。"""
+"""学生Notebook完整镜像；2026-10-30补齐评价与检查点，不执行SDK。"""
 import json
 from pathlib import Path
 NOTEBOOK = {'cells': [{'cell_type': 'markdown',
@@ -244,17 +244,46 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
                        '| 第1轮 | | | | | |\n',
                        '| 第2轮 | | | | | |\n',
                        '\n',
+                       '### 思考题\n',
+                       '\n',
                        '1. 主线程等待播放时，检测编号为什么还能增加？指出启动工作线程的那行。\n',
                        '2. 找到更新记录和读取记录的两处`with lock:`。若把取图也放在锁里，另一方会受到什么影响？\n',
                        '3. STOP已置位而`is_alive()`仍为真，说明什么？这时为何要保留原对象？\n',
                        '4. 重跑STEP 05时记录没有新检测，为什么“是否仍可使用”可能改变？用两个时长说明。\n',
                        '\n',
-                       '**完成核对**：保存两轮前后记录及至少一次旧记录复查，能解释字段起止事件，线程和SDK任务分别核查；未结束项如实注明。']}],
+                       '**完成核对**：保存两轮前后记录及至少一次旧记录复查，能解释字段起止事件，线程和SDK任务分别核查；未结束项如实注明。\n',
+                       '\n',
+                       '### 检查点\n',
+                       '\n',
+                       '- [__] 能从前后记录说明播放等待期间检测是否继续更新。\n',
+                       '- [__] 能指出两处锁的作用，区分取图处理耗时、处理后存放时长与源时间戳。\n',
+                       '- [__] 能分别核查工作线程与SDK音频任务退出，保留未结束对象，不重复启动。\n']},
+           {'cell_type': 'markdown',
+            'id': 'u7-l3-assessment',
+            'metadata': {},
+            'source': ['## 五、学习评价\n',
+                       '\n',
+                       '请独立作答；操作完成情况另按本课记录与检查点核对。\n',
+                       '\n',
+                       '1. 判断：主线程等待音频播放期间，已经启动的检测工作线程仍可能继续更新记录。（\u3000）\n',
+                       '\n',
+                       '2. 填空：更新和读取完整检测记录时使用同一把________；`join()`返回后，还应通过________检查线程是否仍在运行。\n',
+                       '\n',
+                       '3. 选择：停止请求已发出，但检测线程或音频任务仍未结束，应（\u3000）。\n',
+                       '   A. 重跑连接格覆盖旧对象\n',
+                       '   B. 保留原线程、停止信号和任务句柄，分别核查退出情况\n',
+                       '   C. 认为线程退出会自动取消所有SDK任务\n',
+                       '   D. 用处理后存放时长代替图像源时间戳\n',
+                       '\n',
+                       '> 参考答案（教师留存，勿印发给学生）：\n',
+                       '> 1. √。2. 锁；`is_alive()`。3. B；线程与SDK任务分别检查。\n']}],
  'metadata': {'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
               'language_info': {'name': 'python'},
               'x_course': {'confirmation_1': False, 'confirmation_2': False, 'outline': 'v5', 'phase': 'P1'}},
  'nbformat': 4,
  'nbformat_minor': 5}
-OUT = Path(__file__).parent / "notebooks" / 'U7-L3_多线程协作.ipynb'
-OUT.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-print("wrote", OUT, "cells=", len(NOTEBOOK["cells"]))
+
+if __name__ == "__main__":
+    target = Path(__file__).resolve().parent / "notebooks" / 'U7-L3_多线程协作.ipynb'
+    target.parent.mkdir(exist_ok=True)
+    target.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

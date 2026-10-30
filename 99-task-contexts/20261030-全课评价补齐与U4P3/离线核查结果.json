@@ -1,0 +1,1982 @@
+{
+  "checks": 429,
+  "passed": 429,
+  "failed": [],
+  "audit": [
+    {
+      "lesson": "U1-L1",
+      "cells_before": 30,
+      "cells_after": 30,
+      "code_cells": 9,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U1-L2",
+      "cells_before": 29,
+      "cells_after": 29,
+      "code_cells": 8,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U1-L3",
+      "cells_before": 36,
+      "cells_after": 36,
+      "code_cells": 11,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U1-L4",
+      "cells_before": 43,
+      "cells_after": 43,
+      "code_cells": 12,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U2-L1",
+      "cells_before": 31,
+      "cells_after": 31,
+      "code_cells": 10,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U2-L2",
+      "cells_before": 37,
+      "cells_after": 37,
+      "code_cells": 10,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U2-L3",
+      "cells_before": 35,
+      "cells_after": 35,
+      "code_cells": 10,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U2-L4",
+      "cells_before": 35,
+      "cells_after": 35,
+      "code_cells": 10,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U3-L1",
+      "cells_before": 40,
+      "cells_after": 40,
+      "code_cells": 12,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U3-L2",
+      "cells_before": 40,
+      "cells_after": 40,
+      "code_cells": 12,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U3-L3",
+      "cells_before": 32,
+      "cells_after": 32,
+      "code_cells": 7,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U3-L4",
+      "cells_before": 39,
+      "cells_after": 39,
+      "code_cells": 11,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U4-L1",
+      "cells_before": 44,
+      "cells_after": 45,
+      "code_cells": 14,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U4-L2",
+      "cells_before": 36,
+      "cells_after": 37,
+      "code_cells": 10,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U4-L3",
+      "cells_before": 22,
+      "cells_after": 23,
+      "code_cells": 8,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U4-L4",
+      "cells_before": 29,
+      "cells_after": 30,
+      "code_cells": 12,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U5-L1",
+      "cells_before": 34,
+      "cells_after": 35,
+      "code_cells": 9,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U5-L2",
+      "cells_before": 34,
+      "cells_after": 35,
+      "code_cells": 10,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U5-L3",
+      "cells_before": 32,
+      "cells_after": 33,
+      "code_cells": 7,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U5-L4",
+      "cells_before": 27,
+      "cells_after": 27,
+      "code_cells": 9,
+      "new_evaluation": false,
+      "changed": true
+    },
+    {
+      "lesson": "U6-L1",
+      "cells_before": 18,
+      "cells_after": 18,
+      "code_cells": 2,
+      "new_evaluation": false,
+      "changed": false
+    },
+    {
+      "lesson": "U6-L2",
+      "cells_before": 16,
+      "cells_after": 16,
+      "code_cells": 4,
+      "new_evaluation": false,
+      "changed": true
+    },
+    {
+      "lesson": "U6-L3",
+      "cells_before": 17,
+      "cells_after": 17,
+      "code_cells": 1,
+      "new_evaluation": false,
+      "changed": true
+    },
+    {
+      "lesson": "U6-L4",
+      "cells_before": 18,
+      "cells_after": 18,
+      "code_cells": 4,
+      "new_evaluation": false,
+      "changed": true
+    },
+    {
+      "lesson": "U7-L1",
+      "cells_before": 21,
+      "cells_after": 22,
+      "code_cells": 8,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U7-L2",
+      "cells_before": 17,
+      "cells_after": 18,
+      "code_cells": 7,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U7-L3",
+      "cells_before": 15,
+      "cells_after": 16,
+      "code_cells": 6,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U7-L4",
+      "cells_before": 13,
+      "cells_after": 14,
+      "code_cells": 5,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U8-L1",
+      "cells_before": 5,
+      "cells_after": 6,
+      "code_cells": 0,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U8-L2",
+      "cells_before": 19,
+      "cells_after": 20,
+      "code_cells": 8,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U8-L3",
+      "cells_before": 13,
+      "cells_after": 14,
+      "code_cells": 5,
+      "new_evaluation": true,
+      "changed": true
+    },
+    {
+      "lesson": "U8-L4",
+      "cells_before": 6,
+      "cells_after": 7,
+      "code_cells": 0,
+      "new_evaluation": true,
+      "changed": true
+    }
+  ],
+  "results": [
+    {
+      "check": "32份主Notebook",
+      "passed": true
+    },
+    {
+      "check": "U1-L1 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U1-L1 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U1-L1 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U1-L1 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U1-L1 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U1-L1 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U1-L1 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U1-L2 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U1-L2 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U1-L2 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U1-L2 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U1-L2 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U1-L2 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U1-L2 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U1-L3 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U1-L3 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U1-L3 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U1-L3 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U1-L3 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U1-L3 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U1-L3 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U1-L4 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U1-L4 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U1-L4 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U1-L4 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U1-L4 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U1-L4 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U1-L4 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U2-L1 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U2-L1 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U2-L1 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U2-L1 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U2-L1 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U2-L1 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U2-L1 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U2-L2 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U2-L2 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U2-L2 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U2-L2 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U2-L2 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U2-L2 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U2-L2 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U2-L3 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U2-L3 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U2-L3 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U2-L3 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U2-L3 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U2-L3 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U2-L3 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U2-L4 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U2-L4 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U2-L4 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U2-L4 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U2-L4 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U2-L4 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U2-L4 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U3-L1 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U3-L1 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U3-L1 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U3-L1 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U3-L1 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U3-L1 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U3-L1 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U3-L2 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U3-L2 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U3-L2 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U3-L2 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U3-L2 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U3-L2 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U3-L2 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U3-L3 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U3-L3 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U3-L3 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U3-L3 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U3-L3 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U3-L3 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U3-L3 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U3-L4 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U3-L4 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U3-L4 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U3-L4 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U3-L4 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U3-L4 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U3-L4 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U5-L4 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U5-L4 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L4 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L4 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U5-L4 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U5-L4 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U5-L4 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U5-L4 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U6-L1 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U6-L1 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U6-L1 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U6-L1 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U6-L1 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U6-L1 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U6-L1 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U6-L2 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U6-L2 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U6-L2 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U6-L2 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U6-L2 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U6-L2 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U6-L2 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U6-L2 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U6-L3 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U6-L3 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U6-L3 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U6-L3 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U6-L3 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U6-L3 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U6-L3 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U6-L3 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U6-L4 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U6-L4 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U6-L4 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U6-L4 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U6-L4 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U6-L4 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U6-L4 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U6-L4 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U7-L1 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U7-L1 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U7-L1 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U7-L1 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U7-L1 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U7-L1 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U7-L1 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U7-L1 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U7-L2 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U7-L2 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U7-L2 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U7-L2 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U7-L2 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U7-L2 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U7-L2 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U7-L2 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U7-L3 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U7-L3 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U7-L3 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U7-L3 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U7-L3 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U7-L3 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U7-L3 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U7-L3 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U7-L4 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U7-L4 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U7-L4 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U7-L4 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U7-L4 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U7-L4 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U7-L4 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U7-L4 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U8-L1 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U8-L1 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U8-L1 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U8-L1 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U8-L1 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U8-L1 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U8-L1 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U8-L1 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U8-L2 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U8-L2 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U8-L2 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U8-L2 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U8-L2 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U8-L2 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U8-L2 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U8-L2 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U8-L3 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U8-L3 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U8-L3 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U8-L3 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U8-L3 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U8-L3 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U8-L3 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U8-L3 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U8-L4 Notebook结构",
+      "passed": true
+    },
+    {
+      "check": "U8-L4 所有代码格和执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U8-L4 代码格原位置保留",
+      "passed": true
+    },
+    {
+      "check": "U8-L4 独立学习评价标题",
+      "passed": true
+    },
+    {
+      "check": "U8-L4 教师参考答案",
+      "passed": true
+    },
+    {
+      "check": "U8-L4 可勾选检查点",
+      "passed": true
+    },
+    {
+      "check": "U8-L4 思考题独立标示",
+      "passed": true
+    },
+    {
+      "check": "U8-L4 生成器完整镜像",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 PPT只新增一页",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 PPT第1题原文",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 PPT第2题原文",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 PPT第3题原文",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 答案仅在备注",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 教案第1题原文",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 教案第2题原文",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 教案第3题原文",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第1页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第2页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第3页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第4页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第5页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第6页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第7页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第8页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第9页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第10页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第11页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第12页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第13页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第14页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第15页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第16页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第17页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第18页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第19页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第20页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第21页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第22页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第23页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第24页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第25页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第26页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L1 原第27页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 PPT只新增一页",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 PPT第1题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 PPT第2题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 PPT第3题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 答案仅在备注",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 教案第1题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 教案第2题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 教案第3题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第1页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第2页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第3页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第4页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第5页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第6页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第7页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第8页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第9页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第10页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第11页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第12页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第13页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第14页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第15页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第16页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第17页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第18页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第19页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第20页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第21页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第22页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第23页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第24页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第25页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第26页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L1 原第27页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 PPT只新增一页",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 PPT第1题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 PPT第2题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 PPT第3题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 答案仅在备注",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 教案第1题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 教案第2题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 教案第3题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第1页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第2页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第3页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第4页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第5页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第6页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第7页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第8页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第9页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第10页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第11页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第12页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第13页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第14页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第15页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第16页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第17页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第18页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第19页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第20页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第21页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第22页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第23页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第24页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第25页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第26页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第27页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2 原第28页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 PPT只新增一页",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 PPT第1题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 PPT第2题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 PPT第3题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 答案仅在备注",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 教案第1题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 教案第2题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 教案第3题原文",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第1页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第2页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第3页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第4页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第5页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第6页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第7页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第8页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第9页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第10页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第11页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第12页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第13页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第14页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第15页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第16页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第17页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第18页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第19页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第20页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第21页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第22页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第23页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第24页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第25页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第26页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第27页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L3 原第28页文字保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 教学提示",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 一、课时目标",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 二、重难点",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 三、环节时间轴",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 四、教学环节详解",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 五、板书设计",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 六、学习评价",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 45分钟时间轴",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 目标完全一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 评价第1题一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 评价第2题一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 评价第3题一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2 未登记④通过",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 教学提示",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 一、课时目标",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 二、重难点",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 三、环节时间轴",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 四、教学环节详解",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 五、板书设计",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 六、学习评价",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 45分钟时间轴",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 目标完全一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 评价第1题一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 评价第2题一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 评价第3题一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3 未登记④通过",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 教学提示",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 一、课时目标",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 二、重难点",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 三、环节时间轴",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 四、教学环节详解",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 五、板书设计",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 六、学习评价",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 45分钟时间轴",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 目标完全一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 评价第1题一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 评价第2题一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 评价第3题一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4 未登记④通过",
+      "passed": true
+    },
+    {
+      "check": "L2第9格用户原文保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2发放副本逐格源一致",
+      "passed": true
+    },
+    {
+      "check": "U5-L2发放副本执行信息保留",
+      "passed": true
+    },
+    {
+      "check": "U5-L2发放副本结构",
+      "passed": true
+    }
+  ],
+  "robot_executed": false
+}

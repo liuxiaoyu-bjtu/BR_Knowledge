@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""U4学生Notebook完整镜像；按2026-10-30回读稿同步，真机确认状态另见进度表。"""
+"""学生Notebook完整镜像；2026-10-30补齐评价与检查点，不执行SDK。"""
 import json
 from pathlib import Path
 NOTEBOOK = {'cells': [{'cell_type': 'markdown',
@@ -394,18 +394,39 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
                        '\n',
                        '说明机器人最终朝向与位移方向是否相同。IMU和里程计提供估计及采样记录，不能证明机器人准确走过某条真实轨迹，不能由最大角速度判定“安全”或“打滑”。\n',
                        '\n',
-                       '### 5.3 检查点与思考\n',
+                       '### 5.3 检查点\n',
                        '\n',
-                       '- 能从代码指出决定前进和转向的图像量，说明为何不再输入起步间距来规划跟随总路程。\n',
-                       '- 能说明“达到停止占比”在L2结束走近、在L3暂停前进而继续观察的区别。\n',
-                       '- 能区分目标相对机器人的远近、机器人自身位移、机身朝向及IMU角速度。\n',
+                       '- [__] 能从代码指出决定前进和转向的图像量，说明为何不再输入起步间距来规划跟随总路程。\n',
+                       '- [__] 能说明“达到停止占比”在L2结束走近、在L3暂停前进而继续观察的区别。\n',
+                       '- [__] 能区分目标相对机器人的远近、机器人自身位移、机身朝向及IMU角速度。\n',
+                       '### 5.4 思考题\n',
+                       '\n',
                        '- 如果目标只转身、弯腰或被遮挡，框高变化还能说明距离变化吗？应怎样处理？\n',
                        '- 框高在阈值两侧来回波动时，输出为何可能反复切换？先怎样检查采样、阈值和速度？\n',
                        '- 为什么从起点走出一条弯线后，`hypot(dx,dy)`不能当成整段行走路程？\n']},
            {'cell_type': 'markdown',
+            'id': 'u4-l3-assessment',
+            'metadata': {},
+            'source': ['## 六、学习评价\n',
+                       '\n',
+                       '请独立作答；操作完成情况另按本课记录与检查点核对。\n',
+                       '\n',
+                       '1. 判断：本课框高占比达到停止阈值后，整个跟随程序立即结束，之后不再观察目标。（\u3000）\n',
+                       '\n',
+                       '2. 填空：本课每轮用框中心的水平偏差决定________，用框高占比决定是否________；IMU与里程计用于记录________的运动。\n',
+                       '\n',
+                       '3. 选择：机器人从起点沿弯线走到终点，`hypot(dx, dy)`表示（\u3000）。\n',
+                       '   A. 沿途累计路程\n',
+                       '   B. 起终点之间的直线位移估计\n',
+                       '   C. 机器人与来宾的间距\n',
+                       '   D. 机身转过的总角度\n',
+                       '\n',
+                       '> 参考答案（教师留存，勿印发给学生）：\n',
+                       '> 1. ×，近时暂停前进并继续观察，目标远离后可重新跟进。2. 转向；前进（跟进）；机器人自身。3. B。\n']},
+           {'cell_type': 'markdown',
             'id': 'u4-l3-follow-25',
             'metadata': {},
-            'source': ['## 六、扩展阅读：跟随的适用条件\n',
+            'source': ['## 七、扩展阅读：跟随的适用条件\n',
                        '\n',
                        '本课按每轮检测框控制一个当前可见目标，没有识别人物身份。场景中出现第二个人时直接结束；即使始终只有一个检测框，也不能证明它始终属于同一个人。课堂应保持单一目标和清楚的路线。\n',
                        '\n',
@@ -416,6 +437,8 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
               'language_info': {'name': 'python', 'version': '3'}},
  'nbformat': 4,
  'nbformat_minor': 5}
-if __name__ in ("__main__", "__gen__"):
-    path = Path(__file__).parent / "notebooks" / 'U4-L3_跟住来宾.ipynb'
-    path.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1)+"\n", encoding="utf-8")
+
+if __name__ == "__main__":
+    target = Path(__file__).resolve().parent / "notebooks" / 'U4-L3_跟住来宾.ipynb'
+    target.parent.mkdir(exist_ok=True)
+    target.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

@@ -1,0 +1,451 @@
+{
+  "name": "U5-L2_语音合成",
+  "output": "D:\\A_Project\\BoosterRobotics\\知识库\\05-internal-materials\\vocational-planning\\03_X课程项目\\PPT\\U5-L2_语音合成_Codex审查版.pptx",
+  "slides": 29,
+  "notebook_sha256": "ff98b4e45ee68c8ce9cd89e7bc383a021a052e2f8072150484c26bf429eb7eea",
+  "pages": [
+    {
+      "page": 1,
+      "title": "语音合成",
+      "role": "封面",
+      "layout": "cover",
+      "code": []
+    },
+    {
+      "page": 2,
+      "title": "声音怎样被生成和播放",
+      "role": "目标页",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 3,
+      "title": "扬声器怎样发出声音",
+      "role": "知识图示",
+      "layout": "flow",
+      "code": []
+    },
+    {
+      "page": 4,
+      "title": "附件放在哪里",
+      "role": "操作与附件",
+      "layout": "files",
+      "code": []
+    },
+    {
+      "page": 5,
+      "title": "生成440Hz的一小段声音",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 9,
+          "line": 3,
+          "text": "freq_1 = 440       # 声波频率：440 Hz，即标准音高 A4"
+        },
+        {
+          "cell": 9,
+          "line": 4,
+          "text": "duration_1 = 1.5   # 持续时间：决定这声响多久：1.5 秒"
+        },
+        {
+          "cell": 9,
+          "line": 7,
+          "text": "pcm_sound1 = synthesize_tone(freq=freq_1, duration=duration_1, wave_type=\"sine\")"
+        },
+        {
+          "cell": 9,
+          "line": 11,
+          "text": "play_sound(robot, pcm_sound1)  # 本课专用"
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "title": "16000与440分别表示什么",
+      "role": "知识对照",
+      "layout": "samplingrate",
+      "code": []
+    },
+    {
+      "page": 7,
+      "title": "改频率或时长再听",
+      "role": "操作与观察",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 12,
+          "line": 2,
+          "text": "freq_2 = 880       # 提示：可以尝试 220, 523(高音Do), 880"
+        },
+        {
+          "cell": 12,
+          "line": 3,
+          "text": "duration_2 = 0.5   # 提示：尝试改成 0.3 或 2.0"
+        },
+        {
+          "cell": 12,
+          "line": 5,
+          "text": "pcm_sound2 = synthesize_tone(freq=freq_2, duration=duration_2, wave_type=\"sine\")"
+        },
+        {
+          "cell": 12,
+          "line": 8,
+          "text": "play_sound(robot, pcm_sound2)"
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "title": "放大十毫秒看波形",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 14,
+          "line": 2,
+          "text": "plot_waves(["
+        },
+        {
+          "cell": 14,
+          "line": 3,
+          "text": "    {\"name\": \"声音 1 (基准音)\", \"freq\": freq_1, \"wave_type\": \"sine\"},"
+        },
+        {
+          "cell": 14,
+          "line": 4,
+          "text": "    {\"name\": \"声音 2 (自定义声音)\", \"freq\": freq_2, \"wave_type\": \"sine\"},"
+        },
+        {
+          "cell": 14,
+          "line": 5,
+          "text": "], window_ms=10.0)"
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "title": "相同频率为什么听起来不同",
+      "role": "知识图示",
+      "layout": "waves",
+      "code": []
+    },
+    {
+      "page": 10,
+      "title": "四种波形并排看、轮流听",
+      "role": "操作与记录",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 16,
+          "line": 2,
+          "text": "wave_types = [\"sine\", \"square\", \"sawtooth\", \"bell\"]"
+        },
+        {
+          "cell": 16,
+          "line": 12,
+          "text": "for item in compare_configs:"
+        },
+        {
+          "cell": 16,
+          "line": 14,
+          "text": "    audio_data = synthesize_tone(freq=item[\"freq\"], duration=1.2, wave_type=item[\"wave_type\"])"
+        },
+        {
+          "cell": 16,
+          "line": 15,
+          "text": "    play_sound(robot, audio_data)"
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "title": "TTS接收文字，返回什么",
+      "role": "知识流程",
+      "layout": "flow",
+      "code": []
+    },
+    {
+      "page": 12,
+      "title": "把一句话合成并保存",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 19,
+          "line": 7,
+          "text": "handle = speech.synthesize(\"今天天气真好，欢迎使用 Booster 机器人。\")"
+        },
+        {
+          "cell": 19,
+          "line": 8,
+          "text": "audio = handle.result()  # 阻塞等待合成完成"
+        },
+        {
+          "cell": 19,
+          "line": 9,
+          "text": "print(f\"生成音频时长：{audio.duration.seconds:.2f} 秒\")"
+        },
+        {
+          "cell": 19,
+          "line": 12,
+          "text": "save_path = os.path.join(os.getcwd(), \"booster_synthesize.wav\")"
+        },
+        {
+          "cell": 19,
+          "line": 13,
+          "text": "audio.save(save_path)"
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "title": "播放合成结果并核对成功",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 21,
+          "line": 1,
+          "text": "playback = robot.play_sound(save_path)"
+        },
+        {
+          "cell": 21,
+          "line": 2,
+          "text": "playback_status = playback.wait()"
+        },
+        {
+          "cell": 21,
+          "line": 3,
+          "text": "if playback_status == \"SUCCEEDED\":"
+        },
+        {
+          "cell": 21,
+          "line": 5,
+          "text": "else:"
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "title": "换音色先查可用清单",
+      "role": "字段与操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 24,
+          "line": 1,
+          "text": "voices = speech.list_voices()  # speech在前面已经创建"
+        },
+        {
+          "cell": 24,
+          "line": 2,
+          "text": "print(\"可用音色个数：\", len(voices))"
+        },
+        {
+          "cell": 24,
+          "line": 3,
+          "text": "for v in voices:"
+        },
+        {
+          "cell": 24,
+          "line": 4,
+          "text": "    print(\"  \", v)"
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "title": "相同文字换一种声音",
+      "role": "操作与记录",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 26,
+          "line": 4,
+          "text": "Text = \"请用一句话介绍一下这个展厅。\""
+        },
+        {
+          "cell": 26,
+          "line": 7,
+          "text": "handle = speech.synthesize(Text, voice=VOICE_1)"
+        },
+        {
+          "cell": 26,
+          "line": 8,
+          "text": "audio = handle.result()  # 阻塞等待合成完成"
+        },
+        {
+          "cell": 26,
+          "line": 12,
+          "text": "playback = robot.play_sound(audio)"
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "title": "函数返回时任务一定结束了吗",
+      "role": "概念对照",
+      "layout": "async",
+      "code": []
+    },
+    {
+      "page": 17,
+      "title": "从句柄查看任务进展",
+      "role": "字段与方法",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 18,
+      "title": "两个play_sound为什么用法不同",
+      "role": "代码流程对照",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 19,
+      "title": "让机器人先说完再开始识别",
+      "role": "知识流程",
+      "layout": "flow",
+      "code": []
+    },
+    {
+      "page": 20,
+      "title": "前一任务成功后再进入下一步",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 32,
+          "line": 6,
+          "text": "if \"task\" in globals() and not task.done():"
+        },
+        {
+          "cell": 32,
+          "line": 11,
+          "text": "    handle = speech.synthesize(welcome_msg)"
+        },
+        {
+          "cell": 32,
+          "line": 12,
+          "text": "    audio = handle.result()"
+        },
+        {
+          "cell": 32,
+          "line": 15,
+          "text": "    playback = robot.play_sound(audio)"
+        },
+        {
+          "cell": 32,
+          "line": 16,
+          "text": "    playback_status = playback.wait()"
+        },
+        {
+          "cell": 32,
+          "line": 17,
+          "text": "    if playback_status != \"SUCCEEDED\":"
+        },
+        {
+          "cell": 32,
+          "line": 23,
+          "text": "        task = speech.recognize_stream(on_result=on_text)"
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "title": "观察机器人听到了什么",
+      "role": "观察与收尾",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 32,
+          "line": 20,
+          "text": "        def on_text(text):"
+        },
+        {
+          "cell": 32,
+          "line": 21,
+          "text": "            print(\"识别到：\", text)"
+        },
+        {
+          "cell": 32,
+          "line": 26,
+          "text": "            time.sleep(6)  # 观察窗口，不是识别处理耗时"
+        },
+        {
+          "cell": 32,
+          "line": 28,
+          "text": "            accepted = task.cancel()"
+        },
+        {
+          "cell": 32,
+          "line": 30,
+          "text": "            task.wait(timeout=5.0)"
+        },
+        {
+          "cell": 32,
+          "line": 32,
+          "text": "        if not task.done():"
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "title": "音色记录要能对应实验条件",
+      "role": "记录页",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 23,
+      "title": "提示音数据量怎样计算",
+      "role": "换算与记录",
+      "layout": "tonebytes",
+      "code": []
+    },
+    {
+      "page": 24,
+      "title": "三项检查点逐项核对",
+      "role": "检查页",
+      "layout": "checks",
+      "code": []
+    },
+    {
+      "page": 25,
+      "title": "自造提示音与TTS有什么共同点",
+      "role": "讨论页",
+      "layout": "questions",
+      "code": []
+    },
+    {
+      "page": 26,
+      "title": "音色从哪里来，听说还缺什么",
+      "role": "讨论页",
+      "layout": "questions",
+      "code": []
+    },
+    {
+      "page": 27,
+      "title": "独立完成三道题",
+      "role": "学习评价",
+      "layout": "quiz",
+      "code": []
+    },
+    {
+      "page": 28,
+      "title": "结束任务，保存结果",
+      "role": "收尾页",
+      "layout": "flow",
+      "code": []
+    },
+    {
+      "page": 29,
+      "title": "合成语音经历了哪些变化",
+      "role": "阅读导引",
+      "layout": "compare",
+      "code": []
+    }
+  ]
+}

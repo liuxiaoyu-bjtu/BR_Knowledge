@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Notebook完整镜像；重跑前核对学生稿与用户执行记录。"""
+"""学生Notebook完整镜像；2026-10-30补齐评价与检查点，不执行SDK。"""
 import json
 from pathlib import Path
 NOTEBOOK = {'cells': [{'cell_type': 'markdown',
@@ -149,16 +149,45 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
                        '\n',
                        '提交主题、需求验收表、流程、接口分工、素材清单与两个用例。进入L2前至少能指出一处本组要修改的介绍或判断，并说明修改依据。\n',
                        '\n',
+                       '### 思考题\n',
+                       '\n',
                        '1. 把本组一条含糊要求改成能用现场证据核对的要求。\n',
                        '2. 观察模块返回“未检出”时，下一段怎样处理？保留句柄和收尾由谁负责？\n',
                        '3. 哪项功能选择复用，哪项需要本组实现或调整？分别在哪个文件完成？\n',
                        '\n',
-                       '**完成核对**：需求、代码职责、退出责任和证据明确；已学接口与已验证条件分开记录。']}],
+                       '**完成核对**：需求、代码职责、退出责任和证据明确；已学接口与已验证条件分开记录。\n',
+                       '\n',
+                       '### 检查点\n',
+                       '\n',
+                       '- [__] 能写清主题、对象、场地和可观察的验收要求。\n',
+                       '- [__] 能完成模块输入输出、退出责任与人员分工，说明复用和待实现内容。\n',
+                       '- [__] 能按设备和时间安排正常与未完成用例，并交给另一组复述。\n']},
+           {'cell_type': 'markdown',
+            'id': 'u8-l1-assessment',
+            'metadata': {},
+            'source': ['## 六、学习评价\n',
+                       '\n',
+                       '请独立作答；操作完成情况另按本课记录与检查点核对。\n',
+                       '\n',
+                       '1. 判断：“机器人表现智能、接待热情”已经是可以直接验收的完整需求，不必补充对象、条件和证据。（\u3000）\n',
+                       '\n',
+                       '2. 填空：模块接口除输入和返回结果外，还应写清调用前条件、下一段如何使用，以及任务的________责任；首轮用例至少包含正常情况和一种________情况。\n',
+                       '\n',
+                       '3. 选择：面对时间和设备限制，本组应（\u3000）。\n',
+                       '   A. 先增加尽可能多的API\n',
+                       '   B. 按已验证能力选择核心功能，写明验收证据、分工与待验证项\n',
+                       '   C. 直接复制U7片段，省略本组需求\n',
+                       '   D. 先演示，再讨论谁负责收尾\n',
+                       '\n',
+                       '> 参考答案（教师留存，勿印发给学生）：\n',
+                       '> 1. ×，需补充可观察的验收条件。2. 退出（或收尾）；未完成。3. B。\n']}],
  'metadata': {'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
               'language_info': {'name': 'python'},
               'x_course': {'confirmation_1': False, 'confirmation_2': False, 'outline': 'v5', 'phase': 'P1'}},
  'nbformat': 4,
  'nbformat_minor': 5}
-OUT = Path(__file__).parent / "notebooks" / 'U8-L1_选题与任务拆解.ipynb'
-OUT.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-print("wrote", OUT, "cells=", len(NOTEBOOK["cells"]))
+
+if __name__ == "__main__":
+    target = Path(__file__).resolve().parent / "notebooks" / 'U8-L1_选题与任务拆解.ipynb'
+    target.parent.mkdir(exist_ok=True)
+    target.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

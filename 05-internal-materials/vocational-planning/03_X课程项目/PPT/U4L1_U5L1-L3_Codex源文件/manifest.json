@@ -1,0 +1,1622 @@
+[
+  {
+    "name": "U4-L1_转向来宾",
+    "output": "D:\\A_Project\\BoosterRobotics\\知识库\\05-internal-materials\\vocational-planning\\03_X课程项目\\PPT\\U4-L1_转向来宾_Codex审查版.pptx",
+    "slides": 28,
+    "notebook_sha256": "8687000cf3f244e723b7645b9b8659cf25dd4564dcc83870ce6d59c9e746ceae",
+    "pages": [
+      {
+        "page": 1,
+        "title": "转向来宾",
+        "role": "封面",
+        "layout": "cover",
+        "code": []
+      },
+      {
+        "page": 2,
+        "title": "怎样让目标回到画面中间",
+        "role": "目标与安全",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 3,
+        "title": "连接并完成状态归位",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 5,
+            "line": 1,
+            "text": "from boosteros.robots.booster import BoosterRobot"
+          },
+          {
+            "cell": 5,
+            "line": 2,
+            "text": "from boosteros.brain import Detection"
+          },
+          {
+            "cell": 5,
+            "line": 4,
+            "text": "robot = BoosterRobot()"
+          },
+          {
+            "cell": 5,
+            "line": 5,
+            "text": "detector = Detection(model=\"default\")"
+          }
+        ]
+      },
+      {
+        "page": 4,
+        "title": "检测框中心离中线多远",
+        "role": "图示",
+        "layout": "offset",
+        "code": []
+      },
+      {
+        "page": 5,
+        "title": "用同一帧检测和画框",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 9,
+            "line": 3,
+            "text": "img = robot.get_image(img_type=\"rgb\")"
+          },
+          {
+            "cell": 9,
+            "line": 6,
+            "text": "img_array = img.to_numpy()"
+          },
+          {
+            "cell": 9,
+            "line": 7,
+            "text": "results = detector.detect(img_array)"
+          },
+          {
+            "cell": 9,
+            "line": 13,
+            "text": "plt.imshow(img_array[:, :, ::-1])   # [:, :, ::-1] 把采集到的 bgr 通道转为 rgb 排列"
+          },
+          {
+            "cell": 9,
+            "line": 14,
+            "text": "plt.show()"
+          }
+        ]
+      },
+      {
+        "page": 6,
+        "title": "从瓶子列表取出一个目标",
+        "role": "操作代码与手算",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 13,
+            "line": 2,
+            "text": "bottle_r = [r for r in results if r.class_name == \"bottle\"]"
+          },
+          {
+            "cell": 15,
+            "line": 1,
+            "text": "error0 = bottle_r[0].bbox.center_x - img.width / 2"
+          }
+        ]
+      },
+      {
+        "page": 7,
+        "title": "图像坐标与头部转角方向",
+        "role": "图示",
+        "layout": "axes",
+        "code": []
+      },
+      {
+        "page": 8,
+        "title": "一次大转动还是多次小调整",
+        "role": "知识流程",
+        "layout": "feedback",
+        "code": []
+      },
+      {
+        "page": 9,
+        "title": "Kp先从小值试起",
+        "role": "预测与计算",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 21,
+            "line": 1,
+            "text": "Kp = 0.001                      # 比例系数（弧度 / 像素）：先从一个小值试"
+          },
+          {
+            "cell": 21,
+            "line": 3,
+            "text": "head_step = -Kp * error0"
+          }
+        ]
+      },
+      {
+        "page": 10,
+        "title": "从回读的头角开始累加",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 25,
+            "line": 3,
+            "text": "head_yaw = robot.get_joint_states()[\"aahead_yaw_joint\"].position   # 头部水平角度（弧度）"
+          },
+          {
+            "cell": 25,
+            "line": 10,
+            "text": "for i in range(40):"
+          },
+          {
+            "cell": 25,
+            "line": 19,
+            "text": "    error = bottle_r[0].bbox.center_x - img.width / 2"
+          },
+          {
+            "cell": 25,
+            "line": 25,
+            "text": "    head_yaw = head_yaw - Kp * error"
+          },
+          {
+            "cell": 25,
+            "line": 26,
+            "text": "    robot.set_head_angle(0, head_yaw)"
+          }
+        ]
+      },
+      {
+        "page": 11,
+        "title": "结束原因也要记录",
+        "role": "分支与记录",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 12,
+        "title": "如果目标在画面上方呢",
+        "role": "思考与补做",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 13,
+        "title": "头对准了，身体还朝哪里",
+        "role": "图示",
+        "layout": "headbody",
+        "code": []
+      },
+      {
+        "page": 14,
+        "title": "位置角与角速度要分清",
+        "role": "接口对照",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 15,
+        "title": "清零后朝已测头角转身",
+        "role": "代码流程",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 35,
+            "line": 1,
+            "text": "robot.reset_odom()   "
+          },
+          {
+            "cell": 35,
+            "line": 2,
+            "text": "robot.set_head_angle(0, 0)      # 头回正"
+          },
+          {
+            "cell": 35,
+            "line": 4,
+            "text": "yaw_now = robot.get_odom().pose_2d[2]     # 读取当前里程计的朝向角"
+          },
+          {
+            "cell": 35,
+            "line": 7,
+            "text": "    turn_rad = robot.get_odom().pose_2d[2] - yaw_now"
+          },
+          {
+            "cell": 35,
+            "line": 8,
+            "text": "    if abs(turn_rad) < abs(head_yaw):"
+          },
+          {
+            "cell": 35,
+            "line": 9,
+            "text": "        robot.set_velocity(0, 0, 0.5*head_yaw)"
+          },
+          {
+            "cell": 35,
+            "line": 10,
+            "text": "    else:"
+          },
+          {
+            "cell": 35,
+            "line": 11,
+            "text": "        robot.set_velocity(0, 0, 0)"
+          },
+          {
+            "cell": 35,
+            "line": 12,
+            "text": "        break"
+          }
+        ]
+      },
+      {
+        "page": 16,
+        "title": "把预测与实际转向放在一起",
+        "role": "观察与解释",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 17,
+        "title": "一次换算系数能说明什么",
+        "role": "概念辨析",
+        "layout": "formula",
+        "code": []
+      },
+      {
+        "page": 18,
+        "title": "头部量程不够时怎么办",
+        "role": "问题引入",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 19,
+        "title": "先建立新的观察起点",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 39,
+            "line": 4,
+            "text": "robot.set_head_angle(0, 0)      # 头回正，画面中间重新对准身体正前方"
+          },
+          {
+            "cell": 39,
+            "line": 5,
+            "text": "robot.reset_odom()              # 里程计清零，从这一刻开始算朝向"
+          },
+          {
+            "cell": 39,
+            "line": 7,
+            "text": "time.sleep(1)"
+          },
+          {
+            "cell": 39,
+            "line": 9,
+            "text": "yaw_init = robot.get_odom().pose_2d[2]     # 刚清零，约为 0"
+          },
+          {
+            "cell": 39,
+            "line": 10,
+            "text": "yaw_rad = yaw_init"
+          },
+          {
+            "cell": 39,
+            "line": 13,
+            "text": "Kp_deg = 0.0005                   # 比例系数"
+          }
+        ]
+      },
+      {
+        "page": 20,
+        "title": "将本轮偏差用于身体旋转",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 41,
+            "line": 3,
+            "text": "for i in range(80):"
+          },
+          {
+            "cell": 41,
+            "line": 7,
+            "text": "    if not bottle_r:"
+          },
+          {
+            "cell": 41,
+            "line": 13,
+            "text": "    if abs(error) < 20:"
+          },
+          {
+            "cell": 41,
+            "line": 19,
+            "text": "    yaw_rad = yaw_rad - Kp_deg * error"
+          },
+          {
+            "cell": 41,
+            "line": 21,
+            "text": "    robot.set_velocity(0, 0, yaw_rad)"
+          }
+        ]
+      },
+      {
+        "page": 21,
+        "title": "两个等待各发生在哪里",
+        "role": "时序图",
+        "layout": "flow",
+        "code": []
+      },
+      {
+        "page": 22,
+        "title": "两种转向方法怎样选择",
+        "role": "对照与讨论",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 23,
+        "title": "用记录解释机器人为什么这样动",
+        "role": "记录页",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 24,
+        "title": "对照四项检查点",
+        "role": "检查页",
+        "layout": "checks",
+        "code": []
+      },
+      {
+        "page": 25,
+        "title": "目标移动以后会怎样",
+        "role": "讨论页",
+        "layout": "questions",
+        "code": []
+      },
+      {
+        "page": 26,
+        "title": "独立完成三道题",
+        "role": "学习评价",
+        "layout": "quiz",
+        "code": []
+      },
+      {
+        "page": 27,
+        "title": "先停运动，再按流程收尾",
+        "role": "操作检查",
+        "layout": "flow",
+        "code": []
+      },
+      {
+        "page": 28,
+        "title": "将纵向对准思路写成程序",
+        "role": "任务页",
+        "layout": "compare",
+        "code": []
+      }
+    ]
+  },
+  {
+    "name": "U5-L1_语音识别",
+    "output": "D:\\A_Project\\BoosterRobotics\\知识库\\05-internal-materials\\vocational-planning\\03_X课程项目\\PPT\\U5-L1_语音识别_Codex审查版.pptx",
+    "slides": 28,
+    "notebook_sha256": "0a16f6addbdafcb556cea91f69fcbb9077620be7fafba6e923eafc6892e74641",
+    "pages": [
+      {
+        "page": 1,
+        "title": "语音识别",
+        "role": "封面",
+        "layout": "cover",
+        "code": []
+      },
+      {
+        "page": 2,
+        "title": "录下来、播出来、认出来",
+        "role": "目标页",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 3,
+        "title": "麦克风怎样留下声音",
+        "role": "知识图示",
+        "layout": "sampling",
+        "code": []
+      },
+      {
+        "page": 4,
+        "title": "三个参数一起决定数据量",
+        "role": "计算图示",
+        "layout": "pcm",
+        "code": []
+      },
+      {
+        "page": 5,
+        "title": "先连接，再开始录音",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 9,
+            "line": 3,
+            "text": "robot.audio_manager.start_recording(channels=3)  # 声道数设置为3，因为K1是环形 3 麦克风阵列"
+          },
+          {
+            "cell": 9,
+            "line": 6,
+            "text": "for i in range(3):"
+          },
+          {
+            "cell": 9,
+            "line": 7,
+            "text": "    time.sleep(1)"
+          },
+          {
+            "cell": 9,
+            "line": 10,
+            "text": "audio = robot.audio_manager.stop_recording()"
+          },
+          {
+            "cell": 9,
+            "line": 11,
+            "text": "print(\"录音结束，还在录吗：\", robot.audio_manager.is_recording())"
+          }
+        ]
+      },
+      {
+        "page": 6,
+        "title": "录音返回的是音频对象",
+        "role": "字段与代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 12,
+            "line": 6,
+            "text": "print(\"时长的秒数：\", round(audio.duration.seconds, 2), \"秒\")"
+          },
+          {
+            "cell": 12,
+            "line": 7,
+            "text": "print(\"采样率：\", audio.sample_rate, \"　声道数：\", audio.channels)"
+          },
+          {
+            "cell": 12,
+            "line": 8,
+            "text": "print(\"采样格式：\", audio.sample_format)"
+          },
+          {
+            "cell": 12,
+            "line": 9,
+            "text": "print(\"数据长度：\", len(audio.data), \"字节\")"
+          },
+          {
+            "cell": 12,
+            "line": 11,
+            "text": "save_path = os.path.join(os.getcwd(), \"my_voice.wav\")"
+          },
+          {
+            "cell": 12,
+            "line": 12,
+            "text": "audio.save(save_path)"
+          }
+        ]
+      },
+      {
+        "page": 7,
+        "title": "回放录音后核对任务结果",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 15,
+            "line": 1,
+            "text": "playback = robot.play_sound(save_path)"
+          },
+          {
+            "cell": 15,
+            "line": 2,
+            "text": "playback_status = playback.wait()"
+          },
+          {
+            "cell": 15,
+            "line": 3,
+            "text": "if playback_status == \"SUCCEEDED\":"
+          },
+          {
+            "cell": 15,
+            "line": 5,
+            "text": "else:"
+          }
+        ]
+      },
+      {
+        "page": 8,
+        "title": "连续的声音可以分成小块",
+        "role": "比喻与图示",
+        "layout": "chunks",
+        "code": []
+      },
+      {
+        "page": 9,
+        "title": "取20块看看有多少数据",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 19,
+            "line": 3,
+            "text": "stop_flag = threading.Event()"
+          },
+          {
+            "cell": 19,
+            "line": 7,
+            "text": "for chunk in robot.audio_manager.record_stream(channels=3, chunk_bytes=3200, stop_event=stop_flag):"
+          },
+          {
+            "cell": 19,
+            "line": 8,
+            "text": "    count += 1"
+          },
+          {
+            "cell": 19,
+            "line": 9,
+            "text": "    total_bytes += len(chunk.data)"
+          },
+          {
+            "cell": 19,
+            "line": 12,
+            "text": "    if count >= 20:"
+          },
+          {
+            "cell": 19,
+            "line": 13,
+            "text": "        stop_flag.set()"
+          }
+        ]
+      },
+      {
+        "page": 10,
+        "title": "先准备相同的60块声音",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 23,
+            "line": 6,
+            "text": "chunks = []"
+          },
+          {
+            "cell": 23,
+            "line": 8,
+            "text": "for chunk in robot.audio_manager.record_stream("
+          },
+          {
+            "cell": 23,
+            "line": 9,
+            "text": "    channels=3, chunk_bytes=3200, stop_event=stop_flag"
+          },
+          {
+            "cell": 23,
+            "line": 11,
+            "text": "    chunks.append(chunk)"
+          },
+          {
+            "cell": 23,
+            "line": 13,
+            "text": "    if count >= 60:                   # 三声道下约含2秒音频"
+          },
+          {
+            "cell": 23,
+            "line": 14,
+            "text": "        stop_flag.set()"
+          },
+          {
+            "cell": 23,
+            "line": 15,
+            "text": "        break"
+          }
+        ]
+      },
+      {
+        "page": 11,
+        "title": "写入的声音为什么还要排队",
+        "role": "知识图示",
+        "layout": "queue",
+        "code": []
+      },
+      {
+        "page": 12,
+        "title": "队列满了可以怎样处理",
+        "role": "三策略对照",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 13,
+        "title": "容量能装多长声音",
+        "role": "计算与提问",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 14,
+        "title": "写完数据后怎样收尾",
+        "role": "时序图",
+        "layout": "flow",
+        "code": []
+      },
+      {
+        "page": 15,
+        "title": "同批声音分别写入4和64的队列",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 25,
+            "line": 3,
+            "text": "queue_size = 4  # 第一组为4；播放结束后改为64，再运行本格"
+          },
+          {
+            "cell": 25,
+            "line": 9,
+            "text": "    stream = robot.audio_manager.play_stream(channels=3, queue_size=queue_size, overflow=\"block\")"
+          },
+          {
+            "cell": 25,
+            "line": 11,
+            "text": "    start_time = time.perf_counter()"
+          },
+          {
+            "cell": 25,
+            "line": 13,
+            "text": "        for i, chunk in enumerate(chunks):"
+          },
+          {
+            "cell": 25,
+            "line": 15,
+            "text": "            stream.write(chunk)"
+          },
+          {
+            "cell": 25,
+            "line": 20,
+            "text": "    finally:"
+          },
+          {
+            "cell": 25,
+            "line": 21,
+            "text": "        stream.close()  # 结束输入，排队的音频继续播放"
+          },
+          {
+            "cell": 25,
+            "line": 22,
+            "text": "    playback_status = stream.wait(timeout=10.0)"
+          }
+        ]
+      },
+      {
+        "page": 16,
+        "title": "记录的是哪一种时间",
+        "role": "记录与解释",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 17,
+        "title": "ASR输出文字以后发生了什么",
+        "role": "知识流程",
+        "layout": "flow",
+        "code": []
+      },
+      {
+        "page": 18,
+        "title": "留言转写与实时字幕怎样选",
+        "role": "应用对照",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 19,
+        "title": "同一句话说两遍",
+        "role": "实验准备",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 20,
+        "title": "打印回调来观察转写过程",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 31,
+            "line": 5,
+            "text": "def on_text(text):"
+          },
+          {
+            "cell": 31,
+            "line": 6,
+            "text": "    print(\"识别到：\", text)"
+          },
+          {
+            "cell": 31,
+            "line": 12,
+            "text": "    task = speech.recognize_stream(on_result=on_text)"
+          },
+          {
+            "cell": 31,
+            "line": 15,
+            "text": "        time.sleep(6)  # 留出6秒供观察文字回调，不代表识别一句话需要6秒"
+          },
+          {
+            "cell": 31,
+            "line": 17,
+            "text": "        accepted = task.cancel()"
+          },
+          {
+            "cell": 31,
+            "line": 19,
+            "text": "        task.wait(timeout=5.0)"
+          },
+          {
+            "cell": 31,
+            "line": 21,
+            "text": "    if not task.done():"
+          }
+        ]
+      },
+      {
+        "page": 21,
+        "title": "第二次也从同样条件开始",
+        "role": "操作代码与记录",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 33,
+            "line": 1,
+            "text": "if \"task\" in globals() and not task.done():"
+          },
+          {
+            "cell": 33,
+            "line": 5,
+            "text": "    task = speech.recognize_stream(on_result=on_text)"
+          },
+          {
+            "cell": 33,
+            "line": 8,
+            "text": "        time.sleep(6)  # 留出6秒供观察文字回调，不代表识别一句话需要6秒"
+          },
+          {
+            "cell": 33,
+            "line": 10,
+            "text": "        accepted = task.cancel()"
+          },
+          {
+            "cell": 33,
+            "line": 12,
+            "text": "        task.wait(timeout=5.0)"
+          },
+          {
+            "cell": 33,
+            "line": 14,
+            "text": "    if not task.done():"
+          }
+        ]
+      },
+      {
+        "page": 22,
+        "title": "用实际字段核对声音长度",
+        "role": "记录页",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 23,
+        "title": "四项检查点逐项找证据",
+        "role": "检查页",
+        "layout": "checks",
+        "code": []
+      },
+      {
+        "page": 24,
+        "title": "怎样让两次识别比较更公平",
+        "role": "讨论页",
+        "layout": "questions",
+        "code": []
+      },
+      {
+        "page": 25,
+        "title": "播放队列满时应该保留什么",
+        "role": "讨论页",
+        "layout": "questions",
+        "code": []
+      },
+      {
+        "page": 26,
+        "title": "留言与字幕怎样使用识别结果",
+        "role": "讨论页",
+        "layout": "questions",
+        "code": []
+      },
+      {
+        "page": 27,
+        "title": "独立完成三道题",
+        "role": "学习评价",
+        "layout": "quiz",
+        "code": []
+      },
+      {
+        "page": 28,
+        "title": "确认停止采音和识别",
+        "role": "收尾页",
+        "layout": "flow",
+        "code": []
+      }
+    ]
+  },
+  {
+    "name": "U5-L2_语音合成",
+    "output": "D:\\A_Project\\BoosterRobotics\\知识库\\05-internal-materials\\vocational-planning\\03_X课程项目\\PPT\\U5-L2_语音合成_Codex审查版.pptx",
+    "slides": 29,
+    "notebook_sha256": "ff98b4e45ee68c8ce9cd89e7bc383a021a052e2f8072150484c26bf429eb7eea",
+    "pages": [
+      {
+        "page": 1,
+        "title": "语音合成",
+        "role": "封面",
+        "layout": "cover",
+        "code": []
+      },
+      {
+        "page": 2,
+        "title": "声音怎样被生成和播放",
+        "role": "目标页",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 3,
+        "title": "扬声器怎样发出声音",
+        "role": "知识图示",
+        "layout": "flow",
+        "code": []
+      },
+      {
+        "page": 4,
+        "title": "附件放在哪里",
+        "role": "操作与附件",
+        "layout": "files",
+        "code": []
+      },
+      {
+        "page": 5,
+        "title": "生成440Hz的一小段声音",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 9,
+            "line": 3,
+            "text": "freq_1 = 440       # 声波频率：440 Hz，即标准音高 A4"
+          },
+          {
+            "cell": 9,
+            "line": 4,
+            "text": "duration_1 = 1.5   # 持续时间：决定这声响多久：1.5 秒"
+          },
+          {
+            "cell": 9,
+            "line": 7,
+            "text": "pcm_sound1 = synthesize_tone(freq=freq_1, duration=duration_1, wave_type=\"sine\")"
+          },
+          {
+            "cell": 9,
+            "line": 11,
+            "text": "play_sound(robot, pcm_sound1)  # 本课专用"
+          }
+        ]
+      },
+      {
+        "page": 6,
+        "title": "16000与440分别表示什么",
+        "role": "知识对照",
+        "layout": "samplingrate",
+        "code": []
+      },
+      {
+        "page": 7,
+        "title": "改频率或时长再听",
+        "role": "操作与观察",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 12,
+            "line": 2,
+            "text": "freq_2 = 880       # 提示：可以尝试 220, 523(高音Do), 880"
+          },
+          {
+            "cell": 12,
+            "line": 3,
+            "text": "duration_2 = 0.5   # 提示：尝试改成 0.3 或 2.0"
+          },
+          {
+            "cell": 12,
+            "line": 5,
+            "text": "pcm_sound2 = synthesize_tone(freq=freq_2, duration=duration_2, wave_type=\"sine\")"
+          },
+          {
+            "cell": 12,
+            "line": 8,
+            "text": "play_sound(robot, pcm_sound2)"
+          }
+        ]
+      },
+      {
+        "page": 8,
+        "title": "放大十毫秒看波形",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 14,
+            "line": 2,
+            "text": "plot_waves(["
+          },
+          {
+            "cell": 14,
+            "line": 3,
+            "text": "    {\"name\": \"声音 1 (基准音)\", \"freq\": freq_1, \"wave_type\": \"sine\"},"
+          },
+          {
+            "cell": 14,
+            "line": 4,
+            "text": "    {\"name\": \"声音 2 (自定义声音)\", \"freq\": freq_2, \"wave_type\": \"sine\"},"
+          },
+          {
+            "cell": 14,
+            "line": 5,
+            "text": "], window_ms=10.0)"
+          }
+        ]
+      },
+      {
+        "page": 9,
+        "title": "相同频率为什么听起来不同",
+        "role": "知识图示",
+        "layout": "waves",
+        "code": []
+      },
+      {
+        "page": 10,
+        "title": "四种波形并排看、轮流听",
+        "role": "操作与记录",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 16,
+            "line": 2,
+            "text": "wave_types = [\"sine\", \"square\", \"sawtooth\", \"bell\"]"
+          },
+          {
+            "cell": 16,
+            "line": 12,
+            "text": "for item in compare_configs:"
+          },
+          {
+            "cell": 16,
+            "line": 14,
+            "text": "    audio_data = synthesize_tone(freq=item[\"freq\"], duration=1.2, wave_type=item[\"wave_type\"])"
+          },
+          {
+            "cell": 16,
+            "line": 15,
+            "text": "    play_sound(robot, audio_data)"
+          }
+        ]
+      },
+      {
+        "page": 11,
+        "title": "TTS接收文字，返回什么",
+        "role": "知识流程",
+        "layout": "flow",
+        "code": []
+      },
+      {
+        "page": 12,
+        "title": "把一句话合成并保存",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 19,
+            "line": 7,
+            "text": "handle = speech.synthesize(\"今天天气真好，欢迎使用 Booster 机器人。\")"
+          },
+          {
+            "cell": 19,
+            "line": 8,
+            "text": "audio = handle.result()  # 阻塞等待合成完成"
+          },
+          {
+            "cell": 19,
+            "line": 9,
+            "text": "print(f\"生成音频时长：{audio.duration.seconds:.2f} 秒\")"
+          },
+          {
+            "cell": 19,
+            "line": 12,
+            "text": "save_path = os.path.join(os.getcwd(), \"booster_synthesize.wav\")"
+          },
+          {
+            "cell": 19,
+            "line": 13,
+            "text": "audio.save(save_path)"
+          }
+        ]
+      },
+      {
+        "page": 13,
+        "title": "播放合成结果并核对成功",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 21,
+            "line": 1,
+            "text": "playback = robot.play_sound(save_path)"
+          },
+          {
+            "cell": 21,
+            "line": 2,
+            "text": "playback_status = playback.wait()"
+          },
+          {
+            "cell": 21,
+            "line": 3,
+            "text": "if playback_status == \"SUCCEEDED\":"
+          },
+          {
+            "cell": 21,
+            "line": 5,
+            "text": "else:"
+          }
+        ]
+      },
+      {
+        "page": 14,
+        "title": "换音色先查可用清单",
+        "role": "字段与操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 24,
+            "line": 1,
+            "text": "voices = speech.list_voices()  # speech在前面已经创建"
+          },
+          {
+            "cell": 24,
+            "line": 2,
+            "text": "print(\"可用音色个数：\", len(voices))"
+          },
+          {
+            "cell": 24,
+            "line": 3,
+            "text": "for v in voices:"
+          },
+          {
+            "cell": 24,
+            "line": 4,
+            "text": "    print(\"  \", v)"
+          }
+        ]
+      },
+      {
+        "page": 15,
+        "title": "相同文字换一种声音",
+        "role": "操作与记录",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 26,
+            "line": 4,
+            "text": "Text = \"请用一句话介绍一下这个展厅。\""
+          },
+          {
+            "cell": 26,
+            "line": 7,
+            "text": "handle = speech.synthesize(Text, voice=VOICE_1)"
+          },
+          {
+            "cell": 26,
+            "line": 8,
+            "text": "audio = handle.result()  # 阻塞等待合成完成"
+          },
+          {
+            "cell": 26,
+            "line": 12,
+            "text": "playback = robot.play_sound(audio)"
+          }
+        ]
+      },
+      {
+        "page": 16,
+        "title": "函数返回时任务一定结束了吗",
+        "role": "概念对照",
+        "layout": "async",
+        "code": []
+      },
+      {
+        "page": 17,
+        "title": "从句柄查看任务进展",
+        "role": "字段与方法",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 18,
+        "title": "两个play_sound为什么用法不同",
+        "role": "代码流程对照",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 19,
+        "title": "让机器人先说完再开始识别",
+        "role": "知识流程",
+        "layout": "flow",
+        "code": []
+      },
+      {
+        "page": 20,
+        "title": "前一任务成功后再进入下一步",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 32,
+            "line": 6,
+            "text": "if \"task\" in globals() and not task.done():"
+          },
+          {
+            "cell": 32,
+            "line": 11,
+            "text": "    handle = speech.synthesize(welcome_msg)"
+          },
+          {
+            "cell": 32,
+            "line": 12,
+            "text": "    audio = handle.result()"
+          },
+          {
+            "cell": 32,
+            "line": 15,
+            "text": "    playback = robot.play_sound(audio)"
+          },
+          {
+            "cell": 32,
+            "line": 16,
+            "text": "    playback_status = playback.wait()"
+          },
+          {
+            "cell": 32,
+            "line": 17,
+            "text": "    if playback_status != \"SUCCEEDED\":"
+          },
+          {
+            "cell": 32,
+            "line": 23,
+            "text": "        task = speech.recognize_stream(on_result=on_text)"
+          }
+        ]
+      },
+      {
+        "page": 21,
+        "title": "观察机器人听到了什么",
+        "role": "观察与收尾",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 32,
+            "line": 20,
+            "text": "        def on_text(text):"
+          },
+          {
+            "cell": 32,
+            "line": 21,
+            "text": "            print(\"识别到：\", text)"
+          },
+          {
+            "cell": 32,
+            "line": 26,
+            "text": "            time.sleep(6)  # 观察窗口，不是识别处理耗时"
+          },
+          {
+            "cell": 32,
+            "line": 28,
+            "text": "            accepted = task.cancel()"
+          },
+          {
+            "cell": 32,
+            "line": 30,
+            "text": "            task.wait(timeout=5.0)"
+          },
+          {
+            "cell": 32,
+            "line": 32,
+            "text": "        if not task.done():"
+          }
+        ]
+      },
+      {
+        "page": 22,
+        "title": "音色记录要能对应实验条件",
+        "role": "记录页",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 23,
+        "title": "提示音数据量怎样计算",
+        "role": "换算与记录",
+        "layout": "tonebytes",
+        "code": []
+      },
+      {
+        "page": 24,
+        "title": "三项检查点逐项核对",
+        "role": "检查页",
+        "layout": "checks",
+        "code": []
+      },
+      {
+        "page": 25,
+        "title": "自造提示音与TTS有什么共同点",
+        "role": "讨论页",
+        "layout": "questions",
+        "code": []
+      },
+      {
+        "page": 26,
+        "title": "音色从哪里来，听说还缺什么",
+        "role": "讨论页",
+        "layout": "questions",
+        "code": []
+      },
+      {
+        "page": 27,
+        "title": "独立完成三道题",
+        "role": "学习评价",
+        "layout": "quiz",
+        "code": []
+      },
+      {
+        "page": 28,
+        "title": "结束任务，保存结果",
+        "role": "收尾页",
+        "layout": "flow",
+        "code": []
+      },
+      {
+        "page": 29,
+        "title": "合成语音经历了哪些变化",
+        "role": "阅读导引",
+        "layout": "compare",
+        "code": []
+      }
+    ]
+  },
+  {
+    "name": "U5-L3_LLM对话",
+    "output": "D:\\A_Project\\BoosterRobotics\\知识库\\05-internal-materials\\vocational-planning\\03_X课程项目\\PPT\\U5-L3_LLM对话_Codex审查版.pptx",
+    "slides": 29,
+    "notebook_sha256": "35ecb9f09f669d3bf9e665485d20b4eed64dabfe5c012095be8c012fc6d4b6ed",
+    "pages": [
+      {
+        "page": 1,
+        "title": "LLM对话",
+        "role": "封面",
+        "layout": "cover",
+        "code": []
+      },
+      {
+        "page": 2,
+        "title": "听到问题以后怎样形成回复",
+        "role": "目标页",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 3,
+        "title": "听、生成回复、说分别做什么",
+        "role": "知识流程",
+        "layout": "flow",
+        "code": []
+      },
+      {
+        "page": 4,
+        "title": "模型怎样接着生成文字",
+        "role": "比喻与知识",
+        "layout": "tokens",
+        "code": []
+      },
+      {
+        "page": 5,
+        "title": "回答流畅，信息就一定可靠吗",
+        "role": "情境讨论",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 6,
+        "title": "chat返回的是整个会话的句柄",
+        "role": "接口说明",
+        "layout": "session",
+        "code": []
+      },
+      {
+        "page": 7,
+        "title": "连接后先进行默认对话",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 11,
+            "line": 5,
+            "text": "    task = speech.chat("
+          },
+          {
+            "cell": 11,
+            "line": 6,
+            "text": "        config=ChatConfig(volume=0.6),"
+          },
+          {
+            "cell": 11,
+            "line": 7,
+            "text": "        enable_subtitle_log=True,"
+          },
+          {
+            "cell": 11,
+            "line": 11,
+            "text": "        task.wait()  # 等待整个会话结束，不是只等机器人回答一句话"
+          }
+        ]
+      },
+      {
+        "page": 8,
+        "title": "打断说话与结束会话有何不同",
+        "role": "操作与观察",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 9,
+        "title": "ChatConfig能设置哪些内容",
+        "role": "参数对照",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 10,
+        "title": "让机器人介绍已知的实训室资料",
+        "role": "操作代码",
+        "layout": "promptlab",
+        "code": []
+      },
+      {
+        "page": 11,
+        "title": "还有哪些参数可以观察",
+        "role": "选读参数",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 12,
+        "title": "换人设为什么会改变回答",
+        "role": "知识关系",
+        "layout": "context",
+        "code": []
+      },
+      {
+        "page": 13,
+        "title": "四部分让任务更明确",
+        "role": "写作图示",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 14,
+        "title": "提示词哪里容易让任务含糊",
+        "role": "对照与讨论",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 15,
+        "title": "比较之前先统一问题",
+        "role": "实验分工",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 16,
+        "title": "先检查这句话被转写成什么",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 24,
+            "line": 3,
+            "text": "QUESTION = \"请用一句话介绍一下机器人。\"  # 后面几次都问同一句"
+          },
+          {
+            "cell": 24,
+            "line": 16,
+            "text": "    task = speech.recognize_stream(on_result=on_text)"
+          },
+          {
+            "cell": 24,
+            "line": 19,
+            "text": "        time.sleep(6)  # 留出6秒供观察文字回调，不代表识别一句话需要6秒"
+          },
+          {
+            "cell": 24,
+            "line": 21,
+            "text": "        accepted = task.cancel()"
+          },
+          {
+            "cell": 24,
+            "line": 23,
+            "text": "        task.wait(timeout=5.0)"
+          }
+        ]
+      },
+      {
+        "page": 17,
+        "title": "记录默认对话的表现",
+        "role": "操作与记录",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 26,
+            "line": 1,
+            "text": "print(\"请对着机器人说出这句话：\", QUESTION)"
+          },
+          {
+            "cell": 26,
+            "line": 7,
+            "text": "    task = speech.chat(config=ChatConfig(volume=0.5), enable_subtitle_log=True)"
+          },
+          {
+            "cell": 26,
+            "line": 10,
+            "text": "        task.wait()  # 等待整个会话结束，不是只等机器人回答一句话"
+          },
+          {
+            "cell": 26,
+            "line": 12,
+            "text": "        accepted = task.cancel()"
+          },
+          {
+            "cell": 26,
+            "line": 14,
+            "text": "        task.wait(timeout=5.0)"
+          }
+        ]
+      },
+      {
+        "page": 18,
+        "title": "切换一种指定人设再提同题",
+        "role": "操作代码",
+        "layout": "code",
+        "code": [
+          {
+            "cell": 28,
+            "line": 7,
+            "text": "name = \"科普老师\""
+          },
+          {
+            "cell": 28,
+            "line": 8,
+            "text": "prompt = PROMPTS[name]"
+          },
+          {
+            "cell": 28,
+            "line": 16,
+            "text": "    task = speech.chat("
+          },
+          {
+            "cell": 28,
+            "line": 17,
+            "text": "        config=ChatConfig(system_prompt=prompt, volume=0.5),"
+          },
+          {
+            "cell": 28,
+            "line": 18,
+            "text": "        enable_subtitle_log=True,"
+          }
+        ]
+      },
+      {
+        "page": 19,
+        "title": "将三组观察放到同一张表",
+        "role": "汇总与解释",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 20,
+        "title": "为一个展项写出完整任务",
+        "role": "编写任务",
+        "layout": "promptmine",
+        "code": []
+      },
+      {
+        "page": 21,
+        "title": "用提问检查你写的要求",
+        "role": "试用与记录",
+        "layout": "compare",
+        "code": []
+      },
+      {
+        "page": 22,
+        "title": "观察表里留下了哪些证据",
+        "role": "记录页",
+        "layout": "table",
+        "code": []
+      },
+      {
+        "page": 23,
+        "title": "对照四项检查点",
+        "role": "检查页",
+        "layout": "checks",
+        "code": []
+      },
+      {
+        "page": 24,
+        "title": "同一个问题为什么回答不完全一样",
+        "role": "讨论页",
+        "layout": "questions",
+        "code": []
+      },
+      {
+        "page": 25,
+        "title": "为什么要写清楚“不能做什么”",
+        "role": "讨论页",
+        "layout": "questions",
+        "code": []
+      },
+      {
+        "page": 26,
+        "title": "根据观察改一处提示词",
+        "role": "整理页",
+        "layout": "revision",
+        "code": []
+      },
+      {
+        "page": 27,
+        "title": "独立完成三道题",
+        "role": "学习评价",
+        "layout": "quiz",
+        "code": []
+      },
+      {
+        "page": 28,
+        "title": "确认会话任务已经结束",
+        "role": "收尾页",
+        "layout": "flow",
+        "code": []
+      },
+      {
+        "page": 29,
+        "title": "让模型有资料可用、有范围可守",
+        "role": "阅读导引",
+        "layout": "compare",
+        "code": []
+      }
+    ]
+  }
+]

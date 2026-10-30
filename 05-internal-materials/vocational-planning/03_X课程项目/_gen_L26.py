@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Notebook完整镜像；重跑前核对学生稿与用户执行记录。"""
+"""学生Notebook完整镜像；2026-10-30补齐评价与检查点，不执行SDK。"""
 import json
 from pathlib import Path
 NOTEBOOK = {'cells': [{'cell_type': 'markdown',
@@ -313,17 +313,46 @@ NOTEBOOK = {'cells': [{'cell_type': 'markdown',
                        '| --- | --- | --- | --- | --- | --- |\n',
                        '| | | | | | |\n',
                        '\n',
+                       '### 思考题\n',
+                       '\n',
                        '1. 画面u增大表示向右，机器人y为正表示向左。为什么不能直接把u当作y？\n',
                        '2. 球不动、机器人转向后，update_ball的x/y为何应变化？\n',
                        '3. 标定使用的头部姿态改变后，为什么独立核对结果不能继续沿用？\n',
                        '4. 程序达到六秒、管理器stop返回、球进入目标区，分别能证明什么？\n',
                        '\n',
-                       '**完成核对**：已有标定与独立误差记录；运动条件未获批准时如实填未运行；试踢记录区分调用结果、停稳及球的效果；旧管理器已停止。']}],
+                       '**完成核对**：已有标定与独立误差记录；运动条件未获批准时如实填未运行；试踢记录区分调用结果、停稳及球的效果；旧管理器已停止。\n',
+                       '\n',
+                       '### 检查点\n',
+                       '\n',
+                       '- [__] 能区分像素坐标、机器人坐标和里程计坐标，解释方向与单位。\n',
+                       '- [__] 能保存标定及独立测点记录，说明静态核对和运动中定位验证的区别。\n',
+                       '- [__] 能在获准条件下有限试踢，分别记录程序原因、现场效果与停止核查；未运行项明确标记。\n']},
+           {'cell_type': 'markdown',
+            'id': 'u7-l2-assessment',
+            'metadata': {},
+            'source': ['## 六、学习评价\n',
+                       '\n',
+                       '请独立作答；操作完成情况另按本课记录与检查点核对。\n',
+                       '\n',
+                       '1. 判断：画面像素横坐标u向右增大，因此可以直接把u作为以米为单位、向左为正的机器人坐标y。（\u3000）\n',
+                       '\n',
+                       '2. 填空：本课机器人坐标中，x正方向为________，y正方向为________；球位坐标的距离单位是________，踢球方向角单位是________。\n',
+                       '\n',
+                       '3. 选择：固定平面映射在静态独立测点误差符合本次要求，下一步应（\u3000）。\n',
+                       '   A. 宣布所有行走姿态下定位都已通过\n',
+                       '   B. 先按教师确认的方案核查运动中定位与姿态条件，再进行有限时段试踢\n',
+                       '   C. 改变头部姿态后直接沿用旧映射\n',
+                       '   D. 用管理器stop返回证明球已进入目标区\n',
+                       '\n',
+                       '> 参考答案（教师留存，勿印发给学生）：\n',
+                       '> 1. ×，坐标原点、方向、单位及映射关系均不同。2. 前方；左方；米；弧度。3. B；静态通过不代表步态中定位通过。\n']}],
  'metadata': {'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},
               'language_info': {'name': 'python', 'version': '3.10.12'},
               'x_course': {'confirmation_1': False, 'confirmation_2': False, 'outline': 'v5', 'phase': 'P1'}},
  'nbformat': 4,
  'nbformat_minor': 5}
-OUT = Path(__file__).parent / "notebooks" / 'U7-L2_足球定位与自动踢球.ipynb'
-OUT.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-print("wrote", OUT, "cells=", len(NOTEBOOK["cells"]))
+
+if __name__ == "__main__":
+    target = Path(__file__).resolve().parent / "notebooks" / 'U7-L2_足球定位与自动踢球.ipynb'
+    target.parent.mkdir(exist_ok=True)
+    target.write_text(json.dumps(NOTEBOOK, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

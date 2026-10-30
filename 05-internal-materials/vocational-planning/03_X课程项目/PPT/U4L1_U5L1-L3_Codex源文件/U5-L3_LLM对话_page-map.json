@@ -1,0 +1,310 @@
+{
+  "name": "U5-L3_LLM对话",
+  "output": "D:\\A_Project\\BoosterRobotics\\知识库\\05-internal-materials\\vocational-planning\\03_X课程项目\\PPT\\U5-L3_LLM对话_Codex审查版.pptx",
+  "slides": 29,
+  "notebook_sha256": "35ecb9f09f669d3bf9e665485d20b4eed64dabfe5c012095be8c012fc6d4b6ed",
+  "pages": [
+    {
+      "page": 1,
+      "title": "LLM对话",
+      "role": "封面",
+      "layout": "cover",
+      "code": []
+    },
+    {
+      "page": 2,
+      "title": "听到问题以后怎样形成回复",
+      "role": "目标页",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 3,
+      "title": "听、生成回复、说分别做什么",
+      "role": "知识流程",
+      "layout": "flow",
+      "code": []
+    },
+    {
+      "page": 4,
+      "title": "模型怎样接着生成文字",
+      "role": "比喻与知识",
+      "layout": "tokens",
+      "code": []
+    },
+    {
+      "page": 5,
+      "title": "回答流畅，信息就一定可靠吗",
+      "role": "情境讨论",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 6,
+      "title": "chat返回的是整个会话的句柄",
+      "role": "接口说明",
+      "layout": "session",
+      "code": []
+    },
+    {
+      "page": 7,
+      "title": "连接后先进行默认对话",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 11,
+          "line": 5,
+          "text": "    task = speech.chat("
+        },
+        {
+          "cell": 11,
+          "line": 6,
+          "text": "        config=ChatConfig(volume=0.6),"
+        },
+        {
+          "cell": 11,
+          "line": 7,
+          "text": "        enable_subtitle_log=True,"
+        },
+        {
+          "cell": 11,
+          "line": 11,
+          "text": "        task.wait()  # 等待整个会话结束，不是只等机器人回答一句话"
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "title": "打断说话与结束会话有何不同",
+      "role": "操作与观察",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 9,
+      "title": "ChatConfig能设置哪些内容",
+      "role": "参数对照",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 10,
+      "title": "让机器人介绍已知的实训室资料",
+      "role": "操作代码",
+      "layout": "promptlab",
+      "code": []
+    },
+    {
+      "page": 11,
+      "title": "还有哪些参数可以观察",
+      "role": "选读参数",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 12,
+      "title": "换人设为什么会改变回答",
+      "role": "知识关系",
+      "layout": "context",
+      "code": []
+    },
+    {
+      "page": 13,
+      "title": "四部分让任务更明确",
+      "role": "写作图示",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 14,
+      "title": "提示词哪里容易让任务含糊",
+      "role": "对照与讨论",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 15,
+      "title": "比较之前先统一问题",
+      "role": "实验分工",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 16,
+      "title": "先检查这句话被转写成什么",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 24,
+          "line": 3,
+          "text": "QUESTION = \"请用一句话介绍一下机器人。\"  # 后面几次都问同一句"
+        },
+        {
+          "cell": 24,
+          "line": 16,
+          "text": "    task = speech.recognize_stream(on_result=on_text)"
+        },
+        {
+          "cell": 24,
+          "line": 19,
+          "text": "        time.sleep(6)  # 留出6秒供观察文字回调，不代表识别一句话需要6秒"
+        },
+        {
+          "cell": 24,
+          "line": 21,
+          "text": "        accepted = task.cancel()"
+        },
+        {
+          "cell": 24,
+          "line": 23,
+          "text": "        task.wait(timeout=5.0)"
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "title": "记录默认对话的表现",
+      "role": "操作与记录",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 26,
+          "line": 1,
+          "text": "print(\"请对着机器人说出这句话：\", QUESTION)"
+        },
+        {
+          "cell": 26,
+          "line": 7,
+          "text": "    task = speech.chat(config=ChatConfig(volume=0.5), enable_subtitle_log=True)"
+        },
+        {
+          "cell": 26,
+          "line": 10,
+          "text": "        task.wait()  # 等待整个会话结束，不是只等机器人回答一句话"
+        },
+        {
+          "cell": 26,
+          "line": 12,
+          "text": "        accepted = task.cancel()"
+        },
+        {
+          "cell": 26,
+          "line": 14,
+          "text": "        task.wait(timeout=5.0)"
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "title": "切换一种指定人设再提同题",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 28,
+          "line": 7,
+          "text": "name = \"科普老师\""
+        },
+        {
+          "cell": 28,
+          "line": 8,
+          "text": "prompt = PROMPTS[name]"
+        },
+        {
+          "cell": 28,
+          "line": 16,
+          "text": "    task = speech.chat("
+        },
+        {
+          "cell": 28,
+          "line": 17,
+          "text": "        config=ChatConfig(system_prompt=prompt, volume=0.5),"
+        },
+        {
+          "cell": 28,
+          "line": 18,
+          "text": "        enable_subtitle_log=True,"
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "title": "将三组观察放到同一张表",
+      "role": "汇总与解释",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 20,
+      "title": "为一个展项写出完整任务",
+      "role": "编写任务",
+      "layout": "promptmine",
+      "code": []
+    },
+    {
+      "page": 21,
+      "title": "用提问检查你写的要求",
+      "role": "试用与记录",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 22,
+      "title": "观察表里留下了哪些证据",
+      "role": "记录页",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 23,
+      "title": "对照四项检查点",
+      "role": "检查页",
+      "layout": "checks",
+      "code": []
+    },
+    {
+      "page": 24,
+      "title": "同一个问题为什么回答不完全一样",
+      "role": "讨论页",
+      "layout": "questions",
+      "code": []
+    },
+    {
+      "page": 25,
+      "title": "为什么要写清楚“不能做什么”",
+      "role": "讨论页",
+      "layout": "questions",
+      "code": []
+    },
+    {
+      "page": 26,
+      "title": "根据观察改一处提示词",
+      "role": "整理页",
+      "layout": "revision",
+      "code": []
+    },
+    {
+      "page": 27,
+      "title": "独立完成三道题",
+      "role": "学习评价",
+      "layout": "quiz",
+      "code": []
+    },
+    {
+      "page": 28,
+      "title": "确认会话任务已经结束",
+      "role": "收尾页",
+      "layout": "flow",
+      "code": []
+    },
+    {
+      "page": 29,
+      "title": "让模型有资料可用、有范围可守",
+      "role": "阅读导引",
+      "layout": "compare",
+      "code": []
+    }
+  ]
+}

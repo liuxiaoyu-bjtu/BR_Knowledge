@@ -1,0 +1,457 @@
+{
+  "name": "U5-L1_语音识别",
+  "output": "D:\\A_Project\\BoosterRobotics\\知识库\\05-internal-materials\\vocational-planning\\03_X课程项目\\PPT\\U5-L1_语音识别_Codex审查版.pptx",
+  "slides": 28,
+  "notebook_sha256": "0a16f6addbdafcb556cea91f69fcbb9077620be7fafba6e923eafc6892e74641",
+  "pages": [
+    {
+      "page": 1,
+      "title": "语音识别",
+      "role": "封面",
+      "layout": "cover",
+      "code": []
+    },
+    {
+      "page": 2,
+      "title": "录下来、播出来、认出来",
+      "role": "目标页",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 3,
+      "title": "麦克风怎样留下声音",
+      "role": "知识图示",
+      "layout": "sampling",
+      "code": []
+    },
+    {
+      "page": 4,
+      "title": "三个参数一起决定数据量",
+      "role": "计算图示",
+      "layout": "pcm",
+      "code": []
+    },
+    {
+      "page": 5,
+      "title": "先连接，再开始录音",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 9,
+          "line": 3,
+          "text": "robot.audio_manager.start_recording(channels=3)  # 声道数设置为3，因为K1是环形 3 麦克风阵列"
+        },
+        {
+          "cell": 9,
+          "line": 6,
+          "text": "for i in range(3):"
+        },
+        {
+          "cell": 9,
+          "line": 7,
+          "text": "    time.sleep(1)"
+        },
+        {
+          "cell": 9,
+          "line": 10,
+          "text": "audio = robot.audio_manager.stop_recording()"
+        },
+        {
+          "cell": 9,
+          "line": 11,
+          "text": "print(\"录音结束，还在录吗：\", robot.audio_manager.is_recording())"
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "title": "录音返回的是音频对象",
+      "role": "字段与代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 12,
+          "line": 6,
+          "text": "print(\"时长的秒数：\", round(audio.duration.seconds, 2), \"秒\")"
+        },
+        {
+          "cell": 12,
+          "line": 7,
+          "text": "print(\"采样率：\", audio.sample_rate, \"　声道数：\", audio.channels)"
+        },
+        {
+          "cell": 12,
+          "line": 8,
+          "text": "print(\"采样格式：\", audio.sample_format)"
+        },
+        {
+          "cell": 12,
+          "line": 9,
+          "text": "print(\"数据长度：\", len(audio.data), \"字节\")"
+        },
+        {
+          "cell": 12,
+          "line": 11,
+          "text": "save_path = os.path.join(os.getcwd(), \"my_voice.wav\")"
+        },
+        {
+          "cell": 12,
+          "line": 12,
+          "text": "audio.save(save_path)"
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "title": "回放录音后核对任务结果",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 15,
+          "line": 1,
+          "text": "playback = robot.play_sound(save_path)"
+        },
+        {
+          "cell": 15,
+          "line": 2,
+          "text": "playback_status = playback.wait()"
+        },
+        {
+          "cell": 15,
+          "line": 3,
+          "text": "if playback_status == \"SUCCEEDED\":"
+        },
+        {
+          "cell": 15,
+          "line": 5,
+          "text": "else:"
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "title": "连续的声音可以分成小块",
+      "role": "比喻与图示",
+      "layout": "chunks",
+      "code": []
+    },
+    {
+      "page": 9,
+      "title": "取20块看看有多少数据",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 19,
+          "line": 3,
+          "text": "stop_flag = threading.Event()"
+        },
+        {
+          "cell": 19,
+          "line": 7,
+          "text": "for chunk in robot.audio_manager.record_stream(channels=3, chunk_bytes=3200, stop_event=stop_flag):"
+        },
+        {
+          "cell": 19,
+          "line": 8,
+          "text": "    count += 1"
+        },
+        {
+          "cell": 19,
+          "line": 9,
+          "text": "    total_bytes += len(chunk.data)"
+        },
+        {
+          "cell": 19,
+          "line": 12,
+          "text": "    if count >= 20:"
+        },
+        {
+          "cell": 19,
+          "line": 13,
+          "text": "        stop_flag.set()"
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "title": "先准备相同的60块声音",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 23,
+          "line": 6,
+          "text": "chunks = []"
+        },
+        {
+          "cell": 23,
+          "line": 8,
+          "text": "for chunk in robot.audio_manager.record_stream("
+        },
+        {
+          "cell": 23,
+          "line": 9,
+          "text": "    channels=3, chunk_bytes=3200, stop_event=stop_flag"
+        },
+        {
+          "cell": 23,
+          "line": 11,
+          "text": "    chunks.append(chunk)"
+        },
+        {
+          "cell": 23,
+          "line": 13,
+          "text": "    if count >= 60:                   # 三声道下约含2秒音频"
+        },
+        {
+          "cell": 23,
+          "line": 14,
+          "text": "        stop_flag.set()"
+        },
+        {
+          "cell": 23,
+          "line": 15,
+          "text": "        break"
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "title": "写入的声音为什么还要排队",
+      "role": "知识图示",
+      "layout": "queue",
+      "code": []
+    },
+    {
+      "page": 12,
+      "title": "队列满了可以怎样处理",
+      "role": "三策略对照",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 13,
+      "title": "容量能装多长声音",
+      "role": "计算与提问",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 14,
+      "title": "写完数据后怎样收尾",
+      "role": "时序图",
+      "layout": "flow",
+      "code": []
+    },
+    {
+      "page": 15,
+      "title": "同批声音分别写入4和64的队列",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 25,
+          "line": 3,
+          "text": "queue_size = 4  # 第一组为4；播放结束后改为64，再运行本格"
+        },
+        {
+          "cell": 25,
+          "line": 9,
+          "text": "    stream = robot.audio_manager.play_stream(channels=3, queue_size=queue_size, overflow=\"block\")"
+        },
+        {
+          "cell": 25,
+          "line": 11,
+          "text": "    start_time = time.perf_counter()"
+        },
+        {
+          "cell": 25,
+          "line": 13,
+          "text": "        for i, chunk in enumerate(chunks):"
+        },
+        {
+          "cell": 25,
+          "line": 15,
+          "text": "            stream.write(chunk)"
+        },
+        {
+          "cell": 25,
+          "line": 20,
+          "text": "    finally:"
+        },
+        {
+          "cell": 25,
+          "line": 21,
+          "text": "        stream.close()  # 结束输入，排队的音频继续播放"
+        },
+        {
+          "cell": 25,
+          "line": 22,
+          "text": "    playback_status = stream.wait(timeout=10.0)"
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "title": "记录的是哪一种时间",
+      "role": "记录与解释",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 17,
+      "title": "ASR输出文字以后发生了什么",
+      "role": "知识流程",
+      "layout": "flow",
+      "code": []
+    },
+    {
+      "page": 18,
+      "title": "留言转写与实时字幕怎样选",
+      "role": "应用对照",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 19,
+      "title": "同一句话说两遍",
+      "role": "实验准备",
+      "layout": "compare",
+      "code": []
+    },
+    {
+      "page": 20,
+      "title": "打印回调来观察转写过程",
+      "role": "操作代码",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 31,
+          "line": 5,
+          "text": "def on_text(text):"
+        },
+        {
+          "cell": 31,
+          "line": 6,
+          "text": "    print(\"识别到：\", text)"
+        },
+        {
+          "cell": 31,
+          "line": 12,
+          "text": "    task = speech.recognize_stream(on_result=on_text)"
+        },
+        {
+          "cell": 31,
+          "line": 15,
+          "text": "        time.sleep(6)  # 留出6秒供观察文字回调，不代表识别一句话需要6秒"
+        },
+        {
+          "cell": 31,
+          "line": 17,
+          "text": "        accepted = task.cancel()"
+        },
+        {
+          "cell": 31,
+          "line": 19,
+          "text": "        task.wait(timeout=5.0)"
+        },
+        {
+          "cell": 31,
+          "line": 21,
+          "text": "    if not task.done():"
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "title": "第二次也从同样条件开始",
+      "role": "操作代码与记录",
+      "layout": "code",
+      "code": [
+        {
+          "cell": 33,
+          "line": 1,
+          "text": "if \"task\" in globals() and not task.done():"
+        },
+        {
+          "cell": 33,
+          "line": 5,
+          "text": "    task = speech.recognize_stream(on_result=on_text)"
+        },
+        {
+          "cell": 33,
+          "line": 8,
+          "text": "        time.sleep(6)  # 留出6秒供观察文字回调，不代表识别一句话需要6秒"
+        },
+        {
+          "cell": 33,
+          "line": 10,
+          "text": "        accepted = task.cancel()"
+        },
+        {
+          "cell": 33,
+          "line": 12,
+          "text": "        task.wait(timeout=5.0)"
+        },
+        {
+          "cell": 33,
+          "line": 14,
+          "text": "    if not task.done():"
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "title": "用实际字段核对声音长度",
+      "role": "记录页",
+      "layout": "table",
+      "code": []
+    },
+    {
+      "page": 23,
+      "title": "四项检查点逐项找证据",
+      "role": "检查页",
+      "layout": "checks",
+      "code": []
+    },
+    {
+      "page": 24,
+      "title": "怎样让两次识别比较更公平",
+      "role": "讨论页",
+      "layout": "questions",
+      "code": []
+    },
+    {
+      "page": 25,
+      "title": "播放队列满时应该保留什么",
+      "role": "讨论页",
+      "layout": "questions",
+      "code": []
+    },
+    {
+      "page": 26,
+      "title": "留言与字幕怎样使用识别结果",
+      "role": "讨论页",
+      "layout": "questions",
+      "code": []
+    },
+    {
+      "page": 27,
+      "title": "独立完成三道题",
+      "role": "学习评价",
+      "layout": "quiz",
+      "code": []
+    },
+    {
+      "page": 28,
+      "title": "确认停止采音和识别",
+      "role": "收尾页",
+      "layout": "flow",
+      "code": []
+    }
+  ]
+}
