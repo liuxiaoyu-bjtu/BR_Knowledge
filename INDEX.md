@@ -1,5 +1,7 @@
 ---
 
+> U7-L1能力选择 / 需求到技术方案 / 感知选型 / 一次读取与轮询订阅：[本轮修订](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7-L1_能力选择与初步方案修订.md)（2026-10-30，21格/8代码；U7四课66格/26代码，八课109格/39代码；P1待①②）。
+
 > U7九处sss反馈 / U8项目逻辑 / u8_team_template / x_lab / 文件重载与逐模块测试：[学材补全与附件说明](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_U8_学材补全与附件说明.md)、[U8实施与真机测试](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U8_逐课实施与真机测试指导.md)（2026-10-29，八课103格/37代码，P1待①②）。下方101格/36代码为此前版本统计。
 title: "全局关键词索引"
 category: "导航层"
