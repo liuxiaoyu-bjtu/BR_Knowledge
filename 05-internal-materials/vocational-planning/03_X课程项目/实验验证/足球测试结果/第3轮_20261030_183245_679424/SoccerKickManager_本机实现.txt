@@ -1,0 +1,482 @@
+class SoccerKickManager:
+    """管理足球踢球模式和自动踢球指令.
+
+    这里不依赖真实球场坐标系，而是把 odom 当成短时间有效的世界坐标系。
+    更新踢球指令时，根据调用方给出的 direction 构造一个虚拟 field 坐标系：
+
+        virtual_field +x axis = robot heading at command update + requested direction
+
+    虚拟球门是 odom 坐标系中的固定点。每次更新球位置时，再把这个固定点转换回
+    当前机器人坐标系，然后发送 SDK Kick 消息。
+    """
+
+    # 调用方只提供目标方向，不提供距离，所以这里人为假设一个球门距离。
+    # 距离取接近真实球场量级，可以让机器人绕球做小范围调整时 goal_x/goal_y 更稳定。
+    _ASSUMED_GOAL_DISTANCE_M = 8.0
+    _MODE_SWITCH_TIMEOUT_S = 5.0
+    _VISUAL_KICK_VERSION = VisualKickVersion.kV2
+
+    def __init__(self, robot: BoosterRobot) -> None:
+        """初始化足球踢球通道和 odom 订阅.
+
+        Raises:
+            RuntimeError: T2 机型暂不支持视觉踢球。
+        """
+        # T2 运控暂不支持视觉踢球，待支持后移除该判断。
+        # 拦在开启 DDS 通道之前，避免 T2 上白占通道资源。
+        if robot._get_model() == ROBOT_MODEL_T2:
+            raise RuntimeError("Soccer kick is not supported on T2 robots")
+
+        self._robot = robot
+        self._visual_kick_pub = B1VisualKickReferencePublisher()
+        if robot.virtual_robot_name:
+            self._visual_kick_pub.InitChannelWithName(robot.virtual_robot_name)
+        else:
+            self._visual_kick_pub.InitChannel()
+
+        self._lock = threading.RLock()
+        self._kick_active = False
+        self._kick_power = 1.0
+        self._ball_position_robot: tuple[float, float] | None = None
+        self._ball_odom_pose: tuple[float, float, float] | None = None
+        self._virtual_goal_odom: tuple[float, float] | None = None
+        self._virtual_field_yaw_in_odom = 0.0
+
+    def start(self) -> None:
+        """开启视觉踢球控制.
+
+        本方法只负责进入足球模式并启用 SDK VisualKick。重复调用不会重置当前
+        踢球指令，调用方需要通过 update_command() 设置或更新方向和力度。
+        """
+        self._enter_soccer_mode()
+
+        with self._lock:
+            if self._kick_active:
+                return
+
+        try:
+            self._set_visual_kick_mode(True)
+        except Exception:
+            with self._lock:
+                self._kick_active = False
+            raise
+
+        with self._lock:
+            self._kick_active = True
+
+    def update_command(self, direction: float, power: float) -> None:
+        """更新自动踢球指令，并冻结一个虚拟球门点.
+
+        Args:
+            direction: 踢球方向相对机器人当前坐标系的 yaw，单位 rad。0 表示正前方，
+                正值表示左侧。
+            power: 踢球力度，SDK 约定范围为 [1.0, 10.0]。
+
+        计算步骤：
+            odom_pose = (x0, y0, yaw0)
+            direction_odom = yaw0 + direction
+            goal_odom = (
+                x0 + D * cos(direction_odom),
+                y0 + D * sin(direction_odom),
+            )
+
+        `goal_odom` 后续保持固定，模拟 soccer-python 中固定在场地上的球门。
+        """
+        direction = self._validate_angle(direction, "direction")
+        power = self._validate_power(power)
+        odom_pose = self._get_latest_odom_pose()
+        virtual_goal, field_yaw = self._build_virtual_goal_reference(
+            direction=direction,
+            odom_pose=odom_pose,
+        )
+
+        with self._lock:
+            self._kick_power = power
+            self._virtual_goal_odom = virtual_goal
+            self._virtual_field_yaw_in_odom = field_yaw
+            if not self._kick_active:
+                return
+            ball_position = self._ball_position_robot
+            ball_odom_pose = self._ball_odom_pose
+            if ball_position is None or ball_odom_pose is None:
+                return
+
+        ball_x, ball_y = self._robot_point_to_current_frame(
+            point=ball_position,
+            source_odom_pose=ball_odom_pose,
+            target_odom_pose=odom_pose,
+        )
+        goal_x, goal_y = self._odom_point_to_robot_frame(
+            point=virtual_goal,
+            odom_pose=odom_pose,
+        )
+        robot_theta_to_field = self._robot_yaw_to_virtual_field(
+            robot_yaw_in_odom=odom_pose[2],
+            field_yaw_in_odom=field_yaw,
+        )
+        self._publish_visual_kick(
+            ball_x=ball_x,
+            ball_y=ball_y,
+            goal_x=goal_x,
+            goal_y=goal_y,
+            power=power,
+            robot_theta_to_field=robot_theta_to_field,
+        )
+
+    def stop(self) -> None:
+        """关闭视觉踢球控制，并清空当前虚拟球门参考."""
+        with self._lock:
+            self._kick_active = False
+            self._ball_position_robot = None
+            self._ball_odom_pose = None
+            self._virtual_goal_odom = None
+        self._set_visual_kick_mode(False)
+
+    def update_ball(self, x: float, y: float) -> None:
+        """更新球的位置，并在踢球参考完整时向 SDK 发送消息.
+
+        Args:
+            x: 足球在当前机器人坐标系下的 x 坐标，单位 m，向前为正。
+            y: 足球在当前机器人坐标系下的 y 坐标，单位 m，向左为正。
+
+        流程：
+            1. 球坐标已经是当前机器人坐标系，先保存为最新球位置快照。
+            2. 如果视觉踢球已开启，并且球位置和虚拟球门都已存在，则立即发送
+               SDK Kick 消息。此时 Kick.x / Kick.y 直接使用本次传入的实时球坐标。
+            3. 如果还没有虚拟球门，本方法只更新球位置，等待 update_command() 补齐
+               踢球参考后再发布。
+        """
+        ball_x = self._validate_float(x, "x")
+        ball_y = self._validate_float(y, "y")
+        odom_pose = self._get_latest_odom_pose()
+
+        with self._lock:
+            self._ball_position_robot = (ball_x, ball_y)
+            self._ball_odom_pose = odom_pose
+            if not self._kick_active:
+                return
+            virtual_goal = self._virtual_goal_odom
+            if virtual_goal is None:
+                return
+            power = self._kick_power
+            field_yaw = self._virtual_field_yaw_in_odom
+
+        goal_x, goal_y = self._odom_point_to_robot_frame(
+            point=virtual_goal,
+            odom_pose=odom_pose,
+        )
+        robot_theta_to_field = self._robot_yaw_to_virtual_field(
+            robot_yaw_in_odom=odom_pose[2],
+            field_yaw_in_odom=field_yaw,
+        )
+        self._publish_visual_kick(
+            ball_x=ball_x,
+            ball_y=ball_y,
+            goal_x=goal_x,
+            goal_y=goal_y,
+            power=power,
+            robot_theta_to_field=robot_theta_to_field,
+        )
+
+    def _publish_visual_kick(
+        self,
+        *,
+        ball_x: float,
+        ball_y: float,
+        goal_x: float,
+        goal_y: float,
+        power: float,
+        robot_theta_to_field: float,
+    ) -> None:
+        """发布一条已经完成坐标对齐的 Kick 消息."""
+        msg = self._build_kick_msg(
+            ball_x=ball_x,
+            ball_y=ball_y,
+            goal_x=goal_x,
+            goal_y=goal_y,
+            power=power,
+            robot_theta_to_field=robot_theta_to_field,
+        )
+        if not self._visual_kick_pub.Write(msg):
+            raise RuntimeError("Failed to write visual kick command to SDK process")
+
+    def _enter_soccer_mode(self) -> None:
+        """进入足球模式."""
+        current_mode = self._get_raw_mode()
+        if current_mode == RobotMode.kSoccer:
+            logger.info("Robot is already in raw soccer mode")
+            return
+
+        logger.info(
+            "Changing robot raw mode from %s to %s",
+            self._format_enum(current_mode),
+            self._format_enum(RobotMode.kSoccer),
+        )
+        self._robot.loco_client.ChangeMode(RobotMode.kSoccer)
+
+        def _is_soccer_mode() -> bool:
+            return self._get_raw_mode() == RobotMode.kSoccer
+
+        try:
+            wait_for(
+                _is_soccer_mode,
+                timeout=self._MODE_SWITCH_TIMEOUT_S,
+                interval=0.1,
+            )
+        except TimeoutError:
+            raise RuntimeError(
+                "Set raw mode to soccer timed out "
+                f"(current: {self._format_enum(self._get_raw_mode())})"
+            ) from None
+        logger.info("Robot raw mode switched to soccer")
+
+    def _set_visual_kick_mode(self, enable: bool) -> None:
+        """切换 SDK 的视觉踢球模式.
+
+        开启后，机器人底层会根据 B1VisualKickReferencePublisher 收到的 Kick
+        消息进行视觉踢球控制；关闭后不再受这些参考消息控制。
+        """
+        logger.info(
+            "Calling VisualKick(%s, version=%s), raw state before call: %s",
+            enable,
+            self._format_enum(self._VISUAL_KICK_VERSION),
+            self._get_status_summary(),
+        )
+        self._robot.loco_client.VisualKick(enable, version=self._VISUAL_KICK_VERSION)
+        logger.info(
+            "VisualKick(%s) sent, raw state after call: %s",
+            enable,
+            self._get_status_summary(),
+        )
+
+    def _get_raw_mode(self) -> RobotMode:
+        """返回 SDK 原始 mode，不使用 BoosterRobot.get_mode() 的 public alias."""
+        return self._robot.loco_client.GetMode().mode
+
+    def _get_status_summary(self) -> str:
+        """返回便于实机调试的原始状态摘要."""
+        status = self._robot.loco_client.get_status(debounce=False)
+        return self._status_summary(status)
+
+    def _status_summary(self, status: GetStatusResponse) -> str:
+        """格式化 SDK GetStatusResponse."""
+        actions = [self._format_enum(action) for action in status.current_actions]
+        return (
+            f"mode={self._format_enum(status.current_mode)}, "
+            f"body_control={self._format_enum(status.current_body_control)}, "
+            f"actions={actions}"
+        )
+
+    def _format_enum(self, value: _SdkEnum) -> str:
+        """格式化 SDK enum，保留名称和整数值."""
+        return f"{value}({value.value})"
+
+    def _get_visual_kick_stamp(self) -> tuple[int, int]:
+        """获取 Kick 消息时间戳，优先使用 ROS clock，失败时回退到系统时间."""
+        try:
+            stamp = self._robot.ros_adapter.get_clock().now().to_msg()
+            return stamp.sec, stamp.nanosec
+        except Exception:
+            now_ns = time.time_ns()
+            return now_ns // 1_000_000_000, now_ns % 1_000_000_000
+
+    def _get_latest_odom_pose(self) -> tuple[float, float, float]:
+        """返回最近的 odom 2D 位姿；还没有回调数据时主动拉取一次."""
+        odom = self._robot.get_odom()
+        pose = self._odom_pose_2d(odom)
+        return pose
+
+    def _odom_pose_2d(self, odom: OdomState) -> tuple[float, float, float]:
+        """提取并校验 odom 的平面位姿 (x, y, yaw)."""
+        pose = odom.pose_2d
+        return (
+            self._validate_float(float(pose[0]), "odom.x"),
+            self._validate_float(float(pose[1]), "odom.y"),
+            self._validate_angle(float(pose[2]), "odom.yaw"),
+        )
+
+    def _build_virtual_goal_reference(
+        self,
+        *,
+        direction: float,
+        odom_pose: tuple[float, float, float],
+    ) -> tuple[tuple[float, float], float]:
+        """根据当前 odom 和目标方向构造固定的虚拟球门参考.
+
+        这里把 odom 坐标系当成本地世界坐标系：
+
+            robot pose in odom: P_r = (x_r, y_r, theta_r)
+            requested direction in robot frame: alpha
+            goal yaw in odom: theta_g = theta_r + alpha
+            assumed goal distance: D
+
+        公式：
+
+            goal_odom.x = x_r + D * cos(theta_g)
+            goal_odom.y = y_r + D * sin(theta_g)
+
+        返回的 `field_yaw` 定义了虚拟 field 的 +x 轴方向。这样：
+
+            robot_theta_to_field = robot_yaw_odom - field_yaw
+
+        就等价于 soccer-python 里“机器人相对球场坐标系的 yaw”。
+        """
+        robot_x, robot_y, robot_yaw = odom_pose
+        direction_in_odom = self._normalize_angle(robot_yaw + direction)
+        goal_x = robot_x + self._ASSUMED_GOAL_DISTANCE_M * math.cos(direction_in_odom)
+        goal_y = robot_y + self._ASSUMED_GOAL_DISTANCE_M * math.sin(direction_in_odom)
+        return (goal_x, goal_y), direction_in_odom
+
+    def _robot_point_to_odom_frame(
+        self,
+        *,
+        point: tuple[float, float],
+        odom_pose: tuple[float, float, float],
+    ) -> tuple[float, float]:
+        """把机器人坐标系中的点转换到 odom 坐标系."""
+        robot_x, robot_y, robot_yaw = odom_pose
+        cos_yaw = math.cos(robot_yaw)
+        sin_yaw = math.sin(robot_yaw)
+        return (
+            robot_x + point[0] * cos_yaw - point[1] * sin_yaw,
+            robot_y + point[0] * sin_yaw + point[1] * cos_yaw,
+        )
+
+    def _odom_point_to_robot_frame(
+        self,
+        *,
+        point: tuple[float, float],
+        odom_pose: tuple[float, float, float],
+    ) -> tuple[float, float]:
+        """把 odom 坐标系中的点转换到当前机器人坐标系.
+
+        平移：
+
+            dx = point_odom.x - robot_odom.x
+            dy = point_odom.y - robot_odom.y
+
+        旋转：
+
+            robot -> odom 使用 R(theta)，所以 odom -> robot 使用 R(-theta)。
+
+        公式：
+
+            x_robot =  dx * cos(theta) + dy * sin(theta)
+            y_robot = -dx * sin(theta) + dy * cos(theta)
+
+        这和 soccer-python 中把球场球门点转换成 Kick.goal_x / Kick.goal_y
+        使用的是同一种坐标变换。
+        """
+        robot_x, robot_y, robot_yaw = odom_pose
+        dx = point[0] - robot_x
+        dy = point[1] - robot_y
+        cos_yaw = math.cos(robot_yaw)
+        sin_yaw = math.sin(robot_yaw)
+        return (
+            dx * cos_yaw + dy * sin_yaw,
+            -dx * sin_yaw + dy * cos_yaw,
+        )
+
+    def _robot_point_to_current_frame(
+        self,
+        *,
+        point: tuple[float, float],
+        source_odom_pose: tuple[float, float, float],
+        target_odom_pose: tuple[float, float, float],
+    ) -> tuple[float, float]:
+        """把旧机器人坐标系下的点重投影到当前机器人坐标系."""
+        point_odom = self._robot_point_to_odom_frame(
+            point=point,
+            odom_pose=source_odom_pose,
+        )
+        return self._odom_point_to_robot_frame(
+            point=point_odom,
+            odom_pose=target_odom_pose,
+        )
+
+    def _robot_yaw_to_virtual_field(
+        self,
+        *,
+        robot_yaw_in_odom: float,
+        field_yaw_in_odom: float,
+    ) -> float:
+        """计算机器人相对虚拟 field 坐标系的 yaw.
+
+        SDK 字段名是 `robot_theta_to_field`。在没有真实球场坐标系时，这里的
+        field 指 update_command() 创建的虚拟 field：
+
+            virtual field +x yaw in odom = field_yaw_in_odom
+            robot yaw in odom = robot_yaw_in_odom
+            robot_theta_to_field = robot_yaw_in_odom - field_yaw_in_odom
+
+        update_command() 调用时，如果 direction 为 0，这个值也是 0。之后机器人转身时，
+        该值会反映机器人相对冻结目标方向的旋转变化。
+        """
+        return self._normalize_angle(robot_yaw_in_odom - field_yaw_in_odom)
+
+    def _build_kick_msg(
+        self,
+        *,
+        ball_x: float,
+        ball_y: float,
+        goal_x: float,
+        goal_y: float,
+        power: float,
+        robot_theta_to_field: float,
+    ) -> Kick:
+        """构造 SDK Kick 消息.
+
+        字段映射：
+            Kick.x / Kick.y:
+                当前机器人坐标系下的球位置。
+            Kick.goal_x / Kick.goal_y:
+                当前机器人坐标系下的虚拟球门位置。
+            Kick.power:
+                调用方提供的踢球力度。
+            Kick.robot_theta_to_field:
+                机器人相对虚拟 field 坐标系的 yaw。
+            Kick.dir:
+                保持 0.0。目标方向已经由 goal_x / goal_y 和
+                robot_theta_to_field 表达，避免重复语义。
+        """
+        stamp_sec, stamp_nanosec = self._get_visual_kick_stamp()
+
+        stamp = Time()
+        stamp.sec = stamp_sec
+        stamp.nanosec = stamp_nanosec
+
+        header = Header()
+        header.stamp = stamp
+
+        msg = Kick()
+        msg.header = header
+        msg.x = ball_x
+        msg.y = ball_y
+        msg.goal_x = goal_x
+        msg.goal_y = goal_y
+        msg.power = power
+        msg.robot_theta_to_field = robot_theta_to_field
+        msg.dir = 0.0
+        return msg
+
+    def _validate_power(self, power: float) -> float:
+        """校验并返回 SDK 支持的踢球力度."""
+        power = self._validate_float(power, "power")
+        if not 1.0 <= power <= 10.0:
+            raise ValueError("power must be in range [1.0, 10.0]")
+        return power
+
+    def _validate_angle(self, value: float, name: str) -> float:
+        """校验角度为有限数，并归一化到 [-pi, pi]."""
+        return self._normalize_angle(self._validate_float(value, name))
+
+    def _validate_float(self, value: float, name: str) -> float:
+        """校验数值可转为 float 且为有限数."""
+        value = float(value)
+        if not math.isfinite(value):
+            raise ValueError(f"{name} must be a finite number")
+        return value
+
+    def _normalize_angle(self, value: float) -> float:
+        """把角度归一化到 [-pi, pi]."""
+        return math.atan2(math.sin(value), math.cos(value))

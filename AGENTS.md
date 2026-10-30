@@ -1,6 +1,6 @@
 # AGENTS.md — 面向 AI Agent 的知识库使用指南 + 内容总览
 
-> **足球SDK能力审核（2026-10-30）**：SDK 1.2.2第2轮已回读：RGB/深度均544×448、共享head_color_optical_frame，内参可读；坐标系列表含trunk，原示例head_pitch_link不在列表，TF尚未查询。管理器创建及四方法签名齐全，尚未实际运行。当前执行[第3轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第3轮_操作与记录.md)、[第3轮代码](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第3轮_机身变换与管理器创建.ipynb)：用本机名查询相机到trunk，读取本机实现并实际创建管理器。start/update_command/update_ball/stop及重启全部保留后续实测。只核实课程所需能力，不补多框/遮挡等性能测试；深度单位、配准及管理器原点尚未明确，未决定采用课程自编标定，未新增课程阶段确认。下方早期测试安排为历史状态。
+> **足球SDK能力审核（2026-10-30）**：第3轮TF实际报ExtrapolationException，查询时间早于缓存首帧约16.47毫秒，未取得矩阵；管理器构造前的get_mode报错，SoccerKickManager(robot)尚未执行，原“创建失败”需按阶段校正。当前执行[第4轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第4轮_操作与记录.md)、[第4轮代码](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第4轮_管理器创建与启停.ipynb)：独立实际构造，成功后start/stop与同对象重启，TF有限复查。本机类用odom固定虚拟踢球目标，仍需外部米制球位；方向/力度、持续球位更新及实际踢球后续逐项测试。只核实课程能力，深度单位/配准与控制原点待核，未选定自编标定，未新增阶段确认。下方早期安排保留历史含义。
 
 > **足球测试改为逐轮推进（2026-10-30）**：按用户反馈，当前只执行静止检测第1轮，七步操作与代码对应，自动统计有球/无球各20张新图、18/20与0/20数量标准，现场情况由用户填写。[第1轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_操作与记录.md)、[配套测试Notebook](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_静止检测.ipynb)。读取本轮结果后再生成下一轮，不预设像素米制定位路线或误差阈值。旧分级计划及旧探查Notebook已删除，有效技术审核和SDK依据保留；未运行机器人，未新增课程确认。
 

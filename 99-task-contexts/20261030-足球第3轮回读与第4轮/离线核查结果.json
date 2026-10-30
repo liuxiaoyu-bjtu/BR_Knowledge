@@ -1,0 +1,112 @@
+{
+  "nbformat_ast": true,
+  "cells": 13,
+  "code_cells": 6,
+  "stub_scenarios": [
+    {
+      "name": "正常创建、启停、重启",
+      "passed": true,
+      "calls": {
+        "tf": 1,
+        "start": 2,
+        "stop": 2
+      }
+    },
+    {
+      "name": "公开和原始模式均读取失败仍实际构造",
+      "passed": true,
+      "calls": {
+        "tf": 1,
+        "start": 2,
+        "stop": 2
+      }
+    },
+    {
+      "name": "TF首次失败后返回",
+      "passed": true,
+      "calls": {
+        "tf": 2,
+        "start": 2,
+        "stop": 2
+      }
+    },
+    {
+      "name": "TF三次均失败仍执行构造与启停",
+      "passed": true,
+      "calls": {
+        "tf": 3,
+        "start": 2,
+        "stop": 2
+      }
+    },
+    {
+      "name": "实际构造失败不启动",
+      "passed": true,
+      "calls": {
+        "tf": 1,
+        "start": 0,
+        "stop": 0
+      }
+    },
+    {
+      "name": "第一次start失败仍finally尝试stop且不重启",
+      "passed": true,
+      "calls": {
+        "tf": 1,
+        "start": 1,
+        "stop": 1
+      }
+    },
+    {
+      "name": "第一次stop失败不重启",
+      "passed": true,
+      "calls": {
+        "tf": 1,
+        "start": 1,
+        "stop": 1
+      }
+    },
+    {
+      "name": "重启start失败仍尝试stop",
+      "passed": true,
+      "calls": {
+        "tf": 1,
+        "start": 2,
+        "stop": 2
+      }
+    },
+    {
+      "name": "观察被中断仍stop且不重启",
+      "passed": true,
+      "calls": {
+        "tf": 1,
+        "start": 1,
+        "stop": 1
+      }
+    },
+    {
+      "name": "用户不启动时不调用控制",
+      "passed": true,
+      "calls": {
+        "tf": 1,
+        "start": 0,
+        "stop": 0
+      }
+    },
+    {
+      "name": "连接失败仍能生成结束汇总",
+      "passed": true,
+      "calls": {
+        "tf": 0,
+        "start": 0,
+        "stop": 0
+      }
+    }
+  ],
+  "protected_unchanged": 77,
+  "evidence_unchanged": 5,
+  "user_record_preserved": true,
+  "links_checked": 33,
+  "generator_matches_delivery": true,
+  "hardware_executed": false
+}

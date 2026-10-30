@@ -1,0 +1,28 @@
+    @override
+    def get_image(
+        self, camera_id: str = DEFAULT_CAMERA_ID, img_type: ImageType = "rgb"
+    ) -> AnyImage:
+        """Return the latest image data, typically around 30 Hz.
+
+        Args:
+            camera_id: Camera identifier. Empty string means the default camera.
+                Available identifiers come from ``list_sensors()``.
+            img_type: Image type, RGB or DEPTH. Defaults to RGB.
+
+        Returns:
+            AnyImage: Wrapped image object (``Image`` for raw,
+                ``CompressedImage`` for compressed).
+
+        Raises:
+            ValueError: Unsupported image type or unknown camera_id.
+            DataNotReadyError: No image data was received before timeout.
+        """
+        resolved_id = self._resolve_camera_id(camera_id)
+
+        if img_type == "rgb":
+            img = self.ros_adapter.get_rgb_image(resolved_id)
+        elif img_type == "depth":
+            img = self.ros_adapter.get_depth_image(resolved_id)
+        else:
+            raise ValueError(f"Unsupported image type: {img_type}")
+        return img

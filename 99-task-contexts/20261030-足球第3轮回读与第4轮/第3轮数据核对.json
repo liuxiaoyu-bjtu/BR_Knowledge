@@ -1,0 +1,27 @@
+{
+  "data_dir": "足球测试结果/第3轮_20261030_183245_679424",
+  "sdk_version": "1.2.2",
+  "public_mode_at_connection": "walk",
+  "tf_request": {
+    "source_frame": "head_color_optical_frame",
+    "target_frame": "trunk"
+  },
+  "tf_error": "ExtrapolationException('Lookup would require extrapolation into the past.  Requested time 1793356373.951769 but the earliest data is at time 1793356373.968237, when looking up transform from frame [head_color_optical_frame] to frame [trunk]')",
+  "requested_seconds": "1793356373.951769",
+  "earliest_seconds": "1793356373.968237",
+  "past_offset_ms": "16.468000",
+  "matrix_saved": false,
+  "manual_tf_note": "矩阵",
+  "manual_note_preserved": true,
+  "original_create_label": "失败",
+  "actual_stage": "get_mode() before constructor failed; constructor not reached",
+  "mode_before_create_key_present": false,
+  "manager_type_key_present": false,
+  "four_control_methods_executed": false,
+  "source_only_findings": {
+    "odom_used_for_virtual_goal": true,
+    "assumed_goal_distance_m": 8.0,
+    "external_ball_xy_metres_required": true,
+    "stop_switches_back_to_prepare_or_walk": false
+  }
+}

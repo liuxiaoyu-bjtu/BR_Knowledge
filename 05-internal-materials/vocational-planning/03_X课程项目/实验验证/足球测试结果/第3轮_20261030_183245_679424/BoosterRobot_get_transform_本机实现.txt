@@ -1,0 +1,12 @@
+    @override
+    def get_transform(self, target_frame: str, source_frame: str) -> Transform:
+        """Return the coordinate transform between two frames.
+
+        Args:
+            target_frame: Target frame name.
+            source_frame: Source frame name.
+
+        Returns:
+            Transform: Translation and rotation between the frames.
+        """
+        return self.ros_adapter.get_transform(target_frame, source_frame)
