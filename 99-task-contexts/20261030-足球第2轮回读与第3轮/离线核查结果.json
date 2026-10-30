@@ -1,0 +1,65 @@
+{
+  "assistant_robot_executed": false,
+  "nbformat_ast": "passed",
+  "code_steps": 5,
+  "manager_constructors_in_notebook": 1,
+  "control_method_calls": 0,
+  "offline_cases": [
+    {
+      "case": "TF与创建正常",
+      "capabilities": {
+        "相机到trunk变换": "已取得",
+        "本机接口实现读取": "已记录",
+        "创建足球管理器": "成功"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "frame不在列表仍创建",
+      "capabilities": {
+        "相机到trunk变换": "坐标系本轮未列出",
+        "本机接口实现读取": "已记录",
+        "创建足球管理器": "成功"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "TF报错仍创建",
+      "capabilities": {
+        "相机到trunk变换": "接口报错",
+        "本机接口实现读取": "已记录",
+        "创建足球管理器": "成功"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "源码不可读仍创建",
+      "capabilities": {
+        "相机到trunk变换": "已取得",
+        "本机接口实现读取": "已记录",
+        "创建足球管理器": "成功"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "创建失败记录错误",
+      "capabilities": {
+        "相机到trunk变换": "已取得",
+        "本机接口实现读取": "已记录",
+        "创建足球管理器": "失败"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "创建后模式读取失败不改写创建结果",
+      "capabilities": {
+        "相机到trunk变换": "已取得",
+        "本机接口实现读取": "已记录",
+        "创建足球管理器": "成功"
+      },
+      "result": "passed"
+    }
+  ],
+  "protected_sources_unchanged": 76,
+  "round2_evidence_unchanged": 4
+}

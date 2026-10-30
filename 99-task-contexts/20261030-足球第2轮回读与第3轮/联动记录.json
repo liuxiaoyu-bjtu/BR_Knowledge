@@ -1,0 +1,62 @@
+[
+  {
+    "path": "AGENTS.md",
+    "before_sha256": "048d156eeabe494be4615d5511c13d1f8a8ac2fc9cbfaeb4b2e46846c4b00870",
+    "after_sha256": "34c58b2effad2231faa2dd606465b01e68b090dcadf8fa6fbb8e8d98577e4c65"
+  },
+  {
+    "path": "INDEX.md",
+    "before_sha256": "2cee096f5363c3c1a506222fd90bc33d2b8df46cb9f41f07623eae7ca36e09b9",
+    "after_sha256": "debe06bf4d6f82a71758b79348ae47ef9baeb5fe6fb05ef2b59c9b341eaffa87"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "before_sha256": "677c285525de569f40e18813faa91662df087ad81c209a29a853e465ab62c67d",
+    "after_sha256": "cb40cd5c020208eeebe4af21fd2b84990b3ecfa4c2621d09dd0b51fd1a8ba26a"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/README.md",
+    "before_sha256": "17a1f4822c8fb576c773b6d9448e621eef6fa84d4f5090cf02116cde7849cd81",
+    "after_sha256": "86b78e56c16f2807dc6002a157afe49a0b76dfe92af5769dfaf7971a1beba438"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md",
+    "before_sha256": "72884dbdecd1e665f2cd7132c0099e172001f39f3a2eaac2877d58b193250921",
+    "after_sha256": "8e97cd13bdf70009dce6d8aa25cb43a51c08a56d35217e6fd887af71ef8076cd"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md",
+    "before_sha256": "017d62b666087a8556a88d8325dc5a9f7520eed06b4960168c09ecb4810d7303",
+    "after_sha256": "052e6ba778d7b1259c4491667c41002788c468cb407cdb777f39f0203ee82d46"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v5.md",
+    "before_sha256": "927761bde027ee6a340d13d872ac0f67bcca7a70f195470502c43726cf5b4a29",
+    "after_sha256": "5adb3e5ab255b0970a95d6b339d1b5d8cdcf1193d0df16bc1a52da8e8977ef70"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/x_lab/README.md",
+    "before_sha256": "458d76c44ee9063a452e053188dd0df95b90aa8380a2f3f61062cbdaa91eb7d0",
+    "after_sha256": "2389c5738425b71b505bd7119269aced1592fb1cf79a1edfe62661007008bdac"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_逐课真机测试指导.md",
+    "before_sha256": "4d715b60a521a98fb56b3c970268f5ffd5fc11df958b79faae6309b1877a1375",
+    "after_sha256": "f649971a44ae50c298b82363e5a92e31750c6a79537989e2f8592b8703adf835"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U8_逐课实施与真机测试指导.md",
+    "before_sha256": "efab888e2392abd592491a95b6948cb450c273a2f3fcb912242a38f53190efdd",
+    "after_sha256": "d90cfd2c3cdaf870adc3ced99eed2507bae7c1e2a536b7d0d8fcdf904f279c8d"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球方案联合审核_SDK能力与教学边界.md",
+    "before_sha256": "29553ace5b3dd703a1256750734a0c9ada5e27c8101fe9d20178decf94b348ec",
+    "after_sha256": "2383c9d329acff8665ae8a5a8fc509a8353e52ab62db3073dcbeee426b416a21"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第2轮_操作与记录.md",
+    "before_sha256": "d466605ddac09ebc410992c889b759f1864bb5345074a727728718bd57e1ba9d",
+    "after_sha256": "b74816c554cd68004cb4d90b6e438353f6d74c9001feb5e8ededb7550e16495f"
+  }
+]

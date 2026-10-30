@@ -1,6 +1,6 @@
 # AGENTS.md — 面向 AI Agent 的知识库使用指南 + 内容总览
 
-> **足球SDK能力审核（2026-10-30）**：第1轮已回读：K1 060100、SDK 1.2.2可取RGB并运行soccer检测，本次distance_m全为None。用户明确本任务审核SDK能否支撑课程，多框、遮挡及耗时只作备注，不补做性能测试。管理器创建及start/update_command/update_ball/stop全部列入后续逐轮实测，不能只验证方法存在。当前发出[第2轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第2轮_操作与记录.md)、[第2轮代码](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第2轮_深度与坐标接口.ipynb)，每项只读一次深度、内参、坐标系列表和TF；结果回读后再判断定位来源。当前仍未取得可直接用于管理器的米制球位，未推进U7/U8课程确认。下方“第1轮待执行”等为历史状态。
+> **足球SDK能力审核（2026-10-30）**：SDK 1.2.2第2轮已回读：RGB/深度均544×448、共享head_color_optical_frame，内参可读；坐标系列表含trunk，原示例head_pitch_link不在列表，TF尚未查询。管理器创建及四方法签名齐全，尚未实际运行。当前执行[第3轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第3轮_操作与记录.md)、[第3轮代码](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第3轮_机身变换与管理器创建.ipynb)：用本机名查询相机到trunk，读取本机实现并实际创建管理器。start/update_command/update_ball/stop及重启全部保留后续实测。只核实课程所需能力，不补多框/遮挡等性能测试；深度单位、配准及管理器原点尚未明确，未决定采用课程自编标定，未新增课程阶段确认。下方早期测试安排为历史状态。
 
 > **足球测试改为逐轮推进（2026-10-30）**：按用户反馈，当前只执行静止检测第1轮，七步操作与代码对应，自动统计有球/无球各20张新图、18/20与0/20数量标准，现场情况由用户填写。[第1轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_操作与记录.md)、[配套测试Notebook](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_静止检测.ipynb)。读取本轮结果后再生成下一轮，不预设像素米制定位路线或误差阈值。旧分级计划及旧探查Notebook已删除，有效技术审核和SDK依据保留；未运行机器人，未新增课程确认。
 

@@ -1,0 +1,180 @@
+{
+  "test": "足球第2轮_SDK数据能力_v1",
+  "created_at": "2026-10-30T18:10:00.379558",
+  "tester": "xy",
+  "robot_id": "060100",
+  "firmware_note": "1.8.1",
+  "python": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+  "camera_id_requested": "",
+  "capabilities": {
+    "传感器列表": "已取得",
+    "坐标系列表": "已取得",
+    "管理器方法清单": "已取得",
+    "RGB图": "已取得",
+    "深度图": "已取得",
+    "相机内参": "已取得",
+    "坐标变换查询": "本轮未查询"
+  },
+  "sdk_version": "1.2.2",
+  "robot_info": "RobotInfo(manufacturer='Booster Robotics', model='Booster K1', name='Booster K1', serial_number='01012026060100', firmware_version='1.8.1.2-release-02884-2026-10-15', extra={'Name': 'Booster K1', 'Model': 'Booster K1', 'Delivery Time': '2026-06-20', 'Nickname': 'Booster K1_060100', 'Model Version': '1.2.1', 'SN': '01012026060100', 'Feature': '', 'Hand Type': '', 'Platform': 'Single', 'Edition': 'K1 Geek', 'Region': 'CN'})",
+  "mode": "prepare",
+  "connected": true,
+  "sensors": [
+    {
+      "extra": "{}",
+      "id": "'imu_main_1'",
+      "model": "'IMU_MODEL_HI13R4N'",
+      "sensor_type": "'imu'"
+    },
+    {
+      "extra": "{}",
+      "id": "'head'",
+      "model": "'CAMERA_Model_BOOSTER_MIPI'",
+      "sensor_type": "'camera'"
+    }
+  ],
+  "frames": [
+    "aahead_pitch_link",
+    "aahead_yaw_link",
+    "aaleft_shoulder_pitch_link",
+    "aaright_shoulder_pitch_link",
+    "camera_optical_frame",
+    "head_booster_stereo_rgb_link",
+    "head_color_optical_frame",
+    "head_point",
+    "head_realsense_rgb_link",
+    "left_ankle_pitch_link",
+    "left_ankle_roll_link",
+    "left_elbow_pitch_link",
+    "left_elbow_yaw_link",
+    "left_hip_pitch_link",
+    "left_hip_roll_link",
+    "left_hip_yaw_link",
+    "left_knee_pitch_link",
+    "left_shoulder_roll_link",
+    "right_ankle_pitch_link",
+    "right_ankle_roll_link",
+    "right_elbow_pitch_link",
+    "right_elbow_yaw_link",
+    "right_hip_pitch_link",
+    "right_hip_roll_link",
+    "right_hip_yaw_link",
+    "right_knee_pitch_link",
+    "right_shoulder_roll_link",
+    "trunk"
+  ],
+  "soccer_manager_public_api": {
+    "__init__": "(self, robot: 'BoosterRobot') -> 'None'",
+    "start": "(self) -> 'None'",
+    "stop": "(self) -> 'None'",
+    "update_ball": "(self, x: 'float', y: 'float') -> 'None'",
+    "update_command": "(self, direction: 'float', power: 'float') -> 'None'"
+  },
+  "soccer_manager_missing_methods": [],
+  "rgb": {
+    "width": 544,
+    "height": 448,
+    "encoding": "bgr8",
+    "header": "<Header stamp_ns=1793355064483467889 frame=head_color_optical_frame>",
+    "frame_id": "head_color_optical_frame"
+  },
+  "depth": {
+    "width": 544,
+    "height": 448,
+    "encoding": "mono16",
+    "header": "<Header stamp_ns=1793355065783466177 frame=head_color_optical_frame>",
+    "frame_id": "head_color_optical_frame",
+    "shape": [
+      448,
+      544
+    ],
+    "dtype": "uint16",
+    "nonempty_2d_numeric": true,
+    "finite_positive_count": 243584,
+    "positive_min_raw": 299.0,
+    "positive_max_raw": 65535.0,
+    "unit": "本轮未确认"
+  },
+  "camera_info": {
+    "header": {
+      "stamp": 1793355066.050137,
+      "frame_id": "head_color_optical_frame"
+    },
+    "width": 544,
+    "height": 448,
+    "k": [
+      [
+        207.4547727507004,
+        0.0,
+        280.23952732086184
+      ],
+      [
+        0.0,
+        207.4547727507004,
+        214.98355865478516
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "d": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "r": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "p": [
+      [
+        207.4547727507004,
+        0.0,
+        280.23952732086184,
+        0.0
+      ],
+      [
+        0.0,
+        207.4547727507004,
+        214.98355865478516,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "distortion_model": "plumb_bob",
+    "binning_x": 0,
+    "binning_y": 0,
+    "roi": {
+      "x_offset": 0,
+      "y_offset": 0,
+      "height": 0,
+      "width": 0,
+      "do_rectify": false
+    }
+  },
+  "camera_info_repr": "<CameraInfo 544x448 model=plumb_bob frame=head_color_optical_frame>",
+  "camera_k_structure_ok": true,
+  "transform_note": "列表中没有本轮预设示例组合，等待助手读列表后确定参数"
+}

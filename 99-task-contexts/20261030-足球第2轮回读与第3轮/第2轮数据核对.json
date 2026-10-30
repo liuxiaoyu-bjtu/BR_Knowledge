@@ -1,0 +1,50 @@
+{
+  "sdk_version": "1.2.2",
+  "frames": [
+    "aahead_pitch_link",
+    "aahead_yaw_link",
+    "aaleft_shoulder_pitch_link",
+    "aaright_shoulder_pitch_link",
+    "camera_optical_frame",
+    "head_booster_stereo_rgb_link",
+    "head_color_optical_frame",
+    "head_point",
+    "head_realsense_rgb_link",
+    "left_ankle_pitch_link",
+    "left_ankle_roll_link",
+    "left_elbow_pitch_link",
+    "left_elbow_yaw_link",
+    "left_hip_pitch_link",
+    "left_hip_roll_link",
+    "left_hip_yaw_link",
+    "left_knee_pitch_link",
+    "left_shoulder_roll_link",
+    "right_ankle_pitch_link",
+    "right_ankle_roll_link",
+    "right_elbow_pitch_link",
+    "right_elbow_yaw_link",
+    "right_hip_pitch_link",
+    "right_hip_roll_link",
+    "right_hip_yaw_link",
+    "right_knee_pitch_link",
+    "right_shoulder_roll_link",
+    "trunk"
+  ],
+  "manager_signatures": {
+    "__init__": "(self, robot: 'BoosterRobot') -> 'None'",
+    "start": "(self) -> 'None'",
+    "stop": "(self) -> 'None'",
+    "update_ball": "(self, x: 'float', y: 'float') -> 'None'",
+    "update_command": "(self, direction: 'float', power: 'float') -> 'None'"
+  },
+  "depth_shape": [
+    448,
+    544
+  ],
+  "depth_dtype": "uint16",
+  "zero_count": 128,
+  "value_65535_count": 255,
+  "source_unit": "本轮未确认",
+  "tf_state": "本轮未查询",
+  "scope": "接口与数据能力，不做性能验收"
+}
