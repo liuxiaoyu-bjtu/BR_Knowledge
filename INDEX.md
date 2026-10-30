@@ -19,6 +19,8 @@ last_updated: "2026-09-01"
 
 # 全局关键词索引
 
+> 足球SDK能力 / SDK 1.2.2 / distance_m为空 / 深度与内参 / TF查询：[第1轮回读](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_操作与记录.md)、[第2轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第2轮_操作与记录.md)、[第2轮代码](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第2轮_深度与坐标接口.ipynb)（2026-10-30；第1轮检测能力已确认；不补做多框/遮挡性能测试；第2轮待读数）。
+
 > 足球逐轮测试 / 静止检测 / 有球无球 / 自动统计与现场记录：[第1轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_操作与记录.md)、[配套测试Notebook](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_静止检测.ipynb)（2026-10-30；先做第1轮，助手读记录后再安排下一轮；已替代旧分级计划和探查Notebook）。
 
 > 足球SDK能力探查 / 球位坐标 / 像素米制映射 / 单应标定 / 定位测试验收：[联合审核](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球方案联合审核_SDK能力与教学边界.md)、[第1轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_操作与记录.md)、[第1轮测试Notebook](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_静止检测.ipynb)（2026-10-30；先核实本机SDK能力，固定映射为候选；全部真机项目待执行）。

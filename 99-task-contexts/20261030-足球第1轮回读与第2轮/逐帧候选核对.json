@@ -1,0 +1,542 @@
+[
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_01.png",
+    "source_stamp": 1793353118.3498824,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8548123240470886",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8548123240470886",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_02.png",
+    "source_stamp": 1793353121.8499558,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8522841334342957",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8522841334342957",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_03.png",
+    "source_stamp": 1793353125.3499537,
+    "ball_count": 2,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8527093529701233",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8527093529701233",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_04.png",
+    "source_stamp": 1793353129.1499522,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8554592132568359",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8554592132568359",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_05.png",
+    "source_stamp": 1793353132.0166178,
+    "ball_count": 2,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8535162806510925",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8535162806510925",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_06.png",
+    "source_stamp": 1793353134.24995,
+    "ball_count": 2,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8541468381881714",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8541468381881714",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_07.png",
+    "source_stamp": 1793353137.6166568,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8536791801452637",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8536791801452637",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_08.png",
+    "source_stamp": 1793353140.3833184,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.853226900100708",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.853226900100708",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_09.png",
+    "source_stamp": 1793353143.249986,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8529455661773682",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8529455661773682",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_10.png",
+    "source_stamp": 1793353146.44998,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8524088263511658",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8524088263511658",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_11.png",
+    "source_stamp": 1793353149.1833155,
+    "ball_count": 2,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8547016382217407",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8547016382217407",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_12.png",
+    "source_stamp": 1793353151.8166428,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.852393627166748",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.852393627166748",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_13.png",
+    "source_stamp": 1793353154.883313,
+    "ball_count": 2,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.853388786315918",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.853388786315918",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_14.png",
+    "source_stamp": 1793353157.583311,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8519561886787415",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8519561886787415",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_15.png",
+    "source_stamp": 1793353160.616645,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8508924245834351",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8508924245834351",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_16.png",
+    "source_stamp": 1793353163.2499754,
+    "ball_count": 2,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8551613688468933",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8551613688468933",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_17.png",
+    "source_stamp": 1793353165.7833092,
+    "ball_count": 1,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.853706955909729",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.853706955909729",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_18.png",
+    "source_stamp": 1793353169.316653,
+    "ball_count": 2,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8544451594352722",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8544451594352722",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_19.png",
+    "source_stamp": 1793353172.116683,
+    "ball_count": 2,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.8536343574523926",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.8536343574523926",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "with_ball",
+    "picture": "01_with_ball_20.png",
+    "source_stamp": 1793353174.283353,
+    "ball_count": 2,
+    "selected": {
+      "class_name": "Ball",
+      "confidence": "0.854296088218689",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.854296088218689",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_01.png",
+    "source_stamp": 1793353259.7834344,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_02.png",
+    "source_stamp": 1793353262.4500926,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_03.png",
+    "source_stamp": 1793353265.2834232,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_04.png",
+    "source_stamp": 1793353268.1835022,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_05.png",
+    "source_stamp": 1793353270.7168443,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_06.png",
+    "source_stamp": 1793353273.8502111,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_07.png",
+    "source_stamp": 1793353276.3169005,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_08.png",
+    "source_stamp": 1793353279.1168325,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_09.png",
+    "source_stamp": 1793353282.3168385,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_10.png",
+    "source_stamp": 1793353285.0501645,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_11.png",
+    "source_stamp": 1793353287.5834918,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_12.png",
+    "source_stamp": 1793353290.2168972,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_13.png",
+    "source_stamp": 1793353293.1834857,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_14.png",
+    "source_stamp": 1793353296.1168194,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_15.png",
+    "source_stamp": 1793353298.8502092,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_16.png",
+    "source_stamp": 1793353301.3502052,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_17.png",
+    "source_stamp": 1793353304.2501981,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_18.png",
+    "source_stamp": 1793353307.6168664,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_19.png",
+    "source_stamp": 1793353310.083529,
+    "ball_count": 0,
+    "selected": null
+  },
+  {
+    "scene": "without_ball",
+    "picture": "02_without_ball_20.png",
+    "source_stamp": 1793353312.7835488,
+    "ball_count": 0,
+    "selected": null
+  }
+]

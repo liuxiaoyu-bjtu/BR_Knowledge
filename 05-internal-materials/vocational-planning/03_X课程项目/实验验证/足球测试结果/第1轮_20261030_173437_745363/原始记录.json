@@ -1,0 +1,3688 @@
+{
+  "test": "足球第1轮_静止检测_v2",
+  "created_at": "2026-10-30T17:34:37.745914",
+  "tester": "xy",
+  "robot_id": "060100",
+  "firmware": "1.8.1",
+  "python": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+  "python_path": "/usr/bin/python",
+  "thresholds": {
+    "confidence": 0.4,
+    "sample_count": 20,
+    "max_attempts": 60,
+    "min_ball_frames": 18,
+    "max_false_frames": 0
+  },
+  "batches": [
+    {
+      "scene": "with_ball",
+      "records": [
+        {
+          "attempt": 1,
+          "local_start": 1793353118.3327982,
+          "source_stamp": 1793353118.116548,
+          "frame_id": "head_color_optical_frame",
+          "skip": "重复源帧"
+        },
+        {
+          "attempt": 2,
+          "local_start": 1793353118.6986969,
+          "source_stamp": 1793353118.3498824,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.543360649000533,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8548123240470886",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8548123240470886",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7190704941749573",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7190704941749573",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5920335650444031",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5920335650444031",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5859336256980896",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5859336256980896",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_01.png",
+          "local_end": 1793353121.8611689
+        },
+        {
+          "attempt": 3,
+          "local_start": 1793353121.9635231,
+          "source_stamp": 1793353121.8499558,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.7089230319998023,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8522841334342957",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8522841334342957",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7146503925323486",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7146503925323486",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5849428176879883",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5849428176879883",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5837153196334839",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5837153196334839",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_02.png",
+          "local_end": 1793353125.3980794
+        },
+        {
+          "attempt": 4,
+          "local_start": 1793353125.5293517,
+          "source_stamp": 1793353125.3499537,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 3.3926494239985914,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8527093529701233",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8527093529701233",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7158864736557007",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=12, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7158864736557007",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.6282777786254883",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=172, width=15, height=31)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.6282777786254883",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.588701605796814",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.588701605796814",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5851830840110779",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5851830840110779",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_03.png",
+          "local_end": 1793353129.1770825
+        },
+        {
+          "attempt": 5,
+          "local_start": 1793353129.3325868,
+          "source_stamp": 1793353129.1499522,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.4119888530003664,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8554592132568359",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8554592132568359",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6942490339279175",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6942490339279175",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6030571460723877",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6030571460723877",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5956730842590332",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5956730842590332",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_04.png",
+          "local_end": 1793353132.019542
+        },
+        {
+          "attempt": 6,
+          "local_start": 1793353132.135375,
+          "source_stamp": 1793353132.0166178,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 1.7902650280011585,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8535162806510925",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8535162806510925",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7081930637359619",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=12, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7081930637359619",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5894456505775452",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5894456505775452",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.566226065158844",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.566226065158844",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.40269213914871216",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=172, width=13, height=31)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.40269213914871216",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_05.png",
+          "local_end": 1793353134.3077517
+        },
+        {
+          "attempt": 7,
+          "local_start": 1793353134.4824176,
+          "source_stamp": 1793353134.24995,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.6417491720003454,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8541468381881714",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8541468381881714",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6963145732879639",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=12, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6963145732879639",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5915937423706055",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5915937423706055",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5884873270988464",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5884873270988464",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.42183277010917664",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=172, width=13, height=30)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.42183277010917664",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_06.png",
+          "local_end": 1793353137.6856868
+        },
+        {
+          "attempt": 8,
+          "local_start": 1793353137.799746,
+          "source_stamp": 1793353137.6166568,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.5646814730007463,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8536791801452637",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8536791801452637",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7254472970962524",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7254472970962524",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5933511257171631",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5933511257171631",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5828396081924438",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5828396081924438",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_07.png",
+          "local_end": 1793353140.6640341
+        },
+        {
+          "attempt": 9,
+          "local_start": 1793353140.7820158,
+          "source_stamp": 1793353140.3833184,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.0787378860004537,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.853226900100708",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.853226900100708",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6950082182884216",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6950082182884216",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5977565050125122",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5977565050125122",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5845039486885071",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5845039486885071",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_08.png",
+          "local_end": 1793353143.3293307
+        },
+        {
+          "attempt": 10,
+          "local_start": 1793353143.4456942,
+          "source_stamp": 1793353143.249986,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.58528981299969,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8529455661773682",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8529455661773682",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7136136889457703",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7136136889457703",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5931410193443298",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=313, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5931410193443298",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5795842409133911",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5795842409133911",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_09.png",
+          "local_end": 1793353146.440026
+        },
+        {
+          "attempt": 11,
+          "local_start": 1793353146.6293547,
+          "source_stamp": 1793353146.44998,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.237245479000194,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8524088263511658",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8524088263511658",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.707128643989563",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=12, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.707128643989563",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6013182997703552",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=57, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6013182997703552",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5787939429283142",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5787939429283142",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_10.png",
+          "local_end": 1793353149.2198956
+        },
+        {
+          "attempt": 12,
+          "local_start": 1793353149.352192,
+          "source_stamp": 1793353149.1833155,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 1.9999198610003077,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8547016382217407",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8547016382217407",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7197569608688354",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7197569608688354",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5835802555084229",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5835802555084229",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.5749316215515137",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=174, width=9, height=27)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.5749316215515137",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5748679637908936",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5748679637908936",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_11.png",
+          "local_end": 1793353151.7861059
+        },
+        {
+          "attempt": 13,
+          "local_start": 1793353151.9665902,
+          "source_stamp": 1793353151.8166428,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.9991587129989057,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.852393627166748",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.852393627166748",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6998991966247559",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6998991966247559",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5941387414932251",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=57, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5941387414932251",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5824084281921387",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5824084281921387",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_12.png",
+          "local_end": 1793353155.1462753
+        },
+        {
+          "attempt": 14,
+          "local_start": 1793353155.2713048,
+          "source_stamp": 1793353154.883313,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.120971104999626,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.853388786315918",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.853388786315918",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7100026607513428",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7100026607513428",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5909601449966431",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5909601449966431",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5879451632499695",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5879451632499695",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.5633561611175537",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=174, width=7, height=25)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.5633561611175537",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_13.png",
+          "local_end": 1793353157.6508174
+        },
+        {
+          "attempt": 15,
+          "local_start": 1793353157.8004951,
+          "source_stamp": 1793353157.583311,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.0672947039984138,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8519561886787415",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8519561886787415",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6893605589866638",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6893605589866638",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.589923083782196",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.589923083782196",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5836057066917419",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5836057066917419",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_14.png",
+          "local_end": 1793353160.5403602
+        },
+        {
+          "attempt": 16,
+          "local_start": 1793353160.8008683,
+          "source_stamp": 1793353160.616645,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.3339909139995143,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8508924245834351",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8508924245834351",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7171008586883545",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7171008586883545",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5892730355262756",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5892730355262756",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5820101499557495",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5820101499557495",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_15.png",
+          "local_end": 1793353163.3938954
+        },
+        {
+          "attempt": 17,
+          "local_start": 1793353163.5050895,
+          "source_stamp": 1793353163.2499754,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 1.8829728990003787,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8551613688468933",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8551613688468933",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6878204345703125",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6878204345703125",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5977081060409546",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5977081060409546",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5772088766098022",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5772088766098022",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.44904154539108276",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=175, width=18, height=31)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.44904154539108276",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_16.png",
+          "local_end": 1793353165.8467498
+        },
+        {
+          "attempt": 18,
+          "local_start": 1793353166.0181,
+          "source_stamp": 1793353165.7833092,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 3.012759762001224,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.853706955909729",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.853706955909729",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7101601362228394",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7101601362228394",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5865674614906311",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5865674614906311",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5699704885482788",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5699704885482788",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Penalty_point",
+              "confidence": "0.41659846901893616",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=309, y=248, width=18, height=9)",
+                "class_id": "6",
+                "class_name": "'Penalty_point'",
+                "confidence": "0.41659846901893616",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_17.png",
+          "local_end": 1793353169.3316846
+        },
+        {
+          "attempt": 19,
+          "local_start": 1793353169.482617,
+          "source_stamp": 1793353169.316653,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.395039701999849,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8544451594352722",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8544451594352722",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6973849534988403",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6973849534988403",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5905811190605164",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=57, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5905811190605164",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5563845038414001",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5563845038414001",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.5290074944496155",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=173, width=10, height=29)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.5290074944496155",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_18.png",
+          "local_end": 1793353172.1698747
+        },
+        {
+          "attempt": 20,
+          "local_start": 1793353172.2938397,
+          "source_stamp": 1793353172.116683,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 1.795221845000924,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8536343574523926",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8536343574523926",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.705642819404602",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=12, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.705642819404602",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.5946183800697327",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=173, width=10, height=28)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.5946183800697327",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5896741151809692",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=457, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5896741151809692",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5808896422386169",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5808896422386169",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_19.png",
+          "local_end": 1793353174.3940952
+        },
+        {
+          "attempt": 21,
+          "local_start": 1793353174.5135818,
+          "source_stamp": 1793353174.283353,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.5995110050007497,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.854296088218689",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.854296088218689",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.696223795413971",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.696223795413971",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5957254767417908",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5957254767417908",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5942220091819763",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5942220091819763",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.4286843538284302",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=173, width=10, height=30)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.4286843538284302",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_20.png",
+          "local_end": 1793353177.5223923
+        }
+      ],
+      "samples": [
+        {
+          "attempt": 2,
+          "local_start": 1793353118.6986969,
+          "source_stamp": 1793353118.3498824,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.543360649000533,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8548123240470886",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8548123240470886",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7190704941749573",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7190704941749573",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5920335650444031",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5920335650444031",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5859336256980896",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5859336256980896",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_01.png",
+          "local_end": 1793353121.8611689
+        },
+        {
+          "attempt": 3,
+          "local_start": 1793353121.9635231,
+          "source_stamp": 1793353121.8499558,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.7089230319998023,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8522841334342957",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8522841334342957",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7146503925323486",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7146503925323486",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5849428176879883",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5849428176879883",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5837153196334839",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5837153196334839",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_02.png",
+          "local_end": 1793353125.3980794
+        },
+        {
+          "attempt": 4,
+          "local_start": 1793353125.5293517,
+          "source_stamp": 1793353125.3499537,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 3.3926494239985914,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8527093529701233",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8527093529701233",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7158864736557007",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=12, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7158864736557007",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.6282777786254883",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=172, width=15, height=31)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.6282777786254883",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.588701605796814",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.588701605796814",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5851830840110779",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5851830840110779",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_03.png",
+          "local_end": 1793353129.1770825
+        },
+        {
+          "attempt": 5,
+          "local_start": 1793353129.3325868,
+          "source_stamp": 1793353129.1499522,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.4119888530003664,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8554592132568359",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8554592132568359",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6942490339279175",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6942490339279175",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6030571460723877",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6030571460723877",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5956730842590332",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5956730842590332",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_04.png",
+          "local_end": 1793353132.019542
+        },
+        {
+          "attempt": 6,
+          "local_start": 1793353132.135375,
+          "source_stamp": 1793353132.0166178,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 1.7902650280011585,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8535162806510925",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8535162806510925",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7081930637359619",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=12, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7081930637359619",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5894456505775452",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5894456505775452",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.566226065158844",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.566226065158844",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.40269213914871216",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=172, width=13, height=31)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.40269213914871216",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_05.png",
+          "local_end": 1793353134.3077517
+        },
+        {
+          "attempt": 7,
+          "local_start": 1793353134.4824176,
+          "source_stamp": 1793353134.24995,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.6417491720003454,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8541468381881714",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8541468381881714",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6963145732879639",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=12, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6963145732879639",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5915937423706055",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5915937423706055",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5884873270988464",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5884873270988464",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.42183277010917664",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=172, width=13, height=30)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.42183277010917664",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_06.png",
+          "local_end": 1793353137.6856868
+        },
+        {
+          "attempt": 8,
+          "local_start": 1793353137.799746,
+          "source_stamp": 1793353137.6166568,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.5646814730007463,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8536791801452637",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8536791801452637",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7254472970962524",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7254472970962524",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5933511257171631",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5933511257171631",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5828396081924438",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5828396081924438",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_07.png",
+          "local_end": 1793353140.6640341
+        },
+        {
+          "attempt": 9,
+          "local_start": 1793353140.7820158,
+          "source_stamp": 1793353140.3833184,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.0787378860004537,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.853226900100708",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.853226900100708",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6950082182884216",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6950082182884216",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5977565050125122",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5977565050125122",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5845039486885071",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5845039486885071",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_08.png",
+          "local_end": 1793353143.3293307
+        },
+        {
+          "attempt": 10,
+          "local_start": 1793353143.4456942,
+          "source_stamp": 1793353143.249986,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.58528981299969,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8529455661773682",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8529455661773682",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7136136889457703",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7136136889457703",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5931410193443298",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=313, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5931410193443298",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5795842409133911",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5795842409133911",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_09.png",
+          "local_end": 1793353146.440026
+        },
+        {
+          "attempt": 11,
+          "local_start": 1793353146.6293547,
+          "source_stamp": 1793353146.44998,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.237245479000194,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8524088263511658",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8524088263511658",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.707128643989563",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=12, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.707128643989563",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6013182997703552",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=57, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6013182997703552",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5787939429283142",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5787939429283142",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_10.png",
+          "local_end": 1793353149.2198956
+        },
+        {
+          "attempt": 12,
+          "local_start": 1793353149.352192,
+          "source_stamp": 1793353149.1833155,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 1.9999198610003077,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8547016382217407",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8547016382217407",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7197569608688354",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7197569608688354",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5835802555084229",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5835802555084229",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.5749316215515137",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=174, width=9, height=27)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.5749316215515137",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5748679637908936",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5748679637908936",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_11.png",
+          "local_end": 1793353151.7861059
+        },
+        {
+          "attempt": 13,
+          "local_start": 1793353151.9665902,
+          "source_stamp": 1793353151.8166428,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.9991587129989057,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.852393627166748",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.852393627166748",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6998991966247559",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6998991966247559",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5941387414932251",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=57, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5941387414932251",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5824084281921387",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5824084281921387",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_12.png",
+          "local_end": 1793353155.1462753
+        },
+        {
+          "attempt": 14,
+          "local_start": 1793353155.2713048,
+          "source_stamp": 1793353154.883313,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.120971104999626,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.853388786315918",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.853388786315918",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7100026607513428",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7100026607513428",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5909601449966431",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5909601449966431",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5879451632499695",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5879451632499695",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.5633561611175537",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=174, width=7, height=25)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.5633561611175537",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_13.png",
+          "local_end": 1793353157.6508174
+        },
+        {
+          "attempt": 15,
+          "local_start": 1793353157.8004951,
+          "source_stamp": 1793353157.583311,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.0672947039984138,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8519561886787415",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8519561886787415",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6893605589866638",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6893605589866638",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.589923083782196",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.589923083782196",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5836057066917419",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5836057066917419",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_14.png",
+          "local_end": 1793353160.5403602
+        },
+        {
+          "attempt": 16,
+          "local_start": 1793353160.8008683,
+          "source_stamp": 1793353160.616645,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.3339909139995143,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8508924245834351",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8508924245834351",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7171008586883545",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7171008586883545",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5892730355262756",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5892730355262756",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5820101499557495",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5820101499557495",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_15.png",
+          "local_end": 1793353163.3938954
+        },
+        {
+          "attempt": 17,
+          "local_start": 1793353163.5050895,
+          "source_stamp": 1793353163.2499754,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 1.8829728990003787,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8551613688468933",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=21, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8551613688468933",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6878204345703125",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6878204345703125",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5977081060409546",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5977081060409546",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5772088766098022",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5772088766098022",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.44904154539108276",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=175, width=18, height=31)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.44904154539108276",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_16.png",
+          "local_end": 1793353165.8467498
+        },
+        {
+          "attempt": 18,
+          "local_start": 1793353166.0181,
+          "source_stamp": 1793353165.7833092,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 3.012759762001224,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.853706955909729",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.853706955909729",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.7101601362228394",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.7101601362228394",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5865674614906311",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=36)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5865674614906311",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5699704885482788",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5699704885482788",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Penalty_point",
+              "confidence": "0.41659846901893616",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=309, y=248, width=18, height=9)",
+                "class_id": "6",
+                "class_name": "'Penalty_point'",
+                "confidence": "0.41659846901893616",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 1,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_17.png",
+          "local_end": 1793353169.3316846
+        },
+        {
+          "attempt": 19,
+          "local_start": 1793353169.482617,
+          "source_stamp": 1793353169.316653,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.395039701999849,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8544451594352722",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8544451594352722",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.6973849534988403",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.6973849534988403",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5905811190605164",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=57, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5905811190605164",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5563845038414001",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5563845038414001",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.5290074944496155",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=173, width=10, height=29)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.5290074944496155",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_18.png",
+          "local_end": 1793353172.1698747
+        },
+        {
+          "attempt": 20,
+          "local_start": 1793353172.2938397,
+          "source_stamp": 1793353172.116683,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 1.795221845000924,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.8536343574523926",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.8536343574523926",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.705642819404602",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=12, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.705642819404602",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.5946183800697327",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=173, width=10, height=28)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.5946183800697327",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5896741151809692",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=457, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5896741151809692",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5808896422386169",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5808896422386169",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_19.png",
+          "local_end": 1793353174.3940952
+        },
+        {
+          "attempt": 21,
+          "local_start": 1793353174.5135818,
+          "source_stamp": 1793353174.283353,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.5995110050007497,
+          "results": [
+            {
+              "class_name": "Ball",
+              "confidence": "0.854296088218689",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.854296088218689",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.696223795413971",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.696223795413971",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5957254767417908",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5957254767417908",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "L_cross",
+              "confidence": "0.5942220091819763",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+                "class_id": "3",
+                "class_name": "'L_cross'",
+                "confidence": "0.5942220091819763",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            },
+            {
+              "class_name": "Ball",
+              "confidence": "0.4286843538284302",
+              "positive_distance_m": null,
+              "public_fields": {
+                "bbox": "BoundingBox2D(x=0, y=173, width=10, height=30)",
+                "class_id": "0",
+                "class_name": "'Ball'",
+                "confidence": "0.4286843538284302",
+                "distance_m": "None",
+                "keypoints": "None",
+                "mask": "None"
+              }
+            }
+          ],
+          "ball_count": 2,
+          "has_positive_distance": false,
+          "picture": "01_with_ball_20.png",
+          "local_end": 1793353177.5223923
+        }
+      ],
+      "errors": [],
+      "duplicate_frames": 1,
+      "backward_stamps": 0,
+      "discarded_initial_header": "<Header stamp_ns=1793353118116547999 frame=head_color_optical_frame>",
+      "summary": {
+        "sample_count": 20,
+        "ball_frames": 20,
+        "distance_frames": 0,
+        "duplicate_frames": 1,
+        "multi_ball_frames": 9,
+        "backward_stamps": 0,
+        "detection_seconds": {
+          "min": 1.7902650280011585,
+          "median": 2.4035142775001077,
+          "max": 3.3926494239985914
+        },
+        "conclusion": "达到本轮数量标准，仍需人工看框"
+      }
+    },
+    {
+      "scene": "without_ball",
+      "records": [
+        {
+          "attempt": 1,
+          "local_start": 1793353259.8522155,
+          "source_stamp": 1793353259.5167685,
+          "frame_id": "head_color_optical_frame",
+          "skip": "重复源帧"
+        },
+        {
+          "attempt": 2,
+          "local_start": 1793353259.9942608,
+          "source_stamp": 1793353259.7834344,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.196997109000222,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_01.png",
+          "local_end": 1793353262.4582162
+        },
+        {
+          "attempt": 3,
+          "local_start": 1793353262.6260045,
+          "source_stamp": 1793353262.4500926,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.366153057999327,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_02.png",
+          "local_end": 1793353265.3009856
+        },
+        {
+          "attempt": 4,
+          "local_start": 1793353265.428834,
+          "source_stamp": 1793353265.2834232,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.300464687001295,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_03.png",
+          "local_end": 1793353268.2343805
+        },
+        {
+          "attempt": 5,
+          "local_start": 1793353268.3675518,
+          "source_stamp": 1793353268.1835022,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.1097097950005264,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_04.png",
+          "local_end": 1793353270.775616
+        },
+        {
+          "attempt": 6,
+          "local_start": 1793353270.927708,
+          "source_stamp": 1793353270.7168443,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.5172843060008745,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_05.png",
+          "local_end": 1793353273.9144826
+        },
+        {
+          "attempt": 7,
+          "local_start": 1793353274.0564282,
+          "source_stamp": 1793353273.8502111,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.069470332999117,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_06.png",
+          "local_end": 1793353276.4658952
+        },
+        {
+          "attempt": 8,
+          "local_start": 1793353276.6100929,
+          "source_stamp": 1793353276.3169005,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.1142137570004707,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_07.png",
+          "local_end": 1793353279.0885491
+        },
+        {
+          "attempt": 9,
+          "local_start": 1793353279.2748945,
+          "source_stamp": 1793353279.1168325,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.3543878529999347,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_08.png",
+          "local_end": 1793353281.969596
+        },
+        {
+          "attempt": 10,
+          "local_start": 1793353282.486203,
+          "source_stamp": 1793353282.3168385,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.26625316100035,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_09.png",
+          "local_end": 1793353285.0408869
+        },
+        {
+          "attempt": 11,
+          "local_start": 1793353285.1729796,
+          "source_stamp": 1793353285.0501645,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.1015003960001195,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_10.png",
+          "local_end": 1793353287.6093247
+        },
+        {
+          "attempt": 12,
+          "local_start": 1793353287.749605,
+          "source_stamp": 1793353287.5834918,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.233771129998786,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_11.png",
+          "local_end": 1793353290.2574625
+        },
+        {
+          "attempt": 13,
+          "local_start": 1793353290.3993206,
+          "source_stamp": 1793353290.2168972,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.308423259000847,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_12.png",
+          "local_end": 1793353293.1975677
+        },
+        {
+          "attempt": 14,
+          "local_start": 1793353293.3873198,
+          "source_stamp": 1793353293.1834857,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.2990359680006804,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_13.png",
+          "local_end": 1793353296.1595364
+        },
+        {
+          "attempt": 15,
+          "local_start": 1793353296.2752643,
+          "source_stamp": 1793353296.1168194,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.064988505999281,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_14.png",
+          "local_end": 1793353298.7697594
+        },
+        {
+          "attempt": 16,
+          "local_start": 1793353298.9857662,
+          "source_stamp": 1793353298.8502092,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.0864303180005663,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_15.png",
+          "local_end": 1793353301.3816266
+        },
+        {
+          "attempt": 17,
+          "local_start": 1793353301.629779,
+          "source_stamp": 1793353301.3502052,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.236506797000402,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_16.png",
+          "local_end": 1793353304.1950543
+        },
+        {
+          "attempt": 18,
+          "local_start": 1793353304.3827543,
+          "source_stamp": 1793353304.2501981,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.716665097999794,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_17.png",
+          "local_end": 1793353307.5815308
+        },
+        {
+          "attempt": 19,
+          "local_start": 1793353307.8124037,
+          "source_stamp": 1793353307.6168664,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 1.9848000960009813,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_18.png",
+          "local_end": 1793353310.1513252
+        },
+        {
+          "attempt": 20,
+          "local_start": 1793353310.3235412,
+          "source_stamp": 1793353310.083529,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.1089282500015543,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_19.png",
+          "local_end": 1793353312.7663662
+        },
+        {
+          "attempt": 21,
+          "local_start": 1793353312.919071,
+          "source_stamp": 1793353312.7835488,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.8333152949999203,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_20.png",
+          "local_end": 1793353316.02859
+        }
+      ],
+      "samples": [
+        {
+          "attempt": 2,
+          "local_start": 1793353259.9942608,
+          "source_stamp": 1793353259.7834344,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.196997109000222,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_01.png",
+          "local_end": 1793353262.4582162
+        },
+        {
+          "attempt": 3,
+          "local_start": 1793353262.6260045,
+          "source_stamp": 1793353262.4500926,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.366153057999327,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_02.png",
+          "local_end": 1793353265.3009856
+        },
+        {
+          "attempt": 4,
+          "local_start": 1793353265.428834,
+          "source_stamp": 1793353265.2834232,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.300464687001295,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_03.png",
+          "local_end": 1793353268.2343805
+        },
+        {
+          "attempt": 5,
+          "local_start": 1793353268.3675518,
+          "source_stamp": 1793353268.1835022,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.1097097950005264,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_04.png",
+          "local_end": 1793353270.775616
+        },
+        {
+          "attempt": 6,
+          "local_start": 1793353270.927708,
+          "source_stamp": 1793353270.7168443,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.5172843060008745,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_05.png",
+          "local_end": 1793353273.9144826
+        },
+        {
+          "attempt": 7,
+          "local_start": 1793353274.0564282,
+          "source_stamp": 1793353273.8502111,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.069470332999117,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_06.png",
+          "local_end": 1793353276.4658952
+        },
+        {
+          "attempt": 8,
+          "local_start": 1793353276.6100929,
+          "source_stamp": 1793353276.3169005,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.1142137570004707,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_07.png",
+          "local_end": 1793353279.0885491
+        },
+        {
+          "attempt": 9,
+          "local_start": 1793353279.2748945,
+          "source_stamp": 1793353279.1168325,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.3543878529999347,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_08.png",
+          "local_end": 1793353281.969596
+        },
+        {
+          "attempt": 10,
+          "local_start": 1793353282.486203,
+          "source_stamp": 1793353282.3168385,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.26625316100035,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_09.png",
+          "local_end": 1793353285.0408869
+        },
+        {
+          "attempt": 11,
+          "local_start": 1793353285.1729796,
+          "source_stamp": 1793353285.0501645,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.1015003960001195,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_10.png",
+          "local_end": 1793353287.6093247
+        },
+        {
+          "attempt": 12,
+          "local_start": 1793353287.749605,
+          "source_stamp": 1793353287.5834918,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.233771129998786,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_11.png",
+          "local_end": 1793353290.2574625
+        },
+        {
+          "attempt": 13,
+          "local_start": 1793353290.3993206,
+          "source_stamp": 1793353290.2168972,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.308423259000847,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_12.png",
+          "local_end": 1793353293.1975677
+        },
+        {
+          "attempt": 14,
+          "local_start": 1793353293.3873198,
+          "source_stamp": 1793353293.1834857,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.2990359680006804,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_13.png",
+          "local_end": 1793353296.1595364
+        },
+        {
+          "attempt": 15,
+          "local_start": 1793353296.2752643,
+          "source_stamp": 1793353296.1168194,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.064988505999281,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_14.png",
+          "local_end": 1793353298.7697594
+        },
+        {
+          "attempt": 16,
+          "local_start": 1793353298.9857662,
+          "source_stamp": 1793353298.8502092,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.0864303180005663,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_15.png",
+          "local_end": 1793353301.3816266
+        },
+        {
+          "attempt": 17,
+          "local_start": 1793353301.629779,
+          "source_stamp": 1793353301.3502052,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.236506797000402,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_16.png",
+          "local_end": 1793353304.1950543
+        },
+        {
+          "attempt": 18,
+          "local_start": 1793353304.3827543,
+          "source_stamp": 1793353304.2501981,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.716665097999794,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_17.png",
+          "local_end": 1793353307.5815308
+        },
+        {
+          "attempt": 19,
+          "local_start": 1793353307.8124037,
+          "source_stamp": 1793353307.6168664,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 1.9848000960009813,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_18.png",
+          "local_end": 1793353310.1513252
+        },
+        {
+          "attempt": 20,
+          "local_start": 1793353310.3235412,
+          "source_stamp": 1793353310.083529,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.1089282500015543,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_19.png",
+          "local_end": 1793353312.7663662
+        },
+        {
+          "attempt": 21,
+          "local_start": 1793353312.919071,
+          "source_stamp": 1793353312.7835488,
+          "frame_id": "head_color_optical_frame",
+          "detection_seconds": 2.8333152949999203,
+          "results": [],
+          "ball_count": 0,
+          "has_positive_distance": false,
+          "picture": "02_without_ball_20.png",
+          "local_end": 1793353316.02859
+        }
+      ],
+      "errors": [],
+      "duplicate_frames": 1,
+      "backward_stamps": 0,
+      "discarded_initial_header": "<Header stamp_ns=1793353259516768385 frame=head_color_optical_frame>",
+      "summary": {
+        "sample_count": 20,
+        "ball_frames": 0,
+        "distance_frames": 0,
+        "duplicate_frames": 1,
+        "multi_ball_frames": 0,
+        "backward_stamps": 0,
+        "detection_seconds": {
+          "min": 1.9848000960009813,
+          "median": 2.235138963499594,
+          "max": 2.8333152949999203
+        },
+        "conclusion": "达到本轮无球标准"
+      }
+    }
+  ],
+  "sdk_version": "1.2.2",
+  "sdk_path": "/usr/local/lib/python3.10/dist-packages/boosteros/__init__.py",
+  "imports": "成功",
+  "camera_id_requested": "",
+  "robot_info": "RobotInfo(manufacturer='Booster Robotics', model='Booster K1', name='Booster K1', serial_number='01012026060100', firmware_version='1.8.1.2-release-02884-2026-10-15', extra={'Name': 'Booster K1', 'Model': 'Booster K1', 'Delivery Time': '2026-06-20', 'Nickname': 'Booster K1_060100', 'Model Version': '1.2.1', 'SN': '01012026060100', 'Feature': '', 'Hand Type': '', 'Platform': 'Single', 'Edition': 'K1 Geek', 'Region': 'CN'})",
+  "mode": "prepare",
+  "first_image": {
+    "width": 544,
+    "height": 448,
+    "header": "<Header stamp_ns=1793352954099746619 frame=head_color_optical_frame>"
+  },
+  "single_results": [
+    {
+      "class_name": "Ball",
+      "confidence": "0.855002224445343",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=337, y=271, width=20, height=19)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.855002224445343",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    },
+    {
+      "class_name": "L_cross",
+      "confidence": "0.6550710201263428",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=268, y=236, width=13, height=9)",
+        "class_id": "3",
+        "class_name": "'L_cross'",
+        "confidence": "0.6550710201263428",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    },
+    {
+      "class_name": "L_cross",
+      "confidence": "0.5987957119941711",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=456, y=312, width=58, height=37)",
+        "class_id": "3",
+        "class_name": "'L_cross'",
+        "confidence": "0.5987957119941711",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    },
+    {
+      "class_name": "Ball",
+      "confidence": "0.5787521004676819",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=0, y=173, width=8, height=26)",
+        "class_id": "0",
+        "class_name": "'Ball'",
+        "confidence": "0.5787521004676819",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    },
+    {
+      "class_name": "L_cross",
+      "confidence": "0.4058005213737488",
+      "positive_distance_m": null,
+      "public_fields": {
+        "bbox": "BoundingBox2D(x=453, y=241, width=17, height=10)",
+        "class_id": "3",
+        "class_name": "'L_cross'",
+        "confidence": "0.4058005213737488",
+        "distance_m": "None",
+        "keypoints": "None",
+        "mask": "None"
+      }
+    }
+  ],
+  "single_image_header": "<Header stamp_ns=1793353064599844471 frame=head_color_optical_frame>",
+  "ball_label": "Ball",
+  "without_ball_note": "操作员未确认无球，本步未采样"
+}

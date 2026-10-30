@@ -1,5 +1,7 @@
 # 足球方案联合审核：SDK能力与教学边界
 
+> **当前审核口径（2026-10-30）**：用户明确先核实OS SDK能否支撑课程，不做检出率、误差或动态性能验收。第1轮已确认SDK 1.2.2检测接口可用，distance_m全为None；不因多框、遮挡追加补测。[第2轮操作与记录](足球测试_第2轮_操作与记录.md)、[第2轮代码](足球测试_第2轮_深度与坐标接口.ipynb)为当前任务；下文旧候选方案的动态精度讨论保留为技术条件说明，不列为本轮必测项。
+
 > **执行方式已更新**：本报告保留技术依据。实际测试只按[第1轮操作与记录](足球测试_第1轮_操作与记录.md)、[配套测试Notebook](足球测试_第1轮_静止检测.ipynb)开展当前一轮，助手读完记录再发下一轮；旧30项分级计划和旧探查Notebook已删除。
 
 日期：2026-10-30。审核范围为U7-L2、L3/L4及U8足球分支，重点是`x_lab/ball_position.py`的必要性、技术条件与教学负担。本轮回读当前学材和附件，重新查阅官方SDK页面，做了不连接机器人的几何核查；没有取得本机足球能力或运动实测结果，不登记确认①②或P2通过。
@@ -133,7 +135,7 @@
 
 ## 8. 本轮依据
 
-重新查阅日期：2026-10-30，页面资源版本`release-0.0.32`。目标机器安装版本未知。有效SDK正文12篇已留本地证据；错误路径跳转官网首页的结果已排除。
+重新查阅日期：2026-10-30，页面资源版本`release-0.0.32`。公开文档查阅时目标版本未知；第1轮现已记录目标SDK 1.2.2、固件1.8.1（完整返回见原始记录）。有效SDK正文12篇已留本地证据；错误路径跳转官网首页的结果已排除。
 
 - [自动踢球概览](https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/automatic-soccer-kick-manager/overview/)
 - [update_ball](https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/automatic-soccer-kick-manager/update-ball/)
