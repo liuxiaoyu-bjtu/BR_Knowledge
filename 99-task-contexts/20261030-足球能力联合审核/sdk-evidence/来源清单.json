@@ -1,0 +1,74 @@
+[
+  {
+    "file": "camera-info-type.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/sensor-and-state-data/camera-info/",
+    "title": "CameraInfo | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "camera-info.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/sensor-and-state-snapshot-apis/get-camera-info/",
+    "title": "get_camera_info | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "detection-result.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/sensor-and-state-data/detection-result/",
+    "title": "DetectionResult | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "detection.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/vision-and-speech/detection/detect/",
+    "title": "detect | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "frames.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/info-and-state-retrieval-apis/list-frames/",
+    "title": "list_frames | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "image.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/sensor-and-state-snapshot-apis/get-image/",
+    "title": "get_image | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "soccer-ball.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/automatic-soccer-kick-manager/update-ball/",
+    "title": "update_ball | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "soccer-overview.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/automatic-soccer-kick-manager/overview/",
+    "title": "概览 | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "soccer-start.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/automatic-soccer-kick-manager/start/",
+    "title": "start | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "soccer-stop.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/automatic-soccer-kick-manager/stop/",
+    "title": "stop | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "transform-type.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/sensor-and-state-data/transform/",
+    "title": "Transform | Booster Studio Docs",
+    "valid": true
+  },
+  {
+    "file": "transform.html",
+    "canonical": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/sensor-and-state-snapshot-apis/get-transform/",
+    "title": "get_transform | Booster Studio Docs",
+    "valid": true
+  }
+]

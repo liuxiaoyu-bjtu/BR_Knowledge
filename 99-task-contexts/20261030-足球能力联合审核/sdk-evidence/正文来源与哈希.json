@@ -1,0 +1,62 @@
+[
+  {
+    "file": "sdk-evidence/camera-info-type.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/sensor-and-state-data/camera-info/",
+    "sha256": "b8536394aa7f820aee9f8e8b0db723febc6b43804476fd3358409eecf266ecea"
+  },
+  {
+    "file": "sdk-evidence/camera-info.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/sensor-and-state-snapshot-apis/get-camera-info/",
+    "sha256": "a876becb864463db6c887fda219240ed8e0097d4b2c59182c921adb9ae35f628"
+  },
+  {
+    "file": "sdk-evidence/detection-result.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/sensor-and-state-data/detection-result/",
+    "sha256": "1429d7daadd95f0e2a1b30109f7d03a541573b9ff7bc941cc98d5051a1164cc5"
+  },
+  {
+    "file": "sdk-evidence/detection.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/vision-and-speech/detection/detect/",
+    "sha256": "9b6ab6a9e938aa643f39302c600aed80545ea48ca324bb78eaff592eecc9cd54"
+  },
+  {
+    "file": "sdk-evidence/frames.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/info-and-state-retrieval-apis/list-frames/",
+    "sha256": "77850ea6023da2997afae826691b61df965048c016e64de779d2e00e31ce74a0"
+  },
+  {
+    "file": "sdk-evidence/image.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/sensor-and-state-snapshot-apis/get-image/",
+    "sha256": "89238007e4d08dfb96147d42e8c91e62b12cd429c71521a0e0acbcb5db4be70b"
+  },
+  {
+    "file": "sdk-evidence/soccer-ball.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/automatic-soccer-kick-manager/update-ball/",
+    "sha256": "a31c42577f98f66d16c492ccbf4cd9b0665d85a571ad4faf5973ff735c9e0853"
+  },
+  {
+    "file": "sdk-evidence/soccer-overview.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/automatic-soccer-kick-manager/overview/",
+    "sha256": "ffa1a33b949d70a23a13448d760c9eacb9ce7b4e9b707e9cc90e839eb9db76a8"
+  },
+  {
+    "file": "sdk-evidence/soccer-start.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/automatic-soccer-kick-manager/start/",
+    "sha256": "0676e142c1c0efb1d78032211fb0802237f7f0f1ed4618408785a4b87a44af84"
+  },
+  {
+    "file": "sdk-evidence/soccer-stop.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/automatic-soccer-kick-manager/stop/",
+    "sha256": "cdb40d8c445b13c0e8140ac41aea9c9ca607a6a3a37c2756bf8356bd46d2eee0"
+  },
+  {
+    "file": "sdk-evidence/transform-type.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/common-data-types/sensor-and-state-data/transform/",
+    "sha256": "7fc979c0d61a86ea5325d07fe2499764d19b0081d6cba4cbfaaef3ccb33aae5b"
+  },
+  {
+    "file": "sdk-evidence/transform.txt",
+    "url": "https://docs.booster.tech/zh-CN/docs/developer-guide/booster-os-python-sdk/booster-robot-client-reference/sensor-and-state-snapshot-apis/get-transform/",
+    "sha256": "6e6885550daa92eda2a0bdf77672143a263433116f0df9f1d885b18ecf951346"
+  }
+]

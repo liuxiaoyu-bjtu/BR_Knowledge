@@ -1,0 +1,16 @@
+{
+  "robot_executed": false,
+  "protected_source_files_unchanged": 43,
+  "parallel_changes_preserved_and_excluded": [
+    "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U7-L1_多传感器订阅.ipynb",
+    "05-internal-materials/vocational-planning/03_X课程项目/_gen_L25.py"
+  ],
+  "notebook_cells": 17,
+  "notebook_code_cells": 9,
+  "ast_and_nbformat": "passed",
+  "motion_calls_or_manager_construction": "none",
+  "local_links_checked": 10,
+  "test_cases": 30,
+  "all_machine_test_cases": "未执行",
+  "valid_official_pages": 12
+}

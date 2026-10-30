@@ -1,0 +1,14 @@
+{
+  "robot_executed": false,
+  "mathematical_model": "固定h33=1的平面投影线性最小二乘拟合，输入u/宽、v/高",
+  "synthetic_holdout_errors_m": [
+    2.3714374201337736e-16,
+    6.2697235880985e-16,
+    1.0778315928076987e-15
+  ],
+  "synthetic_model_recovered": true,
+  "out_of_region_rejected": true,
+  "setup_note_change_does_not_invalidate_verified": true,
+  "same_pixel_still_returns_same_coordinate": true,
+  "conclusion": "实现能复现所构造的投影；没有真实采样、误差或运动有效性证据。姿态说明和verified不能代替动态核查。"
+}

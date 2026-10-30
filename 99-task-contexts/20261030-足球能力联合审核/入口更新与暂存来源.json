@@ -1,0 +1,72 @@
+[
+  {
+    "path": "AGENTS.md",
+    "before_sha256": "d21f5e60f4970efe5261092660e93b784f013ba4229e8f99e458f82f379fdb67",
+    "after_sha256": "761dbe1cb0cccd5f61d762eb193bf169026f462ef82b7c5926ae3d17ca2c53bf",
+    "same_as_task_start": true,
+    "staged_source": "99-task-contexts/20261030-足球能力联合审核/head-increment/AGENTS.md"
+  },
+  {
+    "path": "INDEX.md",
+    "before_sha256": "61eaa5d3a7c034c808148cf794482843583d48deb7aaa6aaa1d7fe7e5e90673f",
+    "after_sha256": "9902ed90904f60fa56de5665cbbc3deff3beecf04f496d1f69417cfbbbbd26da",
+    "same_as_task_start": true,
+    "staged_source": "99-task-contexts/20261030-足球能力联合审核/head-increment/INDEX.md"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "before_sha256": "74335b7ec3996d04932e1cdb7b52bb1635a2a0ddbe4d8398d4f71c2ed7f89595",
+    "after_sha256": "ad5043701c5c0ec95943438f0e60e3327544bac226856480b437ccab8158efff",
+    "same_as_task_start": true,
+    "staged_source": "99-task-contexts/20261030-足球能力联合审核/head-increment/CHANGELOG.md"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/README.md",
+    "before_sha256": "3f8fcc85c71f08204adcab54063c7cf066181304bdf48b26cd7f1dcfa41b7727",
+    "after_sha256": "5ab8919fa3607ae66cccdf2b0b806a9f3140b6aee4072345e9951cfdbc9d14e0",
+    "same_as_task_start": true,
+    "staged_source": "99-task-contexts/20261030-足球能力联合审核/head-increment/05-internal-materials/vocational-planning/README.md"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md",
+    "before_sha256": "52623f3a01ee70fc3bd4e278d3b42a9b406eeef10c663685a1642c66abb33619",
+    "after_sha256": "ddccdf00d18c37c0129fe0269184e0f52c563dd8b0c3b9c32e89b4628124c6d1",
+    "same_as_task_start": true,
+    "staged_source": "99-task-contexts/20261030-足球能力联合审核/head-increment/05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v5.md",
+    "before_sha256": "23dc644498f74d1b03a9566dccb29a0adbec36cf827e6d1297d6f3d0986cd37b",
+    "after_sha256": "e0083f064b255ec60d93b7289ef67ec0aecdafac384e18da03c3b21bf125b970",
+    "same_as_task_start": true,
+    "staged_source": "99-task-contexts/20261030-足球能力联合审核/head-increment/05-internal-materials/vocational-planning/03_X课程项目/X课程大纲-v5.md"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md",
+    "before_sha256": "92ced8b952353b629c02e1c1d38648092c45abc2fb6494ee60aea2cdd396cf23",
+    "after_sha256": "42e2ac873c91d5d0ce2b53f28677dbcb50776ce1b44a9311d7acf2195dbfdfbb",
+    "same_as_task_start": true,
+    "staged_source": "99-task-contexts/20261030-足球能力联合审核/head-increment/05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/notebooks/x_lab/README.md",
+    "before_sha256": "10a56ba0b3e9d460ef5643d07cef4b567d9720b712f22c8c3ddf489f7e913fe9",
+    "after_sha256": "755f29430147081e67207a74405f05600ba88c16f8e957ba403bc68bddf190f2",
+    "same_as_task_start": true,
+    "staged_source": "99-task-contexts/20261030-足球能力联合审核/head-increment/05-internal-materials/vocational-planning/03_X课程项目/notebooks/x_lab/README.md"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_逐课真机测试指导.md",
+    "before_sha256": "064366b377bff3f21a4c61a79b8e1b427a9570b46ac88aac54e2845969d9d9ef",
+    "after_sha256": "bdf809e2f4d3b549963b6c242bc15dc1143c6f9caa37b249d92d964504b1d6b3",
+    "same_as_task_start": true,
+    "staged_source": "99-task-contexts/20261030-足球能力联合审核/head-increment/05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_逐课真机测试指导.md"
+  },
+  {
+    "path": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U8_逐课实施与真机测试指导.md",
+    "before_sha256": "86c51481c552a11f5b7e0425c3ff6383ce5152f0387ab2882926dae58cd9c671",
+    "after_sha256": "f26ac142b7ce716b938deb45fb5d18843d6f1dcf314a3605cce9861743f4bce7",
+    "same_as_task_start": true,
+    "staged_source": "99-task-contexts/20261030-足球能力联合审核/head-increment/05-internal-materials/vocational-planning/03_X课程项目/实验验证/U8_逐课实施与真机测试指导.md"
+  }
+]

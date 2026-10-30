@@ -12,6 +12,8 @@ last_updated: "2026-09-01"
 
 # 全局关键词索引
 
+> 足球SDK能力探查 / 球位坐标 / 像素米制映射 / 单应标定 / 定位测试验收：[联合审核](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球方案联合审核_SDK能力与教学边界.md)、[分级测试计划](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球SDK能力与定位方案_分级测试计划.md)、[教师只读探查](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球SDK能力探查_只读.ipynb)（2026-10-30；先核实本机SDK能力，固定映射为候选；全部真机项目待执行）。
+
 > U4移动目标跟随 / 框高阈值 / 跟进与暂停 / 接待到位 / 机器人位移方向：[L3/L4新稿与验证](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L3-L4_视觉移动跟随重设与验证.md)（2026-10-29；视觉控制、IMU/odom记录；新代码待①②）。
 
 > U4课间承接 / 框高启动与停止阈值：[L3/L4同步审查](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L3-L4_承接新版L2的同步审查.md)；U7逐格真机测试 / 足球动态标定 / 线程退出：[四课测试指导](05-internal-materials/vocational-planning/03_X课程项目/实验验证/U7_逐课真机测试指导.md)（2026-10-29；未新增确认）。
