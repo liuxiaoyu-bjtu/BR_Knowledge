@@ -1,0 +1,150 @@
+{
+  "robot_executed": false,
+  "nbformat_and_ast": "passed",
+  "code_steps": 7,
+  "thresholds_match_guide": true,
+  "offline_branch_cases": [
+    {
+      "case": "有球18帧达标",
+      "summary": {
+        "sample_count": 20,
+        "ball_frames": 18,
+        "distance_frames": 18,
+        "duplicate_frames": 0,
+        "multi_ball_frames": 0,
+        "backward_stamps": 0,
+        "detection_seconds": {
+          "min": 0.009999999999990905,
+          "median": 0.009999999999990905,
+          "max": 0.009999999999990905
+        },
+        "conclusion": "达到本轮数量标准，仍需人工看框"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "有球17帧不达标",
+      "summary": {
+        "sample_count": 20,
+        "ball_frames": 17,
+        "distance_frames": 17,
+        "duplicate_frames": 0,
+        "multi_ball_frames": 0,
+        "backward_stamps": 0,
+        "detection_seconds": {
+          "min": 0.009999999999990905,
+          "median": 0.009999999999990905,
+          "max": 0.009999999999990905
+        },
+        "conclusion": "未达到本轮有球数量标准"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "无球0误检",
+      "summary": {
+        "sample_count": 20,
+        "ball_frames": 0,
+        "distance_frames": 0,
+        "duplicate_frames": 0,
+        "multi_ball_frames": 0,
+        "backward_stamps": 0,
+        "detection_seconds": {
+          "min": 0.009999999999990905,
+          "median": 0.009999999999990905,
+          "max": 0.009999999999990905
+        },
+        "conclusion": "达到本轮无球标准"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "无球1次误检",
+      "summary": {
+        "sample_count": 20,
+        "ball_frames": 1,
+        "distance_frames": 1,
+        "duplicate_frames": 0,
+        "multi_ball_frames": 0,
+        "backward_stamps": 0,
+        "detection_seconds": {
+          "min": 0.009999999999990905,
+          "median": 0.009999999999990905,
+          "max": 0.009999999999990905
+        },
+        "conclusion": "未达到本轮无球标准：存在球类框"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "距离空值如实记录",
+      "summary": {
+        "sample_count": 20,
+        "ball_frames": 20,
+        "distance_frames": 0,
+        "duplicate_frames": 0,
+        "multi_ball_frames": 0,
+        "backward_stamps": 0,
+        "detection_seconds": {
+          "min": 0.009999999999990905,
+          "median": 0.009999999999990905,
+          "max": 0.009999999999990905
+        },
+        "conclusion": "达到本轮数量标准，仍需人工看框"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "旧图不补足样本",
+      "summary": {
+        "sample_count": 0,
+        "ball_frames": 0,
+        "distance_frames": 0,
+        "duplicate_frames": 60,
+        "multi_ball_frames": 0,
+        "backward_stamps": 0,
+        "detection_seconds": null,
+        "conclusion": "采样不足：不判通过"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "源戳倒退停止",
+      "summary": {
+        "sample_count": 1,
+        "ball_frames": 1,
+        "distance_frames": 1,
+        "duplicate_frames": 0,
+        "multi_ball_frames": 0,
+        "backward_stamps": 1,
+        "detection_seconds": {
+          "min": 0.009999999999990905,
+          "median": 0.009999999999990905,
+          "max": 0.009999999999990905
+        },
+        "conclusion": "需复核：本批有异常，保留已有样本"
+      },
+      "result": "passed"
+    },
+    {
+      "case": "接口异常保留前两帧",
+      "summary": {
+        "sample_count": 2,
+        "ball_frames": 2,
+        "distance_frames": 2,
+        "duplicate_frames": 0,
+        "multi_ball_frames": 0,
+        "backward_stamps": 0,
+        "detection_seconds": {
+          "min": 0.009999999999990905,
+          "median": 0.009999999999990905,
+          "max": 0.009999999999990905
+        },
+        "conclusion": "需复核：本批有异常，保留已有样本"
+      },
+      "result": "passed"
+    }
+  ],
+  "protected_sources_unchanged": 75,
+  "concurrent_changes_not_touched": []
+}
