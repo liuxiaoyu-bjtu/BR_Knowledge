@@ -1,0 +1,163 @@
+{
+  "nbformat_ast": true,
+  "cells": 19,
+  "code_cells": 9,
+  "scenarios": [
+    {
+      "scenario": "正常完成全部方法和活动场景",
+      "passed": true,
+      "calls": {
+        "start": 5,
+        "stop": 6,
+        "update_command": 9,
+        "update_ball": 25
+      }
+    },
+    {
+      "scenario": "模式读取失败仍完成构造与控制",
+      "passed": true,
+      "calls": {
+        "start": 5,
+        "stop": 6,
+        "update_command": 9,
+        "update_ball": 25
+      }
+    },
+    {
+      "scenario": "TF报错不阻断完整控制",
+      "passed": true,
+      "calls": {
+        "start": 5,
+        "stop": 6,
+        "update_command": 9,
+        "update_ball": 25
+      }
+    },
+    {
+      "scenario": "构造失败保留错误且后续运动跳过",
+      "passed": true,
+      "calls": {
+        "start": 0,
+        "stop": 0,
+        "update_command": 0,
+        "update_ball": 0
+      }
+    },
+    {
+      "scenario": "start报错仍尝试stop",
+      "passed": true,
+      "calls": {
+        "start": 1,
+        "stop": 2,
+        "update_command": 4,
+        "update_ball": 2
+      }
+    },
+    {
+      "scenario": "无球位stop失败后续控制被挡住",
+      "passed": true,
+      "calls": {
+        "start": 1,
+        "stop": 1,
+        "update_command": 0,
+        "update_ball": 0
+      }
+    },
+    {
+      "scenario": "参数清理stop失败后续控制被挡住",
+      "passed": true,
+      "calls": {
+        "start": 1,
+        "stop": 2,
+        "update_command": 4,
+        "update_ball": 2
+      }
+    },
+    {
+      "scenario": "odom不可读记录为能力缺口",
+      "passed": true,
+      "calls": {
+        "start": 1,
+        "stop": 2,
+        "update_command": 1,
+        "update_ball": 0
+      }
+    },
+    {
+      "scenario": "未填写真实球位只运行无球位启停",
+      "passed": true,
+      "calls": {
+        "start": 1,
+        "stop": 2,
+        "update_command": 4,
+        "update_ball": 2
+      }
+    },
+    {
+      "scenario": "未人工启动不发运动指令",
+      "passed": true,
+      "calls": {
+        "start": 0,
+        "stop": 1,
+        "update_command": 4,
+        "update_ball": 2
+      }
+    },
+    {
+      "scenario": "人工结束连续观察后stop并可继续独立试踢",
+      "passed": true,
+      "calls": {
+        "start": 5,
+        "stop": 6,
+        "update_command": 8,
+        "update_ball": 6
+      }
+    },
+    {
+      "scenario": "看到球踢动后中断观察仍可继续方向力度试验",
+      "passed": true,
+      "calls": {
+        "start": 5,
+        "stop": 6,
+        "update_command": 9,
+        "update_ball": 25
+      }
+    },
+    {
+      "scenario": "活动中球位调用异常后stop并跳过后续活动",
+      "passed": true,
+      "calls": {
+        "start": 2,
+        "stop": 3,
+        "update_command": 5,
+        "update_ball": 3
+      }
+    },
+    {
+      "scenario": "行进边界到达提前停止",
+      "passed": true,
+      "calls": {
+        "start": 5,
+        "stop": 6,
+        "update_command": 8,
+        "update_ball": 5
+      }
+    },
+    {
+      "scenario": "连接失败仍可保存汇总",
+      "passed": true,
+      "calls": {
+        "start": 0,
+        "stop": 0,
+        "update_command": 0,
+        "update_ball": 0
+      }
+    }
+  ],
+  "geometry_consistency": true,
+  "hardware_executed": false,
+  "protected_unchanged": 133,
+  "round3_only_link_changed": true,
+  "current_links_checked": 33,
+  "generator_matches_delivery": true
+}

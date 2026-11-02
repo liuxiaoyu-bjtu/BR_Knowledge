@@ -19,7 +19,7 @@ last_updated: "2026-09-01"
 
 # 全局关键词索引
 
-> 足球SDK能力 / TF时间外推 / 创建前模式读取 / start-stop重启 / odom虚拟目标：[第3轮回读](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第3轮_操作与记录.md)、[第4轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第4轮_操作与记录.md)、[第4轮代码](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第4轮_管理器创建与启停.ipynb)（2026-10-30；TF报时间错误，构造尚未执行；第4轮补构造与实际启停，方向/力度和球位更新仍待测试）。
+> 足球SDK完整能力 / SoccerKickManager全部公开方法 / 方向力度 / 持续球位 / 试踢与重启 / U7课程边界：[完整操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第4轮_操作与记录.md)、[完整测试Notebook](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第4轮_完整能力验证.ipynb)（2026-11-02；一次现场逐步完成、统一回传后决策课程；手量输入隔离控制能力，视觉定位不作前置阻塞）。
 
 > 足球逐轮测试 / 静止检测 / 有球无球 / 自动统计与现场记录：[第1轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_操作与记录.md)、[配套测试Notebook](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_静止检测.ipynb)（2026-10-30；先做第1轮，助手读记录后再安排下一轮；已替代旧分级计划和探查Notebook）。
 
