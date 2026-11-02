@@ -1,0 +1,32 @@
+[
+  {
+    "path": "AGENTS.md",
+    "before": "d842220f2272bbbaabf0eddaceaf8e7a764d810f2c94c863e5122d5c77a7b5ca",
+    "after": "2cdaacebb6f167b415048309671ed952ad5a326228882f3392765505b6ade940"
+  },
+  {
+    "path": "INDEX.md",
+    "before": "135e6497445372e8f80fb42b45d105e1870718a984a31e2e0375a70eaeb71d75",
+    "after": "36cfebdada9aa08d96e2d664c7af9fe43c22e709a312ccc790671c0e6cd7fba9"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "before": "3498e6110a22ebc198b0f502308ae65bb51baab6178bc2cf6ded0d05b4642f36",
+    "after": "21a2fb9506da9aa4760359c8862e46fb7d55d946549c2d6c795c06cc561df042"
+  },
+  {
+    "path": "04-shared/sdk-tests/_README.md",
+    "before": "dd22f9328e1aae59072867bf5b489e00dd772b34974caa6ed6c5058744df6e77",
+    "after": "8b3cbb947eb65787199153b2c674dce094cf50d9e9fbf43f4637091c22d95c56"
+  },
+  {
+    "path": "01-booster-kb/07-tech-platform/_index.md",
+    "before": "95b27e355d34081836562a4071cef1614f4fa8279a0a4d18b35f9f98b6ffcb45",
+    "after": "967ac4004781ad4dc21a2aa7c1fc92c36e4ef0d522eff239d57e7c2ce28227c2"
+  },
+  {
+    "path": "01-booster-kb/07-tech-platform/booster-sdk.md",
+    "before": "ebb026f105f2f83419132f982a8e9009f3d915df8378dafacf91cf28e0b5a812",
+    "after": "f398415b68d5820129d64d8070a8a27ca4b42f142210c0ec4db5e52ce34bb88d"
+  }
+]

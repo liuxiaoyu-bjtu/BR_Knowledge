@@ -19,6 +19,8 @@ last_updated: "2026-09-01"
 
 # 全局关键词索引
 
+> K1信息与状态全量采集 / robot_info / get_mode / list_gaits / get_gait / list_frames / list_joints / list_sensors / list_actions：[运行说明](04-shared/sdk-tests/K1信息与状态接口_采集说明.md)、[脚本](04-shared/sdk-tests/probe_k1_info_state.py)（八项只读、完整字段与结果打包；真机记录待用户反馈）。
+
 > 足球SDK完整能力 / 第4轮回读 / 四方法实际调用 / None返回 / 运动响应未等于踢出 / U7课程边界：[第4轮回读与课程边界](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球SDK完整测试_回读与U7课程边界.md)、[已回填记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第4轮_操作与记录.md)（2026-11-02；构造与四方法已调用、参数异常符合预期；用户观察到调整，完整踢出及视觉米制来源未证实）。
 
 > 足球逐轮测试 / 静止检测 / 有球无球 / 自动统计与现场记录：[第1轮操作与记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_操作与记录.md)、[配套测试Notebook](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第1轮_静止检测.ipynb)（2026-10-30；先做第1轮，助手读记录后再安排下一轮；已替代旧分级计划和探查Notebook）。

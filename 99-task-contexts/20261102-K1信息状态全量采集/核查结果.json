@@ -1,0 +1,20 @@
+{
+  "interfaces": [
+    "robot_info",
+    "get_mode",
+    "list_gaits",
+    "get_gait",
+    "list_frames",
+    "list_joints",
+    "list_sensors",
+    "list_actions"
+  ],
+  "python_3_10_syntax": true,
+  "notebook_valid_and_unexecuted": true,
+  "bundle_files": 3,
+  "links_checked": 12,
+  "protected_files_unchanged": 137,
+  "offline_tests_passed": 8,
+  "hardware_executed": false,
+  "hardware_records_created": false
+}

@@ -16,6 +16,7 @@ last_updated: "2026-08-13"
 
 | 文件 | 测试内容 | 覆盖接口 | 运行方式 |
 |------|---------|----------|----------|
+| [probe_k1_info_state.py](probe_k1_info_state.py) / [Jupyter入口](K1信息与状态接口_真机采集.ipynb) | K1八项信息与状态只读采集；完整字段、版本、异常、本机定义与ZIP；[运行说明](K1信息与状态接口_采集说明.md) | `robot_info` / `get_mode` / `list_gaits` / `get_gait` / `list_frames` / `list_joints` / `list_sensors` / `list_actions` | `python3 probe_k1_info_state.py --tester xy`；真机待运行 |
 | `probe_detection_classes.py` | **模型类别探测**：验证指定检测模型实际输出类别（`default`=COCO 80 类，清单见 booster-sdk.md §3.3） | `Detection(model)` / `get_image()` / `detect()` / `plot()` | `python probe_detection_classes.py [模型ID]`（默认 `default`） |
 | `test_boosteros_basic.py` | **快速验证（精简版，日常首选）**：连接 → 图像 → 模型列表（完整 JSON）→ 一次检测 → 结果图 | `BoosterRobot()` / `robot_info` / `get_image()` / `Detection.list_models()` / `detect()` / `plot()` | `python test_boosteros_basic.py` |
 | `test_boosteros_sdk.py` | SDK 环境检测（4 项测试，含失败降级与汇总报告） | 包安装检测、机器人连接、`Detection.list_models()`、RGB 图像获取 | `python test_boosteros_sdk.py` |
