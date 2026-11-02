@@ -1,0 +1,43 @@
+digraph locate {
+
+graph [bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.48", fontname="Microsoft YaHei", fontsize=18, labelloc=t];
+node [fontname="Microsoft YaHei", fontsize=13, shape=box, width=3.7, height=0.85, fixedsize=true, style="filled", fillcolor="#EFF6FC", color="#3C6485", penwidth=1.4, margin="0.18,0.10"];
+edge [fontname="Microsoft YaHei", fontsize=11, color="#536C7D", arrowsize=0.7, penwidth=1.2];
+
+label="球位处理子流程｜保留拍摄时刻，输出当前身体坐标";
+start [shape=oval, width=2.6, height=0.65, fillcolor="#DCEEEA", label="进入球位处理"];
+read [shape=parallelogram, label="读取原图、检测框、匹配深度
+内参、拍摄时TF和里程计"];
+check [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="坐标、时钟、内参与
+数据对应关系有效？"];
+depth [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="已配准深度可用
+且球面拟合通过？"];
+deproject [label="反投影并估计相机球心
+变换到拍摄时身体坐标"];
+geometry [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="已核实几何模型
+且处于停稳观察？"];
+ray [label="接地点射线与真实地面求交
+按半径、地面法向修正到球心"];
+odom [label="球位转换到odom
+按当前机器人位姿重新表达"];
+age [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="年龄、范围和
+使用场景均允许？"];
+ok [shape=parallelogram, fillcolor="#EAF6F3", label="输出 valid=true
+x、y：当前身体坐标，单位米
+保留原始拍摄时间与方法"];
+bad [shape=parallelogram, fillcolor="#FFF0ED", label="输出 valid=false 与原因
+禁止生成可控制的假坐标"];
+end [shape=oval, width=2.6, height=0.65, fillcolor="#DCEEEA", label="返回调用方"];
+start -> read -> check;
+check -> depth [label="是"]; check -> bad [label="否"];
+depth -> deproject [label="是"]; depth -> geometry [label="否"];
+geometry -> ray [label="是"]; geometry -> bad [label="否"];
+deproject -> odom; ray -> odom; odom -> age;
+age -> ok [label="是"]; age -> bad [label="否"];
+ok -> end; bad -> end;
+note [shape=note, width=4.6, height=1.4, fillcolor="#FAFAFA", color="#A9B4BC", fontsize=11,
+label="固定地面模型只供已核实的停稳观察。
+本版自动踢球要求已核实的动态深度供数。
+odom只补偿自身运动；原始观测年龄不归零。"];
+{rank=same; age; note;}
+}

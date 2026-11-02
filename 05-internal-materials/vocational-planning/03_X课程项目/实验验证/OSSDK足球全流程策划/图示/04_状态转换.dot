@@ -1,0 +1,57 @@
+digraph states {
+
+graph [bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.48", fontname="Microsoft YaHei", fontsize=18, labelloc=t];
+node [fontname="Microsoft YaHei", fontsize=13, shape=box, width=3.7, height=0.85, fixedsize=true, style="filled", fillcolor="#EFF6FC", color="#3C6485", penwidth=1.4, margin="0.18,0.10"];
+edge [fontname="Microsoft YaHei", fontsize=11, color="#536C7D", arrowsize=0.7, penwidth=1.2];
+
+graph [rankdir=TB, ranksep="0.8", nodesep="0.35"];
+label="运行状态转换｜状态图，不套用流程图符号";
+node [shape=box, style="rounded,filled"];
+initial [shape=point, label="", fillcolor="#263A49", width=.12];
+idle [label="IDLE
+已创建，尚未启动"];
+observe [label="OBSERVE_ONLY
+只观察，不发送动作"];
+head [label="HEAD_SEARCH
+头部定点扫描"];
+localize [label="LOCALIZE
+保持视线、确认球位"];
+turn [label="BODY_TURN
+按里程计转身"];
+approach [label="APPROACH
+一次有期限的接近"];
+settle [label="SETTLE
+零速度、等待停稳"];
+kick [label="KICK
+管理器拥有身体控制"];
+verify [label="VERIFY
+关闭后重新观察"];
+finished [label="FINISHED
+有明确结束原因"];
+stopping [label="STOPPING
+线程或SDK调用尚未退出", fillcolor="#FFF4DC"];
+stopped [label="STOPPED / ERROR
+已退出 / 有调用异常", fillcolor="#FFF0ED"];
+terminal [shape=doublecircle, label="", width=.22, fillcolor="#263A49"];
+initial -> idle;
+idle -> observe [label="start：只观察"];
+idle -> head [label="start：运动条件通过"];
+head -> localize [label="检测到所选球"];
+head -> turn [label="头部扫描完，仍可搜索"];
+turn -> settle [label="扇区到位"];
+settle -> head [label="转身后停稳"];
+localize -> head [label="定位等待超时"];
+localize -> approach [label="有效且尚未到交接范围"];
+approach -> settle [label="本次动作到时"];
+settle -> localize [label="接近后停稳"];
+localize -> kick [label="已到范围、启用踢球、供数合格"];
+localize -> finished [label="交接条件未满足"];
+head -> finished [label="搜索次数或总预算耗尽"];
+kick -> verify [label="移动 / 失效 / 超时"];
+verify -> finished [label="得到新观察或复核超时"];
+observe -> stopping [label="stop / 总时限 / 异常"];
+head -> stopping [style=dashed, label="停止或异常"];
+kick -> stopping [style=dashed, label="停止请求"];
+stopping -> stopped [label="控制与推理线程均退出"];
+finished -> terminal; stopped -> terminal;
+}

@@ -1,0 +1,7 @@
+before/
+index.before
+*.index
+*.index.lock
+__pycache__/
+tests/__pycache__/
+qa/*_审查.png

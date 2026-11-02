@@ -1,0 +1,18 @@
+{
+  "camera_id": "head",
+  "trunk_frame": "trunk",
+  "body_from_trunk": null,
+  "tf_direction_verified": false,
+  "control_origin_verified": false,
+  "clocks_verified": false,
+  "rgb_depth_registered": false,
+  "depth_verified": false,
+  "depth_scale_m": null,
+  "depth_invalid_raw": [0.0, 65535.0],
+  "ball_radius_m": null,
+  "geometry_verified": false,
+  "ground_plane_body": null,
+  "motion_profile_verified": false,
+  "kick_feed_verified": false,
+  "evidence": ""
+}

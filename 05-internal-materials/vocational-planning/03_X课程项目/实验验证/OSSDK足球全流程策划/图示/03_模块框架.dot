@@ -1,0 +1,44 @@
+digraph architecture {
+
+graph [bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.48", fontname="Microsoft YaHei", fontsize=18, labelloc=t];
+node [fontname="Microsoft YaHei", fontsize=13, shape=box, width=3.7, height=0.85, fixedsize=true, style="filled", fillcolor="#EFF6FC", color="#3C6485", penwidth=1.4, margin="0.18,0.10"];
+edge [fontname="Microsoft YaHei", fontsize=11, color="#536C7D", arrowsize=0.7, penwidth=1.2];
+
+rankdir=TB;
+label="应用框架｜机器人访问统一经过公开OS SDK";
+student [label="U7 Notebook / 后续U8应用
+选择参数 · 启停 · 查看状态 · 解释结果", fillcolor="#E8F0FC"];
+profile [shape=note, width=4.6, height=1.4, label="教师配置JSON
+坐标定义、定位条件、实测依据", fillcolor="#FFF4DC"];
+subgraph cluster_module {
+ label="课程附件 k1_soccer.py（单个运行文件）"; fontsize=14; color="#77A89C"; style="rounded";
+ api [label="SoccerApp
+start / status / stop / save_log", fillcolor="#EAF6F3"];
+ subgraph cluster_read {label="采集与推理线程"; fontsize=14; color="#D2DFE8";
+ buffer [label="有界图像缓存
+按原图时间匹配元数据"];
+ target [label="目标筛选与连续性选择"];
+ math [label="球位几何 / 深度球心
+时间补偿与有效性判断"];
+ buffer -> target -> math;
+ }
+ subgraph cluster_control {label="独立控制线程"; fontsize=14; color="#D2DFE8";
+ state [label="SoccerPlanner 状态机
+先头后身 · 观察后短步接近"];
+ owner [label="唯一身体命令出口
+普通速度 / 踢球管理器互斥"];
+ exit [label="退出处理与结果记录
+SDK返回与物理结果分别保存"];
+ state -> owner -> exit;
+ }
+ api -> buffer; api -> state; math -> state [label="有效球位快照"];
+}
+sdk [width=4.6, height=1.45, label="BoosterOS SDK（现有公开接口）
+图像、内参、TF、里程计、关节信息
+Detection / set_head_angle
+set_velocity / SoccerKickManager", fillcolor="#E8F0FC"];
+robot [label="K1传感器、运控与视觉踢球", fillcolor="#EDEFF2"];
+student -> api; profile -> api [style=dashed, label="配置"];
+buffer -> sdk [dir=both, label="读取"]; target -> sdk [dir=both, label="检测"];
+owner -> sdk [label="控制"]; sdk -> robot [dir=both];
+}

@@ -1,0 +1,63 @@
+digraph main {
+
+graph [bgcolor="white", pad="0.35", nodesep="0.35", ranksep="0.48", fontname="Microsoft YaHei", fontsize=18, labelloc=t];
+node [fontname="Microsoft YaHei", fontsize=13, shape=box, width=3.7, height=0.85, fixedsize=true, style="filled", fillcolor="#EFF6FC", color="#3C6485", penwidth=1.4, margin="0.18,0.10"];
+edge [fontname="Microsoft YaHei", fontsize=11, color="#536C7D", arrowsize=0.7, penwidth=1.2];
+
+label="K1 足球应用主流程｜先转头，再转身";
+start [shape=oval, width=2.6, height=0.65, fillcolor="#DCEEEA", label="开始"];
+read [shape=parallelogram, label="读取教师配置与任务参数"];
+ready [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="启用运动且
+条件已核实？"];
+observe [shape=parallelogram, label="只输出检测和定位状态"];
+prep [label="停止普通移动
+设置本轮头部观察点"];
+head [shape=plain, fixedsize=false, label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="9" BGCOLOR="#EAF6F3" COLOR="#3C7C6E"><TR><TD WIDTH="8" BORDER="1" SIDES="R"></TD><TD WIDTH="240" HEIGHT="62">转头、等待停稳<BR/>取得新图并检测</TD><TD WIDTH="8" BORDER="1" SIDES="L"></TD></TR></TABLE>>];
+seen [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="检测到
+所选足球？"];
+points [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="本轮头部
+观察点已用完？"];
+next [label="选择下一个头部观察点"];
+budget [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="仍有搜索时间
+和转身次数？"];
+turn [label="按里程计转过一个扇区
+停止、等待停稳，重置观察点"];
+locate [shape=plain, fixedsize=false, label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="9" BGCOLOR="#EAF6F3" COLOR="#3C7C6E"><TR><TD WIDTH="8" BORDER="1" SIDES="R"></TD><TD WIDTH="240" HEIGHT="62">计算当前身体球位<BR/>详见球位处理子流程</TD><TD WIDTH="8" BORDER="1" SIDES="L"></TD></TR></TABLE>>];
+valid [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="球位有效
+且足够新？"];
+retry [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="定位等待
+尚未超时？"];
+near [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="进入已核实的
+踢球交接范围？"];
+step [label="发送一次有期限的接近指令
+到时零速度，停稳后重新观察"];
+kickok [shape=diamond, width=4.8, height=1.45, fillcolor="#FFF4DC", label="本次启用踢球且
+持续供数已核实？"];
+hold [shape=parallelogram, label="记录：到达交接范围
+未启用自动踢球"];
+kick [shape=plain, fixedsize=false, label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="9" BGCOLOR="#EAF6F3" COLOR="#3C7C6E"><TR><TD WIDTH="8" BORDER="1" SIDES="R"></TD><TD WIDTH="240" HEIGHT="62">停止普通速度发送<BR/>开启管理器并持续更新球位</TD><TD WIDTH="8" BORDER="1" SIDES="L"></TD></TR></TABLE>>];
+verify [shape=plain, fixedsize=false, label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="9" BGCOLOR="#EAF6F3" COLOR="#3C7C6E"><TR><TD WIDTH="8" BORDER="1" SIDES="R"></TD><TD WIDTH="240" HEIGHT="62">关闭管理器、请求停止<BR/>重新观察并判断结束原因</TD><TD WIDTH="8" BORDER="1" SIDES="L"></TD></TR></TABLE>>];
+record [shape=parallelogram, label="保存状态、输入来源和现场结果"];
+end [shape=oval, width=2.6, height=0.65, fillcolor="#DCEEEA", label="结束"];
+start -> read -> ready;
+ready -> observe [label="否"]; observe -> record;
+ready -> prep [label="是"]; prep -> head -> seen;
+seen -> points [label="否"];
+points -> next [label="否"]; next -> prep;
+points -> budget [label="是"];
+budget -> turn [label="是"]; turn -> prep;
+budget -> record [label="否"];
+seen -> locate [label="是"]; locate -> valid;
+valid -> retry [label="否"]; retry -> head [label="是：保持当前观察点"];
+retry -> prep [label="否：重新搜索"];
+valid -> near [label="是"];
+near -> step [label="否"]; step -> head;
+near -> kickok [label="是"];
+kickok -> hold [label="否"]; hold -> record;
+kickok -> kick [label="是"]; kick -> verify -> record -> end;
+note [shape=note, width=4.6, height=1.4, fillcolor="#FAFAFA", color="#A9B4BC", fontsize=11,
+label="任意活动阶段收到停止请求、异常或达到总时限/累计里程限制：
+进入统一退出；活动中的踢球管理器先关闭。
+图中双侧竖线表示子流程；菱形分支标明条件结果。"];
+{rank=same; record; note;}
+}

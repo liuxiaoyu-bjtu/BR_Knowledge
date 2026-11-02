@@ -1,0 +1,12 @@
+{
+  "offline_tests": 32,
+  "result": "passed",
+  "robot_run": false,
+  "plan_sections": 16,
+  "figures": 4,
+  "package_files": 17,
+  "package_sha256": "859a7c042e44be7db10d329cf22efcf40d55931f157de51b9fed5012c5d535be",
+  "module_sha256": "98e6f2e4b93714deb7b1515008a7be199aa6b7e043ff1959f6af7cf57b850fc9",
+  "forbidden_low_level_imports": [],
+  "layout_report": "qa/diagram-bounds.json"
+}

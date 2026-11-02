@@ -1,0 +1,22 @@
+[
+  {
+    "file": "01_主流程.svg",
+    "overflow": [],
+    "edgeOverlap": []
+  },
+  {
+    "file": "02_球位处理子流程.svg",
+    "overflow": [],
+    "edgeOverlap": []
+  },
+  {
+    "file": "03_模块框架.svg",
+    "overflow": [],
+    "edgeOverlap": []
+  },
+  {
+    "file": "04_状态转换.svg",
+    "overflow": [],
+    "edgeOverlap": []
+  }
+]
