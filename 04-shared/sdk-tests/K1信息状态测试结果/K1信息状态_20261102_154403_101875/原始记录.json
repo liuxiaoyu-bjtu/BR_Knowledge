@@ -1,0 +1,474 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-11-02T15:44:03.105495+08:00",
+  "tester": "xy",
+  "note": "",
+  "requested_model": "K1",
+  "hardware_execution": "由现场操作者运行，按robot_info核对机型",
+  "environment": {
+    "boosteros_version": "1.2.2",
+    "python": "3.10.12 (main, Jan  8 2026, 06:52:19) [GCC 11.4.0]",
+    "executable": "/usr/bin/python",
+    "platform": "Linux-5.15.148-rt-tegra-aarch64-with-glibc2.35"
+  },
+  "connection": {
+    "status": "connected",
+    "source": "新建BoosterRobot",
+    "robot_type": "boosteros.robots.booster.booster_robot.BoosterRobot"
+  },
+  "interfaces": {
+    "robot_info": {
+      "attempts": [
+        {
+          "started_at": "2026-11-02T15:44:13.235862+08:00",
+          "status": "error",
+          "returned_at": "2026-11-02T15:44:14.247378+08:00",
+          "elapsed_s": 1.0098596789999874,
+          "error": "RuntimeError('API call failed, code = 100')",
+          "traceback": "Traceback (most recent call last):\n  File \"/home/booster/Workspace/XC/probe_k1_info_state.py\", line 242, in collect\n    value = getattr(robot, name) if name == \"robot_info\" else getattr(robot, name)()\n  File \"/home/booster/.local/lib/python3.10/site-packages/boosteros/robots/booster/booster_robot.py\", line 490, in robot_info\n    info = self.loco_client.GetRobotInfo()\nRuntimeError: API call failed, code = 100\n"
+        }
+      ],
+      "selected_attempt": 0
+    },
+    "get_mode": {
+      "attempts": [
+        {
+          "started_at": "2026-11-02T15:44:14.281534+08:00",
+          "status": "returned",
+          "returned_at": "2026-11-02T15:44:14.291705+08:00",
+          "elapsed_s": 0.006194812999979149,
+          "return_type": "builtins.str",
+          "return_repr": "'walk'",
+          "value": "walk",
+          "export_warnings": []
+        }
+      ],
+      "selected_attempt": 0
+    },
+    "list_gaits": {
+      "attempts": [
+        {
+          "started_at": "2026-11-02T15:44:14.311681+08:00",
+          "status": "returned",
+          "returned_at": "2026-11-02T15:44:14.347844+08:00",
+          "elapsed_s": 0.008792486000004374,
+          "return_type": "builtins.list",
+          "return_repr": "['default', 'soccer']",
+          "item_count": 2,
+          "value": [
+            "default",
+            "soccer"
+          ],
+          "export_warnings": []
+        }
+      ],
+      "selected_attempt": 0
+    },
+    "get_gait": {
+      "attempts": [
+        {
+          "started_at": "2026-11-02T15:44:14.375019+08:00",
+          "status": "returned",
+          "returned_at": "2026-11-02T15:44:14.413386+08:00",
+          "elapsed_s": 7.161900003893606e-05,
+          "return_type": "builtins.str",
+          "return_repr": "'default'",
+          "value": "default",
+          "export_warnings": []
+        }
+      ],
+      "selected_attempt": 0
+    },
+    "list_frames": {
+      "attempts": [
+        {
+          "started_at": "2026-11-02T15:44:14.446329+08:00",
+          "status": "returned",
+          "returned_at": "2026-11-02T15:44:14.459823+08:00",
+          "elapsed_s": 0.00010989300000119329,
+          "return_type": "builtins.list",
+          "return_repr": "['aahead_pitch_link', 'aahead_yaw_link', 'aaleft_shoulder_pitch_link', 'aaright_shoulder_pitch_link', 'camera_optical_frame', 'head_booster_stereo_rgb_link', 'head_color_optical_frame', 'head_point', 'head_realsense_rgb_link', 'left_ankle_pitch_link', 'left_ankle_roll_link', 'left_elbow_pitch_link', 'left_elbow_yaw_link', 'left_hip_pitch_link', 'left_hip_roll_link', 'left_hip_yaw_link', 'left_knee_pitch_link', 'left_shoulder_roll_link', 'right_ankle_pitch_link', 'right_ankle_roll_link', 'right_elbow_pitch_link', 'right_elbow_yaw_link', 'right_hip_pitch_link', 'right_hip_roll_link', 'right_hip_yaw_link', 'right_knee_pitch_link', 'right_shoulder_roll_link', 'trunk']",
+          "item_count": 28,
+          "value": [
+            "aahead_pitch_link",
+            "aahead_yaw_link",
+            "aaleft_shoulder_pitch_link",
+            "aaright_shoulder_pitch_link",
+            "camera_optical_frame",
+            "head_booster_stereo_rgb_link",
+            "head_color_optical_frame",
+            "head_point",
+            "head_realsense_rgb_link",
+            "left_ankle_pitch_link",
+            "left_ankle_roll_link",
+            "left_elbow_pitch_link",
+            "left_elbow_yaw_link",
+            "left_hip_pitch_link",
+            "left_hip_roll_link",
+            "left_hip_yaw_link",
+            "left_knee_pitch_link",
+            "left_shoulder_roll_link",
+            "right_ankle_pitch_link",
+            "right_ankle_roll_link",
+            "right_elbow_pitch_link",
+            "right_elbow_yaw_link",
+            "right_hip_pitch_link",
+            "right_hip_roll_link",
+            "right_hip_yaw_link",
+            "right_knee_pitch_link",
+            "right_shoulder_roll_link",
+            "trunk"
+          ],
+          "export_warnings": []
+        }
+      ],
+      "selected_attempt": 0
+    },
+    "list_joints": {
+      "attempts": [
+        {
+          "started_at": "2026-11-02T15:44:14.486675+08:00",
+          "status": "returned",
+          "returned_at": "2026-11-02T15:44:14.534076+08:00",
+          "elapsed_s": 0.023878795999962676,
+          "return_type": "builtins.list",
+          "return_repr": "[JointInfo(name='aahead_yaw_joint', limits=JointLimits(min=-1.0297000408172607, max=1.0297000408172607), max_torque=6.0, max_velocity=20.0, extra={}), JointInfo(name='aahead_pitch_joint', limits=JointLimits(min=-0.29670000076293945, max=0.7505000233650208), max_torque=6.0, max_velocity=20.0, extra={}), JointInfo(name='aaleft_shoulder_pitch_joint', limits=JointLimits(min=-2.94950008392334, max=1.204200029373169), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='left_shoulder_roll_joint', limits=JointLimits(min=-1.7278000116348267, max=1.5533000230789185), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='left_elbow_pitch_joint', limits=JointLimits(min=-1.902400016784668, max=1.902400016784668), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='left_elbow_yaw_joint', limits=JointLimits(min=-2.2513999938964844, max=0.6807000041007996), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='aaright_shoulder_pitch_joint', limits=JointLimits(min=-2.94950008392334, max=1.204200029373169), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='right_shoulder_roll_joint', limits=JointLimits(min=-1.7278000116348267, max=1.5533000230789185), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='right_elbow_pitch_joint', limits=JointLimits(min=-1.902400016784668, max=1.902400016784668), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='right_elbow_yaw_joint', limits=JointLimits(min=-0.6807000041007996, max=2.2513999938964844), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='left_hip_pitch_joint', limits=JointLimits(min=-2.9844000339508057, max=2.1991000175476074), max_torque=68.0, max_velocity=25.0, extra={}), JointInfo(name='left_hip_roll_joint', limits=JointLimits(min=-0.3840000033378601, max=1.5533000230789185), max_torque=43.0, max_velocity=25.0, extra={}), JointInfo(name='left_hip_yaw_joint', limits=JointLimits(min=-1.0297000408172607, max=1.0297000408172607), max_torque=38.3, max_velocity=25.0, extra={}), JointInfo(name='left_knee_pitch_joint', limits=JointLimits(min=-0.017500000074505806, max=2.2165000438690186), max_torque=112.0, max_velocity=25.0, extra={}), JointInfo(name='left_ankle_pitch_joint', limits=JointLimits(min=-0.29670000076293945, max=0.6632000207901001), max_torque=38.3, max_velocity=25.0, extra={}), JointInfo(name='left_ankle_roll_joint', limits=JointLimits(min=-0.2793000042438507, max=0.7156000137329102), max_torque=38.3, max_velocity=25.0, extra={}), JointInfo(name='right_hip_pitch_joint', limits=JointLimits(min=-2.9844000339508057, max=2.1991000175476074), max_torque=68.0, max_velocity=25.0, extra={}), JointInfo(name='right_hip_roll_joint', limits=JointLimits(min=-1.5533000230789185, max=0.3840000033378601), max_torque=43.0, max_velocity=25.0, extra={}), JointInfo(name='right_hip_yaw_joint', limits=JointLimits(min=-1.0123000144958496, max=1.0123000144958496), max_torque=38.3, max_velocity=25.0, extra={}), JointInfo(name='right_knee_pitch_joint', limits=JointLimits(min=-0.017500000074505806, max=2.303999900817871), max_torque=112.0, max_velocity=25.0, extra={}), JointInfo(name='right_ankle_pitch_joint', limits=JointLimits(min=-0.29670000076293945, max=0.6632000207901001), max_torque=38.3, max_velocity=25.0, extra={}), JointInfo(name='right_ankle_roll_joint', limits=JointLimits(min=-0.2793000042438507, max=0.7156000137329102), max_torque=38.3, max_velocity=25.0, extra={})]",
+          "item_count": 22,
+          "value": [
+            {
+              "name": "aahead_yaw_joint",
+              "limits": {
+                "min": -1.0297000408172607,
+                "max": 1.0297000408172607
+              },
+              "max_torque": 6.0,
+              "max_velocity": 20.0,
+              "extra": {}
+            },
+            {
+              "name": "aahead_pitch_joint",
+              "limits": {
+                "min": -0.29670000076293945,
+                "max": 0.7505000233650208
+              },
+              "max_torque": 6.0,
+              "max_velocity": 20.0,
+              "extra": {}
+            },
+            {
+              "name": "aaleft_shoulder_pitch_joint",
+              "limits": {
+                "min": -2.94950008392334,
+                "max": 1.204200029373169
+              },
+              "max_torque": 14.0,
+              "max_velocity": 20.0,
+              "extra": {}
+            },
+            {
+              "name": "left_shoulder_roll_joint",
+              "limits": {
+                "min": -1.7278000116348267,
+                "max": 1.5533000230789185
+              },
+              "max_torque": 14.0,
+              "max_velocity": 20.0,
+              "extra": {}
+            },
+            {
+              "name": "left_elbow_pitch_joint",
+              "limits": {
+                "min": -1.902400016784668,
+                "max": 1.902400016784668
+              },
+              "max_torque": 14.0,
+              "max_velocity": 20.0,
+              "extra": {}
+            },
+            {
+              "name": "left_elbow_yaw_joint",
+              "limits": {
+                "min": -2.2513999938964844,
+                "max": 0.6807000041007996
+              },
+              "max_torque": 14.0,
+              "max_velocity": 20.0,
+              "extra": {}
+            },
+            {
+              "name": "aaright_shoulder_pitch_joint",
+              "limits": {
+                "min": -2.94950008392334,
+                "max": 1.204200029373169
+              },
+              "max_torque": 14.0,
+              "max_velocity": 20.0,
+              "extra": {}
+            },
+            {
+              "name": "right_shoulder_roll_joint",
+              "limits": {
+                "min": -1.7278000116348267,
+                "max": 1.5533000230789185
+              },
+              "max_torque": 14.0,
+              "max_velocity": 20.0,
+              "extra": {}
+            },
+            {
+              "name": "right_elbow_pitch_joint",
+              "limits": {
+                "min": -1.902400016784668,
+                "max": 1.902400016784668
+              },
+              "max_torque": 14.0,
+              "max_velocity": 20.0,
+              "extra": {}
+            },
+            {
+              "name": "right_elbow_yaw_joint",
+              "limits": {
+                "min": -0.6807000041007996,
+                "max": 2.2513999938964844
+              },
+              "max_torque": 14.0,
+              "max_velocity": 20.0,
+              "extra": {}
+            },
+            {
+              "name": "left_hip_pitch_joint",
+              "limits": {
+                "min": -2.9844000339508057,
+                "max": 2.1991000175476074
+              },
+              "max_torque": 68.0,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "left_hip_roll_joint",
+              "limits": {
+                "min": -0.3840000033378601,
+                "max": 1.5533000230789185
+              },
+              "max_torque": 43.0,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "left_hip_yaw_joint",
+              "limits": {
+                "min": -1.0297000408172607,
+                "max": 1.0297000408172607
+              },
+              "max_torque": 38.3,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "left_knee_pitch_joint",
+              "limits": {
+                "min": -0.017500000074505806,
+                "max": 2.2165000438690186
+              },
+              "max_torque": 112.0,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "left_ankle_pitch_joint",
+              "limits": {
+                "min": -0.29670000076293945,
+                "max": 0.6632000207901001
+              },
+              "max_torque": 38.3,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "left_ankle_roll_joint",
+              "limits": {
+                "min": -0.2793000042438507,
+                "max": 0.7156000137329102
+              },
+              "max_torque": 38.3,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "right_hip_pitch_joint",
+              "limits": {
+                "min": -2.9844000339508057,
+                "max": 2.1991000175476074
+              },
+              "max_torque": 68.0,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "right_hip_roll_joint",
+              "limits": {
+                "min": -1.5533000230789185,
+                "max": 0.3840000033378601
+              },
+              "max_torque": 43.0,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "right_hip_yaw_joint",
+              "limits": {
+                "min": -1.0123000144958496,
+                "max": 1.0123000144958496
+              },
+              "max_torque": 38.3,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "right_knee_pitch_joint",
+              "limits": {
+                "min": -0.017500000074505806,
+                "max": 2.303999900817871
+              },
+              "max_torque": 112.0,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "right_ankle_pitch_joint",
+              "limits": {
+                "min": -0.29670000076293945,
+                "max": 0.6632000207901001
+              },
+              "max_torque": 38.3,
+              "max_velocity": 25.0,
+              "extra": {}
+            },
+            {
+              "name": "right_ankle_roll_joint",
+              "limits": {
+                "min": -0.2793000042438507,
+                "max": 0.7156000137329102
+              },
+              "max_torque": 38.3,
+              "max_velocity": 25.0,
+              "extra": {}
+            }
+          ],
+          "export_warnings": []
+        }
+      ],
+      "selected_attempt": 0
+    },
+    "list_sensors": {
+      "attempts": [
+        {
+          "started_at": "2026-11-02T15:44:14.593981+08:00",
+          "status": "returned",
+          "returned_at": "2026-11-02T15:44:14.636302+08:00",
+          "elapsed_s": 0.02346223399996461,
+          "return_type": "builtins.list",
+          "return_repr": "[SensorInfo(id='imu_main_1', sensor_type='imu', model='IMU_MODEL_HI13R4N', extra={}), SensorInfo(id='head', sensor_type='camera', model='CAMERA_Model_BOOSTER_MIPI', extra={})]",
+          "item_count": 2,
+          "value": [
+            {
+              "id": "imu_main_1",
+              "sensor_type": "imu",
+              "model": "IMU_MODEL_HI13R4N",
+              "extra": {}
+            },
+            {
+              "id": "head",
+              "sensor_type": "camera",
+              "model": "CAMERA_Model_BOOSTER_MIPI",
+              "extra": {}
+            }
+          ],
+          "export_warnings": []
+        }
+      ],
+      "selected_attempt": 0
+    },
+    "list_actions": {
+      "attempts": [
+        {
+          "started_at": "2026-11-02T15:44:14.695466+08:00",
+          "status": "returned",
+          "returned_at": "2026-11-02T15:44:14.743387+08:00",
+          "elapsed_s": 0.00013488500002267756,
+          "return_type": "builtins.list",
+          "return_repr": "[ActionInfo(id='hand_shake', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='hand_wave', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='dance_new_year', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='dance_rock_rolling', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='dance_towards_future', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='gesture_dabing', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='gesture_ultraman', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='bow', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='cheer', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='lucky_cat', type='upper_body', duration=-1.0, interruptible=True)]",
+          "item_count": 10,
+          "value": [
+            {
+              "id": "hand_shake",
+              "type": "upper_body",
+              "duration": -1.0,
+              "interruptible": true
+            },
+            {
+              "id": "hand_wave",
+              "type": "upper_body",
+              "duration": -1.0,
+              "interruptible": true
+            },
+            {
+              "id": "dance_new_year",
+              "type": "upper_body",
+              "duration": -1.0,
+              "interruptible": true
+            },
+            {
+              "id": "dance_rock_rolling",
+              "type": "upper_body",
+              "duration": -1.0,
+              "interruptible": true
+            },
+            {
+              "id": "dance_towards_future",
+              "type": "upper_body",
+              "duration": -1.0,
+              "interruptible": true
+            },
+            {
+              "id": "gesture_dabing",
+              "type": "upper_body",
+              "duration": -1.0,
+              "interruptible": true
+            },
+            {
+              "id": "gesture_ultraman",
+              "type": "upper_body",
+              "duration": -1.0,
+              "interruptible": true
+            },
+            {
+              "id": "bow",
+              "type": "upper_body",
+              "duration": -1.0,
+              "interruptible": true
+            },
+            {
+              "id": "cheer",
+              "type": "upper_body",
+              "duration": -1.0,
+              "interruptible": true
+            },
+            {
+              "id": "lucky_cat",
+              "type": "upper_body",
+              "duration": -1.0,
+              "interruptible": true
+            }
+          ],
+          "export_warnings": []
+        }
+      ],
+      "selected_attempt": 0
+    }
+  },
+  "completed": true,
+  "script_sha256": "3b437f7cf85783854b6fd82f43eb1c205778064b45cd9d7bc020a0bade176865",
+  "finished_at": "2026-11-02T15:44:14.826397+08:00"
+}

@@ -15,6 +15,7 @@ created: 2026-07-16
 | -------------------------------------------------------- | ------------------------------------------------------------------ |
 | [_tech-overview.md](_tech-overview.md)                   | 技术平台全景（含产品架构图）                                                     |
 | [booster-sdk.md](booster-sdk.md)                         | **BoosterOS SDK V1.0** — 主 SDK 完整 API 参考（41 接口 + 5 独立模块 + 22 数据类型） |
+| [booster-sdk-k1-info-state.md](booster-sdk-k1-info-state.md) | K1八项信息状态接口实测：全部名称/字段；7项返回、robot_info报code=100，SDK1.2.2，2026-11-02 |
 | [booster-agent-framework.md](booster-agent-framework.md) | **Booster Agent Framework** — App 端高层应用开发框架（UI 组件/生命周期/参数系统/状态订阅）  |
 | [ros2-sdk.md](ros2-sdk.md)                               | ROS2 SDK 文档                                                        |
 | [booster-studio.md](booster-studio.md)                   | **Booster Studio** — 具身智能原生 IDE（仿真/Vibe Coding/实时可视化/Sim-to-Real/云桌面） |
@@ -47,7 +48,7 @@ created: 2026-07-16
 
 ## K1实机信息采集
 
-[K1信息与状态接口_采集说明.md](../../04-shared/sdk-tests/K1信息与状态接口_采集说明.md)：新增K1信息与状态八项只读采集脚本与Jupyter入口，保存完整清单/嵌套字段、类型与repr、本机定义、异常、SDK/固件来源和逐项记录，自动打包。list_frames空结果短暂重读；已有robot可复用。当前仅离线核查，真机由用户运行并反馈；尚未生成K1实测补充或新增课程确认。
+[八项接口K1专用补充](booster-sdk-k1-info-state.md)：K1八项信息状态接口已回读：七项返回，robot_info在GetRobotInfo时报code=100，本次设备身份和固件未取得；公开模式walk、配置步态default，支持步态default/soccer。完整收录28个坐标系、22个关节、2个传感器、10个动作及字段；清单不等于动作执行或任意TF变换通过，不新增课程确认。
 
 ## 使用指南
 

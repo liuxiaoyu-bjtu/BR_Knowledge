@@ -1,0 +1,77 @@
+{
+  "attempts": [
+    {
+      "started_at": "2026-11-02T15:44:14.695466+08:00",
+      "status": "returned",
+      "returned_at": "2026-11-02T15:44:14.743387+08:00",
+      "elapsed_s": 0.00013488500002267756,
+      "return_type": "builtins.list",
+      "return_repr": "[ActionInfo(id='hand_shake', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='hand_wave', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='dance_new_year', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='dance_rock_rolling', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='dance_towards_future', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='gesture_dabing', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='gesture_ultraman', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='bow', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='cheer', type='upper_body', duration=-1.0, interruptible=True), ActionInfo(id='lucky_cat', type='upper_body', duration=-1.0, interruptible=True)]",
+      "item_count": 10,
+      "value": [
+        {
+          "id": "hand_shake",
+          "type": "upper_body",
+          "duration": -1.0,
+          "interruptible": true
+        },
+        {
+          "id": "hand_wave",
+          "type": "upper_body",
+          "duration": -1.0,
+          "interruptible": true
+        },
+        {
+          "id": "dance_new_year",
+          "type": "upper_body",
+          "duration": -1.0,
+          "interruptible": true
+        },
+        {
+          "id": "dance_rock_rolling",
+          "type": "upper_body",
+          "duration": -1.0,
+          "interruptible": true
+        },
+        {
+          "id": "dance_towards_future",
+          "type": "upper_body",
+          "duration": -1.0,
+          "interruptible": true
+        },
+        {
+          "id": "gesture_dabing",
+          "type": "upper_body",
+          "duration": -1.0,
+          "interruptible": true
+        },
+        {
+          "id": "gesture_ultraman",
+          "type": "upper_body",
+          "duration": -1.0,
+          "interruptible": true
+        },
+        {
+          "id": "bow",
+          "type": "upper_body",
+          "duration": -1.0,
+          "interruptible": true
+        },
+        {
+          "id": "cheer",
+          "type": "upper_body",
+          "duration": -1.0,
+          "interruptible": true
+        },
+        {
+          "id": "lucky_cat",
+          "type": "upper_body",
+          "duration": -1.0,
+          "interruptible": true
+        }
+      ],
+      "export_warnings": []
+    }
+  ],
+  "selected_attempt": 0
+}

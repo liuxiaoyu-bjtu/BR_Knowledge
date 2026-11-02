@@ -1,0 +1,42 @@
+[
+  {
+    "path": "AGENTS.md",
+    "before": "2cdaacebb6f167b415048309671ed952ad5a326228882f3392765505b6ade940",
+    "after": "561e21869c02cdbf9f4af8ff3c8dd226080466ea1ec8f5646d45ce82372ba6c6"
+  },
+  {
+    "path": "INDEX.md",
+    "before": "36cfebdada9aa08d96e2d664c7af9fe43c22e709a312ccc790671c0e6cd7fba9",
+    "after": "423f09b10debff346ddfb963419c2445ac11303189a5c5583c5a1e6dbc535c65"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "before": "21a2fb9506da9aa4760359c8862e46fb7d55d946549c2d6c795c06cc561df042",
+    "after": "651bf80ab1086e9fa8550958eb6391de77ff02d32d96f4e93fa461c4e97bb352"
+  },
+  {
+    "path": "README.md",
+    "before": "e033e43bcc1cb985947e74d5d7dfe034e375d1d484c6c186d590d3ce94fe14e8",
+    "after": "dd35dc25989ac882f52ab94042f327c81a2b2ca6d1937e7988a8ef33fa175d40"
+  },
+  {
+    "path": "04-shared/sdk-tests/_README.md",
+    "before": "8b3cbb947eb65787199153b2c674dce094cf50d9e9fbf43f4637091c22d95c56",
+    "after": "f6cb17c2e98b93c2c9f67ecc65a949b3e4b368ebffd8818a9b131466cdf4a7d7"
+  },
+  {
+    "path": "04-shared/sdk-tests/K1信息与状态接口_采集说明.md",
+    "before": "61396477fe664d58fdeb58aca02276c716c1794591b73ab259289c10d661ea11",
+    "after": "d92b0b005ddba46bd53a52dba249aad188dcb388e8bd116de81326220c146b4e"
+  },
+  {
+    "path": "01-booster-kb/07-tech-platform/_index.md",
+    "before": "967ac4004781ad4dc21a2aa7c1fc92c36e4ef0d522eff239d57e7c2ce28227c2",
+    "after": "01605ebc65141bed4f79cc9d286aaceac4c1351155e8a48f5225c307b39deb29"
+  },
+  {
+    "path": "01-booster-kb/07-tech-platform/booster-sdk.md",
+    "before": "f398415b68d5820129d64d8070a8a27ca4b42f142210c0ec4db5e52ce34bb88d",
+    "after": "66a521f1289f0799e69751abd0c4425345b2b708c069e313dee4b0cdf7ff8ee0"
+  }
+]

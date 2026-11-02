@@ -1,0 +1,19 @@
+{
+  "attempts": [
+    {
+      "started_at": "2026-11-02T15:44:14.311681+08:00",
+      "status": "returned",
+      "returned_at": "2026-11-02T15:44:14.347844+08:00",
+      "elapsed_s": 0.008792486000004374,
+      "return_type": "builtins.list",
+      "return_repr": "['default', 'soccer']",
+      "item_count": 2,
+      "value": [
+        "default",
+        "soccer"
+      ],
+      "export_warnings": []
+    }
+  ],
+  "selected_attempt": 0
+}

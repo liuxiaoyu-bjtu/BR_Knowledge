@@ -8,6 +8,8 @@ last_updated: "2026-08-13"
 
 # SDK 测试脚本说明
 
+> **K1实测结果（2026-11-02）**：K1八项信息状态接口已回读：七项返回，robot_info在GetRobotInfo时报code=100，本次设备身份和固件未取得；公开模式walk、配置步态default，支持步态default/soccer。完整收录28个坐标系、22个关节、2个传感器、10个动作及字段；清单不等于动作执行或任意TF变换通过，不新增课程确认。[专用补充](../../01-booster-kb/07-tech-platform/booster-sdk-k1-info-state.md)、[原始记录](K1信息状态测试结果/K1信息状态_20261102_154403_101875/原始记录.json)。
+
 本目录集中管理 BoosterOS SDK 相关的**测试与验证脚本**，供课程设计、开发验证、环境巡检复用。
 
 > 📌 **定位**：SDK 测试脚本是技术平台能力的技术验证产物，直接服务 `01-booster-kb/07-tech-platform/booster-sdk.md` 文档中记录的 API。后续新增 SDK 测试/验证脚本统一存放于本目录。
@@ -16,7 +18,7 @@ last_updated: "2026-08-13"
 
 | 文件 | 测试内容 | 覆盖接口 | 运行方式 |
 |------|---------|----------|----------|
-| [probe_k1_info_state.py](probe_k1_info_state.py) / [Jupyter入口](K1信息与状态接口_真机采集.ipynb) | K1八项信息与状态只读采集；完整字段、版本、异常、本机定义与ZIP；[运行说明](K1信息与状态接口_采集说明.md) | `robot_info` / `get_mode` / `list_gaits` / `get_gait` / `list_frames` / `list_joints` / `list_sensors` / `list_actions` | `python3 probe_k1_info_state.py --tester xy`；真机待运行 |
+| [probe_k1_info_state.py](probe_k1_info_state.py) / [Jupyter入口](K1信息与状态接口_真机采集.ipynb) | K1八项信息与状态只读采集；完整字段、版本、异常、本机定义与ZIP；[运行说明](K1信息与状态接口_采集说明.md) | `robot_info` / `get_mode` / `list_gaits` / `get_gait` / `list_frames` / `list_joints` / `list_sensors` / `list_actions` | `python3 probe_k1_info_state.py --tester xy`；2026-11-02已采集，7返回/1报错 |
 | `probe_detection_classes.py` | **模型类别探测**：验证指定检测模型实际输出类别（`default`=COCO 80 类，清单见 booster-sdk.md §3.3） | `Detection(model)` / `get_image()` / `detect()` / `plot()` | `python probe_detection_classes.py [模型ID]`（默认 `default`） |
 | `test_boosteros_basic.py` | **快速验证（精简版，日常首选）**：连接 → 图像 → 模型列表（完整 JSON）→ 一次检测 → 结果图 | `BoosterRobot()` / `robot_info` / `get_image()` / `Detection.list_models()` / `detect()` / `plot()` | `python test_boosteros_basic.py` |
 | `test_boosteros_sdk.py` | SDK 环境检测（4 项测试，含失败降级与汇总报告） | 包安装检测、机器人连接、`Detection.list_models()`、RGB 图像获取 | `python test_boosteros_sdk.py` |

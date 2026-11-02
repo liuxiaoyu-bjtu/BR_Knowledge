@@ -1,0 +1,29 @@
+{
+  "attempts": [
+    {
+      "started_at": "2026-11-02T15:44:14.593981+08:00",
+      "status": "returned",
+      "returned_at": "2026-11-02T15:44:14.636302+08:00",
+      "elapsed_s": 0.02346223399996461,
+      "return_type": "builtins.list",
+      "return_repr": "[SensorInfo(id='imu_main_1', sensor_type='imu', model='IMU_MODEL_HI13R4N', extra={}), SensorInfo(id='head', sensor_type='camera', model='CAMERA_Model_BOOSTER_MIPI', extra={})]",
+      "item_count": 2,
+      "value": [
+        {
+          "id": "imu_main_1",
+          "sensor_type": "imu",
+          "model": "IMU_MODEL_HI13R4N",
+          "extra": {}
+        },
+        {
+          "id": "head",
+          "sensor_type": "camera",
+          "model": "CAMERA_Model_BOOSTER_MIPI",
+          "extra": {}
+        }
+      ],
+      "export_warnings": []
+    }
+  ],
+  "selected_attempt": 0
+}

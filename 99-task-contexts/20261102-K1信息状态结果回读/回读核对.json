@@ -1,0 +1,49 @@
+{
+  "test_directory": "04-shared/sdk-tests/K1信息状态测试结果/K1信息状态_20261102_154403_101875",
+  "sdk_version": "1.2.2",
+  "collected_at": "2026-11-02T15:44:03.105495+08:00",
+  "firmware_from_this_run": null,
+  "outcomes": {
+    "robot_info": {
+      "status": "error",
+      "count": null
+    },
+    "get_mode": {
+      "status": "returned",
+      "count": null
+    },
+    "list_gaits": {
+      "status": "returned",
+      "count": 2
+    },
+    "get_gait": {
+      "status": "returned",
+      "count": null
+    },
+    "list_frames": {
+      "status": "returned",
+      "count": 28
+    },
+    "list_joints": {
+      "status": "returned",
+      "count": 22
+    },
+    "list_sensors": {
+      "status": "returned",
+      "count": 2
+    },
+    "list_actions": {
+      "status": "returned",
+      "count": 10
+    }
+  },
+  "raw_files_preserved": 13,
+  "protected_files_preserved": 137,
+  "split_json_matches": 8,
+  "script_hash_matches": true,
+  "zip_entries_match": 12,
+  "document_names_order_fields_checked": true,
+  "links_checked": 18,
+  "hardware_rerun": false,
+  "course_changes": false
+}

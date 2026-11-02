@@ -1,0 +1,13 @@
+{
+  "attempts": [
+    {
+      "started_at": "2026-11-02T15:44:13.235862+08:00",
+      "status": "error",
+      "returned_at": "2026-11-02T15:44:14.247378+08:00",
+      "elapsed_s": 1.0098596789999874,
+      "error": "RuntimeError('API call failed, code = 100')",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/booster/Workspace/XC/probe_k1_info_state.py\", line 242, in collect\n    value = getattr(robot, name) if name == \"robot_info\" else getattr(robot, name)()\n  File \"/home/booster/.local/lib/python3.10/site-packages/boosteros/robots/booster/booster_robot.py\", line 490, in robot_info\n    info = self.loco_client.GetRobotInfo()\nRuntimeError: API call failed, code = 100\n"
+    }
+  ],
+  "selected_attempt": 0
+}

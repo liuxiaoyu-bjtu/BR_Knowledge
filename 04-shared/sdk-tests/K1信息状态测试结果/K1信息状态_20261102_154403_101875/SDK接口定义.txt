@@ -1,0 +1,217 @@
+
+===== robot_info =====
+signature: (self) -> 'RobotInfo'
+doc: Return robot metadata.
+
+Returns:
+    RobotInfo: Robot name, model, serial number, and related metadata.
+    @property
+    @override
+    def robot_info(self) -> RobotInfo:
+        """Return robot metadata.
+
+        Returns:
+            RobotInfo: Robot name, model, serial number, and related metadata.
+        """
+        info = self.loco_client.GetRobotInfo()
+        cli_info_getter = getattr(self.loco_client, "_get_cli_robot_info", None)
+        cli_info = cli_info_getter() if callable(cli_info_getter) else {}
+        extra = {
+            key: value
+            for key, value in cli_info.items()
+            if key not in _ROBOT_INFO_FIELD_NAMES
+        }
+
+        return RobotInfo(
+            name=info.name or "",
+            model=info.model or "",
+            serial_number=info.serial_number or "",
+            firmware_version=info.version or "",
+            manufacturer="Booster Robotics",
+            extra=extra,
+        )
+
+
+===== get_mode =====
+signature: (self) -> 'RobotModeName'
+doc: Return the current robot mode.
+
+Returns:
+    str: Robot mode. Possible values include:
+        - "damping": Safe damping mode, with highest priority.
+        - "prepare": Preparation mode required before walking.
+        - "walk": Walking mode for base velocity commands.
+        - "custom": Custom mode for user-provided joint commands.
+    def get_mode(self) -> RobotModeName:
+        """Return the current robot mode.
+
+        Returns:
+            str: Robot mode. Possible values include:
+                - "damping": Safe damping mode, with highest priority.
+                - "prepare": Preparation mode required before walking.
+                - "walk": Walking mode for base velocity commands.
+                - "custom": Custom mode for user-provided joint commands.
+        """
+        try:
+            return self._public_robot_mode_name(self._get_raw_mode())
+        except Exception:
+            logger.error("Failed to get robot mode")
+            raise RuntimeError("Failed to get robot mode")
+
+
+===== list_gaits =====
+signature: (self) -> 'list[RobotGaitName]'
+doc: Return the supported gait names.
+
+Returns:
+    list[RobotGaitName]: Supported gait names. Current values include:
+        - "default": Standard walking gait.
+        - "soccer": Soccer gait for soccer actions and locomotion.
+          Not supported on T2 robots yet.
+    def list_gaits(self) -> list[RobotGaitName]:
+        """Return the supported gait names.
+
+        Returns:
+            list[RobotGaitName]: Supported gait names. Current values include:
+                - "default": Standard walking gait.
+                - "soccer": Soccer gait for soccer actions and locomotion.
+                  Not supported on T2 robots yet.
+        """
+        return list(self._supported_gaits())
+
+
+===== get_gait =====
+signature: (self) -> 'RobotGaitName'
+doc: Return the currently configured gait name.
+
+Returns:
+    RobotGaitName: Current gait name. Defaults to "default".
+    def get_gait(self) -> RobotGaitName:
+        """Return the currently configured gait name.
+
+        Returns:
+            RobotGaitName: Current gait name. Defaults to "default".
+        """
+        return self._gait
+
+
+===== list_frames =====
+signature: (self) -> 'list[str]'
+doc: Return all known coordinate frame names.
+    @override
+    def list_frames(self) -> list[str]:
+        return self.ros_adapter.list_frames()
+
+
+===== list_joints =====
+signature: (self) -> 'list[JointInfo]'
+doc: List all available joints for the current robot model.
+
+Returns:
+    list[JointInfo]: Joint metadata in the canonical model-specific
+        order, including position limits and the maximum torque and
+        velocity each joint allows. (23 for T1, 31 for T2, 22 for K1)
+    @override
+    def list_joints(self) -> list[JointInfo]:
+        """List all available joints for the current robot model.
+
+        Returns:
+            list[JointInfo]: Joint metadata in the canonical model-specific
+                order, including position limits and the maximum torque and
+                velocity each joint allows. (23 for T1, 31 for T2, 22 for K1)
+        """
+        return build_joint_infos(
+            self._resolve_joint_order(), self._get_joint_limits_map()
+        )
+
+
+===== 返回类型 boosteros.types.meta_info.JointInfo =====
+signature: (name: str, limits: boosteros.types.meta_info.JointLimits, max_torque: float | None, max_velocity: float | None, extra: dict[str, object] = <factory>) -> None
+doc: Static metadata for one joint.
+@dataclass(frozen=True, slots=True)
+class JointInfo:
+    """Static metadata for one joint."""
+
+    name: str
+    limits: JointLimits
+    max_torque: float | None
+    max_velocity: float | None
+    extra: dict[str, object] = field(default_factory=dict)  # 扩展信息字段
+
+
+===== list_sensors =====
+signature: (self) -> 'list[SensorInfo]'
+doc: Return sensor metadata for all mounted sensors.
+
+Booster robots expose IMU and camera information via separate SDK RPCs.
+Virtual robots return mock sensor data to avoid SDK dependency.
+
+Returns:
+    list[SensorInfo]: List of all sensor metadata.
+
+Raises:
+    RuntimeError: Querying the sensor list from the SDK failed
+        (real robot only).
+    @override
+    def list_sensors(self) -> list[SensorInfo]:
+        """Return sensor metadata for all mounted sensors.
+
+        Booster robots expose IMU and camera information via separate SDK RPCs.
+        Virtual robots return mock sensor data to avoid SDK dependency.
+
+        Returns:
+            list[SensorInfo]: List of all sensor metadata.
+
+        Raises:
+            RuntimeError: Querying the sensor list from the SDK failed
+                (real robot only).
+        """
+        if self._is_virtual_robot():
+            return get_mock_sensors_for_virtual_robot()
+
+        try:
+            return fetch_all_sensors(self.loco_client, self.camera_client)
+        except Exception:
+            logger.error("Failed to list sensors")
+            raise RuntimeError("Failed to list sensors")
+
+
+===== 返回类型 boosteros.types.meta_info.SensorInfo =====
+signature: (*, id: str, sensor_type: Literal['camera', 'imu'], model: str, extra: dict[str, object] = <factory>) -> None
+doc: Static metadata for a sensor.
+@dataclass(frozen=True, slots=True, kw_only=True)
+class SensorInfo:
+    """Static metadata for a sensor."""
+
+    id: str  # 传感器唯一标识，例如 "imu_main_1" 或 "head"
+    sensor_type: SensorType  # 传感器类型
+    model: str  # 厂商型号标识，例如 "IMU_MODEL_HI13R4N"
+    extra: dict[str, object] = field(default_factory=dict)  # 扩展信息字段
+
+
+===== list_actions =====
+signature: (self) -> 'list[ActionInfo]'
+doc: Return all predefined actions and their attributes.
+    @override
+    def list_actions(self) -> list[ActionInfo]:
+        return list_supported_action_infos(self._get_model())
+
+
+===== 返回类型 boosteros.types.meta_info.ActionInfo =====
+signature: (id: str, type: str, duration: float, interruptible: bool) -> None
+doc: Metadata for a predefined action.
+@dataclass(frozen=True, slots=True)
+class ActionInfo:
+    """Metadata for a predefined action."""
+
+    id: str
+    # 动作类型（"upper_body", "whole_body" 等）
+    # 仅用于展示和分类，不影响运行时逻辑
+    type: str
+    # 预期持续时间（秒），-1 表示不确定
+    # 仅用于展示，实际完成由 is_running 判定
+    duration: float
+    # 是否可中断的语义标记
+    # 实际能否中断由 stop 方法是否为 None 决定
+    interruptible: bool
+

@@ -1,0 +1,15 @@
+{
+  "attempts": [
+    {
+      "started_at": "2026-11-02T15:44:14.281534+08:00",
+      "status": "returned",
+      "returned_at": "2026-11-02T15:44:14.291705+08:00",
+      "elapsed_s": 0.006194812999979149,
+      "return_type": "builtins.str",
+      "return_repr": "'walk'",
+      "value": "walk",
+      "export_warnings": []
+    }
+  ],
+  "selected_attempt": 0
+}

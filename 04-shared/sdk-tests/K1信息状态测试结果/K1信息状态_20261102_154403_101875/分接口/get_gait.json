@@ -1,0 +1,15 @@
+{
+  "attempts": [
+    {
+      "started_at": "2026-11-02T15:44:14.375019+08:00",
+      "status": "returned",
+      "returned_at": "2026-11-02T15:44:14.413386+08:00",
+      "elapsed_s": 7.161900003893606e-05,
+      "return_type": "builtins.str",
+      "return_repr": "'default'",
+      "value": "default",
+      "export_warnings": []
+    }
+  ],
+  "selected_attempt": 0
+}

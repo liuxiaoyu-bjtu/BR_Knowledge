@@ -1,0 +1,237 @@
+{
+  "attempts": [
+    {
+      "started_at": "2026-11-02T15:44:14.486675+08:00",
+      "status": "returned",
+      "returned_at": "2026-11-02T15:44:14.534076+08:00",
+      "elapsed_s": 0.023878795999962676,
+      "return_type": "builtins.list",
+      "return_repr": "[JointInfo(name='aahead_yaw_joint', limits=JointLimits(min=-1.0297000408172607, max=1.0297000408172607), max_torque=6.0, max_velocity=20.0, extra={}), JointInfo(name='aahead_pitch_joint', limits=JointLimits(min=-0.29670000076293945, max=0.7505000233650208), max_torque=6.0, max_velocity=20.0, extra={}), JointInfo(name='aaleft_shoulder_pitch_joint', limits=JointLimits(min=-2.94950008392334, max=1.204200029373169), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='left_shoulder_roll_joint', limits=JointLimits(min=-1.7278000116348267, max=1.5533000230789185), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='left_elbow_pitch_joint', limits=JointLimits(min=-1.902400016784668, max=1.902400016784668), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='left_elbow_yaw_joint', limits=JointLimits(min=-2.2513999938964844, max=0.6807000041007996), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='aaright_shoulder_pitch_joint', limits=JointLimits(min=-2.94950008392334, max=1.204200029373169), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='right_shoulder_roll_joint', limits=JointLimits(min=-1.7278000116348267, max=1.5533000230789185), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='right_elbow_pitch_joint', limits=JointLimits(min=-1.902400016784668, max=1.902400016784668), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='right_elbow_yaw_joint', limits=JointLimits(min=-0.6807000041007996, max=2.2513999938964844), max_torque=14.0, max_velocity=20.0, extra={}), JointInfo(name='left_hip_pitch_joint', limits=JointLimits(min=-2.9844000339508057, max=2.1991000175476074), max_torque=68.0, max_velocity=25.0, extra={}), JointInfo(name='left_hip_roll_joint', limits=JointLimits(min=-0.3840000033378601, max=1.5533000230789185), max_torque=43.0, max_velocity=25.0, extra={}), JointInfo(name='left_hip_yaw_joint', limits=JointLimits(min=-1.0297000408172607, max=1.0297000408172607), max_torque=38.3, max_velocity=25.0, extra={}), JointInfo(name='left_knee_pitch_joint', limits=JointLimits(min=-0.017500000074505806, max=2.2165000438690186), max_torque=112.0, max_velocity=25.0, extra={}), JointInfo(name='left_ankle_pitch_joint', limits=JointLimits(min=-0.29670000076293945, max=0.6632000207901001), max_torque=38.3, max_velocity=25.0, extra={}), JointInfo(name='left_ankle_roll_joint', limits=JointLimits(min=-0.2793000042438507, max=0.7156000137329102), max_torque=38.3, max_velocity=25.0, extra={}), JointInfo(name='right_hip_pitch_joint', limits=JointLimits(min=-2.9844000339508057, max=2.1991000175476074), max_torque=68.0, max_velocity=25.0, extra={}), JointInfo(name='right_hip_roll_joint', limits=JointLimits(min=-1.5533000230789185, max=0.3840000033378601), max_torque=43.0, max_velocity=25.0, extra={}), JointInfo(name='right_hip_yaw_joint', limits=JointLimits(min=-1.0123000144958496, max=1.0123000144958496), max_torque=38.3, max_velocity=25.0, extra={}), JointInfo(name='right_knee_pitch_joint', limits=JointLimits(min=-0.017500000074505806, max=2.303999900817871), max_torque=112.0, max_velocity=25.0, extra={}), JointInfo(name='right_ankle_pitch_joint', limits=JointLimits(min=-0.29670000076293945, max=0.6632000207901001), max_torque=38.3, max_velocity=25.0, extra={}), JointInfo(name='right_ankle_roll_joint', limits=JointLimits(min=-0.2793000042438507, max=0.7156000137329102), max_torque=38.3, max_velocity=25.0, extra={})]",
+      "item_count": 22,
+      "value": [
+        {
+          "name": "aahead_yaw_joint",
+          "limits": {
+            "min": -1.0297000408172607,
+            "max": 1.0297000408172607
+          },
+          "max_torque": 6.0,
+          "max_velocity": 20.0,
+          "extra": {}
+        },
+        {
+          "name": "aahead_pitch_joint",
+          "limits": {
+            "min": -0.29670000076293945,
+            "max": 0.7505000233650208
+          },
+          "max_torque": 6.0,
+          "max_velocity": 20.0,
+          "extra": {}
+        },
+        {
+          "name": "aaleft_shoulder_pitch_joint",
+          "limits": {
+            "min": -2.94950008392334,
+            "max": 1.204200029373169
+          },
+          "max_torque": 14.0,
+          "max_velocity": 20.0,
+          "extra": {}
+        },
+        {
+          "name": "left_shoulder_roll_joint",
+          "limits": {
+            "min": -1.7278000116348267,
+            "max": 1.5533000230789185
+          },
+          "max_torque": 14.0,
+          "max_velocity": 20.0,
+          "extra": {}
+        },
+        {
+          "name": "left_elbow_pitch_joint",
+          "limits": {
+            "min": -1.902400016784668,
+            "max": 1.902400016784668
+          },
+          "max_torque": 14.0,
+          "max_velocity": 20.0,
+          "extra": {}
+        },
+        {
+          "name": "left_elbow_yaw_joint",
+          "limits": {
+            "min": -2.2513999938964844,
+            "max": 0.6807000041007996
+          },
+          "max_torque": 14.0,
+          "max_velocity": 20.0,
+          "extra": {}
+        },
+        {
+          "name": "aaright_shoulder_pitch_joint",
+          "limits": {
+            "min": -2.94950008392334,
+            "max": 1.204200029373169
+          },
+          "max_torque": 14.0,
+          "max_velocity": 20.0,
+          "extra": {}
+        },
+        {
+          "name": "right_shoulder_roll_joint",
+          "limits": {
+            "min": -1.7278000116348267,
+            "max": 1.5533000230789185
+          },
+          "max_torque": 14.0,
+          "max_velocity": 20.0,
+          "extra": {}
+        },
+        {
+          "name": "right_elbow_pitch_joint",
+          "limits": {
+            "min": -1.902400016784668,
+            "max": 1.902400016784668
+          },
+          "max_torque": 14.0,
+          "max_velocity": 20.0,
+          "extra": {}
+        },
+        {
+          "name": "right_elbow_yaw_joint",
+          "limits": {
+            "min": -0.6807000041007996,
+            "max": 2.2513999938964844
+          },
+          "max_torque": 14.0,
+          "max_velocity": 20.0,
+          "extra": {}
+        },
+        {
+          "name": "left_hip_pitch_joint",
+          "limits": {
+            "min": -2.9844000339508057,
+            "max": 2.1991000175476074
+          },
+          "max_torque": 68.0,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "left_hip_roll_joint",
+          "limits": {
+            "min": -0.3840000033378601,
+            "max": 1.5533000230789185
+          },
+          "max_torque": 43.0,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "left_hip_yaw_joint",
+          "limits": {
+            "min": -1.0297000408172607,
+            "max": 1.0297000408172607
+          },
+          "max_torque": 38.3,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "left_knee_pitch_joint",
+          "limits": {
+            "min": -0.017500000074505806,
+            "max": 2.2165000438690186
+          },
+          "max_torque": 112.0,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "left_ankle_pitch_joint",
+          "limits": {
+            "min": -0.29670000076293945,
+            "max": 0.6632000207901001
+          },
+          "max_torque": 38.3,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "left_ankle_roll_joint",
+          "limits": {
+            "min": -0.2793000042438507,
+            "max": 0.7156000137329102
+          },
+          "max_torque": 38.3,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "right_hip_pitch_joint",
+          "limits": {
+            "min": -2.9844000339508057,
+            "max": 2.1991000175476074
+          },
+          "max_torque": 68.0,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "right_hip_roll_joint",
+          "limits": {
+            "min": -1.5533000230789185,
+            "max": 0.3840000033378601
+          },
+          "max_torque": 43.0,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "right_hip_yaw_joint",
+          "limits": {
+            "min": -1.0123000144958496,
+            "max": 1.0123000144958496
+          },
+          "max_torque": 38.3,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "right_knee_pitch_joint",
+          "limits": {
+            "min": -0.017500000074505806,
+            "max": 2.303999900817871
+          },
+          "max_torque": 112.0,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "right_ankle_pitch_joint",
+          "limits": {
+            "min": -0.29670000076293945,
+            "max": 0.6632000207901001
+          },
+          "max_torque": 38.3,
+          "max_velocity": 25.0,
+          "extra": {}
+        },
+        {
+          "name": "right_ankle_roll_joint",
+          "limits": {
+            "min": -0.2793000042438507,
+            "max": 0.7156000137329102
+          },
+          "max_torque": 38.3,
+          "max_velocity": 25.0,
+          "extra": {}
+        }
+      ],
+      "export_warnings": []
+    }
+  ],
+  "selected_attempt": 0
+}

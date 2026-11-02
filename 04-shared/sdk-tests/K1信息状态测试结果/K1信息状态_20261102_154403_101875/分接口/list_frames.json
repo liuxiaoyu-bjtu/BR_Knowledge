@@ -1,0 +1,45 @@
+{
+  "attempts": [
+    {
+      "started_at": "2026-11-02T15:44:14.446329+08:00",
+      "status": "returned",
+      "returned_at": "2026-11-02T15:44:14.459823+08:00",
+      "elapsed_s": 0.00010989300000119329,
+      "return_type": "builtins.list",
+      "return_repr": "['aahead_pitch_link', 'aahead_yaw_link', 'aaleft_shoulder_pitch_link', 'aaright_shoulder_pitch_link', 'camera_optical_frame', 'head_booster_stereo_rgb_link', 'head_color_optical_frame', 'head_point', 'head_realsense_rgb_link', 'left_ankle_pitch_link', 'left_ankle_roll_link', 'left_elbow_pitch_link', 'left_elbow_yaw_link', 'left_hip_pitch_link', 'left_hip_roll_link', 'left_hip_yaw_link', 'left_knee_pitch_link', 'left_shoulder_roll_link', 'right_ankle_pitch_link', 'right_ankle_roll_link', 'right_elbow_pitch_link', 'right_elbow_yaw_link', 'right_hip_pitch_link', 'right_hip_roll_link', 'right_hip_yaw_link', 'right_knee_pitch_link', 'right_shoulder_roll_link', 'trunk']",
+      "item_count": 28,
+      "value": [
+        "aahead_pitch_link",
+        "aahead_yaw_link",
+        "aaleft_shoulder_pitch_link",
+        "aaright_shoulder_pitch_link",
+        "camera_optical_frame",
+        "head_booster_stereo_rgb_link",
+        "head_color_optical_frame",
+        "head_point",
+        "head_realsense_rgb_link",
+        "left_ankle_pitch_link",
+        "left_ankle_roll_link",
+        "left_elbow_pitch_link",
+        "left_elbow_yaw_link",
+        "left_hip_pitch_link",
+        "left_hip_roll_link",
+        "left_hip_yaw_link",
+        "left_knee_pitch_link",
+        "left_shoulder_roll_link",
+        "right_ankle_pitch_link",
+        "right_ankle_roll_link",
+        "right_elbow_pitch_link",
+        "right_elbow_yaw_link",
+        "right_hip_pitch_link",
+        "right_hip_roll_link",
+        "right_hip_yaw_link",
+        "right_knee_pitch_link",
+        "right_shoulder_roll_link",
+        "trunk"
+      ],
+      "export_warnings": []
+    }
+  ],
+  "selected_attempt": 0
+}

@@ -19,7 +19,7 @@ last_updated: "2026-09-01"
 
 # 全局关键词索引
 
-> K1信息与状态全量采集 / robot_info / get_mode / list_gaits / get_gait / list_frames / list_joints / list_sensors / list_actions：[运行说明](04-shared/sdk-tests/K1信息与状态接口_采集说明.md)、[脚本](04-shared/sdk-tests/probe_k1_info_state.py)（八项只读、完整字段与结果打包；真机记录待用户反馈）。
+> K1信息与状态实测 / 28坐标系 / 22关节 / 2传感器 / 10动作 / code100 / 缓存步态：[K1专用补充](01-booster-kb/07-tech-platform/booster-sdk-k1-info-state.md)、[原始结果](04-shared/sdk-tests/K1信息状态测试结果/K1信息状态_20261102_154403_101875/采集汇总.md)（SDK1.2.2；七项返回，robot_info失败，固件本次未取得）。
 
 > 足球SDK完整能力 / 第4轮回读 / 四方法实际调用 / None返回 / 运动响应未等于踢出 / U7课程边界：[第4轮回读与课程边界](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球SDK完整测试_回读与U7课程边界.md)、[已回填记录](05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试_第4轮_操作与记录.md)（2026-11-02；构造与四方法已调用、参数异常符合预期；用户观察到调整，完整踢出及视觉米制来源未证实）。
 
