@@ -1,0 +1,775 @@
+{
+  "test": "足球SDK完整能力验证_v2",
+  "created_at": "2026-11-02T14:06:30.773684",
+  "tester": "xy",
+  "robot_id": "060100",
+  "calls": [
+    {
+      "method": "BoosterRobot",
+      "case": "准备",
+      "args": [],
+      "kwargs": {
+        "enable_tf_listener": true
+      },
+      "attempted_at": "2026-11-02T14:06:31.451118",
+      "returned": true,
+      "return_type": "BoosterRobot",
+      "return_repr": "<BoosterRobot at >"
+    },
+    {
+      "method": "SoccerKickManager",
+      "case": "构造与查询",
+      "args": [
+        "BoosterRobot(network_interface=)"
+      ],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:06:43.956280",
+      "returned": true,
+      "return_type": "SoccerKickManager",
+      "return_repr": "<boosteros.robots.booster._motion.soccer_kick.SoccerKickManager object at 0x7f3c1e1240>"
+    },
+    {
+      "method": "get_odom",
+      "case": "构造与查询",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:06:44.035902",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(0.05, -0.00, 0.00) @ 1793599603.992>",
+      "pose_2d": [
+        0.04808317471963824,
+        -0.0017846244390852233,
+        0.057959556579589844
+      ]
+    },
+    {
+      "method": "get_transform",
+      "case": "构造与查询",
+      "args": [],
+      "kwargs": {
+        "target_frame": "trunk",
+        "source_frame": "head_color_optical_frame"
+      },
+      "attempted_at": "2026-11-02T14:06:51.541848",
+      "returned": true,
+      "return_type": "Transform",
+      "return_repr": "<Transform trunk→head_color_optical_frame @ 1793599610.564>"
+    },
+    {
+      "method": "start",
+      "case": "无球位启停",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:07:08.188268",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "stop",
+      "case": "无球位启停",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:07:11.040207",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "update_command",
+      "case": "停用参数检查",
+      "args": [],
+      "kwargs": {
+        "direction": 0.0,
+        "power": 1.0
+      },
+      "attempted_at": "2026-11-02T14:07:30.718550",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "update_command",
+      "case": "停用参数检查",
+      "args": [],
+      "kwargs": {
+        "direction": -0.25,
+        "power": 10.0
+      },
+      "attempted_at": "2026-11-02T14:07:30.951539",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "update_ball",
+      "case": "停用参数检查",
+      "args": [],
+      "kwargs": {
+        "x": 0.6,
+        "y": 0.0
+      },
+      "attempted_at": "2026-11-02T14:07:31.025349",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "update_command",
+      "case": "停用参数检查",
+      "args": [],
+      "kwargs": {
+        "direction": 0.0,
+        "power": 0.0
+      },
+      "attempted_at": "2026-11-02T14:07:31.092233",
+      "returned": false,
+      "error": "ValueError('power must be in range [1.0, 10.0]')",
+      "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipykernel_47400/1497824914.py\", line 32, in call\n    value = function(*args, **kwargs)\n  File \"/usr/local/lib/python3.10/dist-packages/boosteros/robots/booster/_motion/soccer_kick.py\", line 133, in update_command\n    power = self._validate_power(power)\n  File \"/usr/local/lib/python3.10/dist-packages/boosteros/robots/booster/_motion/soccer_kick.py\", line 513, in _validate_power\n    raise ValueError(\"power must be in range [1.0, 10.0]\")\nValueError: power must be in range [1.0, 10.0]\n"
+    },
+    {
+      "method": "update_command",
+      "case": "停用参数检查",
+      "args": [],
+      "kwargs": {
+        "direction": 0.0,
+        "power": 11.0
+      },
+      "attempted_at": "2026-11-02T14:07:31.182648",
+      "returned": false,
+      "error": "ValueError('power must be in range [1.0, 10.0]')",
+      "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipykernel_47400/1497824914.py\", line 32, in call\n    value = function(*args, **kwargs)\n  File \"/usr/local/lib/python3.10/dist-packages/boosteros/robots/booster/_motion/soccer_kick.py\", line 133, in update_command\n    power = self._validate_power(power)\n  File \"/usr/local/lib/python3.10/dist-packages/boosteros/robots/booster/_motion/soccer_kick.py\", line 513, in _validate_power\n    raise ValueError(\"power must be in range [1.0, 10.0]\")\nValueError: power must be in range [1.0, 10.0]\n"
+    },
+    {
+      "method": "update_ball",
+      "case": "停用参数检查",
+      "args": [],
+      "kwargs": {
+        "x": "invalid",
+        "y": 0.0
+      },
+      "attempted_at": "2026-11-02T14:07:31.301598",
+      "returned": false,
+      "error": "ValueError(\"could not convert string to float: 'invalid'\")",
+      "traceback": "Traceback (most recent call last):\n  File \"/tmp/ipykernel_47400/1497824914.py\", line 32, in call\n    value = function(*args, **kwargs)\n  File \"/usr/local/lib/python3.10/dist-packages/boosteros/robots/booster/_motion/soccer_kick.py\", line 196, in update_ball\n    ball_x = self._validate_float(x, \"x\")\n  File \"/usr/local/lib/python3.10/dist-packages/boosteros/robots/booster/_motion/soccer_kick.py\", line 522, in _validate_float\n    value = float(value)\nValueError: could not convert string to float: 'invalid'\n"
+    },
+    {
+      "method": "stop",
+      "case": "停用参数检查",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:07:31.434891",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "get_odom",
+      "case": "连续球位与活动中指令更新",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:11:50.396753",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(0.05, 0.01, 0.00) @ 1793599910.280>",
+      "pose_2d": [
+        0.051816782839553474,
+        0.007168672127636809,
+        0.049301385879516595
+      ]
+    },
+    {
+      "method": "start",
+      "case": "连续球位与活动中指令更新",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:11:50.439619",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "update_command",
+      "case": "连续球位与活动中指令更新",
+      "args": [],
+      "kwargs": {
+        "direction": 0.0,
+        "power": 1.0
+      },
+      "attempted_at": "2026-11-02T14:11:50.575000",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "get_odom",
+      "case": "连续球位与活动中指令更新",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:11:50.605561",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(0.05, 0.01, 0.00) @ 1793599910.612>",
+      "pose_2d": [
+        0.05187585385389411,
+        0.00715333905573231,
+        0.04929137229919434
+      ]
+    },
+    {
+      "method": "update_ball",
+      "case": "连续球位与活动中指令更新",
+      "args": [],
+      "kwargs": {
+        "x": 1.2999447602228267,
+        "y": -0.2999687573693395
+      },
+      "attempted_at": "2026-11-02T14:11:50.623161",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "get_odom",
+      "case": "连续球位与活动中指令更新",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:11:50.738257",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(0.06, 0.01, 0.00) @ 1793599910.739>",
+      "pose_2d": [
+        0.057184107075247625,
+        0.0054874542426039934,
+        0.01103520393371582
+      ]
+    },
+    {
+      "method": "update_ball",
+      "case": "连续球位与活动中指令更新",
+      "args": [],
+      "kwargs": {
+        "x": 1.3051769285953765,
+        "y": -0.24830614097055684
+      },
+      "attempted_at": "2026-11-02T14:11:50.828319",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "update_command",
+      "case": "连续球位与活动中指令更新",
+      "args": [],
+      "kwargs": {
+        "direction": 0.2,
+        "power": 2.0
+      },
+      "attempted_at": "2026-11-02T14:11:51.006611",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "get_odom",
+      "case": "连续球位与活动中指令更新",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:11:51.327901",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(0.19, -0.07, 0.00) @ 1793599911.323>",
+      "pose_2d": [
+        0.19317629695090063,
+        -0.06833611771951278,
+        -0.07117080688476561
+      ]
+    },
+    {
+      "method": "stop",
+      "case": "连续球位与活动中指令更新",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:11:51.546970",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "get_odom",
+      "case": "基线试踢",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:14:20.852348",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(2.28, -1.09, 0.00) @ 1793600060.722>",
+      "pose_2d": [
+        2.282904404341312,
+        -1.0898655358353972,
+        1.714853111897604
+      ]
+    },
+    {
+      "method": "start",
+      "case": "基线试踢",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:14:20.927407",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "update_command",
+      "case": "基线试踢",
+      "args": [],
+      "kwargs": {
+        "direction": 0.0,
+        "power": 1.0
+      },
+      "attempted_at": "2026-11-02T14:14:21.139928",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "get_odom",
+      "case": "基线试踢",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:14:21.262989",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(2.28, -1.09, 0.00) @ 1793600061.171>",
+      "pose_2d": [
+        2.2829041315598895,
+        -1.089866177950706,
+        1.714853111897604
+      ]
+    },
+    {
+      "method": "update_ball",
+      "case": "基线试踢",
+      "args": [],
+      "kwargs": {
+        "x": 1.2000005963038782,
+        "y": -0.3000003621373478
+      },
+      "attempted_at": "2026-11-02T14:14:21.421456",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "stop",
+      "case": "基线试踢",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:14:23.575393",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "get_odom",
+      "case": "改方向与重启",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:15:44.230437",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(2.33, -0.61, 0.00) @ 1793600144.159>",
+      "pose_2d": [
+        2.3284958277888754,
+        -0.6067850818426131,
+        1.7603583971606656
+      ]
+    },
+    {
+      "method": "start",
+      "case": "改方向与重启",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:15:44.450964",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "update_command",
+      "case": "改方向与重启",
+      "args": [],
+      "kwargs": {
+        "direction": 0.25,
+        "power": 1.0
+      },
+      "attempted_at": "2026-11-02T14:15:44.796007",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "get_odom",
+      "case": "改方向与重启",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:15:44.852271",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(2.33, -0.61, 0.00) @ 1793600144.851>",
+      "pose_2d": [
+        2.328506161423347,
+        -0.6067670084625357,
+        1.7604067961322232
+      ]
+    },
+    {
+      "method": "update_ball",
+      "case": "改方向与重启",
+      "args": [],
+      "kwargs": {
+        "x": 0.4999696779047084,
+        "y": -0.3000106442972589
+      },
+      "attempted_at": "2026-11-02T14:15:44.903355",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "stop",
+      "case": "改方向与重启",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:15:46.929285",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "get_odom",
+      "case": "改力度与重启",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:16:23.485392",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(2.52, -0.78, 0.00) @ 1793600183.352>",
+      "pose_2d": [
+        2.515578276540177,
+        -0.7814669276486467,
+        1.604954544697897
+      ]
+    },
+    {
+      "method": "start",
+      "case": "改力度与重启",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:16:23.673686",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "update_command",
+      "case": "改力度与重启",
+      "args": [],
+      "kwargs": {
+        "direction": 0.0,
+        "power": 2.0
+      },
+      "attempted_at": "2026-11-02T14:16:24.059340",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "get_odom",
+      "case": "改力度与重启",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:16:24.081907",
+      "returned": true,
+      "return_type": "OdomState",
+      "return_repr": "<OdomState pos=(2.52, -0.78, 0.00) @ 1793600184.071>",
+      "pose_2d": [
+        2.515576731838269,
+        -0.7814685841553828,
+        1.604954306279318
+      ]
+    },
+    {
+      "method": "update_ball",
+      "case": "改力度与重启",
+      "args": [],
+      "kwargs": {
+        "x": 0.40000160278680347,
+        "y": -1.5050053306115557e-06
+      },
+      "attempted_at": "2026-11-02T14:16:24.304932",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    },
+    {
+      "method": "stop",
+      "case": "改力度与重启",
+      "args": [],
+      "kwargs": {},
+      "attempted_at": "2026-11-02T14:16:26.572046",
+      "returned": true,
+      "return_type": "NoneType",
+      "return_repr": "None"
+    }
+  ],
+  "cases": {
+    "构造与查询": {},
+    "无球位启停": {
+      "start_returned": true,
+      "stop_returned": true
+    },
+    "停用参数检查": {
+      "checks": [
+        {
+          "input": "power=0",
+          "expected_ValueError": true
+        },
+        {
+          "input": "power=11",
+          "expected_ValueError": true
+        },
+        {
+          "input": "x非数值",
+          "expected_ValueError": true
+        }
+      ],
+      "stop_returned": true
+    },
+    "连续球位与活动中指令更新": {
+      "measured_ball_xy": [
+        1.3,
+        -0.3
+      ],
+      "direction": 0.0,
+      "power": 1.0,
+      "continuous": true,
+      "samples": [
+        {
+          "odom": [
+            0.05187585385389411,
+            0.00715333905573231,
+            0.04929137229919434
+          ],
+          "ball_xy": [
+            1.2999447602228267,
+            -0.2999687573693395
+          ]
+        },
+        {
+          "odom": [
+            0.057184107075247625,
+            0.0054874542426039934,
+            0.01103520393371582
+          ],
+          "ball_xy": [
+            1.3051769285953765,
+            -0.24830614097055684
+          ]
+        }
+      ],
+      "start_returned": true,
+      "stop_returned": true,
+      "observation_limit_s": 2.0,
+      "measured_pose": [
+        0.051816782839553474,
+        0.007168672127636809,
+        0.049301385879516595
+      ],
+      "active_command_changed": true,
+      "end_reason": "达到本次接近试验的行进边界，提前停止"
+    },
+    "基线试踢": {
+      "measured_ball_xy": [
+        1.2,
+        -0.3
+      ],
+      "direction": 0.0,
+      "power": 1.0,
+      "continuous": false,
+      "samples": [
+        {
+          "odom": [
+            2.2829041315598895,
+            -1.089866177950706,
+            1.714853111897604
+          ],
+          "ball_xy": [
+            1.2000005963038782,
+            -0.3000003621373478
+          ]
+        }
+      ],
+      "start_returned": true,
+      "stop_returned": true,
+      "observation_limit_s": 2.0,
+      "measured_pose": [
+        2.282904404341312,
+        -1.0898655358353972,
+        1.714853111897604
+      ],
+      "end_reason": "单次球位输入观察结束；实际是否踢出另记"
+    },
+    "改方向与重启": {
+      "measured_ball_xy": [
+        0.5,
+        -0.3
+      ],
+      "direction": 0.25,
+      "power": 1.0,
+      "continuous": false,
+      "samples": [
+        {
+          "odom": [
+            2.328506161423347,
+            -0.6067670084625357,
+            1.7604067961322232
+          ],
+          "ball_xy": [
+            0.4999696779047084,
+            -0.3000106442972589
+          ]
+        }
+      ],
+      "start_returned": true,
+      "stop_returned": true,
+      "observation_limit_s": 2.0,
+      "measured_pose": [
+        2.3284958277888754,
+        -0.6067850818426131,
+        1.7603583971606656
+      ],
+      "end_reason": "单次球位输入观察结束；实际是否踢出另记"
+    },
+    "改力度与重启": {
+      "measured_ball_xy": [
+        0.4,
+        0.0
+      ],
+      "direction": 0.0,
+      "power": 2.0,
+      "continuous": false,
+      "samples": [
+        {
+          "odom": [
+            2.515576731838269,
+            -0.7814685841553828,
+            1.604954306279318
+          ],
+          "ball_xy": [
+            0.40000160278680347,
+            -1.5050053306115557e-06
+          ]
+        }
+      ],
+      "start_returned": true,
+      "stop_returned": true,
+      "observation_limit_s": 2.0,
+      "measured_pose": [
+        2.515578276540177,
+        -0.7814669276486467,
+        1.604954544697897
+      ],
+      "end_reason": "单次球位输入观察结束；实际是否踢出另记"
+    }
+  },
+  "control_uncertain": false,
+  "active_tests_available": true,
+  "sdk_version": "1.2.2",
+  "robot_info": "RobotInfo(manufacturer='Booster Robotics', model='Booster K1', name='Booster K1', serial_number='01012026060100', firmware_version='1.8.1.2-release-02884-2026-10-15', extra={'Name': 'Booster K1', 'Model': 'Booster K1', 'Delivery Time': '2026-06-20', 'Nickname': 'Booster K1_060100', 'Model Version': '1.2.1', 'SN': '01012026060100', 'Feature': '', 'Hand Type': '', 'Platform': 'Single', 'Edition': 'K1 Geek', 'Region': 'CN'})",
+  "modes": [
+    {
+      "label": "连接后",
+      "public": "walk",
+      "raw": "RobotMode.kWalking"
+    },
+    {
+      "label": "无球位启停后",
+      "public": "walk",
+      "raw": "RobotMode.kSoccer"
+    },
+    {
+      "label": "连续球位与活动中指令更新停止后",
+      "public": "walk",
+      "raw": "RobotMode.kSoccer"
+    },
+    {
+      "label": "基线试踢停止后",
+      "public": "walk",
+      "raw": "RobotMode.kSoccer"
+    },
+    {
+      "label": "改方向与重启停止后",
+      "public": "walk",
+      "raw": "RobotMode.kSoccer"
+    },
+    {
+      "label": "改力度与重启停止后",
+      "public": "walk",
+      "raw": "RobotMode.kSoccer"
+    }
+  ],
+  "current_case": "改力度与重启",
+  "manager_created": true,
+  "initial_odom": [
+    0.04808317471963824,
+    -0.0017846244390852233,
+    0.057959556579589844
+  ],
+  "transform": {
+    "source": "trunk",
+    "target": "head_color_optical_frame",
+    "matrix": [
+      [
+        -0.009644543648956505,
+        -0.012864128091742977,
+        0.9998707401390656,
+        0.07493016959295999
+      ],
+      [
+        -0.9999531475642167,
+        0.0009519659904786704,
+        -0.00963309073812324,
+        0.04014872786453307
+      ],
+      [
+        -0.0008279216263125666,
+        -0.9999168005235197,
+        -0.01287270665355511,
+        0.3418264043439584
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "sdk_sources": [
+    {
+      "name": "SoccerKickManager",
+      "source_file": "SoccerKickManager_本机实现.txt"
+    },
+    {
+      "name": "BoosterRobot_get_mode",
+      "source_file": "BoosterRobot_get_mode_本机实现.txt"
+    },
+    {
+      "name": "RosAdapter_get_transform",
+      "source_file": "RosAdapter_get_transform_本机实现.txt"
+    }
+  ]
+}

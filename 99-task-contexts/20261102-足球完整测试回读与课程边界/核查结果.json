@@ -1,0 +1,59 @@
+{
+  "raw_files_preserved": 5,
+  "protected_files_preserved": 137,
+  "call_counts_verified": {
+    "SoccerKickManager": {
+      "attempted": 1,
+      "returned": 1,
+      "errors": [],
+      "return_values": [
+        "SoccerKickManager:<boosteros.robots.booster._motion.soccer_kick.SoccerKickManager object at 0x7f3c1e1240>"
+      ]
+    },
+    "start": {
+      "attempted": 5,
+      "returned": 5,
+      "errors": [],
+      "return_values": [
+        "NoneType:None"
+      ]
+    },
+    "stop": {
+      "attempted": 6,
+      "returned": 6,
+      "errors": [],
+      "return_values": [
+        "NoneType:None"
+      ]
+    },
+    "update_command": {
+      "attempted": 9,
+      "returned": 7,
+      "errors": [
+        "ValueError('power must be in range [1.0, 10.0]')",
+        "ValueError('power must be in range [1.0, 10.0]')"
+      ],
+      "return_values": [
+        "NoneType:None"
+      ]
+    },
+    "update_ball": {
+      "attempted": 7,
+      "returned": 6,
+      "errors": [
+        "ValueError(\"could not convert string to float: 'invalid'\")"
+      ],
+      "return_values": [
+        "NoneType:None"
+      ]
+    }
+  },
+  "three_expected_ValueErrors": true,
+  "tf_matrix_finite_4x4": true,
+  "tf_direction_not_assumed_from_labels": true,
+  "user_observation_preserved": true,
+  "unknown_physical_details_not_fabricated": true,
+  "links_checked": 17,
+  "student_files_changed": false,
+  "hardware_executed": false
+}

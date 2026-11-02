@@ -1,0 +1,145 @@
+{
+  "data_dir": "05-internal-materials/vocational-planning/03_X课程项目/实验验证/足球测试结果/第4轮完整_20261102_140630_773208",
+  "created_at": "2026-11-02T14:06:30.773684",
+  "sdk": "1.2.2",
+  "method_counts": {
+    "SoccerKickManager": {
+      "attempted": 1,
+      "returned": 1,
+      "errors": [],
+      "return_values": [
+        "SoccerKickManager:<boosteros.robots.booster._motion.soccer_kick.SoccerKickManager object at 0x7f3c1e1240>"
+      ]
+    },
+    "start": {
+      "attempted": 5,
+      "returned": 5,
+      "errors": [],
+      "return_values": [
+        "NoneType:None"
+      ]
+    },
+    "stop": {
+      "attempted": 6,
+      "returned": 6,
+      "errors": [],
+      "return_values": [
+        "NoneType:None"
+      ]
+    },
+    "update_command": {
+      "attempted": 9,
+      "returned": 7,
+      "errors": [
+        "ValueError('power must be in range [1.0, 10.0]')",
+        "ValueError('power must be in range [1.0, 10.0]')"
+      ],
+      "return_values": [
+        "NoneType:None"
+      ]
+    },
+    "update_ball": {
+      "attempted": 7,
+      "returned": 6,
+      "errors": [
+        "ValueError(\"could not convert string to float: 'invalid'\")"
+      ],
+      "return_values": [
+        "NoneType:None"
+      ]
+    }
+  },
+  "case_count": 7,
+  "continuous_ball_updates": 2,
+  "active_command_changed": true,
+  "continuous_odom_displacement_m": 0.16026067989266232,
+  "continuous_end_reason": "达到本次接近试验的行进边界，提前停止",
+  "trial_inputs": {
+    "连续球位与活动中指令更新": {
+      "measured_ball_xy": [
+        1.3,
+        -0.3
+      ],
+      "direction": 0.0,
+      "power": 1.0,
+      "observation_limit_s": 2.0
+    },
+    "基线试踢": {
+      "measured_ball_xy": [
+        1.2,
+        -0.3
+      ],
+      "direction": 0.0,
+      "power": 1.0,
+      "observation_limit_s": 2.0
+    },
+    "改方向与重启": {
+      "measured_ball_xy": [
+        0.5,
+        -0.3
+      ],
+      "direction": 0.25,
+      "power": 1.0,
+      "observation_limit_s": 2.0
+    },
+    "改力度与重启": {
+      "measured_ball_xy": [
+        0.4,
+        0.0
+      ],
+      "direction": 0.0,
+      "power": 2.0,
+      "observation_limit_s": 2.0
+    }
+  },
+  "tf_requested": {
+    "target_frame": "trunk",
+    "source_frame": "head_color_optical_frame"
+  },
+  "tf_returned": {
+    "source": "trunk",
+    "target": "head_color_optical_frame",
+    "matrix": [
+      [
+        -0.009644543648956505,
+        -0.012864128091742977,
+        0.9998707401390656,
+        0.07493016959295999
+      ],
+      [
+        -0.9999531475642167,
+        0.0009519659904786704,
+        -0.00963309073812324,
+        0.04014872786453307
+      ],
+      [
+        -0.0008279216263125666,
+        -0.9999168005235197,
+        -0.01287270665355511,
+        0.3418264043439584
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "physical_observation": {
+    "source": "用户在本轮对话中的现场回忆，保留原文",
+    "trials": {
+      "基线试踢": "机器人前进一段距离，并由明显右移，但是仍然距离球有一定距离，且没有做踢球动作",
+      "改方向与重启": "机器人没有前后移动，仅右跨一步，基本上球位于机器人前方，但是依旧距离球有一定距离",
+      "改力度与重启": "机器人后退一步，几乎左右移动。"
+    },
+    "stop_observation": null,
+    "current_robot_state": null,
+    "measurement_origin": null,
+    "far_ball_stationary": null,
+    "interpretation_note": "第三项“几乎左右移动”按原文保留，不自行补成“几乎没有左右移动”；该项没有明确描述球是否踢动。"
+  },
+  "unexpected_api_error_count": 0,
+  "notebook_local_outputs_saved": false,
+  "conclusion": "构造和全部四方法实际可调用；用户观察到调整和前进，但完整踢球尚未证实；视觉米制球位仍未建立。"
+}

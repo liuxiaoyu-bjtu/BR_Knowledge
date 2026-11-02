@@ -1,0 +1,15 @@
+    def get_mode(self) -> RobotModeName:
+        """Return the current robot mode.
+
+        Returns:
+            str: Robot mode. Possible values include:
+                - "damping": Safe damping mode, with highest priority.
+                - "prepare": Preparation mode required before walking.
+                - "walk": Walking mode for base velocity commands.
+                - "custom": Custom mode for user-provided joint commands.
+        """
+        try:
+            return self._public_robot_mode_name(self._get_raw_mode())
+        except Exception:
+            logger.error("Failed to get robot mode")
+            raise RuntimeError("Failed to get robot mode")

@@ -1,0 +1,24 @@
+    def get_transform(self, target_frame: str, source_frame: str) -> Transform:
+        """Return the transform from source_frame to target_frame.
+
+        The returned transform represents the pose of target_frame in the
+        source_frame coordinate system.
+        """
+        if self.tf_listener is None:
+            raise RuntimeError("TF listener is disabled.")
+        try:
+            # lookup_transform(target, source) returns source pose in target frame.
+            msg = self.tf_buffer.lookup_transform(
+                target_frame,
+                source_frame,
+                ROSTime(),  # 获取最新的转换
+            )
+            return to_transform(msg)
+        except Exception as e:
+            self._logger.error(
+                "Failed to lookup transform from %s to %s: %s",
+                source_frame,
+                target_frame,
+                e,
+            )
+            raise

@@ -1,0 +1,13 @@
+{
+  "source": "用户在本轮对话中的现场回忆，保留原文",
+  "trials": {
+    "基线试踢": "机器人前进一段距离，并由明显右移，但是仍然距离球有一定距离，且没有做踢球动作",
+    "改方向与重启": "机器人没有前后移动，仅右跨一步，基本上球位于机器人前方，但是依旧距离球有一定距离",
+    "改力度与重启": "机器人后退一步，几乎左右移动。"
+  },
+  "stop_observation": null,
+  "current_robot_state": null,
+  "measurement_origin": null,
+  "far_ball_stationary": null,
+  "interpretation_note": "第三项“几乎左右移动”按原文保留，不自行补成“几乎没有左右移动”；该项没有明确描述球是否踢动。"
+}
