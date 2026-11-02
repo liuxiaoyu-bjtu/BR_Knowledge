@@ -1,0 +1,1600 @@
+{
+  "checks": 396,
+  "passed": 396,
+  "failed": [],
+  "totals": {
+    "pages": 84,
+    "cells": 90,
+    "code_cells": 30,
+    "goals": 9,
+    "checkpoints": 12,
+    "thinking_questions": 12,
+    "evaluation_items": 9
+  },
+  "results": [
+    {
+      "check": "U4-L2源格数",
+      "passed": true
+    },
+    {
+      "check": "U4-L2源代码格数",
+      "passed": true
+    },
+    {
+      "check": "U4-L2页号连续",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第1格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第1格与第1页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第1格与第2页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第1格与第28页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第2格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第2格与第2页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第3格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第3格与第3页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第4格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第4格与第3页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第5格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第5格与第3页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第6格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第6格与第3页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第6代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第7格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第7格与第4页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第8格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第8格与第4页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第8代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第9格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第9格与第4页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第10格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第10格与第5页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第11格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第11格与第5页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第12格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第12格与第5页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第12代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第13格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第13格与第6页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第14格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第14格与第6页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第14格与第9页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第15格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第15格与第6页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第15格与第7页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第15格与第8页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第15格与第27页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第16格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第16格与第7页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第16格与第8页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第16代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第17格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第17格与第9页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第17格与第11页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第18格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第18格与第8页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第18格与第10页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第18格与第11页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第18格与第27页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第19格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第19格与第8页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第19格与第10页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第19格与第11页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第19代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第20格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第20格与第12页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第21格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第21格与第12页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第22格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第22格与第13页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第23格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第23格与第13页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第24格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第24格与第13页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第25格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第25格与第14页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第25代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第26格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第26格与第14页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第27格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第27格与第14页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第27代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第28格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第28格与第14页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第29格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第29格与第14页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第29代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第30格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第30格与第15页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第31格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第31格与第16页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第32格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第32格与第16页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第32代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第33格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第33格与第17页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第33格与第18页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第34格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第34格与第17页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第34格与第18页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第34格与第19页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第34格与第20页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第34格与第21页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第34格与第22页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第34格与第27页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第34格与第28页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第35格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第35格与第20页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第35格与第21页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第35格与第22页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第35格与第28页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第35代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第9页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第11页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第16页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第17页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第19页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第21页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第22页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第23页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第24页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第25页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第27页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第36格与第28页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第37格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L2第37格与第26页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L2代码专表未虚增",
+      "passed": true
+    },
+    {
+      "check": "U4-L2检查点原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L2思考题原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L2评价题干选项完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L2教师答案单列",
+      "passed": true
+    },
+    {
+      "check": "U4-L2页表没有参考答案",
+      "passed": true
+    },
+    {
+      "check": "U4-L2原记录表1完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L2原记录表2完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L2原记录表3完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L2原记录表4完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L2目标1原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L2目标2原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L2目标3原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L2时间从0到45且连续",
+      "passed": true
+    },
+    {
+      "check": "U4-L2课堂页面连续无重叠",
+      "passed": true
+    },
+    {
+      "check": "U4-L2已确认教案仅更新阶段文字",
+      "passed": true
+    },
+    {
+      "check": "U4-L2⑤仍待确认",
+      "passed": true
+    },
+    {
+      "check": "U4-L2文件链接 ../notebooks/U4-L2_走近来宾.ipynb",
+      "passed": true
+    },
+    {
+      "check": "U4-L2文件链接 ../教学设计/U4-L2_走近来宾_教学设计.md",
+      "passed": true
+    },
+    {
+      "check": "U4-L2文件链接 U4-L2-L3-L4_P4覆盖检查记录.md",
+      "passed": true
+    },
+    {
+      "check": "U4-L3源格数",
+      "passed": true
+    },
+    {
+      "check": "U4-L3源代码格数",
+      "passed": true
+    },
+    {
+      "check": "U4-L3页号连续",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第1格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第1格与第1页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第1格与第2页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第1格与第26页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第2格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第2格与第2页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第2格与第3页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第3格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第3格与第3页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第3格与第4页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第3格与第9页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第4格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第4格与第5页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第5格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第5格与第5页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第5代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第6格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第6格与第6页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第6格与第7页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第7格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第7格与第6页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第7格与第7页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第7代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第8格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第8格与第8页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第8格与第9页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第8格与第17页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第9格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第9格与第8页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第9格与第9页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第9代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第10格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第10格与第10页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第11格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第11格与第10页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第11代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第12格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第12格与第11页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第12格与第12页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第13格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第13格与第11页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第13格与第12页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第13代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第14格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第14格与第13页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第14格与第16页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第15格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第15格与第7页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第15格与第14页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第15格与第15页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第15格与第16页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第15格与第17页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第16格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第16格与第14页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第16格与第15页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第16格与第16页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第16格与第17页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第16代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第17格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第17格与第12页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第17格与第19页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第17格与第20页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第18格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第18格与第12页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第18格与第19页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第18格与第20页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第18代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第19格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第19格与第17页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第19格与第18页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第19格与第21页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第19格与第26页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第20格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第20格与第21页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第20代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第21格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第21格与第16页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第21格与第18页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第21格与第20页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第21格与第21页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第21格与第22页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第21格与第23页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第21格与第24页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第21格与第26页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第22格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第22格与第25页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第23格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第23格与第24页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3第23格与第27页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L3代码专表未虚增",
+      "passed": true
+    },
+    {
+      "check": "U4-L3检查点原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L3思考题原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L3评价题干选项完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L3教师答案单列",
+      "passed": true
+    },
+    {
+      "check": "U4-L3页表没有参考答案",
+      "passed": true
+    },
+    {
+      "check": "U4-L3原记录表1完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L3原记录表2完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L3目标1原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L3目标2原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L3目标3原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L3时间从0到45且连续",
+      "passed": true
+    },
+    {
+      "check": "U4-L3课堂页面连续无重叠",
+      "passed": true
+    },
+    {
+      "check": "U4-L3课后阅读单独安排",
+      "passed": true
+    },
+    {
+      "check": "U4-L3已确认教案仅更新阶段文字",
+      "passed": true
+    },
+    {
+      "check": "U4-L3⑤仍待确认",
+      "passed": true
+    },
+    {
+      "check": "U4-L3文件链接 ../notebooks/U4-L3_跟住来宾.ipynb",
+      "passed": true
+    },
+    {
+      "check": "U4-L3文件链接 ../教学设计/U4-L3_跟住来宾_教学设计.md",
+      "passed": true
+    },
+    {
+      "check": "U4-L3文件链接 U4-L2-L3-L4_P4覆盖检查记录.md",
+      "passed": true
+    },
+    {
+      "check": "U4-L4源格数",
+      "passed": true
+    },
+    {
+      "check": "U4-L4源代码格数",
+      "passed": true
+    },
+    {
+      "check": "U4-L4页号连续",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第1格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第1格与第1页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第1格与第2页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第1格与第28页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第2格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第2格与第2页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第3格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第3格与第3页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第4格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第4格与第5页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第4格与第9页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第4格与第20页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第5格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第5格与第5页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第5代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第6格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第6格与第4页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第6格与第6页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第6格与第20页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第7格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第7格与第4页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第7格与第6页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第7代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第8格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第8格与第7页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第9格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第9格与第7页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第9代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第10格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第10格与第8页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第11格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第11格与第8页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第11代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第12格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第12格与第9页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第13格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第13格与第9页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第13代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第14格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第14格与第10页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第14格与第18页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第15格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第15格与第10页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第15格与第18页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第15代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第16格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第16格与第11页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第16格与第12页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第16格与第13页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第17格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第17格与第11页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第17格与第12页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第17格与第13页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第17代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第18格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第18格与第14页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第18格与第15页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第19格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第19格与第14页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第19格与第15页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第19代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第20格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第20格与第16页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第20格与第17页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第20格与第18页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第20格与第20页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第21格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第21格与第16页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第21格与第17页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第21格与第18页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第21代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第22格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第22格与第19页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第22格与第20页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第23格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第23格与第19页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第23格与第20页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第23代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第24格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第24格与第21页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第24格与第22页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第25格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第25格与第21页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第25格与第22页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第25代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第26格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第26格与第23页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第27格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第27格与第23页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第27代码格列入专表",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第28格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第28格与第4页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第28格与第15页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第28格与第17页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第28格与第18页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第28格与第22页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第28格与第24页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第28格与第25页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第28格与第26页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第28格与第28页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第29格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第29格与第27页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第30格有页面",
+      "passed": true
+    },
+    {
+      "check": "U4-L4第30格与第29页双向一致",
+      "passed": true
+    },
+    {
+      "check": "U4-L4代码专表未虚增",
+      "passed": true
+    },
+    {
+      "check": "U4-L4检查点原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L4思考题原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L4评价题干选项完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L4教师答案单列",
+      "passed": true
+    },
+    {
+      "check": "U4-L4页表没有参考答案",
+      "passed": true
+    },
+    {
+      "check": "U4-L4原记录表1完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L4原记录表2完整",
+      "passed": true
+    },
+    {
+      "check": "U4-L4目标1原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L4目标2原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L4目标3原文保留",
+      "passed": true
+    },
+    {
+      "check": "U4-L4时间从0到45且连续",
+      "passed": true
+    },
+    {
+      "check": "U4-L4课堂页面连续无重叠",
+      "passed": true
+    },
+    {
+      "check": "U4-L4课后阅读单独安排",
+      "passed": true
+    },
+    {
+      "check": "U4-L4已确认教案仅更新阶段文字",
+      "passed": true
+    },
+    {
+      "check": "U4-L4⑤仍待确认",
+      "passed": true
+    },
+    {
+      "check": "U4-L4文件链接 ../notebooks/U4-L4_接待来宾.ipynb",
+      "passed": true
+    },
+    {
+      "check": "U4-L4文件链接 ../教学设计/U4-L4_接待来宾_教学设计.md",
+      "passed": true
+    },
+    {
+      "check": "U4-L4文件链接 U4-L2-L3-L4_P4覆盖检查记录.md",
+      "passed": true
+    },
+    {
+      "check": "源文件字节保留 05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L2_走近来宾.ipynb",
+      "passed": true
+    },
+    {
+      "check": "源文件字节保留 05-internal-materials/vocational-planning/03_X课程项目/_gen_L14.py",
+      "passed": true
+    },
+    {
+      "check": "源文件字节保留 05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L3_跟住来宾.ipynb",
+      "passed": true
+    },
+    {
+      "check": "源文件字节保留 05-internal-materials/vocational-planning/03_X课程项目/_gen_L15.py",
+      "passed": true
+    },
+    {
+      "check": "源文件字节保留 05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L4_接待来宾.ipynb",
+      "passed": true
+    },
+    {
+      "check": "源文件字节保留 05-internal-materials/vocational-planning/03_X课程项目/_gen_L16.py",
+      "passed": true
+    },
+    {
+      "check": "84页、90格、30代码、12检查、12思考",
+      "passed": true
+    },
+    {
+      "check": "全课阶段合计32",
+      "passed": true
+    },
+    {
+      "check": "无当前P2补验或待④分布",
+      "passed": true
+    },
+    {
+      "check": "U4-L2当前进度P4且③④登记",
+      "passed": true
+    },
+    {
+      "check": "U4-L3当前进度P4且③④登记",
+      "passed": true
+    },
+    {
+      "check": "U4-L4当前进度P4且③④登记",
+      "passed": true
+    },
+    {
+      "check": "教学设计课程覆盖数",
+      "passed": true
+    },
+    {
+      "check": "PPT内容设计课程覆盖数",
+      "passed": true
+    },
+    {
+      "check": "PPT课程覆盖数",
+      "passed": true
+    },
+    {
+      "check": "用户确认原文可查",
+      "passed": true
+    },
+    {
+      "check": "暂存区未夹带其他工作",
+      "passed": true
+    }
+  ]
+}

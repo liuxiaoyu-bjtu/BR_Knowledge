@@ -1,0 +1,97 @@
+{
+  "AGENTS.md": {
+    "sha256": "561e21869c02cdbf9f4af8ff3c8dd226080466ea1ec8f5646d45ce82372ba6c6",
+    "head_sha256": "55cc62a01a18bc6c6b8965a2c9942a0cee4805438519597e322bcddf14bf1d58",
+    "preexisting_change": true
+  },
+  "INDEX.md": {
+    "sha256": "423f09b10debff346ddfb963419c2445ac11303189a5c5583c5a1e6dbc535c65",
+    "head_sha256": "65760f66086735294b507a620dcc54d7c4dd5276574020bc298354b0b42c38ac",
+    "preexisting_change": true
+  },
+  "CHANGELOG.md": {
+    "sha256": "651bf80ab1086e9fa8550958eb6391de77ff02d32d96f4e93fa461c4e97bb352",
+    "head_sha256": "4e29cb9ee5acc3ff265d729d5e11e2dd58a7e16bf520c9964d4619068eb2ef1a",
+    "preexisting_change": true
+  },
+  "README.md": {
+    "sha256": "dd35dc25989ac882f52ab94042f327c81a2b2ca6d1937e7988a8ef33fa175d40",
+    "head_sha256": "b48a5601c5455d496202786b163b7e96ed275623281b858fadb85efae161c1ac",
+    "preexisting_change": true
+  },
+  "05-internal-materials/vocational-planning/README.md": {
+    "sha256": "66d916f4f14c82367b2048f5650ec570a300570fbcd9efada9c167619a5c8477",
+    "head_sha256": "50b37df879dccaf0ceaecfd67fa5f6b50a4711574a96c1e80d1c4abcf809325e",
+    "preexisting_change": true
+  },
+  "05-internal-materials/vocational-planning/02_共创规则与上下文/notebook开发规则.md": {
+    "sha256": "852255256f51ba63fe902681076fec174ff47a659d555ab292267687f2054dbb",
+    "head_sha256": "e496655688825b3f14a9afbfe7c314c75c85f77de9d63c34924838b5f08a8cc7",
+    "preexisting_change": true
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/X课程当前进度.md": {
+    "sha256": "f2879be6f933488d7080a87de1eb1a45a79bae4b309748c630c149f3f85c3575",
+    "head_sha256": "0a429cd474dfd1749c114b0047c023b1dc3e3c44aba9373890aff8a5120d62c5",
+    "preexisting_change": true
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/X课程开发计划-v4.md": {
+    "sha256": "a78c6bef354f99ed93b1899b76f7af606297246b8f8b9e5177310c067f878d11",
+    "head_sha256": "1e7f3323de73e02a9d53cf9f77f33d55d0fdc6c5303109ef4a46a598239bcc38",
+    "preexisting_change": true
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/实验验证/U4-L2-L3-L4_P2复核与定稿记录.md": {
+    "sha256": "1c14c9f2b31b7d3d6b365d7ae32642f6818b5b75d43337b2850dbf4fe505d5fb",
+    "head_sha256": "1c14c9f2b31b7d3d6b365d7ae32642f6818b5b75d43337b2850dbf4fe505d5fb",
+    "preexisting_change": false
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/实验验证/全课学习评价补齐与U4后三课P3覆盖记录.md": {
+    "sha256": "bebcdf2dc0524fe7d7245c588babc699b6c33b0e149acd5aa2df92d6098a35d4",
+    "head_sha256": "bebcdf2dc0524fe7d7245c588babc699b6c33b0e149acd5aa2df92d6098a35d4",
+    "preexisting_change": false
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L2_走近来宾.ipynb": {
+    "sha256": "8c2ed2405e86d33ccb2e7d22a4435b2a5752947aaa34d53b7a58a596800fdc0a",
+    "head_sha256": "8c2ed2405e86d33ccb2e7d22a4435b2a5752947aaa34d53b7a58a596800fdc0a",
+    "preexisting_change": false
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U4-L2_走近来宾_教学设计.md": {
+    "sha256": "436540c9aee8bf6e690bf2e874383b12530fefb1908b7e5536f6474738d23380",
+    "head_sha256": "436540c9aee8bf6e690bf2e874383b12530fefb1908b7e5536f6474738d23380",
+    "preexisting_change": false
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/_gen_L14.py": {
+    "sha256": "479e302b2a3887155c6d13dffcd398f2dd34c513f3e63a3ab7964e2b86f38a19",
+    "head_sha256": "479e302b2a3887155c6d13dffcd398f2dd34c513f3e63a3ab7964e2b86f38a19",
+    "preexisting_change": false
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L3_跟住来宾.ipynb": {
+    "sha256": "7b0c6a4728c4e084a5c6e382805a8d7c18b2aa564417fc696fbda5c37b8f494b",
+    "head_sha256": "7b0c6a4728c4e084a5c6e382805a8d7c18b2aa564417fc696fbda5c37b8f494b",
+    "preexisting_change": false
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U4-L3_跟住来宾_教学设计.md": {
+    "sha256": "6d68778e7c95c6a241008acf4072b9bf62d090856f7190b7aab90fe5670ff233",
+    "head_sha256": "6d68778e7c95c6a241008acf4072b9bf62d090856f7190b7aab90fe5670ff233",
+    "preexisting_change": false
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/_gen_L15.py": {
+    "sha256": "c0df6a246ca87f5e9c3b1f361b07b8c44747aa6bf36573415ec533f8a762f846",
+    "head_sha256": "c0df6a246ca87f5e9c3b1f361b07b8c44747aa6bf36573415ec533f8a762f846",
+    "preexisting_change": false
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/notebooks/U4-L4_接待来宾.ipynb": {
+    "sha256": "cd8704eb2132ff90752666fc18cffc3a6051a342d83ae93ea1c462821174035f",
+    "head_sha256": "cd8704eb2132ff90752666fc18cffc3a6051a342d83ae93ea1c462821174035f",
+    "preexisting_change": false
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/教学设计/U4-L4_接待来宾_教学设计.md": {
+    "sha256": "63f1330947c4c9c0dff531c531509eaf524adb7be5656b4c96c2b23ee06da762",
+    "head_sha256": "63f1330947c4c9c0dff531c531509eaf524adb7be5656b4c96c2b23ee06da762",
+    "preexisting_change": false
+  },
+  "05-internal-materials/vocational-planning/03_X课程项目/_gen_L16.py": {
+    "sha256": "321b77ea211568c81839cc0501de1903f2b42f6425429f9348ae72797b2c9583",
+    "head_sha256": "321b77ea211568c81839cc0501de1903f2b42f6425429f9348ae72797b2c9583",
+    "preexisting_change": false
+  }
+}
