@@ -1,0 +1,9 @@
+{
+  "offline_tests": 16,
+  "result": "passed",
+  "robot_run": false,
+  "notebook_cells": 9,
+  "code_cells": 4,
+  "package_sha256": "1ba7c1c0e6f4ad86540a5bdf8dbefea68f3bab6b7e40ea88b2561a6c30836f9f",
+  "script_sha256": "a02d179fa9b49ff5892b605d2ad7abdef46e4a7f694a03f4baf96ba7e4a1a3b4"
+}

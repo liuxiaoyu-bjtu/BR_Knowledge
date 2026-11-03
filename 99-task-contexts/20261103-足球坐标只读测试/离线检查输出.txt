@@ -1,0 +1,21 @@
+test_different_resolution_not_rescaled (test_probe.GeometryTests.test_different_resolution_not_rescaled) ... ok
+test_invalid_depth_does_not_produce_center (test_probe.GeometryTests.test_invalid_depth_does_not_produce_center) ... ok
+test_inverse_roundtrip_does_not_remove_translation (test_probe.GeometryTests.test_inverse_roundtrip_does_not_remove_translation) ... ok
+test_nonzero_distortion_processed (test_probe.GeometryTests.test_nonzero_distortion_processed) ... ok
+test_optical_to_trunk_rotation_and_translation (test_probe.GeometryTests.test_optical_to_trunk_rotation_and_translation) ... ok
+test_planar_depth_preserves_surface_without_fake_ball_center (test_probe.GeometryTests.test_planar_depth_preserves_surface_without_fake_ball_center) ... ok
+test_scale_is_explicit_not_inferred_from_dtype (test_probe.GeometryTests.test_scale_is_explicit_not_inferred_from_dtype) ... ok
+test_scaled_tf_rejected (test_probe.GeometryTests.test_scaled_tf_rejected) ... ok
+test_sphere_center_and_surface_are_distinct (test_probe.GeometryTests.test_sphere_center_and_surface_are_distinct) ... ok
+test_unknown_distortion_model_rejected (test_probe.GeometryTests.test_unknown_distortion_model_rejected) ... ok
+test_code_has_no_motion_or_private_robot_calls (test_probe.RunTests.test_code_has_no_motion_or_private_robot_calls) ... ok
+test_full_record_uses_tf_before_inference_and_reports_measured_error (test_probe.RunTests.test_full_record_uses_tf_before_inference_and_reports_measured_error) ... ok
+test_missing_depth_reports_error_but_still_detects (test_probe.RunTests.test_missing_depth_reports_error_but_still_detects) ... ok
+test_no_ball_keeps_source_data (test_probe.RunTests.test_no_ball_keeps_source_data) ... ok
+test_sdk_error_cancels_subscriptions_and_packages_partial_data (test_probe.RunTests.test_sdk_error_cancels_subscriptions_and_packages_partial_data) ... ok
+test_sensor_skew_saved_as_static_diagnostic_not_passed (test_probe.RunTests.test_sensor_skew_saved_as_static_diagnostic_not_passed) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.681s
+
+OK
