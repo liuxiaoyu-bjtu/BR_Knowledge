@@ -1,8 +1,9 @@
 <!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>K1足球全流程与OS SDK课程应用策划案</title><style>
 :root{color-scheme:light;--ink:#203b50;--blue:#245780;--line:#d9e4ec}*{box-sizing:border-box}body{margin:0;background:#f3f6f9;color:#253b4a;font-family:"Microsoft YaHei","Segoe UI",sans-serif;font-size:15px;line-height:1.85}aside{position:fixed;inset:0 auto 0 0;width:246px;padding:30px 20px;background:#153c57;color:white;overflow:auto}aside h3{font-size:20px;line-height:1.5;margin:0 0 20px}aside p{font-size:12px;color:#c4dae8}aside a{display:block;color:#dceaf3;text-decoration:none;padding:7px 0;font-size:13px;line-height:1.5}main{margin:24px 30px 50px 272px;padding:38px 45px;background:white;border:1px solid var(--line);max-width:1420px}h1{font-size:30px;line-height:1.45;color:var(--ink);margin-top:0}h2{font-size:23px;color:var(--blue);margin-top:50px;padding-bottom:9px;border-bottom:2px solid #e7eef4;scroll-margin:20px}h3{font-size:18px;color:#306e6a;margin-top:28px}p{margin:14px 0}a{color:#21638a}code{font-family:Consolas,monospace;background:#eef3f7;padding:2px 4px;font-size:.92em}pre{background:#122c3d;color:#e4f0f8;border-radius:5px;padding:18px;overflow:auto;line-height:1.65}pre code{background:none;padding:0}table{border-collapse:collapse;width:100%;font-size:13px;margin:20px 0;line-height:1.75}th,td{border:1px solid var(--line);padding:10px 12px;vertical-align:top;overflow-wrap:anywhere}th{background:#eaf1f7;text-align:left;color:#204766}tbody tr:nth-child(even){background:#f8fbfd}figure{margin:24px 0;background:#fff;border:1px solid var(--line);padding:18px;overflow:auto;text-align:center}figure svg{width:auto;max-width:100%;height:auto;max-height:none}figcaption{font-size:12px;color:#587080;padding:10px}.badge{padding:10px 15px;background:#fff4dc;border-left:4px solid #c89025;margin-bottom:20px;font-size:13px}@media(max-width:1000px){aside{position:static;width:auto}aside nav{display:none}main{margin:15px;padding:22px;max-width:none}table{font-size:12px}}@media print{aside{display:none}main{margin:0;border:0;padding:0}figure{break-inside:avoid}h2,h3{break-after:avoid}}
-</style><aside><h3>K1足球应用<br>OS SDK策划案</h3><p>2026-11-02<br>设计与离线程序草案</p><nav><a href="#section-0">1. 项目目标与可实现范围</a><a href="#section-1">2. 参考资料的分工与采用范围</a><a href="#section-2">3. 能力迁到OS SDK的映射表</a><a href="#section-3">4. 用映射表建立课程能力标准</a><a href="#section-4">5. 坐标与定位方案</a><a href="#section-5">6. 时间、数据有效性与慢检测处理</a><a href="#section-6">7. 标准流程图与应用框架</a><a href="#section-7">8. 状态机与控制交接约定</a><a href="#section-8">9. 单文件程序交付与调用约定</a><a href="#section-9">10. 目标筛选与退出判断细则</a><a href="#section-10">11. U7课程开发的承接建议</a><a href="#section-11">12. 配置依据与参数管理</a><a href="#section-12">13. 开发与核实安排</a><a href="#section-13">14. 本次离线检查与已知局限</a><a href="#section-14">15. 分支启动时的交接内容</a><a href="#section-15">16. 依据入口</a></nav><p>标准流程图 · 模块框架 · 状态转换<br>配套 k1_soccer.py</p></aside><main><div class="badge">尚未进行本方案真机验证。示例配置保持未核实，程序默认只观察。</div><h1>K1足球全流程与OS SDK课程应用策划案</h1>
+</style><aside><h3>K1足球应用<br>OS SDK策划案</h3><p>2026-11-02初版<br>2026-11-03补充复核<br>设计与离线程序草案</p><nav><a href="#section-0">1. 项目目标与可实现范围</a><a href="#section-1">2. 参考资料的分工与采用范围</a><a href="#section-2">3. 能力迁到OS SDK的映射表</a><a href="#section-3">4. 用映射表建立课程能力标准</a><a href="#section-4">5. 坐标与定位方案</a><a href="#section-5">6. 时间、数据有效性与慢检测处理</a><a href="#section-6">7. 标准流程图与应用框架</a><a href="#section-7">8. 状态机与控制交接约定</a><a href="#section-8">9. 单文件程序交付与调用约定</a><a href="#section-9">10. 目标筛选与退出判断细则</a><a href="#section-10">11. U7课程开发的承接建议</a><a href="#section-11">12. 配置依据与参数管理</a><a href="#section-12">13. 开发与核实安排</a><a href="#section-13">14. 本次离线检查与已知局限</a><a href="#section-14">15. 分支启动时的交接内容</a><a href="#section-15">16. 依据入口</a><a href="#section-16">17. 新旧策略、配置及SDK封装复核（2026-11-03）</a></nav><p>标准流程图 · 模块框架 · 状态转换<br>配套 k1_soccer.py</p></aside><main><div class="badge">尚未进行本方案真机验证。第17节补充策略比较、可选JSON、SDK封装分工与开发者案例。</div><h1>K1足球全流程与OS SDK课程应用策划案</h1>
 <p>日期：2026-11-02。用途：为“X课程→U7开发-分支”提供能力依据、应用结构、程序附件和开发约定。</p>
+<p>2026-11-03补充：第17节回答新旧策略、教师JSON与SDK封装分工，并保留用户转述的开发者仿真案例。程序更新为v0.1.1-draft，修正合法零坐标被拒绝的问题；37项离线检查通过，仍未运行机器人。</p>
 <p>本案采用用户已经认可的技术方向：机器人访问统一使用BoosterOS SDK，课程附件承担状态机、目标筛选、球位计算和退出判断。本次交付策划案、标准图示和单文件程序草案；U7正式Notebook在用户指定的分支中另行开发。</p>
 <p><strong>当前交付状态：设计和离线程序已形成，真机视觉米制定位、持续供数和完整踢出尚未验证。</strong> 现有第4轮记录仍按原结论使用，不因本案或离线检查而升级。</p>
 <h2 id="section-0">1. 项目目标与可实现范围</h2>
@@ -1523,7 +1524,7 @@ p_B(当前) = inverse(T_O←B(当前)) × p_O
 <pre><code class="language-text">OSSDK足球全流程策划/
   K1足球全流程_OSSDK策划案.md      本策划案
   K1足球全流程_OSSDK策划案.html    离线可浏览版
-  k1_soccer.py                    唯一运行模块，v0.1.0-draft
+  k1_soccer.py                    唯一运行模块，v0.1.1-draft
   teacher_profile.example.json    未核实的教师配置示例
   图示/                          4幅图的DOT、SVG、PNG
 </code></pre>
@@ -1539,7 +1540,7 @@ p_B(当前) = inverse(T_O←B(当前)) × p_O
 </thead>
 <tbody><tr>
 <td><code>Calibration.load(path)</code></td>
-<td>读取教师配置</td>
+<td>可选的JSON读取入口；也可直接构造Calibration</td>
 <td>保留未核实项；不能把示例文件当成现场标定</td>
 </tr>
 <tr>
@@ -1838,7 +1839,7 @@ app.save_log(&quot;soccer_session.json&quot;)
 <p>C—E按数据和实际效果推进，不重新拆成“每个方法一轮”。本案不新增逐轮测试Notebook。已有证据直接复用，缺的是坐标和应用表现时，只补相应数据。</p>
 <p>静态核实时至少要能比较前方、左侧、右侧已知球位以及不同已批准观察角下的输出；数量和误差范围由现场量法确定。动态核实要观察机器人移动后当前球位是否随之正确变化。完整踢球记录须包含实际接近、调整、触球及球运动的现场证据；None、FINISHED或丢球不能替代该证据。</p>
 <h2 id="section-13">14. 本次离线检查与已知局限</h2>
-<p>已提供32项标准库unittest检查，全部通过。检查使用合成球面、已知平面、坐标变换和模拟SDK，覆盖选球、非零地面高度、近地平线拒绝、球心恢复、姿态时间错配、跨时刻补偿、先头后身、短步独立停止、控制互斥、供数失效、阻塞推理退出、关闭失败后的零速度尝试与只观察无动作等。</p>
+<p>初版32项标准库unittest检查通过；2026-11-03补充5项后为37项，全部通过。检查使用合成球面、已知平面、坐标变换和模拟SDK，覆盖选球、非零地面高度、近地平线拒绝、球心恢复、姿态时间错配、跨时刻补偿、先头后身、短步独立停止、控制互斥、供数失效、阻塞推理退出、关闭失败后的零速度尝试与只观察无动作等。新增检查覆盖零坐标定位、零坐标年龄判断、连续供数到零、复发旧球位不能更新观测年龄，以及零坐标原样传入管理器。</p>
 <p>四幅图已渲染为SVG和PNG，并在HTML浏览版中检查。节点文字未发现越界、边线标签未发现压住节点；浏览版在1600像素视口下无整页横向溢出。图示制作时对中文字体宽度作了显式尺寸修正，未将渲染器的默认字宽当成最终结果。</p>
 <p>测试文件与执行记录位于 <code>99-task-contexts/20261102-OSSDK足球全流程策划/</code>。它们验证应用逻辑和数据约定，不验证相机精度、头部真实到位、物理停稳、底层控制效果或足球踢出。</p>
 <p>本版尚未实现未配准双相机重投影、非零畸变去除、步态中动态地面估计、滚动球状态预测和多球身份跟踪。TF采用采集附近最新值加时差检查；若现场无法满足这一对应条件，需在公开SDK基础上维护更完整的历史采样/插值方案，或向SDK方明确所需的按时间查询能力。</p>
@@ -1858,4 +1859,247 @@ app.save_log(&quot;soccer_session.json&quot;)
 <li>本科参考：<code>D:/A_Project/BoosterRobotics/课程&amp;资源/工训课/CourseCode</code>，重点为chapter12定位工具、chapter16踢球工具与行为节点、chapter18整合代码。默认标定与参数不作为本机已确认值。</li>
 </ul>
 <p>本策划案为本次技术与教学设计依据；真机结果仍以对应设备、版本、原始记录和现场反馈为准。</p>
+<h2 id="section-16">17. 新旧策略、配置及SDK封装复核（2026-11-03）</h2>
+<h3>17.1 新策略与两类旧策略的区别</h3>
+<p>三者沿用视觉反馈的基本思路。Workshop的“追踪”主要是头部跟随；本科工训课进一步包含身体接近与视觉踢球。本案保留这些行为，改用OS SDK取数与控制，并针对当前检测速度安排观察和动作。</p>
+<table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>DetectBall Workshop</th>
+<th>工训课chapter11—18</th>
+<th>当前OS SDK应用草案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>已有流程</td>
+<td>检测、头部跟随、丢球搜索</td>
+<td>检测、定位、头部跟随、身体追球、VisualKick</td>
+<td>寻球、定位、短步接近、管理器交接、结束复核</td>
+</tr>
+<tr>
+<td>SDK与工程组织</td>
+<td>ROS节点＋Booster Robotics SDK辅助库</td>
+<td>多ROS节点、话题、定位/控制辅助库，后期采用行为树</td>
+<td>公开OS SDK＋单个应用py；有限状态机组织流程</td>
+</tr>
+<tr>
+<td>头部搜索</td>
+<td>正弦连续扫描；默认只转头，可选约3秒后身体也转、头仍扫描</td>
+<td>按章节采用头部搜索、跟随与追球策略</td>
+<td>头部逐点转动、等待停稳、检测新图；一轮失败再转身体扇区</td>
+</tr>
+<tr>
+<td>看见球后的跟随</td>
+<td>像素误差平滑后调头</td>
+<td>头部跟随并按球位、距离和角度连续调身体速度</td>
+<td>本版先保持观察角；停稳观察→有限时长转向/前进→停止→重观察</td>
+</tr>
+<tr>
+<td>球位</td>
+<td>头部追踪可直接用像素误差，无完整踢球输入链</td>
+<td>深度/几何定位，相机→头部→基座；部分参数有默认值</td>
+<td>SDK内参和TF＋应用球心计算；尺度、原点与时间由现场确认</td>
+</tr>
+<tr>
+<td>踢球</td>
+<td>无</td>
+<td>底层模式控制、VisualKick与Kick消息持续发布</td>
+<td>manager.start→设置一次方向/力度→持续更新当前球位→stop</td>
+</tr>
+<tr>
+<td>结束判断</td>
+<td>找到球后回头部跟随</td>
+<td>第16章将球远离、丢球或超时转为SUCCESS，并保留原因</td>
+<td>分别记录球移动、数据失效、超时和未确认；物理结果另行核对</td>
+</tr>
+<tr>
+<td>当前应用代价</td>
+<td>响应较流畅，依赖及时的目标反馈</td>
+<td>需掌握ROS、定位、控制与行为组织</td>
+<td>学生调用较少；移动较慢，教师仍需落实定位与供数</td>
+</tr>
+</tbody></table>
+<p>“先头后身”在旧Workshop中已有。本案的变化是把连续扫动改成离散观察，把连续追球改成逐次接近。这与本机约2.2—2.4秒的检测记录有关，不能据此宣称其运动表现优于旧策略。球位算法同样继承本科材料中的反投影、球面拟合和几何关系；应用组织和数据检查作了调整。</p>
+<p>若后续通过OS SDK取得足够快、时间匹配的检测与定位，可再改为连续跟随。当前草案没有实现完整的像素误差头部跟随，也没有实现滚动球预测，因此不能将所有旧功能都记为已迁移完成。</p>
+<h3>17.2 教师JSON的作用与必要性</h3>
+<p><code>teacher_profile.example.json</code>是本课程应用的配置载体，OS SDK本身不读取或要求这个文件。<code>Calibration.load()</code>将其加载成应用对象；<code>SoccerApp</code>也接受直接构造的对象。</p>
+<pre><code class="language-python"># 已有robot与detector时，只观察可省略JSON及Calibration参数。
+app = SoccerApp(robot, detector)
+app.start()
+
+# 停止并确认前一实例退出后，也可直接传入配置对象。
+profile = Calibration(camera_id=&quot;head&quot;)  # 未核实，仍只适用于观察
+app = SoccerApp(robot, detector, calibration=profile)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>配置内容</th>
+<th>作用</th>
+<th>是否必须放在JSON</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>camera_id、trunk_frame</td>
+<td>选择传感器和TF中间坐标</td>
+<td>否，可在Python对象中提供</td>
+</tr>
+<tr>
+<td>body_from_trunk、深度比例、球半径、地面平面</td>
+<td>给应用补足未由SDK接口直接确认的物理关系</td>
+<td>否；所选定位路线依赖的数据必须有来源</td>
+</tr>
+<tr>
+<td>tf_direction_verified、clocks_verified等</td>
+<td>应用层检查是否已有核实记录</td>
+<td>否；布尔值是人工声明，程序不能借此证明标定正确</td>
+</tr>
+<tr>
+<td>motion_profile_verified、kick_feed_verified</td>
+<td>控制本草案是否允许进入相应阶段</td>
+<td>属于本草案条件，非SDK启用开关</td>
+</tr>
+<tr>
+<td>evidence</td>
+<td>指向实际测量、设备版本和验证记录</td>
+<td>建议保留以便复查；填一段文字不会自动核验原始记录</td>
+</tr>
+</tbody></table>
+<p>检测和只观察不要求填写完整几何配置；缺失时保留像素检测，米制球位无效。运动需要本草案规定的坐标、时钟、定位和运动条件；自动踢球还要求动态深度供数。深度路线不要求同时标定地面平面，停稳几何路线不要求同时完成深度配准。JSON示例中的null和false应如实保留，不能为了启动而批量改成true。</p>
+<p>SDK可提供的内参、TF、里程计和关节限位仍在运行时读取，不另手抄进JSON维护。后续若由设备文档或SDK接口可靠给出深度比例、控制原点等信息，可以减少相应人工配置。本版将几何量、核实声明和证据统一放入Calibration，命名范围较宽；正式整理时可以区分这几类字段，同时保留单文件交付。</p>
+<h3>17.3 与OS SDK封装风格及功能是否重复</h3>
+<p><strong>当前草案沿用了部分SDK风格，还不能表述为完全一致或绝无冗余。</strong> SDK已有的硬件能力继续直接调用；本文件是足球应用的组织层。</p>
+<table>
+<thead>
+<tr>
+<th>代码部分</th>
+<th>与SDK的关系</th>
+<th>本次判断</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>传入robot、detector；snake_case；配置dataclass；start/stop</td>
+<td>与SDK常见用法接近，复用已有实例</td>
+<td>保留；无需第二个机器人/检测器封装</td>
+</tr>
+<tr>
+<td><code>_execute()</code>中的set_head_angle/set_velocity与管理器四方法</td>
+<td>集中调度现有SDK，约束身体命令先后关系</td>
+<td>保留；没有重新实现机器人运控、DDS或Kick消息构造</td>
+</tr>
+<tr>
+<td>SoccerPlanner</td>
+<td>SDK没有该足球应用的寻球/接近/交接状态机</td>
+<td>应用必需；不能用TaskHandle替代行为决策</td>
+</tr>
+<tr>
+<td>select_ball</td>
+<td>SDK返回检测列表；应用需选定同一颗球</td>
+<td>类别、边界及目标连续性保留；confidence下限与detect参数有一次重复检查，可作为独立函数输入保护</td>
+</tr>
+<tr>
+<td>BallTarget.center及只保存bbox/confidence</td>
+<td>SDK BoundingBox2D已有center_x/center_y/area，DetectionResult已有这些原始字段</td>
+<td>有局部重复；后续可直接引用SDK结果，减少镜像字段，不能宣称当前完全无冗余</td>
+</tr>
+<tr>
+<td>Capture、BallEstimate</td>
+<td>加入采集时刻、当前控制坐标、定位方法和失效原因</td>
+<td>与原始DetectionResult不同；这些应用信息仍需保存</td>
+</tr>
+<tr>
+<td>depth_sphere_center/ray_ground_center/locate_ball</td>
+<td>当前核对的公开接口未提供同等像素到米制球心能力，实测distance_m为空</td>
+<td>保留应用计算；未重新实现检测模型或SDK TF求解</td>
+</tr>
+<tr>
+<td>to_odom/from_odom/current_ball</td>
+<td>SDK管理器内部也有平面变换，但公开update_ball接收的是当前身体坐标，且没有原图时间参数</td>
+<td>公式相似，处理时段不同；应用补偿拍摄→当前，管理器内部主要维护虚拟目标及指令更新。不能调用私有函数代替公开能力</td>
+</tr>
+<tr>
+<td><code>_rgb</code>、<code>_depth</code>缓存</td>
+<td>SDK queue_size约束待执行回调队列；应用缓存保留时间匹配所需图像</td>
+<td>用途不同；深度历史缓存保留，RGB只取最新一帧，其两帧缓存可精简为单个最新值</td>
+</tr>
+<tr>
+<td>置信度、power范围、头部限位预检查</td>
+<td>SDK已有部分校验；应用在启动运动前提前拒绝无效配置</td>
+<td>有意的提前检查，不再增加另一套范围来源；头部限位继续取list_joints</td>
+</tr>
+<tr>
+<td>app.start/status/stop</td>
+<td>SDK SoccerKickManager同样有start/stop；SDK高级异步任务另有TaskHandle</td>
+<td>此app自行管理线程，start返回None，status为字典；不会出现在get_active_tasks中，也不支持SDK任务回调/取消协议</td>
+</tr>
+</tbody></table>
+<p>当前文件没有自建虚拟球门，没有重新拼Kick消息，也没有绕开管理器直接启用VisualKick；这些功能已交给SDK。<code>current_ball()</code>也不会二次转换已经是当前坐标的输入：它从保存的拍摄时刻球位生成当前输入，再交给manager.update_ball，后者按本次传入值直接发布Kick.x/y。</p>
+<p>课程侧建议保留一个<code>SoccerApp</code>入口和内部纯计算函数；若进一步精简，应先减少原始检测字段的复制、RGB多余缓存及对外展示的教师内部辅助函数。无必要为了名称一致而实现另一套SDK任务系统。SDK的TaskHandle由SDK提供，应用代码不直接构造或冒充。</p>
+<p>本次只修复零坐标兼容性并补充审核说明，未进行上述结构重构。单文件部署可以包含多个内部类/函数；“一个py文件”并不要求重新封装其中每个SDK调用。</p>
+<h3>17.4 用户转述的开发者案例及其对方案的影响</h3>
+<p>来源：2026-11-03用户补充的SDK开发者说明。原话为：“update_ball，需要持续更新球的位置直到0，只发一帧指令不会触发踢球动作，真机测试注意找一个大一点的场地，机器人向前踢完可能会向后退几步。”本次未运行以下程序，开发者案例不记作本机新增实测。</p>
+<pre><code class="language-python">import time
+from boosteros.robots.booster import BoosterRobot, SoccerKickManager
+
+def main():
+    &quot;&quot;&quot;按已观察有效的坐标序列执行一次仿真踢球实验.&quot;&quot;&quot;
+    robot = BoosterRobot(use_sim_time=True)
+    soccer_kick = SoccerKickManager(robot)
+    try:
+        soccer_kick.start()
+        soccer_kick.update_command(direction=0.0, power=4.0)
+        # 0.99 → 0.98 → ... → 0.01 → 0.00，零值恰好 1 帧。
+        for step in range(1, 101):
+            soccer_kick.update_ball(x=(100 - step) / 100, y=0.0)
+            time.sleep(1 / 30)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        soccer_kick.stop()
+        print(&quot;本轮结束，已关闭视觉踢球&quot;, flush=True)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<p>代码发送100次球位，名义约30Hz，依次为0.99m至0m，累计sleep约3.33秒，另有接口与调度耗时。它只在开始时设置一次方向与力度，随后连续更新球位，与本机管理器实现一致。<code>use_sim_time=True</code>用于选用仿真时钟，不能单独据此断言已经启动仿真或不会连接真实机器人。</p>
+<p>该序列是预设输入，没有图像、检测、深度或真实球位反馈。它可作为管理器连续供数的仿真参考；真机视觉流程中应将循环内的值替换成有效的当前身体球位，不能让x按时间自行递减，也不能在丢球时发(0,0)。</p>
+<table>
+<thead>
+<tr>
+<th>影响项</th>
+<th>本次复核结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单帧发送</td>
+<td>应用于持续球位流。知识库旧版SDK示例只发一帧后立即stop，只能展示调用写法，不足以演示完整踢球；本次已作说明</td>
+</tr>
+<tr>
+<td>现有草案持续更新</td>
+<td>KICK状态每个控制周期调用kick_update；默认control_period_s=0.05，即名义20Hz。开发者案例采用30Hz，但没有给出最低所需频率；20Hz尚未验证充分</td>
+</tr>
+<tr>
+<td>检测速度与观测年龄</td>
+<td>当前检测约2.2—2.4秒，kick_max_ball_age_s=0.35。按默认条件通常无法进入KICK，或进入后因供数过旧退出；把同一旧结果发30次不会解决此问题</td>
+</tr>
+<tr>
+<td>“直到0”的含义</td>
+<td>本机公开Python封装只校验数值有限，未见x==0专用分支；底层实现未据此核实。开发者的连续供数要求保留，0是示例终点还是额外协议触发条件仍待明确</td>
+</tr>
+<tr>
+<td>零坐标兼容</td>
+<td>v0.1.0中locate_ball与current_ball使用x&lt;=0拒绝，确实会挡住合法零值；v0.1.1改为x&lt;0。保留年龄、范围和有效性检查，不生成零值、不将零值当作完成信号</td>
+</tr>
+<tr>
+<td>近脚供数</td>
+<td>必须验证相机视场、深度有效范围及遮挡下能否持续获得接近阶段球位；动态深度核实标志本身不能解决盲区</td>
+</tr>
+<tr>
+<td>踢后动作与结束</td>
+<td>依据开发者提醒，场地应覆盖前进、转向、侧移及踢后退步。不能看见球离开就推定底层动作、收脚或后退已结束</td>
+</tr>
+</tbody></table>
+<p>本版ball_moved_observed触发退出、manager.stop的调用时机与停止表现，还需连同踢后退步一起核实。现有接口没有踢球完成句柄，不能从sleep结束、球位达到零或stop返回推断动作已经物理完成。基础场地范围、一次尝试结束的判据及观察时段应根据真机表现确定，不凭示例增设固定等待秒数。</p>
+<p>本次没有通过放宽0.35秒门槛来掩盖慢检测，也没有将开发者预设序列接入真机。OS SDK覆盖图像、检测、TF和踢球控制；当前落实全流程的主要问题仍是及时、可靠、覆盖近脚范围的米制球位流，以及经现场确认的动作结束处理。</p>
 </main></html>

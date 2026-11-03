@@ -149,6 +149,28 @@ class GeometryTests(unittest.TestCase):
     def test_clock_reset_rejected(self):
         self.assertFalse(s.current_ball(ball(), (0, 0, 0), 9, 10.1, s.SoccerConfig()).valid)
 
+    def test_measured_zero_x_not_rejected_by_localization(self):
+        cap = capture()
+        target = s.BallTarget((150, 210, 20, 10), .9)
+        profile = calibration()
+        point = s.ray_ground_center(160, 220, cap.k, cap.trunk_from_camera,
+                                    profile.ground_plane_body, profile.ball_radius_m)
+        transform = cap.trunk_from_camera.copy()
+        transform[0, 3] -= point[0]
+        actual = s.locate_ball(s.replace(cap, trunk_from_camera=transform), target,
+                               profile, s.SoccerConfig())
+        self.assertTrue(actual.valid, actual.reason)
+        self.assertAlmostEqual(actual.x, 0, places=10)
+
+    def test_zero_x_is_current_coordinate_but_stale_zero_is_rejected(self):
+        b = ball(x=0, ball_odom=(0, 0))
+        cfg = s.SoccerConfig()
+        actual = s.current_ball(b, (0, 0, 0), 10.1, 10.1, cfg, kicking=True)
+        self.assertTrue(actual.valid)
+        self.assertEqual((actual.x, actual.y), (0, 0))
+        expired = s.current_ball(b, (0, 0, 0), 10.5, 10.5, cfg, kicking=True)
+        self.assertFalse(expired.valid)
+
 
 class PlannerTests(unittest.TestCase):
     def test_head_scan_precedes_body_turn(self):
@@ -207,6 +229,32 @@ class PlannerTests(unittest.TestCase):
         actions = p.step(3, o2, b, (.3, 0, 0))
         self.assertEqual(p.state, 'KICK')
         self.assertEqual(actions[0].kind, 'kick_update')
+
+    def test_continuous_current_ball_updates_reach_zero(self):
+        p, o = self.prepare_localize(s.SoccerConfig(allow_kick=True), x=.6)
+        p.step(1.1, o, o.ball, (0, 0, 0))
+        for index in range(1, 101):
+            x = .6 * (100 - index) / 100
+            now = 1.1 + index / 30
+            o = observation(p, now, x, sequence=index + 1)
+            # 球在 odom 中未移动；机器人接近，身体坐标逐渐减至零。
+            b = s.replace(o.ball, ball_odom=(.6, 0))
+            actions = p.step(now, o, b, (.6 - x, 0, 0))
+            self.assertEqual(p.state, 'KICK')
+            self.assertEqual(actions[0].kind, 'kick_update')
+            self.assertEqual(actions[0].values, (x, 0))
+
+    def test_fast_republishing_does_not_renew_old_visual_observation(self):
+        p, o = self.prepare_localize(s.SoccerConfig(allow_kick=True), x=.6)
+        p.step(1.1, o, o.ball, (0, 0, 0))
+        for index in range(1, 7):
+            now = 10 + index / 20
+            b = s.current_ball(o.ball, (0, 0, 0), now, 1 + index / 20, p.cfg, kicking=True)
+            self.assertEqual(p.step(1.1 + index / 20, o, b, (0, 0, 0))[0].kind, 'kick_update')
+        b = s.current_ball(o.ball, (0, 0, 0), 10.4, 1.4, p.cfg, kicking=True)
+        actions = p.step(1.5, o, b, (0, 0, 0))
+        self.assertEqual(actions[0].kind, 'kick_end')
+        self.assertEqual(p.reason, 'kick_ball_feed_lost')
 
     def test_total_timeout_stops(self):
         p = s.SoccerPlanner(s.SoccerConfig(max_total_time_s=1))
@@ -310,6 +358,15 @@ class ApplicationTests(unittest.TestCase):
         app._motion, app._manager_may_be_active = True, True
         with self.assertRaisesRegex(RuntimeError, 'conflicts'):
             app._execute(s.Action('velocity', (.1, 0, 0)))
+
+    def test_kick_update_forwards_zero_without_changing_command(self):
+        app = s.SoccerApp(FakeRobot(), NS())
+        received = []
+        app._motion, app._manager_may_be_active = True, True
+        app._manager = NS(update_ball=lambda **values: received.append(values))
+        app._execute(s.Action('kick_update', (0, 0)))
+        self.assertEqual(received, [{'x': 0, 'y': 0}])
+        self.assertEqual(app.robot.actions, [])
 
     def test_shutdown_failure_still_requests_zero_and_blocks_restart(self):
         robot = FakeRobot()

@@ -17,7 +17,7 @@ from typing import Any
 
 import numpy as np
 
-VERSION = "0.1.0-draft"
+VERSION = "0.1.1-draft"
 
 
 def wrap(angle: float) -> float:
@@ -334,7 +334,7 @@ def locate_ball(cap: Capture, target: BallTarget | None, cal: Calibration, cfg: 
                                        cal.ground_plane_body, float(cal.ball_radius_m))
             method = "ground_geometry"
         x, y, z = map(float, center)
-        if not np.isfinite(center).all() or x <= 0 or math.hypot(x, y) > cfg.max_ball_distance_m:
+        if not np.isfinite(center).all() or x < 0 or math.hypot(x, y) > cfg.max_ball_distance_m:
             raise ValueError("ball_out_of_model_range")
         return replace(base, valid=True, reason="ok", x=x, y=y, z=z, method=method,
                        ball_odom=to_odom((x, y), cap.odom_pose))
@@ -352,7 +352,9 @@ def current_ball(ball: BallEstimate, pose: tuple[float, float, float], odom_time
     if sensor_age < -cfg.max_sensor_skew_s or age < 0 or age > limit:
         return replace(ball, valid=False, age_s=age, reason="ball_expired_or_clock_reset")
     x, y = from_odom(ball.ball_odom, pose)
-    if x <= 0 or math.hypot(x, y) > cfg.max_ball_distance_m:
+    # x=0 是合法坐标；不能将其用作丢球标志，也不能凭空补发零值。
+    # x<0 仍超出本版前方寻球/踢球场景，并非 SDK 对负坐标的限制。
+    if x < 0 or math.hypot(x, y) > cfg.max_ball_distance_m:
         return replace(ball, valid=False, age_s=age, reason="current_ball_out_of_range")
     return replace(ball, x=x, y=y, age_s=age, predicted=sensor_age > cfg.max_sensor_skew_s)
 

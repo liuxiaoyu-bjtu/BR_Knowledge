@@ -1,6 +1,7 @@
 test_actual_joint_names_and_limits_checked (test_k1_soccer.ApplicationTests.test_actual_joint_names_and_limits_checked) ... ok
 test_command_conflict_rejected (test_k1_soccer.ApplicationTests.test_command_conflict_rejected) ... ok
 test_control_stops_while_inference_blocked (test_k1_soccer.ApplicationTests.test_control_stops_while_inference_blocked) ... ok
+test_kick_update_forwards_zero_without_changing_command (test_k1_soccer.ApplicationTests.test_kick_update_forwards_zero_without_changing_command) ... ok
 test_log_json_does_not_write_infinity (test_k1_soccer.ApplicationTests.test_log_json_does_not_write_infinity) ... ok
 test_missing_metadata_still_allows_pixel_detection (test_k1_soccer.ApplicationTests.test_missing_metadata_still_allows_pixel_detection) ... ok
 test_readonly_has_no_robot_actions (test_k1_soccer.ApplicationTests.test_readonly_has_no_robot_actions) ... ok
@@ -13,6 +14,7 @@ test_geometry_fallback_has_known_center (test_k1_soccer.GeometryTests.test_geome
 test_horizon_rejected (test_k1_soccer.GeometryTests.test_horizon_rejected) ... ok
 test_kick_age_stricter_than_static_observation (test_k1_soccer.GeometryTests.test_kick_age_stricter_than_static_observation) ... ok
 test_latest_pose_cannot_replace_capture_pose (test_k1_soccer.GeometryTests.test_latest_pose_cannot_replace_capture_pose) ... ok
+test_measured_zero_x_not_rejected_by_localization (test_k1_soccer.GeometryTests.test_measured_zero_x_not_rejected_by_localization) ... ok
 test_moving_capture_cannot_use_fixed_plane (test_k1_soccer.GeometryTests.test_moving_capture_cannot_use_fixed_plane) ... ok
 test_nonzero_distortion_rejected (test_k1_soccer.GeometryTests.test_nonzero_distortion_rejected) ... ok
 test_nonzero_ground_height (test_k1_soccer.GeometryTests.test_nonzero_ground_height) ... ok
@@ -20,6 +22,9 @@ test_odom_translation_and_rotation (test_k1_soccer.GeometryTests.test_odom_trans
 test_scaled_transform_rejected (test_k1_soccer.GeometryTests.test_scaled_transform_rejected) ... ok
 test_sphere_fit_recovers_center (test_k1_soccer.GeometryTests.test_sphere_fit_recovers_center) ... ok
 test_unverified_origin_not_metric (test_k1_soccer.GeometryTests.test_unverified_origin_not_metric) ... ok
+test_zero_x_is_current_coordinate_but_stale_zero_is_rejected (test_k1_soccer.GeometryTests.test_zero_x_is_current_coordinate_but_stale_zero_is_rejected) ... ok
+test_continuous_current_ball_updates_reach_zero (test_k1_soccer.PlannerTests.test_continuous_current_ball_updates_reach_zero) ... ok
+test_fast_republishing_does_not_renew_old_visual_observation (test_k1_soccer.PlannerTests.test_fast_republishing_does_not_renew_old_visual_observation) ... ok
 test_handoff_does_not_enable_kick_by_default (test_k1_soccer.PlannerTests.test_handoff_does_not_enable_kick_by_default) ... ok
 test_head_scan_precedes_body_turn (test_k1_soccer.PlannerTests.test_head_scan_precedes_body_turn) ... ok
 test_kick_loss_is_not_success (test_k1_soccer.PlannerTests.test_kick_loss_is_not_success) ... ok
@@ -32,6 +37,6 @@ test_lock_rejects_other_ball (test_k1_soccer.SelectionTests.test_lock_rejects_ot
 test_not_first_item (test_k1_soccer.SelectionTests.test_not_first_item) ... ok
 
 ----------------------------------------------------------------------
-Ran 32 tests in 0.413s
+Ran 37 tests in 0.962s
 
 OK

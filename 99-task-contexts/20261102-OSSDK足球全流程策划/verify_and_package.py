@@ -23,7 +23,8 @@ md = (OUT / 'K1足球全流程_OSSDK策划案.md').read_text(encoding='utf-8')
 for image in re.findall(r'!\[[^\]]*\]\(([^)]+)\)', md):
     if not (OUT / image).is_file():
         raise RuntimeError(f'missing_image:{image}')
-if len(re.findall(r'^## \d+\.', md, re.M)) != 16:
+sections = len(re.findall(r'^## \d+\.', md, re.M))
+if sections != 17:
     raise RuntimeError('section_count_mismatch')
 for fig in ['01_主流程', '02_球位处理子流程', '03_模块框架', '04_状态转换']:
     for ext in ['dot', 'svg', 'png']:
@@ -41,8 +42,11 @@ assets = [f for f in OUT.rglob('*') if f.is_file() and f != PACKAGE and '__pycac
 with zipfile.ZipFile(PACKAGE, 'w', zipfile.ZIP_DEFLATED) as archive:
     for file in assets:
         archive.write(file, Path('OSSDK足球全流程策划') / file.relative_to(OUT))
-report = {'offline_tests':32, 'result':'passed', 'robot_run':False,
-          'plan_sections':16, 'figures':4, 'package_files':len(assets),
+tests_match = re.search(r'Ran (\d+) tests?', run.stdout + run.stderr)
+if tests_match is None:
+    raise RuntimeError('missing_test_count')
+report = {'offline_tests':int(tests_match.group(1)), 'result':'passed', 'robot_run':False,
+          'plan_sections':sections, 'figures':4, 'package_files':len(assets),
           'package_sha256':hashlib.sha256(PACKAGE.read_bytes()).hexdigest(),
           'module_sha256':hashlib.sha256((OUT / 'k1_soccer.py').read_bytes()).hexdigest(),
           'forbidden_low_level_imports':[], 'layout_report':'qa/diagram-bounds.json'}
