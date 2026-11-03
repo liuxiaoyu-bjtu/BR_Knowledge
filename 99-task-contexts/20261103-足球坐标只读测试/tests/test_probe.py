@@ -9,6 +9,7 @@ import sys
 import tempfile
 from types import SimpleNamespace as NS
 import unittest
+from unittest.mock import patch
 import zipfile
 
 import numpy as np
@@ -147,6 +148,15 @@ class GeometryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "不支持"):
             self.fit(d=[.1, 0, 0, 0], model="unknown")
 
+    def test_first_field_result_quality_rejected(self):
+        fit = {"center_camera_m": [.2317677847, .8157564479, 3.0126138639],
+               "fitted_radius_m": .2406311287, "sphere_rms_m": .1148649271}
+        reasons = p.sphere_quality(fit)
+        self.assertTrue(any("RMS" in text for text in reasons))
+
+    def test_unreasonable_radius_is_rejected(self):
+        self.assertTrue(p.sphere_quality(dict(center_camera_m=[0, 0, 1], fitted_radius_m=1, sphere_rms_m=.001)))
+
 
 class RunTests(unittest.TestCase):
     def run_fake(self, root, robot=None, **kwargs):
@@ -216,6 +226,21 @@ class RunTests(unittest.TestCase):
         self.assertEqual(calls, {"subscribe_image", "get_camera_info", "get_transform"})
         imports = [n for n in ast.walk(tree) if isinstance(n, ast.ImportFrom)]
         self.assertFalse(any("SoccerKickManager" in [a.name for a in n.names] for n in imports))
+
+    def test_bad_fit_is_saved_for_diagnosis_but_candidate_is_empty(self):
+        original = p.sphere_from_depth
+        def bad_fit(*args, **kwargs):
+            fit = original(*args, **kwargs)
+            fit["sphere_rms_m"] = .115
+            return fit
+        with tempfile.TemporaryDirectory() as tmp, patch.object(p, "sphere_from_depth", side_effect=bad_fit):
+            report, _ = self.run_fake(tmp, known_xy=(1.25, .02))
+            self.assertEqual(report["status"], "fit_rejected")
+            self.assertIsNone(report["candidate_center_target_m"])
+            self.assertIsNotNone(report["diagnostic_center_target_m"])
+            self.assertNotIn("measurement_comparison", report)
+            self.assertIn("diagnostic_measurement_comparison", report)
+            self.assertFalse(report["control_input_verified"])
 
 
 if __name__ == "__main__":

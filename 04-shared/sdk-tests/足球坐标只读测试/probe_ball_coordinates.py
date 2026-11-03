@@ -24,7 +24,7 @@ import numpy as np
 
 _SESSION_ROBOT = None
 _SESSION_DETECTOR = None
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 
 def timestamp(obj):
@@ -101,6 +101,12 @@ def sphere_from_depth(depth, rgb_size, bbox, k, distortion, distortion_model, sc
     surface = np.median(points, axis=0)
     # 平移到点云附近后拟合，减少数值尺度的影响。
     local = points - surface
+    # 平面拟合仅作诊断对照，不能据此认定地面或替代足球球心。
+    _, _, plane_vh = np.linalg.svd(points - points.mean(axis=0), full_matrices=False)
+    plane_normal = plane_vh[-1]
+    plane_residual = (points - points.mean(axis=0)) @ plane_normal
+    stats.update(plane_rms_m=float(np.sqrt(np.mean(plane_residual ** 2))),
+                 plane_normal_camera=plane_normal.tolist())
     a = np.column_stack([2 * local, np.ones(len(local))])
     solution, _, rank, singular = np.linalg.lstsq(a, (local ** 2).sum(axis=1), rcond=None)
     if rank < 4:
@@ -119,6 +125,20 @@ def sphere_from_depth(depth, rgb_size, bbox, k, distortion, distortion_model, sc
                  surface_sample_median_camera_m=surface.tolist(),
                  sampled_points=int(len(points)), singular_values=singular.tolist())
     return stats
+
+
+def sphere_quality(fit):
+    """使用原版已有的诊断限制拒绝差拟合；这些数值不代表现场定位验收标准。"""
+    reasons = []
+    if fit.get("center_camera_m") is None:
+        reasons.append(fit.get("sphere_error", "未取得球心"))
+        return reasons
+    radius, rms = fit.get("fitted_radius_m"), fit.get("sphere_rms_m")
+    if radius is None or not math.isfinite(radius) or not 0.02 <= radius <= 0.25:
+        reasons.append("拟合半径不在本工具0.02—0.25米诊断范围")
+    if rms is None or not math.isfinite(rms) or rms > 0.02:
+        reasons.append("球面RMS超过本工具0.02米诊断限制")
+    return reasons
 
 
 def _capture_pair(robot, camera_id, timeout_s):
@@ -200,7 +220,8 @@ def run_probe(robot=None, detector=None, *, camera_id="head", target_frame="trun
                   "depth_is_optical_Z_hypothesis": True, "depth_scale_m_hypothesis": depth_scale_m,
                   "target_frame": target_frame, "camera_id": camera_id},
               "known_xy_m": known_xy, "measured_ball_radius_m": ball_radius_m,
-              "candidate_center_target_m": None, "warnings": [], "stages": []}
+              "candidate_center_target_m": None, "diagnostic_center_target_m": None,
+              "warnings": [], "stages": []}
     print("静态只读测试：不发送动作。深度比例、同像素配准及光轴Z均按假设记录。", flush=True)
     try:
         if robot is None:
@@ -304,18 +325,24 @@ def run_probe(robot=None, detector=None, *, camera_id="head", target_frame="trun
             if fit["center_camera_m"] is None:
                 raise ValueError(fit["sphere_error"] + "；仅保留表面点，不冒充球心")
             center = transform_point(matrix, fit["center_camera_m"])
-            report["candidate_center_target_m"] = center
-            report["status"] = "candidate_only"
+            report["diagnostic_center_target_m"] = center
+            rejected = sphere_quality(fit)
+            report["sphere_fit_rejection_reasons"] = rejected
+            if rejected:
+                report["status"] = "fit_rejected"
+                report["warnings"].extend(rejected)
+            else:
+                report["candidate_center_target_m"] = center
+                report["status"] = "candidate_only"
             report["snapshot_receipt_age_at_result_s"] = time.monotonic() - rgb[1]
             if known_xy is not None:
                 error = center[:2] - np.asarray(known_xy)
-                report["measurement_comparison"] = {"error_xy_m": error,
-                                                      "planar_error_m": float(np.linalg.norm(error))}
+                field = "diagnostic_measurement_comparison" if rejected else "measurement_comparison"
+                report[field] = {"error_xy_m": error, "planar_error_m": float(np.linalg.norm(error))}
             if ball_radius_m is not None:
                 report["sphere_fit"]["radius_error_m"] = fit["fitted_radius_m"] - ball_radius_m
-            if not 0.02 <= fit["fitted_radius_m"] <= 0.25 or fit["sphere_rms_m"] > 0.02:
-                report["warnings"].append("球面半径或残差异常；候选值可能取到背景，须检查原图与深度")
-            print(f"候选球心[{target_frame}]：x={center[0]:+.3f}, y={center[1]:+.3f}, z={center[2]:+.3f} m", flush=True)
+            label = "拒用的球心诊断值" if rejected else "候选球心"
+            print(f"{label}[{target_frame}]：x={center[0]:+.3f}, y={center[1]:+.3f}, z={center[2]:+.3f} m", flush=True)
             print(f"拟合半径={fit['fitted_radius_m']:.3f} m，球面RMS={fit['sphere_rms_m']:.4f} m", flush=True)
     except KeyboardInterrupt:
         report["status"] = "interrupted"
@@ -332,6 +359,8 @@ def run_probe(robot=None, detector=None, *, camera_id="head", target_frame="trun
                  "本次仅查询数据，未调用SoccerKickManager、头部、速度或模式控制。",
                  "候选坐标仍待深度单位/配准、TF物理方向和控制原点核对。", "",
                  f"候选球心：{report['candidate_center_target_m']}",
+                 f"拟合诊断值（可能已拒用）：{report['diagnostic_center_target_m']}",
+                 f"拒用原因：{report.get('sphere_fit_rejection_reasons')}",
                  f"卷尺输入xy：{report['known_xy_m']}",
                  f"误差：{report.get('measurement_comparison')}",
                  f"异常：{report.get('error')}", "", "提示：", *["- " + w for w in report["warnings"]]]

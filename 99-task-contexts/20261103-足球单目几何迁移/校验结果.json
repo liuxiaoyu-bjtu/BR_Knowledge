@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0-geometry",
+  "offline_tests_passed": 20,
+  "notebook_cells": 9,
+  "notebook_code_cells": 3,
+  "notebook_all_code_compiled": true,
+  "robot_executed": false,
+  "legacy_source_parity": true,
+  "zip_byte_consistency": true,
+  "files": {
+    "geometry_ball_coordinates.py": "dc4f57896f0b9dc935ec7681cfbdd8cb3e08e5326ec959c25099eb750cf4eb87",
+    "K1足球坐标_单目几何测试.ipynb": "a37cfee32e9e5b2e10e1e840d53f956e9c856dbb17c5486d9b4d9fa8bf84d189",
+    "单目几何测试说明.md": "6087f4d9ec1710b981d2c0a59ae28c5c884b5e538df6de29d9e73d2d2a15cb69",
+    "几何迁移_旧快照复算.json": "bb30e42e9abb07eac47b3bb1fd1b8a7a40358667ece217c2c9f1aea555ed4cc4"
+  },
+  "archive": "K1足球坐标_单目几何工具包_v0.2.0.zip",
+  "archive_sha256": "48f64f3775d935ce887960df68c6cf3d154d2c8d360f59cf52a9617138c89fcd"
+}

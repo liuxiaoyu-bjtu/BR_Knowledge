@@ -1,0 +1,82 @@
+{
+  "source": "04-shared/sdk-tests/足球坐标只读测试/K1足球坐标_测试工具包/足球坐标测试结果/球位_20261103_113057_624030",
+  "record_sha256": "ded18ab5768414a76d38ecb2981ff2ce2a999f3c452c238ce14d73cd81a8f33a",
+  "depth_sha256": "ea40fba0ce3d7d92f6afc87408b0487fa1c85a59b17a648e258ad9c476a6d338",
+  "offline_replay_matches_original": true,
+  "original_candidate_target_m": [
+    3.0721017051742265,
+    -0.20694906264976892,
+    -0.5257151801287017
+  ],
+  "original_status": "candidate_only",
+  "new_quality_status": "fit_rejected",
+  "rejection_reasons": [
+    "球面RMS超过本工具0.02米诊断限制"
+  ],
+  "sphere_fit": {
+    "ellipse_pixels": 134,
+    "valid_points": 134,
+    "invalid_raw_hypothesis": [
+      0,
+      65535
+    ],
+    "raw_median": 2946.5,
+    "raw_min": 2530.0,
+    "raw_max": 3601.0,
+    "plane_rms_m": 0.01109175127711701,
+    "plane_normal_camera": [
+      -0.012928210542397832,
+      -0.99658327772573,
+      0.08157592739045183
+    ],
+    "center_camera_m": [
+      0.2317677847189661,
+      0.8157564479013543,
+      3.012613863908623
+    ],
+    "fitted_radius_m": 0.2406311287398152,
+    "sphere_rms_m": 0.11486492714198904,
+    "surface_sample_median_camera_m": [
+      0.26149476977564295,
+      0.8164096733658336,
+      2.9465
+    ],
+    "sampled_points": 134,
+    "singular_values": [
+      11.607340393569087,
+      5.337057431415685,
+      1.1141643208948244,
+      0.2567857891082774
+    ]
+  },
+  "plane_normal_target_up": [
+    0.09863866949982333,
+    0.011558483690500639,
+    0.9950561865211842
+  ],
+  "depth_quantiles_m": {
+    "min": 2.5300000000000002,
+    "p05": 2.6186000000000003,
+    "p25": 2.814,
+    "median": 2.9465,
+    "p75": 3.14575,
+    "p95": 3.3295500000000002,
+    "max": 3.601
+  },
+  "robot_run_by_assistant": false,
+  "user_field_reference": {
+    "source": "2026-11-03本对话补充",
+    "feet_to_ball_distance_m_approx": 2.5,
+    "ball_diameter_m_approx": 0.2,
+    "robot_height_m": 0.9,
+    "camera_height_not_measured": true,
+    "trunk_to_feet_offset_not_measured": true,
+    "ball_reference_point_not_specified": true
+  },
+  "different_reference_numeric_difference_m_not_localization_error": 0.5721017051742265,
+  "fitted_camera_optical_Z_m": 3.012613863908623,
+  "fitted_camera_slant_range_m": 3.129699215793846,
+  "illustrative_slant_range_m_if_horizontal_center_distance_2_5_and_camera_height_0_9": 2.6248809496813377,
+  "fitted_diameter_m": 0.4812622574796304,
+  "fitted_to_actual_diameter_ratio_approx": 2.406311287398152
+}

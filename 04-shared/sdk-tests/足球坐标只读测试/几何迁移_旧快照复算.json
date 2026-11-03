@@ -1,0 +1,33 @@
+{
+  "source": "04-shared\\sdk-tests\\足球坐标只读测试\\K1足球坐标_测试工具包\\足球坐标测试结果\\球位_20261103_113057_624030\\原始记录.json",
+  "source_sha256": "ded18ab5768414a76d38ecb2981ff2ce2a999f3c452c238ce14d73cd81a8f33a",
+  "method": "legacy_pixel_ray_ground",
+  "pixel_uv": [
+    298.5,
+    279.2
+  ],
+  "ray_camera": [
+    0.08378948800936009,
+    0.2946617448871321,
+    0.9519210975156279
+  ],
+  "direction_body": [
+    0.9462835344252325,
+    -0.08868988104099326,
+    -0.31093661021626656
+  ],
+  "measured_camera_height_m": null,
+  "unique_metric_ball_position_available": false,
+  "static_upright_xy_formula": {
+    "constant_xy_m": [
+      0.07515460496393428,
+      0.04043637160938127
+    ],
+    "coefficient_per_camera_height_m": [
+      3.0433326386592476,
+      -0.28523460450445687
+    ]
+  },
+  "formula": "xy = constant_xy_m + camera_height_m * coefficient_per_camera_height_m",
+  "note": "缺少当时镜头光心离地高度；90cm为整机高度。2.5m从脚底量起，未用于反推高度。"
+}

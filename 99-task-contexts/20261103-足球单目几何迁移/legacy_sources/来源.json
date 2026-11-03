@@ -1,0 +1,17 @@
+[
+  {
+    "source": "D:\\A_Project\\BoosterRobotics\\课程&资源\\工训课\\CourseCode\\chapter_12_spatial_ball_localization\\ball_localization_utils.py",
+    "snapshot": "legacy_sources/ball_localization_utils.py",
+    "sha256": "46cb64a85586c19f464d217ed2c845282374e99ff7ea339f07f09162ce4a9327"
+  },
+  {
+    "source": "D:\\A_Project\\BoosterRobotics\\课程&资源\\工训课\\CourseCode\\chapter_12_spatial_ball_localization\\ball_position_geometry_node.py",
+    "snapshot": "legacy_sources/ball_position_geometry_node.py",
+    "sha256": "0bbf983aa90586ac66a86d975e62838e3dc21b5ce2a9bc09167f2daa59ae144f"
+  },
+  {
+    "source": "D:\\A_Project\\BoosterRobotics\\课程&资源\\工训课\\CourseCode\\chapter_12_spatial_ball_localization\\README.md",
+    "snapshot": "legacy_sources/README.md",
+    "sha256": "d5b9398470c4b2e4a2cd744c88b24763f18462b4440f09d938b96fa8103e0f5d"
+  }
+]

@@ -1,0 +1,130 @@
+    @override
+    def get_transform(self, target_frame: str, source_frame: str) -> Transform:
+        """Return the coordinate transform between two frames.
+
+        Args:
+            target_frame: Target frame name.
+            source_frame: Source frame name.
+
+        Returns:
+            Transform: Translation and rotation between the frames.
+        """
+        return self.ros_adapter.get_transform(target_frame, source_frame)
+
+class Transform:
+    """Unified coordinate transform data container.
+
+    Translation and rotation are stored as numpy arrays. This type does not
+    depend on ROS directly and supports inverse and matrix conversion.
+    """
+
+    __slots__: ClassVar[list[str]] = [
+        "_child_frame_id",
+        "_translation",
+        "_rotation",
+        "header",
+        "_matrix_cache",
+        "_rpy_cache",
+    ]
+    _child_frame_id: str
+    _translation: NDArray[np.float64]  # [x, y, z] (m)
+    _rotation: NDArray[np.float64]  # [x, y, z, w] 四元数
+    header: Header  # 元数据头 (时间戳, 坐标系等)
+    _matrix_cache: NDArray[np.float64] | None  # 矩阵缓存
+    _rpy_cache: NDArray[np.float64] | None  # RPY 缓存
+
+    def __init__(
+        self,
+        translation: NDArray[np.float64],
+        rotation: NDArray[np.float64],
+        child_frame_id: str,
+        header: Header | None = None,
+    ):
+        """Initialize transform data."""
+        self._translation = translation
+        self._rotation = rotation
+        self.header = header if header is not None else Header()
+        self._matrix_cache = None
+        self._rpy_cache = None
+        self._child_frame_id = child_frame_id
+
+    @property
+    def translation(self) -> NDArray[np.float64]:
+        return self._translation
+
+    @property
+    def rotation(self) -> NDArray[np.float64]:
+        return self._rotation
+
+    @property
+    def timestamp(self) -> float:
+        return self.header.timestamp
+
+    @property
+    def source_frame(self) -> str:
+        """Source or reference frame."""
+        return self.header.frame_id
+
+    @property
+    def target_frame(self) -> str:
+        """Target or child frame."""
+        return self._child_frame_id
+
+    @property
+    def rpy(self) -> NDArray[np.float64]:
+        """Roll-pitch-yaw Euler angles [roll, pitch, yaw] in radians."""
+        if self._rpy_cache is None:
+            from scipy.spatial.transform import Rotation
+
+            rot = Rotation.from_quat(self._rotation)
+            self._rpy_cache = rot.as_euler("xyz", degrees=False)
+
+        return self._rpy_cache
+
+    def inverse(self) -> "Transform":
+        """Return the inverse transform."""
+        from scipy.spatial.transform import Rotation
+
+        rot = Rotation.from_quat(self._rotation)
+        rot_inv = rot.inv()
+
+        # 逆旋转
+        q_inv = rot_inv.as_quat()
+        # 逆平移: -R_inv * T
+        t_inv = -rot_inv.apply(self._translation)
+
+        # 交换坐标系
+        new_header = Header.from_sec(self.timestamp, frame_id=self.target_frame)
+        return Transform(t_inv, q_inv, self.source_frame, new_header)
+
+    def to_matrix(self) -> NDArray[np.float64]:
+        """Convert to a 4x4 homogeneous transform matrix."""
+        if self._matrix_cache is None:
+            from scipy.spatial.transform import Rotation
+
+            rot = Rotation.from_quat(self._rotation)
+            matrix = np.eye(4)
+            matrix[:3, :3] = rot.as_matrix()
+            matrix[:3, 3] = self._translation
+            self._matrix_cache = matrix
+        return self._matrix_cache
+
+    def to_numpy(self) -> dict[str, NDArray[np.float64]]:
+        """Convert to a numpy dictionary."""
+        return {
+            "translation": self._translation,
+            "rotation": self._rotation,
+            "rpy": self.rpy,
+            "matrix": self.to_matrix(),
+        }
+
+    def __repr__(self) -> str:
+        return f"<Transform {self.source_frame}→{self.target_frame} @ {self.timestamp:.3f}>"
+
+    def __str__(self) -> str:
+        return (
+            f"Transform: {self.source_frame} → {self.target_frame} @ {self.timestamp:.3f}\n"
+            f"  Translation: {self._translation} m\n"
+            f"  Rotation:    {self._rotation} [x, y, z, w]\n"
+            f"  RPY (rad):    {self.rpy}"
+        )

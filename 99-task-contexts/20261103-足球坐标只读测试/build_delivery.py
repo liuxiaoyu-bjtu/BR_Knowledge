@@ -75,6 +75,8 @@ if picture.exists():
 display({
     "状态": report["status"],
     "候选球心[x,y,z]米": report["candidate_center_target_m"],
+    "拟合诊断值（可能已拒用）": report.get("diagnostic_center_target_m"),
+    "拒用原因": report.get("sphere_fit_rejection_reasons"),
     "球面拟合": report.get("sphere_fit"),
     "卷尺比较": report.get("measurement_comparison"),
     "RGB/深度时间差秒": report.get("rgb_depth_skew_s"),
@@ -105,7 +107,7 @@ if run.returncode:
     raise RuntimeError(run.stdout + run.stderr)
 import re
 tests = int(re.search(r"Ran (\d+) tests?", run.stdout + run.stderr).group(1))
-package = OUT / "K1足球坐标_测试工具包.zip"
+package = OUT / "K1足球坐标_测试工具包_v0.1.1.zip"
 files = [OUT / n for n in ["probe_ball_coordinates.py", "K1足球坐标_只读测试.ipynb", "README.md"]]
 with zipfile.ZipFile(package, "w", zipfile.ZIP_DEFLATED) as archive:
     for path in files:

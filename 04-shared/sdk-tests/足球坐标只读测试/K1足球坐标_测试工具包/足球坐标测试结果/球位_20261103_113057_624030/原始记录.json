@@ -1,0 +1,246 @@
+{
+  "version": "0.1.0",
+  "created_at": "2026-11-03T11:30:57.624397+08:00",
+  "note": "正前方静止球",
+  "status": "candidate_only",
+  "output_dir": "/home/booster/Workspace/X_C/K1足球坐标_测试工具包/足球坐标测试结果/球位_20261103_113057_624030",
+  "control_input_verified": false,
+  "assumptions": {
+    "robot_head_ball_static": true,
+    "rgb_depth_same_pixel_hypothesis": true,
+    "depth_is_optical_Z_hypothesis": true,
+    "depth_scale_m_hypothesis": 0.001,
+    "target_frame": "trunk",
+    "camera_id": "head"
+  },
+  "known_xy_m": null,
+  "measured_ball_radius_m": null,
+  "candidate_center_target_m": [
+    3.0721017051742265,
+    -0.20694906264976892,
+    -0.5257151801287017
+  ],
+  "warnings": [
+    "TF与RGB时间差超过0.12秒；保持静止核对，不能延伸为运动时有效",
+    "球面半径或残差异常；候选值可能取到背景，须检查原图与深度"
+  ],
+  "stages": [
+    "capture",
+    "camera_info_and_tf_before_detection",
+    "detection",
+    "metric_localization"
+  ],
+  "sdk_version": "1.2.2",
+  "rgb": {
+    "timestamp": 1793676695.9799242,
+    "frame_id": "head_color_optical_frame",
+    "width": 544,
+    "height": 448,
+    "encoding": "bgr8"
+  },
+  "depth": {
+    "timestamp": 1793676695.9799242,
+    "frame_id": "head_color_optical_frame",
+    "width": 544,
+    "height": 448,
+    "encoding": "mono16",
+    "dtype": "uint16",
+    "shape": [
+      448,
+      544
+    ],
+    "receipt_gap_s": -0.028248409999832802,
+    "raw_min": 0.0,
+    "raw_max": 65535.0
+  },
+  "rgb_depth_skew_s": 0.0,
+  "camera_info": {
+    "frame_id": "head_color_optical_frame",
+    "width": 544,
+    "height": 448,
+    "k": [
+      [
+        207.4547727507004,
+        0.0,
+        280.23952732086184
+      ],
+      [
+        0.0,
+        207.4547727507004,
+        214.98355865478516
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "d": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "distortion_model": "plumb_bob"
+  },
+  "transform": {
+    "requested_source": "head_color_optical_frame",
+    "requested_target": "trunk",
+    "returned_source_label": "trunk",
+    "returned_target_label": "head_color_optical_frame",
+    "matrix": [
+      [
+        -0.005451927967898923,
+        -0.017063649756554278,
+        0.9998395412957116,
+        0.07515460496393428
+      ],
+      [
+        -0.9999847884545287,
+        0.0009291879037117978,
+        -0.005436862090548222,
+        0.04043637160938127
+      ],
+      [
+        -0.0008362660969368774,
+        -0.9998539735715539,
+        -0.017068456057589748,
+        0.34153663266741685
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "timestamp": 1793676697.049267,
+    "tf_minus_rgb_s": 1.069342851638794,
+    "camera_origin_in_target_m": [
+      0.07515460496393428,
+      0.04043637160938127,
+      0.34153663266741685
+    ],
+    "camera_axes_in_target": [
+      [
+        -0.005451927967898923,
+        -0.017063649756554278,
+        0.9998395412957116
+      ],
+      [
+        -0.9999847884545287,
+        0.0009291879037117978,
+        -0.005436862090548222
+      ],
+      [
+        -0.0008362660969368774,
+        -0.9998539735715539,
+        -0.017068456057589748
+      ]
+    ]
+  },
+  "reverse_transform": {
+    "matrix": [
+      [
+        -0.005451927967898923,
+        -0.9999847884545287,
+        -0.0008362660969368774,
+        0.04113110950915683
+      ],
+      [
+        -0.017063649756554278,
+        0.0009291879037117978,
+        -0.9998539735715539,
+        0.3427315981620921
+      ],
+      [
+        0.9998395412957116,
+        -0.005436862090548222,
+        -0.017068456057589748,
+        -0.06909319577077706
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "timestamp": 1793676698.0135708,
+    "roundtrip_max_error": 4.440892098500626e-16
+  },
+  "detection_elapsed_s": 1.926035481999861,
+  "detections": [
+    {
+      "class_name": "Ball",
+      "confidence": 0.8655524849891663,
+      "bbox": [
+        289,
+        263,
+        19,
+        18
+      ],
+      "distance_m": null
+    },
+    {
+      "class_name": "L_cross",
+      "confidence": 0.7062181234359741,
+      "bbox": [
+        229,
+        264,
+        27,
+        21
+      ],
+      "distance_m": null
+    }
+  ],
+  "selected_detection_index": 0,
+  "selected_ball": {
+    "class_name": "Ball",
+    "confidence": 0.8655524849891663,
+    "bbox": [
+      289,
+      263,
+      19,
+      18
+    ],
+    "distance_m": null
+  },
+  "sphere_fit": {
+    "ellipse_pixels": 134,
+    "valid_points": 134,
+    "invalid_raw_hypothesis": [
+      0,
+      65535
+    ],
+    "raw_median": 2946.5,
+    "raw_min": 2530.0,
+    "raw_max": 3601.0,
+    "center_camera_m": [
+      0.2317677847189663,
+      0.8157564479013547,
+      3.012613863908623
+    ],
+    "fitted_radius_m": 0.24063112873981507,
+    "sphere_rms_m": 0.11486492714198904,
+    "surface_sample_median_camera_m": [
+      0.26149476977564295,
+      0.8164096733658336,
+      2.9465
+    ],
+    "sampled_points": 134,
+    "singular_values": [
+      11.607340393569087,
+      5.337057431415687,
+      1.1141643208948244,
+      0.2567857891082777
+    ]
+  },
+  "surface_sample_median_target_m": [
+    3.0058252340187717,
+    -0.23631553658351626,
+    -0.5252647082938442
+  ],
+  "snapshot_receipt_age_at_result_s": 5.7614464879998195
+}

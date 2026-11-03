@@ -1,0 +1,4 @@
+before/
+*.index
+*.index.lock
+__pycache__/

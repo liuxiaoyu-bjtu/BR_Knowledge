@@ -1,0 +1,52 @@
+test_actual_pixel (__main__.GeometryTests.test_actual_pixel) ... ok
+test_bad_matrix_or_height (__main__.GeometryTests.test_bad_matrix_or_height) ... ok
+test_height_changes_scale_not_yaw (__main__.GeometryTests.test_height_changes_scale_not_yaw) ... ok
+test_horizontal_ray_rejected (__main__.GeometryTests.test_horizontal_ray_rejected) ... ok
+test_legacy_composition_with_compensation (__main__.GeometryTests.test_legacy_composition_with_compensation) ... ok
+test_legacy_pixel_selection_exact (__main__.GeometryTests.test_legacy_pixel_selection_exact) ... ok
+test_no_silent_height_or_double_extrinsics (__main__.GeometryTests.test_no_silent_height_or_double_extrinsics) ... ok
+test_nonzero_distortion (__main__.GeometryTests.test_nonzero_distortion) ... ok
+test_old_intersection_exact_across_poses (__main__.GeometryTests.test_old_intersection_exact_across_poses) ... ok
+test_old_ray_exact (__main__.GeometryTests.test_old_ray_exact) ... ok
+test_target_origin_and_height (__main__.GeometryTests.test_target_origin_and_height) ... ok
+test_upward_ray_rejected (__main__.GeometryTests.test_upward_ray_rejected) ... ok
+test_x_forward_y_left (__main__.GeometryTests.test_x_forward_y_left) ... ok
+test_capture_timeout_unsubscribes (__main__.IntegrationTests.test_capture_timeout_unsubscribes) ... 单目几何静态测试：像素→射线→地面；不发送动作。
+TimeoutError: 等待一张新RGB图像超时
+结果目录：C:\Users\yujie\AppData\Local\Temp\tmpi19nc2e_\几何球位_20261103_115840_200811
+结果ZIP：C:\Users\yujie\AppData\Local\Temp\tmpi19nc2e_\几何球位_20261103_115840_200811.zip
+ok
+test_explicit_original_head_pose_needs_no_body_tf (__main__.IntegrationTests.test_explicit_original_head_pose_needs_no_body_tf) ... 单目几何静态测试：像素→射线→地面；不发送动作。
+取点(u,v)=(298.50,279.20)；候选x=+2.784m，y=-0.199m
+结果目录：C:\Users\yujie\AppData\Local\Temp\tmp8eo5ljhe\几何球位_20261103_115840_223912
+结果ZIP：C:\Users\yujie\AppData\Local\Temp\tmp8eo5ljhe\几何球位_20261103_115840_223912.zip
+ok
+test_five_head_frames_do_not_imply_body (__main__.IntegrationTests.test_five_head_frames_do_not_imply_body) ... 单目几何静态测试：像素→射线→地面；不发送动作。
+ValueError: 当前帧列表缺少身体目标帧或图像光学帧；头部帧间TF不足以确定身体姿态。可在取得可信的旧head_to_ground位姿后显式传入，不能编造身体TF。
+结果目录：C:\Users\yujie\AppData\Local\Temp\tmpfh68i431\几何球位_20261103_115840_288927
+结果ZIP：C:\Users\yujie\AppData\Local\Temp\tmpfh68i431\几何球位_20261103_115840_288927.zip
+ok
+test_measured_reference_never_changes_result (__main__.IntegrationTests.test_measured_reference_never_changes_result) ... 单目几何静态测试：像素→射线→地面；不发送动作。
+取点(u,v)=(298.50,279.20)；候选x=+2.784m，y=-0.199m
+结果目录：C:\Users\yujie\AppData\Local\Temp\tmpv_qwufx0\几何球位_20261103_115840_305876
+结果ZIP：C:\Users\yujie\AppData\Local\Temp\tmpv_qwufx0\几何球位_20261103_115840_305876.zip
+单目几何静态测试：像素→射线→地面；不发送动作。
+取点(u,v)=(298.50,279.20)；候选x=+2.784m，y=-0.199m
+结果目录：C:\Users\yujie\AppData\Local\Temp\tmpt0gle1rz\几何球位_20261103_115840_330434
+结果ZIP：C:\Users\yujie\AppData\Local\Temp\tmpt0gle1rz\几何球位_20261103_115840_330434.zip
+ok
+test_no_ball_not_zero_ball (__main__.IntegrationTests.test_no_ball_not_zero_ball) ... 单目几何静态测试：像素→射线→地面；不发送动作。
+结果目录：C:\Users\yujie\AppData\Local\Temp\tmp2tvpo7dk\几何球位_20261103_115840_352282
+结果ZIP：C:\Users\yujie\AppData\Local\Temp\tmp2tvpo7dk\几何球位_20261103_115840_352282.zip
+ok
+test_only_public_read_calls (__main__.IntegrationTests.test_only_public_read_calls) ... ok
+test_sdk_tf_readonly_snapshot (__main__.IntegrationTests.test_sdk_tf_readonly_snapshot) ... 单目几何静态测试：像素→射线→地面；不发送动作。
+取点(u,v)=(298.50,279.20)；候选x=+2.784m，y=-0.199m
+结果目录：C:\Users\yujie\AppData\Local\Temp\tmpy5i1o7p1\几何球位_20261103_115840_377329
+结果ZIP：C:\Users\yujie\AppData\Local\Temp\tmpy5i1o7p1\几何球位_20261103_115840_377329.zip
+ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.518s
+
+OK
