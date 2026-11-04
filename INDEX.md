@@ -254,3 +254,10 @@ last_updated: "2026-09-01"
 | 中高职方案 | `01-booster-kb/03-solutions/vocational.md` |
 | 状态机/FSM | `05-internal-materials/vocational-planning/03_X课程项目/高职应用开发大纲-修订版.md#模块-4状态机与任务流程4-课时` |
 | 综合项目（视觉踢球） | `05-internal-materials/vocational-planning/03_X课程项目/高职应用开发大纲-修订版.md#模块-7综合项目开发与展示5-课时` |
+
+## 周末项目课
+
+| 关键词 | 入口 |
+|---|---|
+| K1周末班 / 少年机器人创作社 / 初中混合基础 / 两小时周末课 / 机器人作品 / 招生宣介 | [课程总纲与招生宣介](05-internal-materials/course-outlines/K1周末创作班/课程总纲与招生宣介-v1.md) |
+| 周末班实施 / 分层创作 / Agent作品出口 / 动作创作条件 | [设计依据与实施口径](05-internal-materials/course-outlines/K1周末创作班/设计依据与实施口径.md) |
